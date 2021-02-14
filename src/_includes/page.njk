@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title or 'Title' }} | Matt Waler</title>
+    <meta name="description" content="{{ description or 'Description' }}">
+    <link rel="stylesheet" href="/assets/main.bundle.css">
+    <script defer src="/assets/main.bundle.js"></script>
+    {% include 'favicons.njk' %}
+  </head>
+  <body class="{{ 'debug-screens' if env.dev }}">
+    {% include 'header.njk' %}
+    <main>
+      {% block body %}
+      {% endblock %}
+    </main>
+    {% include 'footer.njk' %}
+  </body>
+</html>

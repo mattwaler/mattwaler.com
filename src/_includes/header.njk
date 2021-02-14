@@ -1,0 +1,68 @@
+{% set currentPage = page.url %}
+
+<header
+  class="gradient-purple text-white"
+  x-data="{ mobileNav: false }"
+>
+  <div class="container py-5 flex items-center">
+
+    {# Logo #}
+    <a href="/" class="flex items-center">
+      <span class="w-6 h-6 text-indigo-200">
+        {% include 'icons/logo.svg' %}
+      </span>
+      <span class="ml-2 leading-none font-extrabold text-xl">
+        mattwaler
+      </span>
+    </a>
+
+    {# Nav Text Links #}
+    <nav class="ml-auto space-x-4 hidden md:block">
+      {% for item in navigation.internal %}
+        {% set isCurrentPage = item.link === currentPage %}
+        <a
+          class="font-semibold text-sm tracking-tight {{ 'text-white' if isCurrentPage else 'text-indigo-200' }}"
+          href="{{ item.link }}"
+        >
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </nav>
+
+    {# Nav Icons #}
+    <nav class="ml-auto md:ml-20 flex space-x-4 text-indigo-300">
+      {% for item in navigation.external  %}
+        <a href="{{ item.link }}" target="_blank" class="w-5 h-5 hidden md:block">
+          {% include 'icons/' + item.icon + '.svg' %}
+        </a>
+      {% endfor  %}
+      <button @click="mobileNav = !mobileNav" class="w-6 h-6 md:hidden">
+        <span x-show="!mobileNav">
+          {% include 'icons/menu.svg' %}
+        </span>
+        <span x-show="mobileNav">
+          {% include 'icons/close.svg' %}
+        </span>
+      </button>
+    </nav>
+
+  </div>
+
+  <div class="container">
+    <div class="h-px bg-indigo-200" style="opacity: 0.2;"></div>
+  </div>
+
+  <nav class="container md:hidden" x-cloak x-show.transition="mobileNav">
+    {% for item in navigation.internal %}
+      {% set isCurrentPage = item.link === currentPage %}
+      <a
+        class="block py-4 font-semibold text-sm tracking-tight text-white"
+        href="{{ item.link }}"
+      >
+        {{ item.name }}
+      </a>
+      <div class="h-px bg-indigo-200" style="opacity: 0.2;"></div>
+    {% endfor %}
+  </nav>
+
+</header>

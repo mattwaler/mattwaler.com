@@ -1,0 +1,30 @@
+---
+permalink: /404.html
+---
+
+{% extends 'page.njk' %}
+{% from 'hero.njk' import hero  %}
+
+{% set title = 'Page Not Found' %}
+{% set description = "This is where you go when a page doesn't exist." %}
+
+{% set homeButton  %}
+  <a class="mt-8 inline-flex items-center border px-4 py-3 rounded" href="/feed.xml">
+    <span class="font-medium tracking-tight leading-none">
+      Go Home
+    </span>
+  </a>
+{% endset %}
+
+{% block body %}
+
+  {{ hero(
+    eyebrow = 'Ruh roh Shaggy!',
+    heading = "Something's not right here.",
+    paragraph = "There hasn't been a page at this URL in over 40 years!",
+    belowParagraph = homeButton
+  ) }}
+
+  {% include 'contact-cta.njk' %}
+
+{% endblock %}

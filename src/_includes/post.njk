@@ -1,0 +1,19 @@
+{% extends 'page.njk' %}
+{% from 'hero.njk' import hero  %}
+
+{% block body %}
+
+  {{ hero(
+    eyebrow = date | prettyDate,
+    heading = title,
+    paragraph = description
+  ) }}
+
+  {# Content #}
+  <section class="container max-w-screen-md markdown mt-16">
+    {{ content | safe }}
+  </section>
+
+  {% include 'contact-cta.njk' %}
+
+{% endblock body %}

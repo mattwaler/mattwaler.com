@@ -1,0 +1,127 @@
+{% extends "page.njk" %}
+
+{% set title = "Web Developer" %}
+{% set description = "Matt Waler is a freelance web developer providing consulting, instruction, and development services." %}
+
+{% block body %}
+
+  {# Success Contact Submit #}
+  <section
+    x-data="{ didSubmit: false }"
+    x-init="window.location.hash === '#contact'
+      ? function() {
+        setTimeout(() => { didSubmit = true }, 500)
+        setTimeout(() => { didSubmit = false }, 4000)
+      }
+      : null
+    "
+    x-cloak
+    x-show.transition="didSubmit"
+    class="fixed top-0 right-0 m-8 bg-white py-6 px-4 shadow-lg rounded-lg z-50 max-w-lg"
+  >
+    <div class="flex items-center">
+      <span class="flex-none w-16 text-green-600 rounded-full">
+        {% include 'icons/check.svg' %}
+      </span>
+      <div class="ml-4">
+        <p class="font-extrabold leading-none text-xl">Contact Success!</p>
+        <p class="mt-2 text-sm">Thank you for reaching out. I will be in touch.</p>
+      </div>
+    </div>
+  </section>
+
+  {# Hero #}
+  <section class="gradient-purple text-white">
+    <div class="container py-12 relative text-center lg:text-left">
+      <img
+        alt="My family and I cheesin' hard."
+        src="/assets/fam.jpg"
+        class="object-cover object-top h-72 shadow-lg rounded-lg w-full mx-auto lg:hidden"
+      >
+      <div class="mt-10 lg:mt-0 lg:w-1/2">
+        <h1 class="text-2xl sm:text-3xl xl:text-4xl font-black leading-none">
+          <span>
+            I make awesome websites,
+          </span>
+          <span class="block text-indigo-200">
+            in exchange for money.
+          </span>
+        </h1>
+        <p class="mt-4 text-sm sm:text-lg text-indigo-100 ">
+          I also love Tennis, Chipotle, and<br>spending time with my family.
+        </p>
+      </div>
+
+      {# Desktop Images #}
+      {% set imageClasses = 'top-12 right-6 object-cover object-center absolute shadow-lg rounded-lg' %}
+      <img
+        alt="My family and I cheesin' hard."
+        class="{{ imageClasses }} hidden lg:block xl:hidden"
+        src="/assets/fam.jpg"
+        width="480px"
+        height="270px"
+      >
+      <img
+        alt="My family and I cheesin' hard."
+        class="{{ imageClasses }} hidden xl:block"
+        src="/assets/fam.jpg"
+        width="640px"
+        height="360px"
+      >
+    </div>
+
+  </section>
+  <span class="z-0 w-full h-16 block gradient-purple text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
+  <div role="presentation" class="hidden lg:block" style="height: 22px;"></div>
+  <div role="presentation" class="hidden xl:block" style="height: 56px;"></div>
+
+  {# What I Do #}
+  <section class="relative section-spacing">
+
+    {# Blobs #}
+    <div class="z-0 opacity-25 text-gray-300">
+      <span class="absolute" style="width: 640px; top: -128px; left: -360px;">
+        {% include 'icons/blob-1.svg' %}
+      </span>
+      <span class="absolute" style="width: 640px; top: 320px; right: -360px;">
+        {% include 'icons/blob-1.svg' %}
+      </span>
+    </div>
+
+    {# Content #}
+    <div class="container text-center">
+      <h2 class="text-3xl leading-tight font-extrabold sm:text-4xl">
+        Jack of all trades.
+        <br class="sm:hidden">
+        Master of some.
+      </h2>
+      <p class="text-gray-700 mt-1 italic sm:text-lg">I can make myself useful in a whole number of ways.</p>
+      <div class="mt-12 grid gap-12 sm:gap-16 sm:mt-24 sm:grid-cols-3 lg:gap-24">
+        {% for skill in collections.skill %}
+          <div class="flex flex-col">
+            <span class="w-8 h-8 md:w-16 md:h-16 mx-auto animate-grow {{ skill.data.color }}">
+              {% include 'icons/' + skill.data.icon + '.svg' %}
+            </span>
+            <h2 class="mt-4 font-extrabold leading-none text-xl md:mt-6 md:text-2xl">{{ skill.data.name }}</h2>
+            <p class="mt-2 md:mt-3 text-gray-600">
+              {{ skill.data.description }}
+            </p>
+            <span class="h-4"></span>
+            <a class="mt-auto flex justify-center items-center font-extrabold {{ skill.data.color }}" href="{{ skill.data.link }}">
+              {{ skill.data.linkText }}
+              <span class="ml-1 w-4 h-4">
+                {% include 'icons/arrow.svg' %}
+              </span>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </section>
+
+ {% include 'contact-cta.njk' %}
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'page.njk' %}
+{% from 'hero.njk' import hero  %}
+
+{% set title = 'Contact Me' %}
+{% set description = "Contact Matt Waler for development, instruction, or consultation for the web." %}
+
+{% block body %}
+
+  {{ hero(
+    eyebrow = "Don't be shy",
+    heading = "Let's get in touch.",
+    paragraph = "Fill out the contact form below and I promise I will reach out as fast as I can. Thank you in advance for contacting me!"
+  ) }}
+
+  <form name="contact" method="post" aria-label="contact form" action="/#contact" class="container section-spacing">
+    <input type="hidden" name="form-name" value="contact">
+      <label class="flex flex-wrap py-8">
+        <span class="w-full block md:w-1/3">Name:</span>
+        <input name="name" type="text" required class="input w-full md:w-2/3">
+      </label>
+      <label class="flex flex-wrap py-8 border-t">
+        <span class="w-full block md:w-1/3">Email:</span>
+        <input name="email" type="email" required class="input w-full md:w-2/3">
+      </label>
+      <label class="flex flex-wrap py-8 border-t">
+        <span class="w-full block md:w-1/3">Category:</span>
+        <select class="input w-full md:w-2/3" name="category">
+          <option value="development">Development</option>
+          <option value="consulting">Consulting</option>
+          <option value="instruction">Instruction</option>
+          <option value="general">General</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+      <label class="flex flex-wrap py-8 border-t">
+        <span class="w-full block md:w-1/3">Message:</span>
+        <textarea name="message" rows="7" required class="input w-full md:w-2/3"></textarea>
+      </label>
+      <div class="py-8 border-t flex">
+        <button type="submit" class="button ml-auto">Submit</button>
+      </div>
+  </form>
+
+{% endblock body %}
+
+
