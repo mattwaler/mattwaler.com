@@ -32,7 +32,13 @@
     {# Nav Icons #}
     <nav class="ml-auto md:ml-20 flex space-x-4 text-indigo-300">
       {% for item in navigation.external  %}
-        <a href="{{ item.link }}" target="_blank" class="w-5 h-5 hidden md:block">
+        <a
+          aria-label="{{ item.icon }} profile link"
+          href="{{ item.link }}"
+          target="_blank"
+          rel="noopener"
+          class="w-5 h-5 hidden md:block"
+        >
           {% include 'icons/' + item.icon + '.svg' %}
         </a>
       {% endfor  %}
