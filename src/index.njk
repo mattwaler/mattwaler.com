@@ -39,7 +39,7 @@
         class="object-cover object-top h-72 shadow-lg rounded-lg w-full mx-auto lg:hidden"
       >
       <div class="mt-10 lg:mt-0 lg:w-1/2">
-        <h1 class="text-2xl sm:text-3xl xl:text-4xl font-black leading-none">
+        <h1 class="text-2xl sm:text-3xl font-black leading-none">
           <span>
             I make awesome websites,
           </span>
@@ -56,17 +56,10 @@
       {% set imageClasses = 'top-12 right-6 object-cover object-center absolute shadow-lg rounded-lg' %}
       <img
         alt="My family and I cheesin' hard."
-        class="{{ imageClasses }} hidden lg:block xl:hidden"
+        class="{{ imageClasses }} hidden lg:block"
         src="/assets/fam.jpg"
         width="480px"
         height="270px"
-      >
-      <img
-        alt="My family and I cheesin' hard."
-        class="{{ imageClasses }} hidden xl:block"
-        src="/assets/fam.jpg"
-        width="640px"
-        height="360px"
       >
     </div>
 
@@ -75,7 +68,6 @@
     {% include 'icons/waves.svg' %}
   </span>
   <div role="presentation" class="hidden lg:block" style="height: 22px;"></div>
-  <div role="presentation" class="hidden xl:block" style="height: 56px;"></div>
 
   {# What I Do #}
   <section class="relative section-spacing">
