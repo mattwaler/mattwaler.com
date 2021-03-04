@@ -1,11 +1,7 @@
-const highlighting = require('@11ty/eleventy-plugin-syntaxhighlight')
-const markdown = require('./src/_config/markdown')
-const prettyDate = require('./src/_config/prettyDate')
-
 module.exports = (config) => {
-  config.addFilter('prettyDate', prettyDate)
+  config.addFilter('prettyDate', require('./src/_config/prettyDate'))
   config.addPassthroughCopy({ public: './' })
-  config.addPlugin(highlighting)
+  config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
   config.setBrowserSyncConfig({
     files: ['dist/**/*'],
     open: true,
@@ -19,7 +15,7 @@ module.exports = (config) => {
     },
   })
   config.setDataDeepMerge(true)
-  config.setLibrary('md', markdown)
+  config.setLibrary('md', require('./src/_config/markdown'))
   return {
     dir: {
       input: 'src',

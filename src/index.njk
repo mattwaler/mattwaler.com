@@ -6,18 +6,26 @@
 {% block body %}
 
   {# Success Contact Submit #}
-  <section
-    x-data="{ didSubmit: false }"
-    x-init="window.location.hash === '#contact'
-      ? function() {
-        setTimeout(() => { didSubmit = true }, 500)
-        setTimeout(() => { didSubmit = false }, 4000)
+  <script>
+    function contactSubmit() {
+      return {
+        didSubmit: false,
+        init() {
+          if (window.location.search.includes('contact')) {
+            setTimeout(() => { this.didSubmit = true }, 500)
+            setTimeout(() => { this.didSubmit = false }, 4000)
+          }
+        }
       }
-      : null
-    "
+    }
+  </script>
+
+  <section
+    x-data="contactSubmit()"
+    x-init="init()"
     x-cloak
     x-show.transition="didSubmit"
-    class="fixed top-0 right-0 m-8 bg-white py-6 px-4 shadow-lg rounded-lg z-50 max-w-lg"
+    class="fixed top-0 right-0 m-8 bg-white px-6 py-4 shadow-lg rounded-lg z-50 max-w-lg"
   >
     <div class="flex items-center">
       <span class="flex-none w-16 text-green-600 rounded-full">
@@ -62,7 +70,6 @@
         height="270px"
       >
     </div>
-
   </section>
   <span class="z-0 w-full h-16 block gradient-purple text-gray-100">
     {% include 'icons/waves.svg' %}
