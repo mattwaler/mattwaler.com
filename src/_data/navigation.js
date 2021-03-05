@@ -1,8 +1,8 @@
 module.exports = {
   internal: [
-    { name: 'Contact', link: '/contact/' },
-    { name: 'Sites', link: '/sites/' },
     { name: 'Blog', link: '/blog/' },
+    { name: 'Contact', link: '/contact/' },
+    { name: 'Work', link: '/work/' },
   ],
   external: [
     { icon: 'github', link: 'https://github.com/mattwaler' },

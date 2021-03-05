@@ -1,7 +1,7 @@
 ---
-title: Sites
-heading: Websites I brought to life.
-description: Below you will find a list of some of the sites I've helped design, build, and deploy to the internet. Give them a peep!
+title: Work
+heading: Things I built.
+description: A list of some of the web applications I've helped design, build, and deploy to the internet. Give them a peep!
 ---
 
 {% extends 'page.njk' %}
@@ -16,7 +16,7 @@ description: Below you will find a list of some of the sites I've helped design,
   ) }}
 
   <section class="container section-spacing">
-    {% for item in collections.sites %}
+    {% for item in collections.work %}
       <article class="flex flex-wrap items-center {{ 'pt-12 mt-12 border-t' if not loop.first }}">
         <img
           alt="{{ item.data.title }} image"
