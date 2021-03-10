@@ -20,8 +20,9 @@
     <nav class="ml-auto space-x-4 hidden md:block">
       {% for item in navigation.internal %}
         {% set isCurrentPage = item.link === currentPage %}
+        {% set textColor = 'text-white' if isCurrentPage else 'text-indigo-200' %}
         <a
-          class="font-semibold text-sm tracking-tight {{ 'text-white' if isCurrentPage else 'text-indigo-200' }}"
+          class="font-semibold tracking-tight transition-colors duration-200 hover:text-white {{ textColor }}"
           href="{{ item.link }}"
         >
           {{ item.name }}
@@ -37,7 +38,7 @@
           href="{{ item.link }}"
           target="_blank"
           rel="noopener"
-          class="w-5 h-5 hidden md:block"
+          class="w-5 h-5 hidden md:block transition-colors duration-200 hover:text-white"
         >
           {% include 'icons/' + item.icon + '.svg' %}
         </a>
