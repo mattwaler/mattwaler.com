@@ -1,13 +1,13 @@
 {% set code %}
 {% highlight "js" %}
-let isSiteAwesome = false
+let needsMattsHelp = true
 
 const contactMatt = (message) => {
   return alert(message)
 }
 
-if (!isSiteAwesome) {
-  return contactMatt("Let's get started!")
+if (needsMattsHelp) {
+  contactMatt("Let's get started!")
 }
 {% endhighlight %}
 {% endset %}
