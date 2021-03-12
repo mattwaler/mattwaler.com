@@ -12,30 +12,33 @@
     paragraph = "Fill out the contact form below and I promise I will reach out as fast as I can. Thank you in advance for contacting me!"
   ) }}
 
-  <form
-    name="contact"
-    method="post"
-    aria-label="contact form"
-    action="/?contact"
-    class="container max-w-xl section-spacing"
-  >
-    <input type="hidden" name="form-name" value="contact">
-    <label class="block pt-8">
-      <p class="font-bold">Name:</p>
-      <input name="name" type="text" required class="mt-2 input w-full">
-    </label>
-    <label class="block pt-8">
-      <p class="font-bold">Email:</p>
-      <input name="email" type="email" required class="mt-2 input w-full">
-    </label>
-    <label class="block pt-8">
-      <p class="font-bold">Message:</p>
-      <textarea name="message" rows="7" required class="mt-2 input w-full"></textarea>
-    </label>
-    <div class="block pt-8">
-      <button type="submit" class="button ml-auto">Submit</button>
-    </div>
-  </form>
+  <div class="container grid items-center md:grid-cols-2 gap-24 sections-spacing">
+    <form
+      name="contact"
+      method="post"
+      aria-label="contact form"
+      action="/?contact"
+    >
+      <input type="hidden" name="form-name" value="contact">
+      <label class="block pt-8">
+        <p class="font-bold">Name:</p>
+        <input name="name" type="text" required class="mt-2 input w-full">
+      </label>
+      <label class="block pt-8">
+        <p class="font-bold">Email:</p>
+        <input name="email" type="email" required class="mt-2 input w-full">
+      </label>
+      <label class="block pt-8">
+        <p class="font-bold">Message:</p>
+        <textarea name="message" rows="7" required class="mt-2 input w-full"></textarea>
+      </label>
+      <div class="block pt-8">
+        <button type="submit" class="button ml-auto">Submit</button>
+      </div>
+    </form>
+    <img class="hidden md:block" src="/assets/contact.svg" alt="Contact image.">
+  </div>
+
 
 {% endblock body %}
 
