@@ -1,11 +1,9 @@
-isProd = process.env.NODE_ENV === 'production'
-
 module.exports = {
   plugins: [
     require('postcss-import'),
-    require('tailwindcss')('./tailwind.config.js'),
+    require('@tailwindcss/jit'),
     require('postcss-nested'),
     require('autoprefixer'),
-    isProd ? require('cssnano') : null,
+    process.env.NODE_ENV === 'production' ? require('cssnano') : null,
   ],
 }
