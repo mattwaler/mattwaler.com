@@ -5,5 +5,7 @@ import './main.pcss'
 import 'alpinejs'
 import 'lazysizes'
 import Turbolinks from 'turbolinks'
+import { toggle } from 'slide-element'
 
 Turbolinks.start()
+window.slideToggle = toggle
