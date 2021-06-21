@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   darkMode: false,
   theme: {
     container: {
@@ -18,10 +19,5 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('tailwindcss-debug-screens'),
   ],
-  purge: [
-    './src/**/*.js',
-    './src/**/*.md',
-    './src/**/*.njk',
-    './src/**/*.svg',
-  ],
+  purge: ['./src/**/*.{js,md,njk,svg}'],
 }

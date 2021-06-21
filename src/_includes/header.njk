@@ -1,10 +1,6 @@
 {% set currentPage = page.url %}
 
-<header
-  class="gradient-purple text-white"
-  x-data="{ showMobileNav: false }"
-  @toggle-mobile-nav.window="showMobileNav = !showMobileNav; window.slideToggle($refs.mobileNav)"
->
+<header x-data class="gradient-purple text-white">
   <div class="container py-5 flex items-center">
 
     {# Logo #}
@@ -44,11 +40,11 @@
           {% include 'icons/' + item.icon + '.svg' %}
         </a>
       {% endfor  %}
-      <button @click="$dispatch('toggle-mobile-nav')" class="w-6 h-6 md:hidden">
-        <span x-show="!showMobileNav">
+      <button @click="$store.nav.toggle()" class="w-6 h-6 md:hidden">
+        <span x-show="!$store.nav.isOpen">
           {% include 'icons/menu.svg' %}
         </span>
-        <span x-show="showMobileNav">
+        <span x-show="$store.nav.isOpen">
           {% include 'icons/close.svg' %}
         </span>
       </button>
@@ -60,7 +56,7 @@
     <div class="h-px bg-indigo-200" style="opacity: 0.2;"></div>
   </div>
 
-  <nav class="container hidden" x-ref="mobileNav" x-cloak>
+  <nav class="container md:hidden" x-show="$store.nav.isOpen" x-cloak x-transition>
     {% for item in navigation.internal %}
       {% set isCurrentPage = item.link === currentPage %}
       <a
