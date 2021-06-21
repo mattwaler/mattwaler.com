@@ -2,10 +2,8 @@ import Alpine from 'alpinejs'
 import 'htmx.org'
 import 'lazysizes'
 import './main.pcss'
-import { toggle } from 'slide-element'
 
 window.Alpine = Alpine
-window.slideToggle = toggle
 
 // Start Alpine when the page is ready.
 window.addEventListener('DOMContentLoaded', (event) => {
