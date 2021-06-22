@@ -30,6 +30,7 @@
     "@11ty/eleventy": "^0.12.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/typography": "^0.4.1",
     "cross-env": "^6.0.3",
     "date-fns": "^2.16.0",
     "esbuild": "^0.12.9",
