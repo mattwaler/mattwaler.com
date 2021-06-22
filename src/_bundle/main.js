@@ -1,12 +1,11 @@
 import Alpine from 'alpinejs'
 import 'htmx.org'
 import 'lazysizes'
-import './main.pcss'
 
 window.Alpine = Alpine
 
 // Start Alpine when the page is ready.
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
   Alpine.start()
 });
 
@@ -16,7 +15,7 @@ document.body.addEventListener('htmx:afterSwap', () => {
 })
 
 // Start Alpine when the page is ready.
-window.addEventListener('alpine:initializing', (event) => {
+window.addEventListener('alpine:initializing', () => {
   Alpine.store('nav', {
     isOpen: false,
     close() { return this.isOpen = false },
