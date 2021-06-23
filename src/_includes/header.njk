@@ -62,6 +62,7 @@
       <a
         class="block py-4 font-semibold text-sm tracking-tight text-white"
         href="{{ item.link }}"
+        @click="$store.nav.close()"
       >
         {{ item.name }}
       </a>

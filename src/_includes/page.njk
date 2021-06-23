@@ -4,6 +4,9 @@
     {% include 'meta.njk' %}
     <link rel="stylesheet" href="/assets/main.bundle.css">
     <script defer src="/assets/main.bundle.js"></script>
+    <style>
+      [x-cloak] { display: none; }
+    </style>
   </head>
   <body class="{{ 'debug-screens' if env.dev }}">
     {% include 'header.njk' %}

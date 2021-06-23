@@ -4,8 +4,10 @@ import 'lazysizes'
 
 window.Alpine = Alpine
 
-Alpine.start()
-Turbolinks.start()
+window.addEventListener('DOMContentLoaded', () => {
+  Alpine.start()
+  Turbolinks.start()
+})
 
 // Create Global Alpine Store for Nav.
 window.addEventListener('alpine:init', () => {
