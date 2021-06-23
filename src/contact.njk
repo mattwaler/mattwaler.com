@@ -12,12 +12,46 @@
     paragraph = "Fill out the contact form below and I promise I will reach out as fast as I can. Thank you in advance for contacting me!"
   ) }}
 
+  {# Success Contact Submit #}
+  <script>
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('contactSubmit', () => ({
+        didSubmit: false,
+        init() {
+          if (window.location.search.includes('submit')) {
+            setTimeout(() => { this.didSubmit = true }, 500)
+            setTimeout(() => { this.didSubmit = false }, 4000)
+          }
+        }
+      }))
+    })
+  </script>
+
+  <section
+    x-data="contactSubmit"
+    x-cloak
+    x-show="didSubmit"
+    x-transition
+    class="fixed top-0 right-0 m-8 bg-white px-5 py-4 shadow-lg rounded-lg z-50 w-96"
+  >
+    <div class="flex items-center">
+      <span class="flex-none w-16 text-green-600 rounded-full">
+        {% include 'icons/check.svg' %}
+      </span>
+      <div class="ml-4">
+        <p class="font-extrabold leading-none text-xl">Contact Success!</p>
+        <p class="mt-2 text-sm">Thank you for reaching out.<br>I will be in touch.</p>
+      </div>
+    </div>
+  </section>
+
   <div class="container grid items-center md:grid-cols-2 gap-24 sections-spacing">
     <form
       name="contact"
       method="post"
       aria-label="contact form"
-      action="/?contact"
+      action="/contact?submit=true"
+      netlify
     >
       <input type="hidden" name="form-name" value="contact">
       <label class="block pt-8">

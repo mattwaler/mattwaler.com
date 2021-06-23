@@ -5,39 +5,6 @@
 
 {% block body %}
 
-  {# Success Contact Submit #}
-  <script>
-    document.addEventListener('alpine:init', () => {
-      Alpine.data('contactSubmit', () => ({
-        didSubmit: false,
-        init() {
-          if (window.location.search.includes('contact')) {
-            setTimeout(() => { this.didSubmit = true }, 500)
-            setTimeout(() => { this.didSubmit = false }, 4000)
-          }
-        }
-      }))
-    })
-  </script>
-
-  <section
-    x-data="contactSubmit"
-    x-cloak
-    x-show="didSubmit"
-    x-transition
-    class="fixed top-0 right-0 m-8 bg-white px-5 py-4 shadow-lg rounded-lg z-50 w-96"
-  >
-    <div class="flex items-center">
-      <span class="flex-none w-16 text-green-600 rounded-full">
-        {% include 'icons/check.svg' %}
-      </span>
-      <div class="ml-4">
-        <p class="font-extrabold leading-none text-xl">Contact Success!</p>
-        <p class="mt-2 text-sm">Thank you for reaching out.<br>I will be in touch.</p>
-      </div>
-    </div>
-  </section>
-
   {# Hero #}
   <section class="gradient-purple text-white">
     <div class="container py-12 relative text-center lg:text-left">
