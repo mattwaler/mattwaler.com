@@ -4,7 +4,7 @@ import 'lazysizes'
 
 window.Alpine = Alpine
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   Alpine.start()
   Turbolinks.start()
 })
@@ -18,3 +18,8 @@ window.addEventListener('alpine:init', () => {
     toggle() { return this.isOpen = !this.isOpen }
   })
 });
+
+// Show alert success
+if (window.location.search.includes('submit')) {
+  alert('Thanks for reaching out! I will be in touch shortly.')
+}
