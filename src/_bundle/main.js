@@ -1,20 +1,13 @@
 import Alpine from 'alpinejs'
-import 'htmx.org'
+import Turbolinks from  'turbolinks'
 import 'lazysizes'
 
 window.Alpine = Alpine
 
-// Start Alpine when the page is ready.
-window.addEventListener('DOMContentLoaded', () => {
-  Alpine.start()
-});
+Alpine.start()
+Turbolinks.start()
 
-// Restart Alpine when the DOM is altered by HTMX.
-document.body.addEventListener('htmx:afterSwap', () => {
-  Alpine.start()
-})
-
-// Start Alpine when the page is ready.
+// Create Global Alpine Store for Nav.
 window.addEventListener('alpine:init', () => {
   Alpine.store('nav', {
     isOpen: false,

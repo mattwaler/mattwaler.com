@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/assets/main.bundle.css">
     <script defer src="/assets/main.bundle.js"></script>
   </head>
-  <body hx-boost="true" class="{{ 'debug-screens' if env.dev }}">
+  <body class="{{ 'debug-screens' if env.dev }}">
     {% include 'header.njk' %}
     <main>
       {% block body %}
