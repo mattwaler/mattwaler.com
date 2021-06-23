@@ -7,8 +7,8 @@
 
   {# Success Contact Submit #}
   <script>
-    function contactSubmit() {
-      return {
+    document.addEventListener('alpine:init', () => {
+      Alpine.data('contactSubmit', () => ({
         didSubmit: false,
         init() {
           if (window.location.search.includes('contact')) {
@@ -16,15 +16,15 @@
             setTimeout(() => { this.didSubmit = false }, 4000)
           }
         }
-      }
-    }
+      }))
+    })
   </script>
 
   <section
-    x-data="contactSubmit()"
-    x-init="init()"
+    x-data="contactSubmit"
     x-cloak
-    x-show.transition="didSubmit"
+    x-show="didSubmit"
+    x-transition
     class="fixed top-0 right-0 m-8 bg-white px-5 py-4 shadow-lg rounded-lg z-50 w-96"
   >
     <div class="flex items-center">

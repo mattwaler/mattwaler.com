@@ -15,7 +15,7 @@ document.body.addEventListener('htmx:afterSwap', () => {
 })
 
 // Start Alpine when the page is ready.
-window.addEventListener('alpine:initializing', () => {
+window.addEventListener('alpine:init', () => {
   Alpine.store('nav', {
     isOpen: false,
     close() { return this.isOpen = false },

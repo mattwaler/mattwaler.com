@@ -1,0 +1,189 @@
+{% extends 'page.njk' %}
+{% from 'hero.njk' import hero  %}
+
+{% set title = 'Instruction' %}
+{% set description = "Contact Matt Waler for development, instruction, or consultation for the web." %}
+
+{% block body %}
+
+  {{ hero(
+    eyebrow = "Need a Refresher?",
+    heading = "Schedule A Personalized Pair Programming Session.",
+    paragraph = "Bridge the gap to modern frontend development alongside a living, breathing person who can answer your questions in real time."
+  ) }}
+
+  {# Overview #}
+  <section id="overview" class="container section-spacing prose-lg prose-indigo">
+    <h3 class="font-extrabold text-4xl">
+      Frontend Development is constantly changing and evolving at breakneck speeds.
+    </h3>
+    <p class="mt-8">
+      Keeping up can be difficult. That's why I started offering pair programming sessions.
+    </p>
+    <p class="mt-8">
+      Documentation is not always conducive to learning. It is oftentimes either too simple, or too advanced to answer the questions you may have. It also rarely delves into essential skills in modern frontend development like project scaffolding, organization, abstraction, and much more.
+    </p>
+    <p class="mt-8">
+      YouTube can be hit or miss as well. You may find exactly what you're looking for, but you'll most likely just find another bland step-by-step tutorial on how to build a todo app.
+    </p>
+    <p class="mt-8">
+      Pair-programming sessions open up a dialog for specific questions and practical experience working in the tools you want to get stronger with.
+    </p>
+  </section>
+
+  {# Offerings #}
+  <section id="offerings" class="bg-gray-200">
+    <div class="container section-spacing">
+      <div class="text-center">
+        <h3 class="font-bold text-3xl">What I Can Offer.</h3>
+        <p class="mt-2 text-lg">I only teach the languages, tooling, and frameworks I know intimately.</p>
+      </div>
+      <div class="mt-16 grid gap-24 grid-cols-1 lg:grid-cols-3">
+        {% for item in offerings %}
+          <div>
+            <h4 class="font-bold text-lg">{{ item.heading }}</h4>
+            <p class="mt-2">{{ item.description }}</p>
+            <div class="mt-8 space-y-2">
+              {% for bullet in item.bullets %}
+                <div class="flex items-center">
+                  <span class="block w-4 h-4 text-indigo-400">
+                    {% include 'icons/check.svg' %}
+                  </span>
+                  <span class="ml-2">
+                    {{ bullet }}
+                  </span>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {# Testimonials #}
+  <section id="testimonials" class="container section-spacing">
+    <div class="text-center">
+      <h3 class="font-bold text-3xl">
+        What Others Are Saying.
+      </h3>
+      <p class="mt-2 text-lg">
+        Here are a few votes of confidence from people you've never met before.
+      </p>
+    </div>
+    <div class="mt-16 grid gap-24 grid-cols-1 lg:grid-cols-2">
+      {% for item in testimonials %}
+        <div class="flex flex-col">
+          <p class="italic border-l-4 border-indigo-500 pl-6 text-gray-700">{{ item.quote }}</p>
+          <div class="mt-8"></div>
+          <div class="mt-auto flex items-center">
+            <img class="w-16 h-16 rounded-full shadow-lg" src="/assets/{{ item.image }}" alt="{{ item.name }} image.">
+            <div class="ml-4">
+              <p class="font-black uppercase">{{ item.name }}</p>
+              <p class="text-gray-700">{{ item.title }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Pricing #}
+  <section id="pricing" class="section-spacing relative">
+    <div class="bg-gray-900 absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
+    <div class="relative container text-white z-20">
+      <div class="text-center">
+        <h3 class="font-bold text-3xl">
+          One Size Fits All Pricing.
+        </h3>
+        <p class="mt-2 text-lg">
+          Completely personalized sessions, all at one low price.
+        </p>
+      </div>
+    </div>
+    <div class="relative mt-16 container max-w-6xl grid gap-24 grid-cols-1 lg:grid-cols-2">
+      {% for item in pricing %}
+        <div class="bg-white rounded p-8 flex flex-col items-start shadow-lg">
+          <span class="bg-indigo-100 text-indigo-500 px-4 py-2 rounded">
+            {{ item.name }}
+          </span>
+          <div class="mt-8 flex items-center leading-none">
+            <span class="font-black text-4xl">${{ item.price }}</span>
+            <span class="text-gray-700 text-sm ml-3">{{ item.duration }} mins</span>
+          </div>
+          <p class="mt-4">
+            {{ item.description }}
+          </p>
+          <div class="mt-4 space-y-2">
+            {% for bullet in item.bullets %}
+              <div class="flex items-center">
+                <span class="block w-4 h-4 text-indigo-400">
+                  {% include 'icons/check.svg' %}
+                </span>
+                <span class="ml-2">
+                  {{ bullet }}
+                </span>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="mt-8"></div>
+          <a
+            class="mt-auto button w-full text-center"
+            href="#schedule"
+          >
+            Schedule Now
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  {# Schedule #}
+  <section id="schedule" class="bg-gray-200 section-spacing">
+    <div class="container">
+      <div class="text-center">
+        <h3 class="font-bold text-3xl">
+          Let's Get Started
+        </h3>
+        <p class="mt-2 text-lg">
+          Fill out and submit the form below and we can start building cool stuff together.
+        </p>
+      </div>
+      <form
+        netlify
+        name="Schedule"
+        class="mt-16 grid grid-cols-2 gap-8 max-w-4xl mx-auto"
+        method="POST"
+        action="/?contact"
+      >
+        <label class="col-span-2 sm:col-span-1">
+          <span class="block">Name:</span>
+          <input class="input w-full" type="text" name="name">
+        </label>
+        <label class="col-span-2 sm:col-span-1">
+          <span class="block">Email:</span>
+          <input class="input w-full" type="email" name="email">
+        </label>
+        <label class="col-span-2">
+          <span class="block">Session Type:</span>
+          <select class="input w-full" name="type">
+            <option value="meet">
+              FREE Meet & Greet (15 Minutes)
+            </option>
+            <option value="session">
+              Pair Programming Session (45 Minutes)
+            </option>
+          </select>
+        </label>
+        <label class="col-span-2">
+          <span class="block">Extra Information:</span>
+          <textarea class="input w-full" name="info" cols="30" rows="10"></textarea>
+        </label>
+        <button type="submit" class="button col-span-2">Submit</button>
+      </form>
+    </div>
+  </section>
+
+{% endblock body %}
+
+
