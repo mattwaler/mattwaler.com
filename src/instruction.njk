@@ -33,24 +33,25 @@
 
   {# Offerings #}
   <span class="z-0 w-full h-16 block bg-gray-200 text-gray-100 rotate-180">
-    {% include 'icons/waves.svg' %}
+    {% include 'svg/waves.svg' %}
   </span>
   <section id="offerings" class="bg-gray-200">
     <div class="container section-spacing">
-      <div class="text-center">
+      <div class="lg:text-center">
         <h3 class="font-bold text-3xl">What I Can Offer.</h3>
         <p class="mt-2 text-lg">I only teach the languages, tooling, and frameworks I know intimately.</p>
       </div>
       <div class="mt-16 grid gap-16 grid-cols-1 lg:gap-24 lg:grid-cols-3">
         {% for item in offerings %}
-          <div>
+          <div class="flex flex-col">
             <h4 class="font-bold text-lg">{{ item.heading }}</h4>
             <p class="mt-2">{{ item.description }}</p>
-            <div class="mt-8 space-y-2">
+            <span class="mt-8"></span>
+            <div class="mt-auto space-y-2">
               {% for bullet in item.bullets %}
                 <div class="flex items-center">
                   <span class="block w-4 h-4 text-indigo-400">
-                    {% include 'icons/check.svg' %}
+                    {% include 'svg/check.svg' %}
                   </span>
                   <span class="ml-2">
                     {{ bullet }}
@@ -64,12 +65,12 @@
     </div>
   </section>
   <span class="z-0 w-full h-16 block bg-gray-200 text-gray-100">
-    {% include 'icons/waves.svg' %}
+    {% include 'svg/waves.svg' %}
   </span>
 
   {# Testimonials #}
   <section id="testimonials" class="container section-spacing">
-    <div class="text-center">
+    <div class="lg:text-center">
       <h3 class="font-bold text-3xl">
         What Others Are Saying.
       </h3>
@@ -77,7 +78,7 @@
         Here are a few votes of confidence from people you've never met before.
       </p>
     </div>
-    <div class="mt-16 grid gap-24 grid-cols-1 lg:grid-cols-2">
+    <div class="mt-16 grid gap-16 grid-cols-1 lg:gap-24 lg:grid-cols-2">
       {% for item in testimonials %}
         <div class="flex flex-col">
           <p class="italic border-l-4 border-indigo-500 pl-6 text-gray-700">{{ item.quote }}</p>
@@ -96,12 +97,12 @@
 
   {# Pricing #}
   <span class="z-0 w-full h-16 block bg-gray-900 text-gray-100 rotate-180">
-    {% include 'icons/waves.svg' %}
+    {% include 'svg/waves.svg' %}
   </span>
   <section id="pricing" class="section-spacing relative">
     <div class="bg-gray-900 absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
     <div class="relative container text-white z-20">
-      <div class="text-center">
+      <div class="lg:text-center">
         <h3 class="font-bold text-3xl">
           One Size Fits All Pricing.
         </h3>
@@ -110,7 +111,7 @@
         </p>
       </div>
     </div>
-    <div class="relative mt-16 container max-w-6xl grid gap-24 grid-cols-1 lg:grid-cols-2">
+    <div class="relative mt-16 container grid gap-16 grid-cols-1 lg:gap-24 lg:grid-cols-2">
       {% for item in pricing %}
         <div class="bg-white rounded p-8 flex flex-col items-start shadow-lg">
           <span class="bg-indigo-100 text-indigo-500 px-4 py-2 rounded">
@@ -118,7 +119,7 @@
           </span>
           <div class="mt-8 flex items-center leading-none">
             <span class="font-black text-4xl">${{ item.price }}</span>
-            <span class="text-gray-700 text-sm ml-3">{{ item.duration }} mins</span>
+            <span class="text-gray-700 text-sm ml-2">for {{ item.duration }} mins</span>
           </div>
           <p class="mt-4">
             {{ item.description }}
@@ -127,7 +128,7 @@
             {% for bullet in item.bullets %}
               <div class="flex items-center">
                 <span class="block w-4 h-4 text-indigo-400">
-                  {% include 'icons/check.svg' %}
+                  {% include 'svg/check.svg' %}
                 </span>
                 <span class="ml-2">
                   {{ bullet }}
@@ -147,13 +148,13 @@
     </div>
   </section>
   <span class="z-0 w-full h-16 block bg-gray-900 text-gray-100 lg:hidden">
-    {% include 'icons/waves.svg' %}
+    {% include 'svg/waves.svg' %}
   </span>
 
   {# Schedule #}
   <section id="schedule" class="section-spacing">
     <div class="container">
-      <div class="text-center">
+      <div class="lg:text-center">
         <h3 class="font-bold text-3xl">
           Let's Get Started
         </h3>

@@ -6,7 +6,7 @@
     {# Logo #}
     <a href="/" class="flex items-center">
       <span class="w-6 h-6 text-indigo-200">
-        {% include 'icons/logo.svg' %}
+        {% include 'svg/logo.svg' %}
       </span>
       <span class="ml-2 leading-none font-extrabold text-xl">
         mattwaler
@@ -37,15 +37,15 @@
           rel="noopener"
           class="w-5 h-5 hidden md:block transition-colors duration-200 hover:text-white"
         >
-          {% include 'icons/' + item.icon + '.svg' %}
+          {% include 'svg/' + item.icon + '.svg' %}
         </a>
       {% endfor  %}
       <button @click="$store.nav.toggle()" class="w-6 h-6 md:hidden">
         <span x-show="!$store.nav.isOpen">
-          {% include 'icons/menu.svg' %}
+          {% include 'svg/menu.svg' %}
         </span>
         <span x-show="$store.nav.isOpen">
-          {% include 'icons/close.svg' %}
+          {% include 'svg/close.svg' %}
         </span>
       </button>
     </nav>

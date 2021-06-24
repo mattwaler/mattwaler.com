@@ -39,7 +39,7 @@ description:
     </div>
   </section>
   <span class="z-0 w-full h-16 block gradient-purple text-gray-100">
-    {% include 'icons/waves.svg' %}
+    {% include 'svg/waves.svg' %}
   </span>
   <div role="presentation" class="hidden lg:block" style="height: 22px;"></div>
 
@@ -48,10 +48,10 @@ description:
     {# Blobs #}
     <div class="z-0 opacity-25 text-gray-300">
       <span class="absolute" style="width: 640px; top: -128px; left: -360px;">
-        {% include 'icons/blob-1.svg' %}
+        {% include 'svg/blob-1.svg' %}
       </span>
       <span class="absolute" style="width: 640px; top: 320px; right: -360px;">
-        {% include 'icons/blob-1.svg' %}
+        {% include 'svg/blob-1.svg' %}
       </span>
     </div>
     {# Content #}
@@ -66,7 +66,7 @@ description:
         {% for skill in skills %}
           <div class="flex flex-col">
             <span class="w-8 h-8 md:w-16 md:h-16 mx-auto animate-grow {{ skill.color }}">
-              {% include 'icons/' + skill.icon + '.svg' %}
+              {% include 'svg/' + skill.icon + '.svg' %}
             </span>
             <h2 class="mt-4 font-extrabold leading-none text-xl md:mt-6 md:text-2xl">{{ skill.name }}</h2>
             <p class="mt-2 md:mt-3 text-gray-600">
@@ -76,7 +76,7 @@ description:
             <a class="mt-auto flex justify-center items-center font-extrabold {{ skill.color }}" href="{{ skill.link }}">
               {{ skill.linkText }}
               <span class="ml-1 w-4 h-4">
-                {% include 'icons/arrow.svg' %}
+                {% include 'svg/arrow.svg' %}
               </span>
             </a>
           </div>

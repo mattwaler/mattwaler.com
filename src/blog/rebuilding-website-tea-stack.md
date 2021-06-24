@@ -55,7 +55,7 @@ For example, here is a brief snippet of the hero element on this very page:
   </div>
 </section>
 <span class="w-full h-12 block gradient-purple text-gray-100">
-  {% include 'icons/waves.svg' %}
+  {% include 'svg/waves.svg' %}
 </span>
 ```
 :::
@@ -139,10 +139,10 @@ Or maybe the button code to toggle the mobile nav:
 ```html
 <button @click="mobileNav = !mobileNav" class="w-6 h-6 md:hidden">
   <span x-show="!mobileNav">
-    {% include 'icons/menu.svg' %}
+    {% include 'svg/menu.svg' %}
   </span>
   <span x-show="mobileNav">
-    {% include 'icons/close.svg' %}
+    {% include 'svg/close.svg' %}
   </span>
 </button>
 ```
