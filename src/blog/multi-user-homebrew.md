@@ -13,7 +13,7 @@ So, when attempting to use homebrew or any other taps you installed as another u
 
 ## The Solution: Ask Firmly with Shell Scripts
 
-The best solution I've been able to come up with is to create a zsh function that rewrites the permissions of the homebrew directory, and run that *before* doing anything else, or append it to other functions!
+The best solution I've been able to come up with is to create a zsh function that rewrites the permissions of the homebrew directory, and run that *before* doing anything else.
 
 Something like this:
 
@@ -24,12 +24,22 @@ bp() {
   sudo chown -R $(whoami) /usr/local/* &&
 }
 
+```
+:::
+
+Or, you can prefix your other functions by calling this function first, like so:
+
+::: codeblock
+```shell
 # Prefix it to your other commands!
 mongo:start() {
   bp &&
   brew services start mongodb-community
 }
+
 ```
 :::
 
-Now, in order to fix permissions, Ijust run `bp` in the console when you switch users, or just run the prefixed functions!
+Now, in order to fix permissions, just run `bp` in the console when you switch users, or just run the prefixed functions!
+
+Enjoy your multi-user homebrew installation!

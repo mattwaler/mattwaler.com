@@ -32,6 +32,9 @@
   </section>
 
   {# Offerings #}
+  <span class="z-0 w-full h-16 block bg-gray-200 text-gray-100 rotate-180">
+    {% include 'icons/waves.svg' %}
+  </span>
   <section id="offerings" class="bg-gray-200">
     <div class="container section-spacing">
       <div class="text-center">
@@ -60,6 +63,9 @@
       </div>
     </div>
   </section>
+  <span class="z-0 w-full h-16 block bg-gray-200 text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
 
   {# Testimonials #}
   <section id="testimonials" class="container section-spacing">
@@ -77,7 +83,7 @@
           <p class="italic border-l-4 border-indigo-500 pl-6 text-gray-700">{{ item.quote }}</p>
           <div class="mt-8"></div>
           <div class="mt-auto flex items-center">
-            <img class="w-16 h-16 rounded-full shadow-lg" src="/assets/{{ item.image }}" alt="{{ item.name }} image.">
+            <img class="w-16 h-16 rounded-full shadow-lg border-indigo-500 border-2" src="/assets/{{ item.image }}" alt="{{ item.name }} image.">
             <div class="ml-4">
               <p class="font-black uppercase">{{ item.name }}</p>
               <p class="text-gray-700">{{ item.title }}</p>
@@ -89,6 +95,9 @@
   </section>
 
   {# Pricing #}
+  <span class="z-0 w-full h-16 block bg-gray-900 text-gray-100 rotate-180">
+    {% include 'icons/waves.svg' %}
+  </span>
   <section id="pricing" class="section-spacing relative">
     <div class="bg-gray-900 absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
     <div class="relative container text-white z-20">
@@ -137,9 +146,12 @@
       {% endfor %}
     </div>
   </section>
+  <span class="z-0 w-full h-16 block bg-gray-900 text-gray-100">
+    {% include 'icons/waves.svg' %}
+  </span>
 
   {# Schedule #}
-  <section id="schedule" class="bg-gray-200 section-spacing">
+  <section id="schedule" class="section-spacing">
     <div class="container">
       <div class="text-center">
         <h3 class="font-bold text-3xl">

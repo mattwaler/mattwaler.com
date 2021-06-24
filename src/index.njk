@@ -1,7 +1,12 @@
-{% extends "page.njk" %}
+---
+title: Home
+description:
+  My name is Matt Waler, and I am a Fullstack Web Developer from Broadview Heights, Ohio.
+  I offer freelance web development, web consulting, and web instruction via personalized
+  pair-programming sessions.
+---
 
-{% set title = "Web Developer" %}
-{% set description = "Matt Waler is a freelance web developer providing consulting, instruction, and development services." %}
+{% extends "page.njk" %}
 
 {% block body %}
 
@@ -26,9 +31,6 @@
           I also love Tennis, Chipotle, and<br>spending time with my family.
         </p>
       </div>
-
-      {# Desktop Images #}
-      {% set imageClasses = 'top-12 right-6 absolute' %}
       <img
         alt="My family and I cheesin' hard."
         class="absolute w-[480px] h-[270px] top-12 right-6 hidden lg:block"
@@ -43,7 +45,6 @@
 
   {# What I Do #}
   <section class="relative section-spacing">
-
     {# Blobs #}
     <div class="z-0 opacity-25 text-gray-300">
       <span class="absolute" style="width: 640px; top: -128px; left: -360px;">
@@ -53,7 +54,6 @@
         {% include 'icons/blob-1.svg' %}
       </span>
     </div>
-
     {# Content #}
     <div class="container text-center">
       <h2 class="text-3xl leading-tight font-extrabold sm:text-4xl">
