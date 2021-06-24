@@ -21,7 +21,7 @@ Something like this:
 ```shell
 # I've named it "bp", short for "brew permissions"
 bp() {
-  sudo chown -R $(whoami) /usr/local/* &&
+  sudo chown -R $(whoami) /usr/local/*
 }
 
 ```
