@@ -3,21 +3,19 @@ import 'lazysizes'
 
 window.Alpine = Alpine
 
-document.addEventListener('DOMContentLoaded', () => {
-  Alpine.start()
+Alpine.store('nav', {
+  isOpen: false,
+  close() { return this.isOpen = false },
+  open() { return this.isOpen = true },
+  toggle() { return this.isOpen = !this.isOpen }
 })
 
-// Create Global Alpine Store for Nav.
-document.addEventListener('alpine:init', () => {
-  Alpine.store('nav', {
-    isOpen: false,
-    close() { return this.isOpen = false },
-    open() { return this.isOpen = true },
-    toggle() { return this.isOpen = !this.isOpen }
-  })
-});
+Alpine.start()
+
 
 // Show alert success
 if (window.location.search.includes('submit')) {
-  alert('Thanks for reaching out! I will be in touch shortly.')
+  setTimeout(() => {
+    alert('Thanks for reaching out! I will be in touch shortly.')
+  }, 1000);
 }

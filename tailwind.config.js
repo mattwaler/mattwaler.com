@@ -16,8 +16,11 @@ module.exports = {
             code: {
               color: theme('colors.gray.100')
             },
+            'code::after, code::before': {
+              display: 'none',
+            },
             pre: {
-              backgroundColor: 'transparent',
+              backgroundColor: theme('colors.gray.900'),
             },
           },
         },
