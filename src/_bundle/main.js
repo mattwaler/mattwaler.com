@@ -1,16 +1,14 @@
 import Alpine from 'alpinejs'
-import Turbolinks from  'turbolinks'
 import 'lazysizes'
 
 window.Alpine = Alpine
 
 document.addEventListener('DOMContentLoaded', () => {
   Alpine.start()
-  Turbolinks.start()
 })
 
 // Create Global Alpine Store for Nav.
-window.addEventListener('alpine:init', () => {
+document.addEventListener('alpine:init', () => {
   Alpine.store('nav', {
     isOpen: false,
     close() { return this.isOpen = false },
