@@ -1,5 +1,4 @@
 import Alpine from 'alpinejs'
-import 'lazysizes'
 
 window.Alpine = Alpine
 
