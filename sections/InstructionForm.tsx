@@ -16,6 +16,7 @@ export default function InstructionForm() {
           method="POST"
           action="/?contact=true"
         >
+          <input type="hidden" name="form-name" value="schedule" />
           <label className="col-span-2 sm:col-span-1">
             <span className="block">Name:</span>
             <input className="input w-full" type="text" name="name" />
