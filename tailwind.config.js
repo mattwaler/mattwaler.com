@@ -34,8 +34,12 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
     require('tailwindcss-debug-screens'),
   ],
-  purge: ['./src/**/*.{js,md,njk,svg}'],
+  purge: [
+    './components/**/*.{js,ts,jsx,tsx}',
+    './data/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './sections/**/*.{js,ts,jsx,tsx}',
+  ],
 }
