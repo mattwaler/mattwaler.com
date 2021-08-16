@@ -1,43 +1,27 @@
 {
-  "name": "my-website",
-  "author": "Matt Waler",
-  "license": "UNLICENSED",
+  "name": "mattwaler.com",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
-    "build:11ty": "eleventy --quiet",
-    "build:css": "tailwindcss -i src/_bundle/main.pcss -o dist/assets/main.bundle.css --minify --postcss",
-    "build:js": "esbuild src/_bundle/main.js --outfile=dist/assets/main.bundle.js --minify --bundle",
-    "clean": "rm -rf dist",
-    "dev": "cross-env NODE_ENV=development npm-run-all -p dev:*",
-    "dev:11ty": "eleventy --serve --quiet",
-    "dev:css": "tailwindcss -i src/_bundle/main.pcss -o dist/assets/main.bundle.css --watch --postcss",
-    "dev:js": "esbuild src/_bundle/main.js --outfile=dist/assets/main.bundle.js --bundle --watch"
+    "dev": "next dev",
+    "build": "next build && next export -o .dist",
+    "start": "next start"
   },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "htmlWhitespaceSensitivity": "ignore"
-  },
-  "browserslist": "> 2%",
   "dependencies": {
-    "alpinejs": "^3.1.0"
+    "next": "11.1.0",
+    "prismjs": "^1.24.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@tailwindcss/forms": "^0.2.1",
-    "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.2.6",
-    "cross-env": "^6.0.3",
-    "date-fns": "^2.16.0",
-    "esbuild": "^0.12.9",
-    "markdown-it": "^11.0.0",
-    "markdown-it-container": "^3.0.0",
-    "npm-run-all": "^4.1.5",
-    "postcss-import": "^14.0.0",
-    "tailwindcss": "^2.2.4",
-    "tailwindcss-debug-screens": "^1.1.0"
+    "@tailwindcss/forms": "^0.3.3",
+    "@types/prismjs": "^1.16.6",
+    "@types/react": "17.0.18",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.7",
+    "tailwindcss-debug-screens": "^2.1.0",
+    "typescript": "4.3.5"
   }
 }
