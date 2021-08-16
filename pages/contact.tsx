@@ -4,7 +4,7 @@ import ContactForm from 'sections/ContactForm'
 
 const Contact: NextPage = () => {
   return (
-    <Layout meta={{ title: 'Contact', description: '' }}>
+    <Layout meta={{ title: 'Contact', description: 'Get in contact with Matt Waler.' }}>
       <>
         <Hero
           heading="Let's get in touch."

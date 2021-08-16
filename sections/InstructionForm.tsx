@@ -14,7 +14,7 @@ export default function InstructionForm() {
           name="schedule"
           className="mt-16 grid grid-cols-2 gap-8 max-w-4xl mx-auto"
           method="POST"
-          action="/instruction?submit=true"
+          action="/?contact=true"
         >
           <label className="col-span-2 sm:col-span-1">
             <span className="block">Name:</span>

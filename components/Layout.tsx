@@ -3,6 +3,7 @@ import Footer from 'components/Footer'
 import Head from 'next/head'
 import Favicons from 'components/Favicons'
 import Meta from 'components/Meta'
+import { Toaster } from 'react-hot-toast'
 
 interface Props {
   meta: {
@@ -23,6 +24,7 @@ export default function Layout(props: Props) {
         <title>{props.meta.title ?? 'Default Title'} | Matt Waler</title>
         <meta name="description" content={props.meta.description ?? 'Default description.'} />
       </Head>
+      <Toaster />
       <div className={`min-h-screen flex flex-col ${devMode && 'debug-screens'}`}>
         <Header />
         <main className="flex-1">
