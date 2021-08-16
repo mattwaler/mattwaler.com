@@ -1,0 +1,28 @@
+html, body {
+  width: 100%;
+  @apply font-sans antialiased text-gray-900 bg-gray-100 overflow-x-hidden;
+}
+
+img, video {
+  @apply shadow-lg rounded-lg object-cover object-center;
+}
+
+* {
+  @apply relative z-10;
+}
+
+::-webkit-scrollbar {
+  @apply w-3 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-500 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-indigo-700;
+}

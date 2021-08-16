@@ -1,0 +1,12 @@
+/about/                        /work/
+/blog/my-site-redesign/       /blog/rebuilding-website-tea-stack/
+/contact                      /contact/
+/MattWaler.pdf                /work/
+/posts/                       /blog/
+/posts/*                      /blog/
+/projects/                    /work/
+/sites/                       /work/
+/skills/                      /work/
+/services/                    /work/
+/qr/1                         /assets/rolled.mp3
+/qr/2                         /assets/bathroom.mp3

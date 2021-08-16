@@ -1,0 +1,16 @@
+@keyframes grow {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.1);
+    transform-origin: center;
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.animate-grow {
+  animation: grow ease 4s infinite;
+}
