@@ -1,12 +1,12 @@
-import Layout from "components/Layout";
-import Hero from "components/Hero";
-import WorkListing from "sections/WorkListing";
+import Layout from 'components/Layout'
+import Hero from 'components/Hero'
+import WorkListing from 'sections/WorkListing'
 
 const Work: NextPage = () => {
   return (
     <Layout
       meta={{
-        title: "Work",
+        title: 'Work',
         description:
           "A list of some of the web applications I've helped design, build, and deploy to the internet.",
       }}
@@ -17,7 +17,7 @@ const Work: NextPage = () => {
       />
       <WorkListing />
     </Layout>
-  );
-};
+  )
+}
 
-export default Work;
+export default Work

@@ -37,9 +37,9 @@ const Hero = () => (
     <div
       role="presentation"
       className="hidden lg:block"
-      style={{ height: "22px" }}
+      style={{ height: '22px' }}
     ></div>
   </>
-);
+)
 
 export default Hero

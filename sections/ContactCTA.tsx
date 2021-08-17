@@ -1,5 +1,5 @@
 import { Arrow, Music } from 'components/Icons'
-import Prism from "prismjs";
+import Prism from 'prismjs'
 import { useEffect, useState } from 'react'
 
 let code = `
@@ -17,7 +17,11 @@ if (needsMattsHelp) {
 const CodeblockCTA = () => {
   const [highlightedCode, setHighlightedCode] = useState('')
   useEffect(() => {
-    const newCode = Prism.highlight(code, Prism.languages.javascript, 'javascript')
+    const newCode = Prism.highlight(
+      code,
+      Prism.languages.javascript,
+      'javascript'
+    )
     setHighlightedCode(newCode)
   }, [])
 
@@ -31,8 +35,7 @@ const CodeblockCTA = () => {
         </div>
         <div className="py-6">
           <pre>
-            <code dangerouslySetInnerHTML={{ __html: highlightedCode }}>
-            </code>
+            <code dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
           </pre>
         </div>
       </div>
@@ -41,13 +44,13 @@ const CodeblockCTA = () => {
           Do you want to build a website?
           <span
             className="w-6 h-6 absolute lg:hidden animate-bounce"
-            style={{ top: "-16px", left: "-32px" }}
+            style={{ top: '-16px', left: '-32px' }}
           >
             <Music />
           </span>
           <span
             className="w-8 h-8 absolute hidden lg:block animate-bounce"
-            style={{ top: "-32px", left: "-32px" }}
+            style={{ top: '-32px', left: '-32px' }}
           >
             <Music />
           </span>
@@ -68,7 +71,7 @@ const CodeblockCTA = () => {
         </a>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export default CodeblockCTA

@@ -6,13 +6,13 @@ const Skills = () => (
     <div className="z-0 opacity-25 text-gray-300">
       <span
         className="absolute"
-        style={{ width: "640px", top: "-128px", left: "-360px" }}
+        style={{ width: '640px', top: '-128px', left: '-360px' }}
       >
         <Blob1 />
       </span>
       <span
         className="absolute"
-        style={{ width: "640px", top: "320px", right: "-360px" }}
+        style={{ width: '640px', top: '320px', right: '-360px' }}
       >
         <Blob1 />
       </span>
@@ -52,6 +52,6 @@ const Skills = () => (
       </div>
     </div>
   </section>
-);
+)
 
 export default Skills

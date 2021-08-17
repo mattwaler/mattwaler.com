@@ -1,13 +1,13 @@
-import Layout from "components/Layout";
-import Hero from "components/Hero";
-import CodeblockCTA from "sections/ContactCTA";
+import Layout from 'components/Layout'
+import Hero from 'components/Hero'
+import CodeblockCTA from 'sections/ContactCTA'
 
 const Custom404: NextPage = () => {
   return (
     <Layout
       meta={{
-        title: "Page Not Found",
-        description: "No page found. Please try again.",
+        title: 'Page Not Found',
+        description: 'No page found. Please try again.',
       }}
     >
       <Hero
@@ -16,7 +16,7 @@ const Custom404: NextPage = () => {
       />
       <CodeblockCTA />
     </Layout>
-  );
-};
+  )
+}
 
-export default Custom404;
+export default Custom404

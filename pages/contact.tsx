@@ -1,13 +1,13 @@
-import Layout from "components/Layout";
-import Hero from "components/Hero";
-import ContactForm from "sections/ContactForm";
+import Layout from 'components/Layout'
+import Hero from 'components/Hero'
+import ContactForm from 'sections/ContactForm'
 
 const Contact: NextPage = () => {
   return (
     <Layout
       meta={{
-        title: "Contact",
-        description: "Get in contact with Matt Waler.",
+        title: 'Contact',
+        description: 'Get in contact with Matt Waler.',
       }}
     >
       <Hero
@@ -16,7 +16,7 @@ const Contact: NextPage = () => {
       />
       <ContactForm />
     </Layout>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

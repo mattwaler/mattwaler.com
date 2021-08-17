@@ -94,5 +94,5 @@ export default function Favicons() {
         content="/favicons/mstile-310x310.png"
       />
     </>
-  );
+  )
 }

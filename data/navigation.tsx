@@ -2,7 +2,6 @@ import { Dev, GitHub, LinkedIn } from 'components/Icons'
 
 const links = {
   internal: [
-    // { name: 'Blog', link: '/blog/' },
     { name: 'Contact', link: '/contact' },
     { name: 'Instruction', link: '/instruction' },
     { name: 'Work', link: '/work' },

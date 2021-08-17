@@ -1,18 +1,18 @@
-import Layout from "components/Layout";
-import Hero from "components/Hero";
-import InstructionOverview from "sections/InstructionOverview";
-import InstructionOfferings from "sections/InstructionOfferings";
-import InstructionTestimonials from "sections/InstructionTestimonials";
-import InstructionPricing from "sections/InstructionPricing";
-import InstructionForm from "sections/InstructionForm";
+import Layout from 'components/Layout'
+import Hero from 'components/Hero'
+import InstructionOverview from 'sections/InstructionOverview'
+import InstructionOfferings from 'sections/InstructionOfferings'
+import InstructionTestimonials from 'sections/InstructionTestimonials'
+import InstructionPricing from 'sections/InstructionPricing'
+import InstructionForm from 'sections/InstructionForm'
 
 const Instruction: NextPage = () => {
   return (
     <Layout
       meta={{
-        title: "Instruction",
+        title: 'Instruction',
         description:
-          "Schedule a pair programming session with Matt Waler and learn modern web development.",
+          'Schedule a pair programming session with Matt Waler and learn modern web development.',
       }}
     >
       <Hero
@@ -25,7 +25,7 @@ const Instruction: NextPage = () => {
       <InstructionPricing />
       <InstructionForm />
     </Layout>
-  );
-};
+  )
+}
 
-export default Instruction;
+export default Instruction

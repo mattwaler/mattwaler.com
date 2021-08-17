@@ -1,7 +1,12 @@
 export default function ContactForm() {
   return (
     <div className="container grid items-center md:grid-cols-2 gap-24 sections-spacing">
-      <form data-netlify="true" name="contact" method="POST" action="/?contact=true">
+      <form
+        data-netlify="true"
+        name="contact"
+        method="POST"
+        action="/?contact=true"
+      >
         <input type="hidden" name="form-name" value="contact" />
         <label className="block pt-8">
           <p className="font-bold">Name:</p>
