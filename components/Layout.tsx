@@ -10,7 +10,7 @@ interface Props {
     title: string | null,
     description: string | null,
   }
-  children: JSX.Element,
+  children: React.ReactNode,
 }
 
 const devMode = process.env.NODE_ENV === 'development'
