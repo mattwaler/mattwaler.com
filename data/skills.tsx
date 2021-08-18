@@ -7,8 +7,8 @@ const skills = [
       'I can inspect, diagnose, and plan improvements for your current web project.',
     icon: <Design />,
     color: 'text-blue-500',
-    link: '/blog/',
-    linkText: 'View Blog',
+    link: '/work',
+    linkText: 'View Work',
   },
   {
     name: 'Development',
@@ -16,7 +16,7 @@ const skills = [
       'I can build single page applications, fullstack CMS projects, and everything in between.',
     icon: <Development />,
     color: 'text-indigo-500',
-    link: '/work/',
+    link: '/work',
     linkText: 'View Work',
   },
   {
@@ -25,7 +25,7 @@ const skills = [
     description:
       'I am comfortable teaching modern tools like React, Vue, Svelte, and much more.',
     color: 'text-green-500',
-    link: '/instruction/',
+    link: '/instruction',
     linkText: 'View Instruction',
   },
 ]
