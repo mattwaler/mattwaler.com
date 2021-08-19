@@ -1,6 +1,6 @@
 import links from 'data/navigation'
 
-export default function Footer() {
+export default function PageFooter() {
   return (
     <footer className="container text-gray-600 mb-6 mt-8 sm:mt-16 text-sm flex flex-wrap justify-center items-center">
       <span>Waler Media LLC | © {new Date().getFullYear()}</span>

@@ -4,7 +4,7 @@ import links from 'data/navigation'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function Header() {
+export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)
   const router = useRouter()
 
