@@ -1,14 +1,7 @@
 import Head from 'next/head'
 
-interface Props {
-  meta: {
-    title: string,
-    description: string,
-  }
-}
-
-export default function PageHead(props: Props) {
-  const { title, description } = props.meta
+export default function PageHead({ meta }: { meta: Meta }) {
+  const { title, description } = meta
 
   return (
     <Head>
