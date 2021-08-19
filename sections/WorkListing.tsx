@@ -13,7 +13,7 @@ export default function WorkListing() {
         >
           <img
             alt={`${item.title} image`}
-            className="w-full object-top h-64 md:w-1/2 lg:w-1/3"
+            className="w-full object-top h-64 bg-gray-200 md:w-1/2 lg:w-1/3"
             src={item.image}
             loading="lazy"
           />

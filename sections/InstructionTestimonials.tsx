@@ -34,7 +34,8 @@ export default function InstructionTestimonials() {
             <div className="mt-8"></div>
             <div className="mt-auto flex items-center">
               <img
-                className="w-16 h-16 rounded-full shadow-lg border-indigo-500 border-2"
+                className="w-16 h-16 rounded-full shadow-lg bg-gray-200 border-indigo-500 border-2"
+                loading="lazy"
                 src={`/assets/${item.image}`}
                 alt={`${item.name} image.`}
               />

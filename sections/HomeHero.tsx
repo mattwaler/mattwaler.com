@@ -8,7 +8,7 @@ const Hero = () => (
           alt="My family and I cheesin' hard."
           src="/assets/fam.jpg"
           loading="lazy"
-          className="object-cover object-top h-72 shadow-lg rounded-lg w-full mx-auto lg:hidden"
+          className="object-cover object-top h-72 bg-gray-200 shadow-lg rounded-lg w-full mx-auto lg:hidden"
         />
         <div className="mt-10 lg:mt-0 lg:w-1/2">
           <h1 className="text-2xl sm:text-3xl font-black leading-none">
@@ -26,7 +26,7 @@ const Hero = () => (
         <img
           loading="lazy"
           alt="My family and I cheesin' hard."
-          className="absolute w-[480px] h-[270px] top-12 right-6 hidden lg:block"
+          className="absolute w-[480px] h-[270px] top-12 right-6 hidden bg-gray-200 lg:block"
           src="/assets/fam.jpg"
         />
       </div>
