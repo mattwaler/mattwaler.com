@@ -7,7 +7,8 @@ import InstructionForm from 'sections/InstructionForm'
 
 const heroProps = {
   heading: 'Schedule A Personalized Pair Programming Session.',
-  paragraph: "Bridge the gap to modern frontend development alongside a living, breathing person who can answer your questions in real time."
+  paragraph:
+    'Bridge the gap to modern frontend development alongside a living, breathing person who can answer your questions in real time.',
 }
 
 const Instruction: Page = () => {

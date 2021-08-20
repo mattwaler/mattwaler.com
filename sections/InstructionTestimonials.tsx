@@ -20,17 +20,12 @@ export default function InstructionTestimonials() {
     <section id="testimonials" className="container section-spacing">
       <div className="lg:text-center">
         <h3 className="font-bold text-3xl">What Others Are Saying.</h3>
-        <p className="mt-2 text-lg">
-          Here are a few votes of confidence from people you've never met
-          before.
-        </p>
+        <p className="mt-2 text-lg">Here are a few votes of confidence from people you've never met before.</p>
       </div>
       <div className="mt-16 grid gap-16 grid-cols-1 lg:gap-24 lg:grid-cols-2">
         {testimonials.map((item) => (
           <div key={item.name} className="flex flex-col">
-            <p className="italic border-l-4 border-indigo-500 pl-6 text-gray-700">
-              {item.quote}
-            </p>
+            <p className="italic border-l-4 border-indigo-500 pl-6 text-gray-700">{item.quote}</p>
             <div className="mt-8"></div>
             <div className="mt-auto flex items-center">
               <img

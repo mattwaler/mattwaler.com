@@ -3,7 +3,8 @@ import CodeblockCTA from 'sections/ContactCTA'
 
 const heroProps = {
   heading: 'You look lost',
-  paragraph: "Looks like you attempted to visit a page that either got removed or never existed initially. Let's get you back on track."
+  paragraph:
+    "Looks like you attempted to visit a page that either got removed or never existed initially. Let's get you back on track.",
 }
 
 const Custom404: Page = () => {

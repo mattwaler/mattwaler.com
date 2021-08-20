@@ -20,9 +20,7 @@ export default function PageHeader() {
             <span className="w-6 h-6 text-indigo-200">
               <Logo />
             </span>
-            <span className="ml-2 leading-none font-extrabold text-xl">
-              mattwaler
-            </span>
+            <span className="ml-2 leading-none font-extrabold text-xl">mattwaler</span>
           </a>
         </Link>
         <nav className="ml-auto space-x-4 hidden md:block">
@@ -51,10 +49,7 @@ export default function PageHeader() {
               {icon}
             </a>
           ))}
-          <button
-            className="w-6 h-6 md:hidden"
-            onClick={() => setNavOpen(!isNavOpen)}
-          >
+          <button className="w-6 h-6 md:hidden" onClick={() => setNavOpen(!isNavOpen)}>
             {isNavOpen ? <Close /> : <Menu />}
           </button>
         </nav>

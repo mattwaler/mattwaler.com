@@ -5,8 +5,7 @@ export default function InstructionForm() {
         <div className="lg:text-center">
           <h3 className="font-bold text-3xl">Let's Get Started</h3>
           <p className="mt-2 text-lg">
-            Fill out and submit the form below and we can start building cool
-            stuff together.
+            Fill out and submit the form below and we can start building cool stuff together.
           </p>
         </div>
         <form
@@ -29,19 +28,12 @@ export default function InstructionForm() {
             <span className="block">Session Type:</span>
             <select className="input w-full" name="type">
               <option value="meet">FREE Meet & Greet (15 Minutes)</option>
-              <option value="session">
-                Pair Programming Session (45 Minutes)
-              </option>
+              <option value="session">Pair Programming Session (45 Minutes)</option>
             </select>
           </label>
           <label className="col-span-2">
             <span className="block">Extra Information:</span>
-            <textarea
-              className="input w-full"
-              name="info"
-              cols={30}
-              rows={10}
-            ></textarea>
+            <textarea className="input w-full" name="info" cols={30} rows={10}></textarea>
           </label>
           <button type="submit" className="button col-span-2">
             Submit

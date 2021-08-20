@@ -3,7 +3,7 @@ import CodeblockCTA from 'sections/ContactCTA'
 
 const heroProps = {
   heading: 'Something went wrong.',
-  paragraph: "Something went wrong on the server. Please try again or visit another page."
+  paragraph: 'Something went wrong on the server. Please try again or visit another page.',
 }
 
 const Custom500: Page = () => {

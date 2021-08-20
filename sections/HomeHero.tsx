@@ -13,9 +13,7 @@ const Hero = () => (
         <div className="mt-10 lg:mt-0 lg:w-1/2">
           <h1 className="text-2xl sm:text-3xl font-black leading-none">
             <span>I make awesome websites,</span>
-            <span className="block text-indigo-200">
-              in exchange for money.
-            </span>
+            <span className="block text-indigo-200">in exchange for money.</span>
           </h1>
           <p className="mt-4 text-sm sm:text-lg text-indigo-100 ">
             I also love Tennis, Chipotle, and
@@ -34,11 +32,7 @@ const Hero = () => (
     <span className="z-0 w-full h-16 block gradient-purple text-gray-100">
       <Waves />
     </span>
-    <div
-      role="presentation"
-      className="hidden lg:block"
-      style={{ height: '22px' }}
-    ></div>
+    <div role="presentation" className="hidden lg:block" style={{ height: '22px' }}></div>
   </>
 )
 
