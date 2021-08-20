@@ -5,13 +5,15 @@ import InstructionTestimonials from 'sections/InstructionTestimonials'
 import InstructionPricing from 'sections/InstructionPricing'
 import InstructionForm from 'sections/InstructionForm'
 
+const heroProps = {
+  heading: 'Schedule A Personalized Pair Programming Session.',
+  paragraph: "Bridge the gap to modern frontend development alongside a living, breathing person who can answer your questions in real time."
+}
+
 const Instruction: Page = () => {
   return (
     <>
-      <Hero
-        heading="Schedule A Personalized Pair Programming Session."
-        paragraph="Bridge the gap to modern frontend development alongside a living, breathing person who can answer your questions in real time."
-      />
+      <Hero {...heroProps} />
       <InstructionOverview />
       <InstructionOfferings />
       <InstructionTestimonials />
