@@ -8,9 +8,9 @@ export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)
   const router = useRouter()
 
-  function isActive(path: string) {
-    return router.pathname === path
-  }
+  router.events.on('routeChangeComplete', () => setNavOpen(false))
+
+  const isActive = (path: string) => router.pathname === path
 
   return (
     <header className="gradient-purple text-white">
