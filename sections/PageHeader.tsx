@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Close, Menu, Logo } from 'components/Icons'
 import links from 'data/navigation'
 import Link from 'next/link'
@@ -8,7 +8,9 @@ export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)
   const router = useRouter()
 
-  router.events.on('routeChangeComplete', () => setNavOpen(false))
+  useEffect(() => {
+    router.events.on('routeChangeComplete', () => setNavOpen(false))
+  }, [])
 
   const isActive = (path: string) => router.pathname === path
 

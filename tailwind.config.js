@@ -9,23 +9,6 @@ module.exports = {
     debugScreens: {
       position: ['bottom', 'right'],
     },
-    extend: {
-      typography: (theme) => ({
-        DEFAULT: {
-          css: {
-            code: {
-              color: theme('colors.gray.100')
-            },
-            'code::after, code::before': {
-              display: 'none',
-            },
-            pre: {
-              backgroundColor: theme('colors.gray.900'),
-            },
-          },
-        },
-      }),
-    },
     screens: {
       sm: '640px',
       md: '768px',
