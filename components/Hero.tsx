@@ -1,4 +1,4 @@
-import { Waves } from 'components/Icons'
+import { Waves } from "components/Icons"
 
 interface Props {
   heading: string

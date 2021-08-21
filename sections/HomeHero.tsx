@@ -1,4 +1,4 @@
-import { Waves } from 'components/Icons'
+import { Waves } from "components/Icons"
 
 const Hero = () => (
   <>
@@ -32,7 +32,7 @@ const Hero = () => (
     <span className="z-0 w-full h-16 block gradient-purple text-gray-100">
       <Waves />
     </span>
-    <div role="presentation" className="hidden lg:block" style={{ height: '22px' }}></div>
+    <div role="presentation" className="hidden lg:block" style={{ height: "22px" }}></div>
   </>
 )
 

@@ -1,10 +1,9 @@
-import Hero from 'components/Hero'
-import CodeblockCTA from 'sections/ContactCTA'
+import Hero from "components/Hero"
+import CodeblockCTA from "sections/ContactCTA"
 
 const heroProps = {
-  heading: 'You look lost',
-  paragraph:
-    "Looks like you attempted to visit a page that either got removed or never existed initially. Let's get you back on track.",
+  heading: "You look lost",
+  paragraph: "Looks like you attempted to visit a page that does not exist. Let's get you back on track.",
 }
 
 const Custom404: Page = () => {
@@ -17,8 +16,8 @@ const Custom404: Page = () => {
 }
 
 Custom404.meta = {
-  title: 'Page Not Found',
-  description: 'No page found. Please try again.',
+  title: "Page Not Found",
+  description: "No page found. Please try again.",
 }
 
 export default Custom404

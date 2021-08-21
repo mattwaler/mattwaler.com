@@ -1,11 +1,11 @@
-import { Arrow } from 'components/Icons'
-import work from 'data/work'
+import { Arrow } from "components/Icons"
+import work from "data/work"
 
 export default function WorkListing() {
   return (
     <section className="container section-spacing">
       {work.map((item, index) => (
-        <article key={item.title} className={`flex flex-wrap items-center ${index !== 0 && 'pt-12 mt-12 border-t'}`}>
+        <article key={item.title} className={`flex flex-wrap items-center ${index !== 0 && "pt-12 mt-12 border-t"}`}>
           <img
             alt={`${item.title} image`}
             className="w-full object-top h-64 bg-gray-200 md:w-5/12 lg:w-1/3"

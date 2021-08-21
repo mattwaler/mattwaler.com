@@ -1,6 +1,6 @@
-import { Arrow, Music } from 'components/Icons'
-import Prism from 'prismjs'
-import { useEffect, useState } from 'react'
+import { Arrow, Music } from "components/Icons"
+import Prism from "prismjs"
+import { useEffect, useState } from "react"
 
 let code = `
 let needsMattsHelp = true
@@ -15,9 +15,9 @@ if (needsMattsHelp) {
 `
 
 const CodeblockCTA = () => {
-  const [highlightedCode, setHighlightedCode] = useState('')
+  const [highlightedCode, setHighlightedCode] = useState("")
   useEffect(() => {
-    const newCode = Prism.highlight(code, Prism.languages.javascript, 'javascript')
+    const newCode = Prism.highlight(code, Prism.languages.javascript, "javascript")
     setHighlightedCode(newCode)
   }, [])
 
@@ -38,10 +38,10 @@ const CodeblockCTA = () => {
       <div className="w-full max-w-2xl mx-auto mt-12 text-center lg:mt-0 lg:w-1/2 lg:pl-16 lg:text-left">
         <h3 className="relative inline text-2xl font-extrabold leading-tight lg:text-3xl">
           Do you want to build a website?
-          <span className="w-6 h-6 absolute lg:hidden animate-bounce" style={{ top: '-16px', left: '-32px' }}>
+          <span className="w-6 h-6 absolute lg:hidden animate-bounce" style={{ top: "-16px", left: "-32px" }}>
             <Music />
           </span>
-          <span className="w-8 h-8 absolute hidden lg:block animate-bounce" style={{ top: '-32px', left: '-32px' }}>
+          <span className="w-8 h-8 absolute hidden lg:block animate-bounce" style={{ top: "-32px", left: "-32px" }}>
             <Music />
           </span>
         </h3>

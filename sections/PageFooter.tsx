@@ -1,4 +1,4 @@
-import links from 'data/navigation'
+import links from "data/navigation"
 
 export default function PageFooter() {
   return (

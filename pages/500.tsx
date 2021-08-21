@@ -1,9 +1,9 @@
-import Hero from 'components/Hero'
-import CodeblockCTA from 'sections/ContactCTA'
+import Hero from "components/Hero"
+import CodeblockCTA from "sections/ContactCTA"
 
 const heroProps = {
-  heading: 'Something went wrong.',
-  paragraph: 'Something went wrong on the server. Please try again or visit another page.',
+  heading: "Something went wrong.",
+  paragraph: "Something went wrong on the server. Please try again or visit another page.",
 }
 
 const Custom500: Page = () => {
@@ -16,8 +16,8 @@ const Custom500: Page = () => {
 }
 
 Custom500.meta = {
-  title: 'Something went wrong',
-  description: 'Something went wrong on the server. Please try again.',
+  title: "Something went wrong",
+  description: "Something went wrong on the server. Please try again.",
 }
 
 export default Custom500
