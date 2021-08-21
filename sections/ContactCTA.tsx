@@ -23,7 +23,10 @@ const CodeblockCTA = () => {
 
   return (
     <section className="container flex flex-wrap items-center section-spacing">
-      <div className="w-full lg:w-1/2 bg-gray-900 p-4 text-white rounded-lg shadow-lg text-sm sm:text-base">
+      <div
+        aria-hidden="true"
+        className="w-full lg:w-1/2 bg-gray-900 p-4 text-white rounded-lg shadow-lg text-sm sm:text-base"
+      >
         <div className="space-x-2 flex items-center">
           <div className="rounded-full w-3 h-3 bg-red-500"></div>
           <div className="rounded-full w-3 h-3 bg-yellow-500"></div>

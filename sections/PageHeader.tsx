@@ -39,19 +39,19 @@ export default function PageHeader() {
           ))}
         </nav>
         <nav className="ml-auto md:ml-20 flex space-x-4 text-indigo-300">
-          {links.external.map(({ link, icon }) => (
+          {links.external.map((link) => (
             <a
-              key={link}
-              aria-label="social link"
-              href={link}
+              key={link.link}
+              aria-label={`${link.name} link`}
+              href={link.link}
               target="_blank"
               rel="noopener"
               className="w-5 h-5 hidden md:block transition-colors duration-200 hover:text-white"
             >
-              {icon}
+              {link.icon}
             </a>
           ))}
-          <button className="w-6 h-6 md:hidden" onClick={() => setNavOpen(!isNavOpen)}>
+          <button aria-label="Toggle mobile menu" className="w-6 h-6 md:hidden" onClick={() => setNavOpen(!isNavOpen)}>
             {isNavOpen ? <Close /> : <Menu />}
           </button>
         </nav>

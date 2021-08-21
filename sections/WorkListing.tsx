@@ -11,6 +11,8 @@ export default function WorkListing() {
             className="w-full object-top h-64 bg-gray-200 md:w-5/12 lg:w-1/3"
             src={item.image}
             loading="lazy"
+            width="592"
+            height="256"
           />
           <div className="mt-8 flex-1 md:pl-12 md:mt-0">
             <a target="_blank" href={item.link}>

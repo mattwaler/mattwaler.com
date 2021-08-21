@@ -9,6 +9,8 @@ const Hero = () => (
           src="/assets/fam.jpg"
           loading="lazy"
           className="object-cover object-top h-72 bg-gray-200 shadow-lg rounded-lg w-full mx-auto lg:hidden"
+          width="480"
+          height="288"
         />
         <div className="mt-10 lg:mt-0 lg:w-1/2">
           <h1 className="text-2xl sm:text-3xl font-black leading-none">
@@ -26,6 +28,8 @@ const Hero = () => (
           alt="My family and I cheesin' hard."
           className="absolute w-[480px] h-[270px] top-12 right-6 hidden bg-gray-200 lg:block"
           src="/assets/fam.jpg"
+          width="480"
+          height="270"
         />
       </div>
     </section>

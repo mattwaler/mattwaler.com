@@ -7,9 +7,9 @@ const links = {
     { name: "Work", link: "/work" },
   ],
   external: [
-    { icon: <GitHub />, link: "https://github.com/mattwaler" },
-    { icon: <LinkedIn />, link: "https://www.linkedin.com/in/mattwaler/" },
-    { icon: <Dev />, link: "https://dev.to/mattwaler" },
+    { name: "GitHub", icon: <GitHub />, link: "https://github.com/mattwaler" },
+    { name: "LinkedIn", icon: <LinkedIn />, link: "https://www.linkedin.com/in/mattwaler/" },
+    { name: "Dev", icon: <Dev />, link: "https://dev.to/mattwaler" },
   ],
 }
 
