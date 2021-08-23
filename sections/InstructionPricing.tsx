@@ -1,4 +1,5 @@
-import { Check, Waves } from "components/Icons"
+import { Waves } from "components/Icons"
+import { CheckCircleIcon } from "@heroicons/react/outline"
 
 const pricing = [
   {
@@ -44,7 +45,7 @@ export default function InstructionPricing() {
                 {item.bullets.map((bullet) => (
                   <div key={bullet} className="flex items-center">
                     <span className="block w-4 h-4 text-indigo-400">
-                      <Check />
+                      <CheckCircleIcon />
                     </span>
                     <span className="ml-2">{bullet}</span>
                   </div>

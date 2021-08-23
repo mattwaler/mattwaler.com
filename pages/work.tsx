@@ -2,7 +2,7 @@ import Hero from "components/Hero"
 import WorkListing from "sections/WorkListing"
 
 const heroProps = {
-  heading: "Things I built.",
+  heading: "View some my work.",
   paragraph: "A list of some of the web applications I've helped design, build, and deploy to the internet.",
 }
 

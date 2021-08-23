@@ -1,4 +1,4 @@
-import { Arrow } from "components/Icons"
+import { ArrowRightIcon } from "@heroicons/react/outline"
 import work from "data/work"
 
 export default function WorkListing() {
@@ -23,7 +23,7 @@ export default function WorkListing() {
             <a target="_blank" href={item.link} className={`inline-flex items-center mt-6 ${item.color} font-bold`}>
               <span className="leading-none">View Project</span>
               <span className="w-4 ml-1">
-                <Arrow />
+                <ArrowRightIcon />
               </span>
             </a>
           </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
-import { Close, Menu, Logo } from "components/Icons"
+import { Logo } from "components/Icons"
+import { MenuIcon, XIcon } from "@heroicons/react/outline"
 import links from "data/navigation"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -52,7 +53,7 @@ export default function PageHeader() {
             </a>
           ))}
           <button aria-label="Toggle mobile menu" className="w-6 h-6 md:hidden" onClick={() => setNavOpen(!isNavOpen)}>
-            {isNavOpen ? <Close /> : <Menu />}
+            {isNavOpen ? <XIcon /> : <MenuIcon />}
           </button>
         </nav>
       </div>

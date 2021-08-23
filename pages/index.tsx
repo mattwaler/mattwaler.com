@@ -1,8 +1,18 @@
-import Hero from "sections/HomeHero"
+import Hero from "components/Hero"
 import Skills from "sections/Skills"
 import ContactCTA from "sections/ContactCTA"
 import { useEffect } from "react"
 import { toast } from "react-hot-toast"
+
+const heroProps = {
+  heading: (
+    <>
+      <span className="md:block">I make awesome websites</span>
+      <span className="ml-2 text-indigo-200 md:ml-0 md:block">in exchange for cold-hard cash.</span>
+    </>
+  ),
+  paragraph: "I also love Tennis, Chipotle, and spending time with family."
+}
 
 const Home: Page = () => {
   useEffect(() => {
@@ -13,7 +23,7 @@ const Home: Page = () => {
   }, [])
   return (
     <>
-      <Hero />
+      <Hero {...heroProps} />
       <Skills />
       <ContactCTA />
     </>

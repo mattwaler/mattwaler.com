@@ -6,7 +6,7 @@ import InstructionPricing from "sections/InstructionPricing"
 import InstructionForm from "sections/InstructionForm"
 
 const heroProps = {
-  heading: "Schedule A Personalized Pair Programming Session.",
+  heading: "Schedule a personalized pair programming session.",
   paragraph: "Bridge the gap to modern frontend development alongside a living, breathing person.",
 }
 

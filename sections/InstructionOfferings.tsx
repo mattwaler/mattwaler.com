@@ -1,10 +1,11 @@
-import { Check, Waves } from "components/Icons"
+import { Waves } from "components/Icons"
+import { CheckCircleIcon } from "@heroicons/react/outline"
 
 const offerings = [
   {
     heading: "The Big Names",
     description: "The stuff we constantly hear about. These are the skills that can get you hired anywhere.",
-    bullets: ["Node", "React", "Svelte", "Vue"],
+    bullets: ["React", "Svelte", "Typescript", "Vue"],
   },
   {
     heading: "The Lesser Knowns",
@@ -40,7 +41,7 @@ export default function InstructionOfferings() {
                   {item.bullets.map((bullet) => (
                     <div key={bullet} className="flex items-center">
                       <span className="block w-4 h-4 text-indigo-400">
-                        <Check />
+                        <CheckCircleIcon />
                       </span>
                       <span className="ml-2">{bullet}</span>
                     </div>
