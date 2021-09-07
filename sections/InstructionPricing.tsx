@@ -4,6 +4,7 @@ import { CheckCircleIcon } from "@heroicons/react/outline"
 const pricing = [
   {
     name: "Meet & Greet",
+    slug: "meet",
     price: "0",
     duration: "15",
     description: "A brief free session to get to know each other and determine if you are interested.",
@@ -11,12 +12,23 @@ const pricing = [
   },
   {
     name: "Full Session",
+    slug: "session",
     price: "60",
     duration: "45",
     description: "A completely personalized pair-programming session to learn modern frontend development.",
     bullets: ["Personalized Session", "Unlimited Questions", "You Choose The Topics", "Also Become BFFs"],
   },
 ]
+
+function focusForm(value: string) {
+  const form = document.getElementById('schedule') as HTMLElement
+  const select = document.getElementById('instruction-type') as HTMLInputElement
+  console.log(form, select)
+  if (form && select) {
+    form.scrollIntoView({ behavior: 'smooth' })
+    select.value = value
+  }
+}
 
 export default function InstructionPricing() {
   return (
@@ -52,9 +64,9 @@ export default function InstructionPricing() {
                 ))}
               </div>
               <div className="mt-8"></div>
-              <a className="mt-auto button w-full text-center" href="#schedule">
+              <button onClick={() => focusForm(item.slug)} className="mt-auto button w-full text-center">
                 Schedule Now
-              </a>
+              </button>
             </div>
           ))}
         </div>

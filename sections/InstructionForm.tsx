@@ -26,7 +26,7 @@ export default function InstructionForm() {
           </label>
           <label className="col-span-2">
             <span className="block">Session Type:</span>
-            <select className="input w-full" name="type">
+            <select id="instruction-type" className="input w-full" name="type">
               <option value="meet">FREE Meet & Greet (15 Minutes)</option>
               <option value="session">Pair Programming Session (45 Minutes)</option>
             </select>
