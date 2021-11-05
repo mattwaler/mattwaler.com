@@ -48,7 +48,7 @@ export default [
     link: "https://kappaalphatheta.org",
     image: "/assets/theta.jpg",
     color: "text-yellow-500",
-    tools: ["Craft"],
+    tools: ["Craft", "React"],
   },
   {
     title: "IU Health",
