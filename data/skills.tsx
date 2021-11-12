@@ -1,6 +1,6 @@
 import { AcademicCapIcon, TemplateIcon, TerminalIcon } from "@heroicons/react/outline"
 
-const skills = [
+export default [
   {
     name: "Consulting",
     description: "I can inspect, diagnose, and plan improvements for your current web project.",
@@ -26,5 +26,3 @@ const skills = [
     linkText: "View Instruction",
   },
 ]
-
-export default skills

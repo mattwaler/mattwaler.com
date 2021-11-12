@@ -1,6 +1,6 @@
 import { Dev, GitHub, LinkedIn } from "components/Icons"
 
-const links = {
+export default {
   internal: [
     { name: "Contact", link: "/contact" },
     { name: "Instruction", link: "/instruction" },
@@ -12,5 +12,3 @@ const links = {
     { name: "Dev", icon: <Dev />, link: "https://dev.to/mattwaler" },
   ],
 }
-
-export default links

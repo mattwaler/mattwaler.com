@@ -2,8 +2,8 @@ import Hero from "components/Hero"
 import WorkListing from "sections/WorkListing"
 
 const heroProps = {
-  heading: "View some my work.",
-  paragraph: "A list of some of the web applications I've helped design, build, and deploy to the internet.",
+  heading: "Take a gander at some of projects I have worked on.",
+  paragraph: "A non-comprehensive list of the most recent web applications I have helped develop and deploy.",
 }
 
 const Work: Page = () => {
@@ -17,7 +17,7 @@ const Work: Page = () => {
 
 Work.meta = {
   title: "Work",
-  description: "A list of some of the web applications I've helped design, build, and deploy to the internet.",
+  description: heroProps.paragraph,
 }
 
 export default Work
