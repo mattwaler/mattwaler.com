@@ -8,7 +8,7 @@ export default function WorkListing() {
         <article key={item.title} className={`flex gap-8 flex-col items-center md:flex-row md:gap-16 ${index !== 0 && "pt-12 mt-12 border-t"}`}>
           <img
             alt={`${item.title} image`}
-            className="w-full object-top h-64  bg-gray-200 md:w-5/12"
+            className="w-full object-top h-72  bg-gray-200 md:w-5/12"
             src={item.image}
             loading="lazy"
             width="592"

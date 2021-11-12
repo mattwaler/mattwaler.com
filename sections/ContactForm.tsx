@@ -1,9 +1,9 @@
 export default function ContactForm() {
   return (
-    <div className="container grid items-center md:grid-cols-2 gap-24 sections-spacing">
+    <div className="container lg:max-w-xl section-spacing">
       <form data-netlify="true" name="contact" method="POST" action="/?contact=true">
         <input type="hidden" name="form-name" value="contact" />
-        <label className="block pt-8">
+        <label className="block">
           <p className="font-bold">Name:</p>
           <input name="name" type="text" required className="mt-2 input w-full" />
         </label>
@@ -21,7 +21,6 @@ export default function ContactForm() {
           </button>
         </div>
       </form>
-      <img className="hidden shadow-none md:block" src="/assets/contact.svg" alt="Contact image." />
     </div>
   )
 }
