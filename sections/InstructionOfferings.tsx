@@ -52,7 +52,7 @@ export default function InstructionOfferings() {
           </div>
         </div>
       </section>
-      <span className="z-0 w-full h-16 block bg-gray-200 text-gray-100">
+      <span className="z-0 w-full h-16 block bg-gray-200 text-gray-900">
         <Waves />
       </span>
     </>

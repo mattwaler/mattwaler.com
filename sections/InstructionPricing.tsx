@@ -33,9 +33,6 @@ function focusForm(value: string) {
 export default function InstructionPricing() {
   return (
     <>
-      <span className="z-0 w-full h-16 block bg-gray-900 text-gray-100 rotate-180">
-        <Waves />
-      </span>
       <section id="pricing" className="section-spacing relative">
         <div className="bg-gray-900 absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
         <div className="relative container text-white z-20">

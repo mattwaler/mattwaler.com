@@ -16,7 +16,6 @@ const Instruction: Page = () => {
       <Hero {...heroProps} />
       <InstructionOverview />
       <InstructionOfferings />
-      <InstructionTestimonials />
       <InstructionPricing />
       <InstructionForm />
     </>
