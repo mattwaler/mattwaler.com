@@ -1,6 +1,14 @@
 module.exports = {
-  mode: 'jit',
-  darkMode: false,
+  content: [
+    './components/**/*.{js,ts,jsx,tsx}',
+    './data/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './sections/**/*.{js,ts,jsx,tsx}',
+  ],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwindcss-debug-screens'),
+  ],
   theme: {
     container: {
       center: true,
@@ -15,14 +23,4 @@ module.exports = {
       lg: '1024px',
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('tailwindcss-debug-screens'),
-  ],
-  purge: [
-    './components/**/*.{js,ts,jsx,tsx}',
-    './data/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './sections/**/*.{js,ts,jsx,tsx}',
-  ],
 }
