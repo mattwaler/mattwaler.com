@@ -3,6 +3,12 @@ import Skills from "sections/Skills"
 import ContactCTA from "sections/ContactCTA"
 import { useEffect } from "react"
 import { toast } from "react-hot-toast"
+import Page from "components/Page"
+
+const seo = {
+  title: "Home",
+  description: "Matt Waler is a web developer from Broadview Heights, Ohio.",
+}
 
 const heroProps = {
   heading: (
@@ -14,7 +20,7 @@ const heroProps = {
   paragraph: "I also love Tennis, Chipotle, and spending time with family."
 }
 
-const Home: Page = () => {
+export default function Home() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
     if (params.has("contact")) {
@@ -22,17 +28,12 @@ const Home: Page = () => {
     }
   }, [])
   return (
-    <>
+    <Page {...seo}>
       <Hero {...heroProps} />
       <Skills />
       <ContactCTA />
-    </>
+    </Page>
   )
 }
 
-Home.meta = {
-  title: "Home",
-  description: "Matt Waler is a web developer from Broadview Heights, Ohio.",
-}
 
-export default Home
