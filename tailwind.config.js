@@ -1,12 +1,10 @@
 module.exports = {
   content: [
-    './components/**/*.{js,ts,jsx,tsx}',
-    './data/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './sections/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,mdx}',
   ],
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     require('tailwindcss-debug-screens'),
   ],
   theme: {
