@@ -16,8 +16,6 @@ const seo = {
 }
 
 export default function Work() {
-  console.log(posts)
-
   return (
     <Page {...seo}>
       <Hero {...heroProps} />
