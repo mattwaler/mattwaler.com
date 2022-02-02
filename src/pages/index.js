@@ -1,8 +1,6 @@
 import Hero from 'components/Hero'
 import Skills from 'sections/Skills'
 import ContactCTA from 'sections/ContactCTA'
-import { useEffect } from 'react'
-import { toast } from 'react-hot-toast'
 import Page from 'components/Page'
 
 const seo = {
@@ -21,12 +19,6 @@ const heroProps = {
 }
 
 export default function Home() {
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    if (params.has('contact')) {
-      toast.success('Thanks for reaching out!')
-    }
-  }, [])
   return (
     <Page {...seo}>
       <Hero {...heroProps} />
