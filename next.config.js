@@ -8,12 +8,4 @@ const withMDX = require("@next/mdx")({
 
 module.exports = withMDX({
   pageExtensions: ["js", "mdx"],
-  webpack: (config, options) => {
-    config.module.rules.push({
-      enforce: 'pre',
-      test: /\.js/,
-      loader: 'import-glob',
-    })
-    return config
-  },
 })
