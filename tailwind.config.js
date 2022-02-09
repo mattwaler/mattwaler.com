@@ -1,6 +1,5 @@
 module.exports = {
-  mode: 'jit',
-  darkMode: false,
+  content: ['./src/**/*.{js,md,njk,svg}'],
   theme: {
     container: {
       center: true,
@@ -37,5 +36,4 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('tailwindcss-debug-screens'),
   ],
-  purge: ['./src/**/*.{js,md,njk,svg}'],
 }

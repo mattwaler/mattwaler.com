@@ -14,7 +14,6 @@ module.exports = (config) => {
       },
     },
   })
-  config.setDataDeepMerge(true)
   config.setLibrary('md', require('./src/_config/markdown'))
   return {
     dir: {

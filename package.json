@@ -2,16 +2,21 @@
   "name": "my-website",
   "author": "Matt Waler",
   "license": "UNLICENSED",
+  "config": {
+    "11ty": "eleventy --quiet",
+		"css": "tailwindcss -i src/_styles/_main.pcss -o dist/assets/main.bundle.css --postcss",
+		"js": "esbuild src/_scripts/_main.js --outfile=dist/assets/main.bundle.js --bundle"
+	},
   "scripts": {
     "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
-    "build:11ty": "eleventy --quiet",
-    "build:css": "tailwindcss -i src/_bundle/main.pcss -o dist/assets/main.bundle.css --minify --postcss",
-    "build:js": "esbuild src/_bundle/main.js --outfile=dist/assets/main.bundle.js --minify --bundle",
     "clean": "rm -rf dist",
     "dev": "cross-env NODE_ENV=development npm-run-all -p dev:*",
-    "dev:11ty": "eleventy --serve --quiet",
-    "dev:css": "tailwindcss -i src/_bundle/main.pcss -o dist/assets/main.bundle.css --watch --postcss",
-    "dev:js": "esbuild src/_bundle/main.js --outfile=dist/assets/main.bundle.js --bundle --watch"
+    "build:11ty": "$npm_package_config_11ty",
+    "build:css": "$npm_package_config_css --minify ",
+    "build:js": "$npm_package_config_js --minify",
+    "dev:11ty": "$npm_package_config_11ty --serve",
+    "dev:css": "$npm_package_config_css --watch",
+    "dev:js": "$npm_package_config_js --watch"
   },
   "prettier": {
     "semi": false,
@@ -20,24 +25,23 @@
     "trailingComma": "es5",
     "htmlWhitespaceSensitivity": "ignore"
   },
-  "browserslist": "> 2%",
   "dependencies": {
-    "alpinejs": "^3.1.0"
+    "alpinejs": "^3.8.1"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@tailwindcss/forms": "^0.2.1",
-    "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.2.6",
-    "cross-env": "^6.0.3",
-    "date-fns": "^2.16.0",
-    "esbuild": "^0.12.9",
-    "markdown-it": "^11.0.0",
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/typography": "^0.5.1",
+    "autoprefixer": "^10.4.2",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.28.0",
+    "esbuild": "^0.14.21",
+    "markdown-it": "^12.3.2",
     "markdown-it-container": "^3.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss-import": "^14.0.0",
-    "tailwindcss": "^2.2.4",
-    "tailwindcss-debug-screens": "^1.1.0"
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^3.0.19",
+    "tailwindcss-debug-screens": "^2.2.1"
   }
 }
