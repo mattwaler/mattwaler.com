@@ -11,7 +11,6 @@ Alpine.store('nav', {
 
 Alpine.start()
 
-
 // Show alert success
 if (window.location.search.includes('submit')) {
   setTimeout(() => {
