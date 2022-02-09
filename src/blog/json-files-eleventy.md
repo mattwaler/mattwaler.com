@@ -1,8 +1,8 @@
 ---
-title: Exporting JSON with Eleventy
+title: How to export Eleventy data to JSON programmatically
 description:
   You can leverage Eleventy to output any file type you want. In this post, I show you how to export JSON so it can be consumed dynamically in the client.
-date: 2020-03-26
+date: 2022-02-09
 ---
 
 ## The sky's the limit
@@ -15,16 +15,8 @@ In the following example, I am looping over a pretend posts collection inside 11
 ---
 permalink: /api/posts.json
 ---
-[
-  {% for post in collections.posts  %}
-    {% set data = post.data %}
-    {
-      "title": "{{ data.title }}",
-      "description": "{{ data.description }}",
-      "url": "{{ post.url }}"
-    }{{ '' if loop.last else ',' }}
-  {% endfor  %}
-]
+
+{{ collections.posts | dump(2) | safe }}
 ```
 :::
 

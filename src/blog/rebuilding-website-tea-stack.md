@@ -1,8 +1,8 @@
 ---
-title: Rebuilding My Website with the TEA Stack
+title: Building my website with the TEA stack (Tailwind, Eleventy, Alpine)
 description:
   In this post I talk about the goals I had for the website rebuild, and how I used the TEA Stack to make it happen.
-date: 2020-12-22
+date: 2022-02-08
 ---
 
 ## Why Redesign?
@@ -26,7 +26,6 @@ I had a few key goals in mind when I began the new iteration:
 - Markdown-powered blog & content
 - Minimal JS/CSS bundles
 - Syntax highlighting in pages & posts
-- App-like page routing, without a frontend framework
 - Contain styles, structure, and functionality in templates as much as possible
 
 ## How I Built This
@@ -66,7 +65,8 @@ TailwindCSS has some fantastic plugins, from both the community and Tailwind Lab
 
 At the time of writing this, I am using these two great packages:
 
-- [TailwindCSS Custom Forms](https://tailwindcss-custom-forms.netlify.app/) to style form inputs
+- [Tailwind Forms](https://tailwindcss-forms.vercel.app/) to style form inputs
+- [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) to style form inputs
 - [TailwindCSS Debug Screens](https://joren.co/tailwindcss-debug-screens-demo/) to display the current breakpoint in development
 
 ## Eleventy
@@ -85,20 +85,6 @@ Copied 1 item and Processed 11 files in 0.38 seconds
 
 No JavaScript, no frameworks, just raw HTML.
 
-> But now you don't get those _**dope**_ page transitions that feel like an app!
-
-**Wrong!** [Turbolinks](https://github.com/turbolinks/turbolinks) can provide this functionality for us. Adding this to your bundle will grant you buttery smooth page transitions for quite the bargain:
-
-::: codeblock
-```bash
-# package-size is a fantastic tool to quickly check filesize
-npx package-size turbolinks
-
-package             size        minified    gzipped
-turbolinks@5.2.0    39.79 KB    37.78 KB    8.74 KB
-```
-:::
-
 Eleventy allows for a markdown-powered website, exposes a fantastic API for passing data to templates, and makes it crazy simple to add custom filters, plugins, and so much more.
 
 ### Eleventy Plugins
@@ -111,12 +97,16 @@ This project contains **one** JavaScript file. That file looks like this:
 
 ::: codeblock
 ```js
-// This passes all postcss files through rollup and out into a single css file
-import './main.pcss'
+import Alpine from 'alpinejs'
 
-// Import and auto-initialize both Alpine and Turbolinks
-import 'alpinejs'
-import 'turbolinks'
+window.Alpine = Alpine
+
+Alpine.store('nav', {
+  isOpen: false,
+  close() { return this.isOpen = false },
+  open() { return this.isOpen = true },
+  toggle() { return this.isOpen = !this.isOpen }
+})
 ```
 :::
 
@@ -137,11 +127,11 @@ Or maybe the button code to toggle the mobile nav:
 
 ::: codeblock
 ```html
-<button @click="mobileNav = !mobileNav" class="w-6 h-6 md:hidden">
-  <span x-show="!mobileNav">
+<button @click="$store.nav.toggle()">
+  <span x-show="!$store.nav.isOpen">
     {% include 'svg/menu.svg' %}
   </span>
-  <span x-show="mobileNav">
+  <span x-show="$store.nav.isOpen">
     {% include 'svg/close.svg' %}
   </span>
 </button>

@@ -1,4 +1,4 @@
-# 🫖 mattwaler.com
+# 🐳 mattwaler.com
 
 Welcome to my personal website! This stack makes static site generation a breeze.
 
@@ -35,4 +35,4 @@ Running `npm run build && npx serve dist` will boot up a local server of your pr
 
 ### 👋🏻 Thank you!
 
-I appreciate you taking time to check out the TEA stack, Please leave a star and share it if you found it useful!
+I appreciate you taking time to check out this project. Please leave a star and share it if you found it useful!

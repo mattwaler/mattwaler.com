@@ -14,7 +14,7 @@ module.exports = [
   },
   {
     name: 'Full Session',
-    price: '60',
+    price: '45',
     duration: '45',
     description:
       'A completely personalized pair-programming session to learn modern frontend development.',

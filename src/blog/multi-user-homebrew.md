@@ -1,5 +1,5 @@
 ---
-title: Using Homebrew with Multiple Users on MacOS Big Sur
+title: Using Homebrew successfully with multiple users on MacOS
 description:
   Homebrew was not designed for multi-user use on MacOS. Here's a few tips to get things working right.
 date: 2021-06-25

@@ -12,12 +12,12 @@ description:
 
   {{ hero(
     eyebrow = "Need a Refresher?",
-    heading = "Schedule A Personalized Pair Programming Session.",
+    heading = "Schedule a personalized pair programming session.",
     paragraph = "Bridge the gap to modern frontend development alongside a living, breathing person who can answer your questions in real time."
   ) }}
 
   {# Overview #}
-  <section id="overview" class="container section-spacing prose-lg prose-indigo">
+  <section id="overview" class="container-narrow section-spacing prose-lg prose-indigo">
     <h3 class="font-extrabold text-4xl">
       Frontend Development is constantly changing and evolving at breakneck speeds.
     </h3>
@@ -36,9 +36,6 @@ description:
   </section>
 
   {# Offerings #}
-  <span class="z-0 w-full h-16 block bg-gray-200 text-gray-100 rotate-180">
-    {% include 'svg/waves.svg' %}
-  </span>
   <section id="offerings" class="bg-gray-200">
     <div class="container section-spacing">
       <div class="lg:text-center">
@@ -68,41 +65,8 @@ description:
       </div>
     </div>
   </section>
-  <span class="z-0 w-full h-16 block bg-gray-200 text-gray-100">
-    {% include 'svg/waves.svg' %}
-  </span>
-
-  {# Testimonials #}
-  <section id="testimonials" class="container section-spacing">
-    <div class="lg:text-center">
-      <h3 class="font-bold text-3xl">
-        What Others Are Saying.
-      </h3>
-      <p class="mt-2 text-lg">
-        Here are a few votes of confidence from people you've never met before.
-      </p>
-    </div>
-    <div class="mt-16 grid gap-16 grid-cols-1 lg:gap-24 lg:grid-cols-2">
-      {% for item in testimonials %}
-        <div class="flex flex-col">
-          <p class="italic border-l-4 border-indigo-500 pl-6 text-gray-700">{{ item.quote }}</p>
-          <div class="mt-8"></div>
-          <div class="mt-auto flex items-center">
-            <img class="w-16 h-16 rounded-full shadow-lg border-indigo-500 border-2" src="/assets/{{ item.image }}" alt="{{ item.name }} image.">
-            <div class="ml-4">
-              <p class="font-black uppercase">{{ item.name }}</p>
-              <p class="text-gray-700">{{ item.title }}</p>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-  </section>
 
   {# Pricing #}
-  <span class="z-0 w-full h-16 block bg-gray-900 text-gray-100 rotate-180">
-    {% include 'svg/waves.svg' %}
-  </span>
   <section id="pricing" class="section-spacing relative">
     <div class="bg-gray-900 absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
     <div class="relative container text-white z-20">
@@ -151,13 +115,10 @@ description:
       {% endfor %}
     </div>
   </section>
-  <span class="z-0 w-full h-16 block bg-gray-900 text-gray-100 lg:hidden">
-    {% include 'svg/waves.svg' %}
-  </span>
 
   {# Schedule #}
   <section id="schedule" class="section-spacing">
-    <div class="container">
+    <div class="container-narrow">
       <div class="lg:text-center">
         <h3 class="font-bold text-3xl">
           Let's Get Started
@@ -169,7 +130,7 @@ description:
       <form
         netlify
         name="schedule"
-        class="mt-16 grid grid-cols-2 gap-8 max-w-4xl mx-auto"
+        class="mt-16 grid grid-cols-2 gap-8 mx-auto"
         method="POST"
         action="/instruction?submit=true"
       >

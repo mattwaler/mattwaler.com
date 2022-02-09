@@ -1,5 +1,5 @@
 ---
-title: Switch Statements Exist in Nunjucks
+title: Switch statements exist in Nunjucks!
 description:
   Learn how to use switch statements in Nunjucks, even though they are missing from the official documentation.
 date: 2020-03-15
