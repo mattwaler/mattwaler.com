@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import { Toaster } from 'react-hot-toast'
-import PageHeader from 'components/Header'
-import PageFooter from 'components/Footer'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
 import Hero from 'components/Hero'
 import ContactCTA from 'sections/ContactCTA'
 
-export default function Page({ children, title, description }) {
+export default function Page(props) {
+  const { children, title, description } = props
   const devMode = process.env.NODE_ENV === 'development'
 
   return (
@@ -30,13 +31,15 @@ export default function Page({ children, title, description }) {
       {/* Page Markup */}
       <div className={`flex flex-col min-h-screen ${devMode && 'debug-screens'}`}>
         <Toaster />
-        <PageHeader />
+        <Header />
         <main className={`flex-1`}>
           <Hero heading={title} paragraph={description} />
-          <div className="container section-spacing prose lg:prose-lg">{children}</div>
+          <div className="container section-spacing prose prose-pre:p-0 lg:prose-lg">
+            {children}
+          </div>
           <ContactCTA />
         </main>
-        <PageFooter />
+        <Footer />
       </div>
     </>
   )
