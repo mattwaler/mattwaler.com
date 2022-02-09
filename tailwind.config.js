@@ -1,14 +1,5 @@
 module.exports = {
-  content: [
-    './components/**/*.{js,ts,jsx,tsx}',
-    './data/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './sections/**/*.{js,ts,jsx,tsx}',
-  ],
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('tailwindcss-debug-screens'),
-  ],
+  content: ['./src/**/*.{js,md,njk,svg}'],
   theme: {
     container: {
       center: true,
@@ -17,10 +8,32 @@ module.exports = {
     debugScreens: {
       position: ['bottom', 'right'],
     },
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              color: theme('colors.gray.100')
+            },
+            'code::after, code::before': {
+              display: 'none',
+            },
+            pre: {
+              backgroundColor: theme('colors.gray.900'),
+            },
+          },
+        },
+      }),
+    },
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
     },
   },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-debug-screens'),
+  ],
 }

@@ -1,31 +1,47 @@
 {
-  "name": "mattwaler.com",
-  "version": "0.1.0",
-  "private": true,
+  "name": "my-website",
+  "author": "Matt Waler",
+  "license": "UNLICENSED",
+  "config": {
+    "11ty": "eleventy --quiet",
+		"css": "tailwindcss -i src/_styles/_main.pcss -o dist/assets/main.bundle.css --postcss",
+		"js": "esbuild src/_scripts/_main.js --outfile=dist/assets/main.bundle.js --bundle"
+	},
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export -o .dist",
-    "pretty": "prettier --write '**/*.tsx'",
-    "start": "next start"
+    "build": "cross-env NODE_ENV=production npm-run-all clean -p build:*",
+    "clean": "rm -rf dist",
+    "dev": "cross-env NODE_ENV=development npm-run-all -p dev:*",
+    "build:11ty": "$npm_package_config_11ty",
+    "build:css": "$npm_package_config_css --minify ",
+    "build:js": "$npm_package_config_js --minify",
+    "dev:11ty": "$npm_package_config_11ty --serve",
+    "dev:css": "$npm_package_config_css --watch",
+    "dev:js": "$npm_package_config_js --watch"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "htmlWhitespaceSensitivity": "ignore"
   },
   "dependencies": {
-    "@heroicons/react": "^1.0.4",
-    "next": "^12.0.7",
-    "prismjs": "^1.24.1",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-hot-toast": "^2.1.0"
+    "alpinejs": "^3.8.1"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "@tailwindcss/forms": "^0.4.0",
-    "@types/prismjs": "^1.16.6",
-    "@types/react": "^17.0.38",
-    "autoprefixer": "^10.4.1",
-    "postcss": "^8.3.6",
+    "@tailwindcss/typography": "^0.5.1",
+    "autoprefixer": "^10.4.2",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.28.0",
+    "esbuild": "^0.14.21",
+    "markdown-it": "^12.3.2",
+    "markdown-it-container": "^3.0.0",
+    "npm-run-all": "^4.1.5",
     "postcss-import": "^14.0.2",
-    "prettier": "^2.3.2",
-    "tailwindcss": "^3.0.8",
-    "tailwindcss-debug-screens": "^2.1.0",
-    "typescript": "^4.5.4"
+    "tailwindcss": "^3.0.19",
+    "tailwindcss-debug-screens": "^2.2.1"
   }
 }
