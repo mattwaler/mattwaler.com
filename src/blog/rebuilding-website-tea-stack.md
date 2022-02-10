@@ -46,7 +46,7 @@ For example, here is a brief snippet of the hero element on this very page:
 ```html
 <section class="gradient-purple text-white py-8 lg:py-16">
   <div class="container max-w-screen-md mx-auto text-center">
-    <p class="uppercase font-bold text-indigo-300 text-sm">{{ date | prettyDate }}</p>
+    <p class="uppercase font-bold text-indigo-300 text-sm">{{ date }}</p>
     <h1 class="mt-2 text-2xl sm:text-3xl font-bold leading-none">
       {{ title }}
     </h1>

@@ -1,5 +1,7 @@
+const format = require('date-fns/format')
+
 module.exports = (config) => {
-  config.addFilter('prettyDate', require('./src/_config/prettyDate'))
+  config.addFilter('date', (date, dateFormat) => format(date, dateFormat ?? 'MMMM d, yyyy'))
   config.addPassthroughCopy({ public: './' })
   config.addPlugin(require('@11ty/eleventy-plugin-syntaxhighlight'))
   config.setBrowserSyncConfig({

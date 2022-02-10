@@ -21,7 +21,7 @@ description:
       <article class="flex flex-wrap-reverse {{ 'border-t pt-12 mt-12' if not loop.first }}">
         <div class="w-full mt-8 md:mt-0 md:w-1/3">
           <p class="uppercase text-xs font-bold text-gray-600">Last Updated:</p>
-          <p class="text-lg font-bold">{{ post.data.date | prettyDate }}</p>
+          <p class="text-lg font-bold">{{ post.data.date | date("MMMM d, yyyy") }}</p>
         </div>
         <div class="mt-2 w-full md:mt-0 md:w-2/3">
           <a href="{{ post.url }}">
