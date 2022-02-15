@@ -11,6 +11,11 @@ module.exports = {
     },
     debugScreens: {
       position: ['bottom', 'right'],
+      style: {
+        borderRadius: '4px',
+        margin: '16px',
+        padding: '8px',
+      },
     },
     screens: {
       sm: '640px',
