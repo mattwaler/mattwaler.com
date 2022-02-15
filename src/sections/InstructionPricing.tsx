@@ -12,7 +12,7 @@ const pricing = [
   {
     name: "Full Session",
     slug: "session",
-    price: "60",
+    price: "45",
     duration: "45",
     description: "A completely personalized pair-programming session to learn modern frontend development.",
     bullets: ["Personalized Session", "Unlimited Questions", "You Choose The Topics", "Also Become BFFs"],
