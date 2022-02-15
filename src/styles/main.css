@@ -1,9 +1,9 @@
-@import 'tailwindcss/base';
-@import './base.css';
-@import './prism.css';
+@import "tailwindcss/base";
+@import "./base.css";
+@import "./prism.css";
 
-@import 'tailwindcss/components';
-@import './components.css';
+@import "tailwindcss/components";
+@import "./components.css";
 
-@import 'tailwindcss/utilities';
-@import './utilities.css';
+@import "tailwindcss/utilities";
+@import "./utilities.css";

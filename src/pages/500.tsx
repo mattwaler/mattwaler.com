@@ -1,6 +1,6 @@
 import Hero from "components/Hero"
 import CodeblockCTA from "sections/ContactCTA"
-import Page from 'components/Page'
+import Page from "components/Page"
 
 const seo = {
   title: "Something went wrong",

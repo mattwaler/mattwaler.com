@@ -5,7 +5,10 @@ export default function WorkListing() {
   return (
     <section className="container section-spacing">
       {work.map((item, index) => (
-        <article key={item.title} className={`flex gap-8 flex-col items-center md:flex-row md:gap-16 ${index !== 0 && "pt-12 mt-12 border-t"}`}>
+        <article
+          key={item.title}
+          className={`flex gap-8 flex-col items-center md:flex-row md:gap-16 ${index !== 0 && "pt-12 mt-12 border-t"}`}
+        >
           <img
             alt={`${item.title} image`}
             className="w-full object-top h-72  bg-gray-200 md:w-5/12"
@@ -21,7 +24,7 @@ export default function WorkListing() {
             </a>
             <p className="text-base text-gray-700 mt-4">{item.description}</p>
             <ul className="flex flex-wrap items-center gap-1 mt-4">
-              {item.tools.map(tool => (
+              {item.tools.map((tool) => (
                 <li
                   key={tool}
                   className="text-xs tracking-tight font-bold uppercase bg-gray-300 text-gray-800 px-3 py-1 rounded-2xl"

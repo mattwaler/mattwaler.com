@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import { Toaster } from 'react-hot-toast'
+import Head from "next/head"
+import { Toaster } from "react-hot-toast"
 import PageHeader from "sections/PageHeader"
 import PageFooter from "sections/PageFooter"
 
 interface Props {
   children: React.ReactNode
-  description: string,
+  description: string
   title: string
 }
 
@@ -36,9 +36,7 @@ export default function Page(props: Props) {
       <div className={`flex flex-col min-h-screen ${devMode && "debug-screens"}`}>
         <Toaster />
         <PageHeader />
-        <main className="flex-1">
-          {children}
-        </main>
+        <main className="flex-1">{children}</main>
         <PageFooter />
       </div>
     </>

@@ -83,5 +83,4 @@ export default [
     color: "text-green-600",
     tools: ["Shopify"],
   },
-
 ]

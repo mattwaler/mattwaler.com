@@ -1,48 +1,48 @@
 code[class*="language-"],
 pre[class*="language-"] {
   @apply text-indigo-100 font-mono text-left whitespace-pre leading-normal text-sm sm:text-base;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	direction: ltr;
-	word-spacing: normal;
-	word-break: normal;
-	tab-size: 4;
-	hyphens: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  direction: ltr;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: 4;
+  hyphens: none;
 }
 
 /* Code blocks */
 pre[class*="language-"] {
-	@apply overflow-auto rounded text-base pt-6 pb-4;
+  @apply overflow-auto rounded text-base pt-6 pb-4;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-	@apply bg-gray-900;
+  @apply bg-gray-900;
 }
 
 /* Inline code */
 :not(pre) > code {
-	@apply bg-gray-900 mx-1 px-2 text-white py-1 rounded text-sm font-mono;
+  @apply bg-gray-900 mx-1 px-2 text-white py-1 rounded text-sm font-mono;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	@apply text-indigo-100 opacity-50;
+  @apply text-indigo-100 opacity-50;
 }
 
 .token.punctuation {
-	@apply text-indigo-100;
+  @apply text-indigo-100;
 }
 
 .namespace {
-	@apply opacity-75;
+  @apply opacity-75;
 }
 
 .token.property,
 .token.keyword,
 .token.tag {
-	@apply text-indigo-500;
+  @apply text-indigo-500;
 }
 
 .token.class-name {
@@ -56,11 +56,11 @@ pre[class*="language-"] {
 
 .token.symbol,
 .token.deleted {
-	@apply text-red-500;
+  @apply text-red-500;
 }
 
 .token.number {
-  color: #FF73FD;
+  color: #ff73fd;
 }
 
 .token.selector,
@@ -69,51 +69,51 @@ pre[class*="language-"] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	@apply text-green-500;
+  @apply text-green-500;
 }
 
 .token.variable {
-	color: #C6C5FE;
+  color: #c6c5fe;
 }
 
 .token.operator {
-	color: #EDEDED;
+  color: #ededed;
 }
 
 .token.entity {
-	color: #FFFFB6;
-	cursor: help;
+  color: #ffffb6;
+  cursor: help;
 }
 
 .token.url {
-	color: #96CBFE;
+  color: #96cbfe;
 }
 
 .language-css .token.string,
 .style .token.string {
-	color: #87C38A;
+  color: #87c38a;
 }
 
 .token.atrule,
 .token.attr-value {
-	color: #F9EE98;
+  color: #f9ee98;
 }
 
 .token.function {
-	color: #DAD085;
+  color: #dad085;
 }
 
 .token.regex {
-	color: #E9C062;
+  color: #e9c062;
 }
 
 .token.important {
-	color: #fd971f;
+  color: #fd971f;
 }
 
 .token.important,
 .token.bold {
-	@apply font-bold;
+  @apply font-bold;
 }
 
 .token.italic {

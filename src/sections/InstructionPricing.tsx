@@ -20,11 +20,11 @@ const pricing = [
 ]
 
 function focusForm(value: string) {
-  const form = document.getElementById('schedule') as HTMLElement
-  const select = document.getElementById('instruction-type') as HTMLInputElement
+  const form = document.getElementById("schedule") as HTMLElement
+  const select = document.getElementById("instruction-type") as HTMLInputElement
   console.log(form, select)
   if (form && select) {
-    form.scrollIntoView({ behavior: 'smooth' })
+    form.scrollIntoView({ behavior: "smooth" })
     select.value = value
   }
 }

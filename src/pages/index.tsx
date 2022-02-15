@@ -12,8 +12,9 @@ const seo = {
 
 const heroProps = {
   heading: "I build websites with modern tools and technologies.",
-  paragraph: "I am a frontend-focused developer from Ohio. I graduated from Ohio University in 2016 and I've been developing ever since. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
-  image: '/assets/tripp.jpg',
+  paragraph:
+    "I am a frontend-focused developer from Ohio. I graduated from Ohio University in 2016 and I've been developing ever since. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
+  image: "/assets/tripp.jpg",
 }
 
 export default function Home() {
@@ -31,5 +32,3 @@ export default function Home() {
     </Page>
   )
 }
-
-

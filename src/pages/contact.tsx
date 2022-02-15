@@ -1,6 +1,6 @@
 import Hero from "components/Hero"
 import ContactForm from "sections/ContactForm"
-import Page from 'components/Page'
+import Page from "components/Page"
 
 const seo = {
   title: "Contact",

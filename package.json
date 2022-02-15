@@ -5,8 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export -o .dist",
-    "pretty": "prettier --write '**/*.tsx'",
+    "format": "prettier --write .",
     "start": "next start"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "printWidth": 120
   },
   "dependencies": {
     "@heroicons/react": "^1.0.4",
