@@ -1,28 +1,35 @@
-import { AcademicCapIcon, TemplateIcon, TerminalIcon } from "@heroicons/react/outline"
+import {
+  AcademicCapIcon,
+  TemplateIcon,
+  TerminalIcon,
+} from '@heroicons/react/outline'
 
 export default [
   {
-    name: "Development",
-    description: "I can build single page applications, fullstack CMS projects, and everything in between.",
+    name: 'Development',
+    description:
+      'I can build single page applications, fullstack CMS projects, and everything in between.',
     icon: <TerminalIcon />,
-    color: "text-indigo-500",
-    link: "/work",
-    linkText: "View Work",
+    color: 'text-indigo-500',
+    link: '/work',
+    linkText: 'View Work',
   },
   {
-    name: "Instruction",
+    name: 'Instruction',
     icon: <AcademicCapIcon />,
-    description: "I am comfortable teaching modern tools like React, Vue, Svelte, and much more.",
-    color: "text-green-500",
-    link: "/instruction",
-    linkText: "View Instruction",
+    description:
+      'I am comfortable teaching modern tools like React, Vue, Svelte, and much more.',
+    color: 'text-green-500',
+    link: '/instruction',
+    linkText: 'View Instruction',
   },
   {
-    name: "Consulting",
-    description: "I can inspect, diagnose, and plan improvements for your current web project.",
+    name: 'Consulting',
+    description:
+      'I can inspect, diagnose, and plan improvements for your current web project.',
     icon: <TemplateIcon />,
-    color: "text-blue-500",
-    link: "/work",
-    linkText: "View Work",
+    color: 'text-blue-500',
+    link: '/work',
+    linkText: 'View Work',
   },
 ]

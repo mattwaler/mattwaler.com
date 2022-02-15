@@ -1,7 +1,7 @@
-import Head from "next/head"
-import { Toaster } from "react-hot-toast"
-import PageHeader from "sections/PageHeader"
-import PageFooter from "sections/PageFooter"
+import Head from 'next/head'
+import { Toaster } from 'react-hot-toast'
+import PageHeader from 'sections/PageHeader'
+import PageFooter from 'sections/PageFooter'
 
 interface Props {
   children: React.ReactNode
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default function Page(props: Props) {
-  const devMode = process.env.NODE_ENV === "development"
+  const devMode = process.env.NODE_ENV === 'development'
   const { children, description, title } = props
 
   return (
@@ -18,7 +18,10 @@ export default function Page(props: Props) {
       {/* Page Head */}
       <Head>
         <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta property="og:image" content="/assets/fam.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
@@ -33,7 +36,9 @@ export default function Page(props: Props) {
       </Head>
 
       {/* Page Markup */}
-      <div className={`flex flex-col min-h-screen ${devMode && "debug-screens"}`}>
+      <div
+        className={`flex flex-col min-h-screen ${devMode && 'debug-screens'}`}
+      >
         <Toaster />
         <PageHeader />
         <main className="flex-1">{children}</main>

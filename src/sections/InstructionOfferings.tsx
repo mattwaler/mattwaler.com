@@ -1,20 +1,22 @@
-import { CheckCircleIcon } from "@heroicons/react/outline"
+import { CheckCircleIcon } from '@heroicons/react/outline'
 
 const offerings = [
   {
-    heading: "The Big Names",
-    description: "The stuff we constantly hear about. These are the skills that can get you hired anywhere.",
-    bullets: ["React", "Svelte", "Typescript", "Vue"],
+    heading: 'The Big Names',
+    description:
+      'The stuff we constantly hear about. These are the skills that can get you hired anywhere.',
+    bullets: ['React', 'Svelte', 'Typescript', 'Vue'],
   },
   {
-    heading: "The Lesser Knowns",
-    description: "Tools you do not hear about nearly as much, but pack just as much punch, possibly even more so.",
-    bullets: ["AlpineJS", "Craft CMS", "Eleventy", "Tailwind CSS"],
+    heading: 'The Lesser Knowns',
+    description:
+      'Tools you do not hear about nearly as much, but pack just as much punch, possibly even more so.',
+    bullets: ['AlpineJS', 'Craft CMS', 'Eleventy', 'Tailwind CSS'],
   },
   {
-    heading: "Tooling",
-    description: "These are the tools that will up your game across the board.",
-    bullets: ["Git", "NPM", "VS Code", "ZSH"],
+    heading: 'Tooling',
+    description: 'These are the tools that will up your game across the board.',
+    bullets: ['Git', 'NPM', 'VS Code', 'ZSH'],
   },
 ]
 
@@ -24,7 +26,10 @@ export default function InstructionOfferings() {
       <div className="container section-spacing">
         <div className="lg:text-center">
           <h3 className="font-bold text-3xl">What I Can Offer.</h3>
-          <p className="mt-2 text-lg">I only teach the languages, tooling, and frameworks I know intimately.</p>
+          <p className="mt-2 text-lg">
+            I only teach the languages, tooling, and frameworks I know
+            intimately.
+          </p>
         </div>
         <div className="mt-16 grid gap-16 grid-cols-1 lg:gap-24 lg:grid-cols-3">
           {offerings.map((item) => (

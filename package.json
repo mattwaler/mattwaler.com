@@ -11,10 +11,11 @@
   "prettier": {
     "trailingComma": "es5",
     "semi": false,
-    "printWidth": 120
+    "singleQuote": true
   },
   "dependencies": {
     "@heroicons/react": "^1.0.4",
+    "clsx": "^1.1.1",
     "next": "^12.0.7",
     "prismjs": "^1.24.1",
     "react": "17.0.2",

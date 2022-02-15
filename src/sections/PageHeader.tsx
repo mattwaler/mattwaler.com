@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react"
-import { Logo } from "components/Icons"
-import { MenuIcon, XIcon } from "@heroicons/react/outline"
-import links from "data/navigation"
-import Link from "next/link"
-import { useRouter } from "next/router"
+import { useState, useEffect } from 'react'
+import { Logo } from 'components/Icons'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import links from 'data/navigation'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
-    router.events.on("routeChangeComplete", () => setNavOpen(false))
+    router.events.on('routeChangeComplete', () => setNavOpen(false))
   }, [])
 
   const isActive = (path: string) => router.pathname === path
@@ -23,7 +23,9 @@ export default function PageHeader() {
             <span className="w-6 h-6 text-indigo-200">
               <Logo />
             </span>
-            <span className="ml-2 leading-none font-extrabold text-xl">mattwaler</span>
+            <span className="ml-2 leading-none font-extrabold text-xl">
+              mattwaler
+            </span>
           </a>
         </Link>
         <nav className="ml-auto space-x-4 hidden md:block">
@@ -31,7 +33,7 @@ export default function PageHeader() {
             <Link key={name} href={link}>
               <a
                 className={`text-sm font-semibold transition-colors duration-200 hover:text-white ${
-                  isActive(link) ? "text-white" : "text-indigo-200"
+                  isActive(link) ? 'text-white' : 'text-indigo-200'
                 }`}
               >
                 {name}
@@ -52,13 +54,17 @@ export default function PageHeader() {
               {link.icon}
             </a>
           ))}
-          <button aria-label="Toggle mobile menu" className="w-6 h-6 md:hidden" onClick={() => setNavOpen(!isNavOpen)}>
+          <button
+            aria-label="Toggle mobile menu"
+            className="w-6 h-6 md:hidden"
+            onClick={() => setNavOpen(!isNavOpen)}
+          >
             {isNavOpen ? <XIcon /> : <MenuIcon />}
           </button>
         </nav>
       </div>
       <div className="container">
-        <div className="h-px bg-indigo-200" style={{ opacity: "0.2" }} />
+        <div className="h-px bg-indigo-200" style={{ opacity: '0.2' }} />
       </div>
       {isNavOpen && (
         <nav className="container md:hidden">
@@ -67,13 +73,13 @@ export default function PageHeader() {
               <Link href={link}>
                 <a
                   className={`block py-4 font-semibold text-sm tracking-tight ${
-                    isActive(link) ? "text-white" : "text-indigo-200"
+                    isActive(link) ? 'text-white' : 'text-indigo-200'
                   }`}
                 >
                   {name}
                 </a>
               </Link>
-              <div className="h-px bg-indigo-200" style={{ opacity: "0.2" }} />
+              <div className="h-px bg-indigo-200" style={{ opacity: '0.2' }} />
             </div>
           ))}
         </nav>

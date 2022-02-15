@@ -1,5 +1,5 @@
-code[class*="language-"],
-pre[class*="language-"] {
+code[class*='language-'],
+pre[class*='language-'] {
   @apply text-indigo-100 font-mono text-left whitespace-pre leading-normal text-sm sm:text-base;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   direction: ltr;
@@ -10,12 +10,12 @@ pre[class*="language-"] {
 }
 
 /* Code blocks */
-pre[class*="language-"] {
+pre[class*='language-'] {
   @apply overflow-auto rounded text-base pt-6 pb-4;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
   @apply bg-gray-900;
 }
 
