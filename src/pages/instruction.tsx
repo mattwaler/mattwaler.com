@@ -14,7 +14,7 @@ const seo = {
 const heroProps = {
   heading: 'Schedule a personalized pair programming session.',
   paragraph:
-    'Bridge the gap to modern frontend development alongside a living, breathing person.',
+    'I offer pair programming sessions for developers to help sharpen their skills with modern frontend tools and frameworks. Ask questions as you work alongside a living breathing person.',
 }
 
 export default function Instruction() {

@@ -1,5 +1,6 @@
 import Intro from 'components/Intro'
 import Dehang from 'components/Dehang'
+import { CheckCircleIcon } from '@heroicons/react/solid'
 
 const content = [
   {
@@ -58,9 +59,10 @@ const About = () => (
             className="mt-2 text-lg md:text-xl"
             tag="p"
           />
-          <ul className="list-disc mt-4 ml-4">
+          <ul className="mt-4 flex flex-col gap-2">
             {section.items.map((item) => (
-              <li className="md:text-lg" key={item}>
+              <li className="flex items-center gap-2 md:text-lg" key={item}>
+                <CheckCircleIcon className="w-5 h-5 text-indigo-500" />
                 {item}
               </li>
             ))}

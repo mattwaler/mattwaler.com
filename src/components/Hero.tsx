@@ -12,8 +12,12 @@ export default function Hero(props: Props) {
     <section className="gradient-purple text-white py-8 lg:py-16">
       <div className="container flex items-center flex-col gap-8 lg:gap-16 lg:flex-row">
         <div className="order-2 lg:order-1">
-          <Dehang tag='h1' className="h1" text={props.heading} />
-          <Dehang tag='p' className="mt-4 text-base sm:text-lg lg:text-xl text-indigo-100" text={props.paragraph} />
+          <Dehang tag="h1" className="h1" text={props.heading} />
+          <Dehang
+            tag="p"
+            className={clsx("mt-4 text-base sm:text-lg lg:text-xl text-indigo-100", !props.image && 'lg:max-w-2xl')}
+            text={props.paragraph}
+          />
         </div>
         {props.image && (
           <img

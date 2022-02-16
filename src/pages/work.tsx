@@ -5,7 +5,7 @@ import Page from 'components/Page'
 const heroProps = {
   heading: 'Take a gander at some of projects I have worked on.',
   paragraph:
-    'A non-comprehensive list of the most recent web applications I have helped develop and deploy.',
+    'I have built a lot of websites since I got started in 2016. Listed below is a non-exhaustive representation of the web applications I have helped develop and deploy.',
 }
 
 const seo = {
