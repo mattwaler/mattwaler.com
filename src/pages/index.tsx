@@ -4,6 +4,7 @@ import ContactCTA from 'sections/ContactCTA'
 import { useEffect } from 'react'
 import { toast } from 'react-hot-toast'
 import Page from 'components/Page'
+import About from 'sections/About'
 
 const seo = {
   title: 'Home',
@@ -13,7 +14,7 @@ const seo = {
 const heroProps = {
   heading: 'I build websites with modern tools and technologies.',
   paragraph:
-    "I am a frontend-focused developer from Ohio. I graduated from Ohio University in 2016 and I've been developing ever since. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
+    "I am a frontend-focused developer from Ohio. I graduated from Ohio University in 2016 and I've been making websites ever since. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
   image: '/assets/tripp.jpg',
 }
 
@@ -27,6 +28,7 @@ export default function Home() {
   return (
     <Page {...seo}>
       <Hero {...heroProps} />
+      <About />
       <Skills />
       <ContactCTA />
     </Page>

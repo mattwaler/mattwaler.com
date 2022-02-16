@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn } from 'components/Icons'
+import { GitHub, LinkedIn, Instagram } from 'components/Icons'
 
 export default {
   internal: [
@@ -8,6 +8,11 @@ export default {
   ],
   external: [
     { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/mattwaler' },
+    {
+      name: 'Instagram',
+      icon: <Instagram />,
+      link: 'https://www.instagram.com/mattwaler',
+    },
     {
       name: 'LinkedIn',
       icon: <LinkedIn />,

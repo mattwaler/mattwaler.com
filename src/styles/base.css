@@ -4,11 +4,6 @@ body {
   @apply font-sans antialiased text-gray-900 bg-gray-100 overflow-x-hidden;
 }
 
-img,
-video {
-  @apply shadow-lg rounded-lg object-cover object-center;
-}
-
 * {
   @apply relative z-10;
 }
