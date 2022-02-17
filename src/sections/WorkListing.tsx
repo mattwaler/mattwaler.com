@@ -13,11 +13,11 @@ export default function WorkListing() {
         >
           <img
             alt={`${item.title} image`}
-            className="w-full object-top h-72 bg-gray-200 md:w-5/12 rounded-lg shadow-lg"
+            className="w-full object-top object-cover h-72 bg-gray-200 md:w-5/12 rounded-lg shadow-lg"
             src={item.image}
             loading="lazy"
             width="592"
-            height="256"
+            height="288"
           />
           <div className="flex-1">
             <a target="_blank" href={item.link}>
