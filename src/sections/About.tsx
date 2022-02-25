@@ -1,5 +1,5 @@
 import Intro from 'components/Intro'
-import Dehang from 'components/Dehang'
+import Text from 'components/Text'
 import { CheckCircleIcon } from '@heroicons/react/solid'
 
 const content = [
@@ -54,8 +54,8 @@ const About = () => (
         </div>
         <div className={!isEven(index) ? 'order-2 md:order-1' : ''}>
           <h3 className="text-2xl md:text-3xl font-bold">{section.heading}</h3>
-          <Dehang
-            text={section.subheading}
+          <Text
+            content={section.subheading}
             className="mt-2 text-lg md:text-xl"
             tag="p"
           />

@@ -3,14 +3,14 @@ import { createElement } from 'react'
 interface Props {
   className?: string
   tag?: string
-  text: string
+  content: string
 }
 
-export default function Dehang(props: Props) {
-  const { className, tag, text } = props
+export default function Text(props: Props) {
+  const { className, tag, content } = props
 
   // Reconstruct string with break tag
-  const array = text.split(' ')
+  const array = content.split(' ')
   const length = array.length
   const withoutLastTwo = array.slice(0, -2)
   const lastTwoString = `${array[length - 2]}&nbsp;${array[length - 1]}`
@@ -21,7 +21,7 @@ export default function Dehang(props: Props) {
   if (lastTwoString.length > 24) {
     return createElement(tag ?? 'span', {
       className,
-      dangerouslySetInnerHTML: { __html: text },
+      dangerouslySetInnerHTML: { __html: content },
     })
   }
 

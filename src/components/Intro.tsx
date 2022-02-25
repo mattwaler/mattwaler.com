@@ -1,4 +1,4 @@
-import Dehang from 'components/Dehang'
+import Text from 'components/Text'
 
 interface Props {
   heading: string
@@ -8,15 +8,15 @@ interface Props {
 export default function Intro(props: Props) {
   return (
     <div className="md:text-center">
-      <Dehang
+      <Text
         tag="h2"
         className="text-3xl leading-tight font-extrabold sm:text-4xl"
-        text={props.heading}
+        content={props.heading}
       />
-      <Dehang
+      <Text
         tag="p"
         className="text-gray-700 mt-1 italic sm:text-lg"
-        text={props.subheading}
+        content={props.subheading}
       />
     </div>
   )
