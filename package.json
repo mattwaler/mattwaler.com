@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o .dist",
+    "build": "next build && next export -o .dist && next-sitemap",
     "format": "prettier --write .",
     "start": "next start"
   },
@@ -28,6 +28,7 @@
     "@types/prismjs": "^1.16.6",
     "@types/react": "^17.0.38",
     "autoprefixer": "^10.4.1",
+    "next-sitemap": "^2.5.10",
     "postcss": "^8.3.6",
     "postcss-import": "^14.0.2",
     "prettier": "^2.3.2",
