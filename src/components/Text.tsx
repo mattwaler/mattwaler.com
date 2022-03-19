@@ -17,17 +17,10 @@ export default function Text(props: Props) {
   const newArray = [...withoutLastTwo, lastTwoString]
   const newString = newArray.join(' ')
 
-  // Bail if last string is too long
-  if (lastTwoString.length > 24) {
-    return createElement(tag ?? 'span', {
-      className,
-      dangerouslySetInnerHTML: { __html: content },
-    })
-  }
-
-  // Return dehung string if short enough
   return createElement(tag ?? 'span', {
     className,
-    dangerouslySetInnerHTML: { __html: newString },
+    dangerouslySetInnerHTML: {
+      __html: lastTwoString.length > 24 ? content : newString,
+    },
   })
 }
