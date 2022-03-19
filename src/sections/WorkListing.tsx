@@ -1,5 +1,6 @@
 import { ArrowRightIcon } from '@heroicons/react/outline'
 import work from 'data/work'
+import Text from 'components/Text'
 
 export default function WorkListing() {
   return (
@@ -21,14 +22,22 @@ export default function WorkListing() {
           />
           <div className="flex-1">
             <a target="_blank" href={item.link}>
-              <h2 className="text-2xl md:text-3xl font-extrabold leading-none">
-                {item.title}
-              </h2>
-              <p className={`text-sm font-medium underline ${item.color}`}>
-                {item.link}
-              </p>
+              <Text
+                tag="h2"
+                className="text-2xl md:text-3xl font-extrabold leading-none"
+                content={item.title}
+              />
+              <Text
+                tag="p"
+                className={`text-sm font-medium underline ${item.color}`}
+                content={item.link}
+              />
             </a>
-            <p className="text-base text-gray-700 mt-4">{item.description}</p>
+            <Text
+              tag="p"
+              className="text-base text-gray-700 mt-3"
+              content={item.description}
+            />
             <ul className="flex flex-wrap items-center gap-1 mt-4">
               {item.tools.map((tool) => (
                 <li
