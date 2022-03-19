@@ -1,5 +1,14 @@
 export default [
   {
+    title: 'Rev Indy',
+    description:
+      'A modular marketing website to bring awareness to the Rev Indy fundraising event that takes place every year.',
+    link: 'https://revindy.org/',
+    image: '/assets/rev.jpg',
+    color: 'text-red-500',
+    tools: ['Craft', 'Tailwind', 'Alpine'],
+  },
+  {
     title: 'Ascend Indiana',
     description:
       'A website that aims to help individuals find meaningful jobs or internships in the greater Indianapolis area.',
@@ -59,7 +68,16 @@ export default [
       'A full-service web application for the Indiana branch of University Hospitals.',
     link: 'https://iuhealth.org',
     image: '/assets/iuhealth.jpg',
-    color: 'text-red-700',
+    color: 'text-rose-700',
+    tools: ['Craft', 'Tailwind', 'Alpine', 'React', 'Algolia'],
+  },
+  {
+    title: 'Riley Childrens',
+    description:
+      'A monolithic web application for the Pediatric branches of University Hospitals in Indiana.',
+    link: 'https://rileychildrens.org',
+    image: '/assets/riley.jpg',
+    color: 'text-pink-800',
     tools: ['Craft', 'Tailwind', 'Alpine', 'React', 'Algolia'],
   },
   {
@@ -79,6 +97,15 @@ export default [
     color: 'text-red-700',
     image: '/assets/sexyhair.jpg',
     tools: ['Craft', 'Tailwind'],
+  },
+  {
+    title: 'Transport Services',
+    description:
+      'A marketing website for a Cleveland-based full-service semi-trailer dealership.',
+    link: 'https://www.transportservices.com/',
+    image: '/assets/transport.jpg',
+    color: 'text-red-900',
+    tools: ['Kentico', 'Sass', 'Pug'],
   },
   {
     title: 'Garden of Flavor',
