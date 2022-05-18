@@ -11,7 +11,7 @@ export default function Hero(props: Props) {
   return (
     <section className="gradient-purple text-white py-8 lg:py-16">
       <div className="container flex items-center flex-col gap-8 lg:gap-16 lg:flex-row">
-        <div className="order-2 lg:order-1">
+        <div className="w-full order-2 lg:order-1">
           <Text tag="h1" className="h1" content={props.heading} />
           <Text
             tag="p"
