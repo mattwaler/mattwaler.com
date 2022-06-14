@@ -24,7 +24,7 @@ export default function Hero(props: Props) {
             width={320}
             height={320}
             className={clsx(
-              'order-1 w-64 h-64 rounded-full border-4 border-white',
+              'order-1 w-64 h-64 rounded-full border-4 border-white bg-gray-400',
               'lg:order-2 lg:w-80 lg:h-80'
             )}
             src={props.image}

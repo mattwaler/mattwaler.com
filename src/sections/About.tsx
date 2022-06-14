@@ -23,10 +23,10 @@ const content = [
       "If I'm not writing code, then I am most likely doing one or multiple of the following:",
     image: '/assets/hobbies.svg',
     items: [
-      'Practicing my Tennis serve',
+      'Practicing Tennis',
       'Watching Edgar Wright movies',
-      'Losing online Chess matches',
-      'Lifting weights at Planet Fitness',
+      'Losing Chess matches',
+      'Lifting weights',
       'Listening to Pop-punk music',
     ],
   },
