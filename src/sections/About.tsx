@@ -47,9 +47,10 @@ const About = () => (
       >
         <div className={!isEven(index) ? 'order-1 md:order-2' : ''}>
           <img
-            className="w-2/3 mx-auto md:w-full"
-            src={section.image}
             alt={`${section.heading} illustration.`}
+            className="w-2/3 mx-auto md:w-full"
+            loading="lazy"
+            src={section.image}
           />
         </div>
         <div className={!isEven(index) ? 'order-2 md:order-1' : ''}>

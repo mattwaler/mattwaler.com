@@ -21,14 +21,15 @@ export default function Hero(props: Props) {
         </div>
         {props.image && (
           <img
-            width={320}
-            height={320}
+            alt="Hero image."
             className={clsx(
               'order-1 w-64 h-64 rounded-full border-4 border-white bg-gray-400',
               'lg:order-2 lg:w-80 lg:h-80'
             )}
+            height={320}
+            loading="lazy"
             src={props.image}
-            alt="Hero image."
+            width={320}
           />
         )}
       </div>

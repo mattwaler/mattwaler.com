@@ -19,7 +19,12 @@ export default function Contact() {
       <Hero {...heroProps} />
       <div className="grid items-center grid-cols-1 container section-spacing md:gap-16 md:grid-cols-2 lg:gap-32">
         <ContactForm />
-        <img className="hidden md:block" src="/assets/contact.svg" alt="Contact form illustration." />
+        <img
+          alt="Contact form illustration."
+          className="hidden md:block"
+          loading="lazy"
+          src="/assets/contact.svg"
+        />
       </div>
     </Page>
   )
