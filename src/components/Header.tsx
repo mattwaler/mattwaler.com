@@ -1,10 +1,30 @@
 import { useState, useEffect } from 'react'
-import { Logo } from 'components/Icons'
+import { Logo, GitHub, LinkedIn, Instagram } from 'components/Icons'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import links from 'data/navigation'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Collapse } from 'react-collapse';
+
+export const links = {
+  internal: [
+    { name: 'Contact', link: '/contact' },
+    { name: 'Instruction', link: '/instruction' },
+    { name: 'Work', link: '/work' },
+  ],
+  external: [
+    { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/mattwaler' },
+    {
+      name: 'Instagram',
+      icon: <Instagram />,
+      link: 'https://www.instagram.com/mattwaler',
+    },
+    {
+      name: 'LinkedIn',
+      icon: <LinkedIn />,
+      link: 'https://www.linkedin.com/in/mattwaler/',
+    },
+  ],
+}
 
 export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)

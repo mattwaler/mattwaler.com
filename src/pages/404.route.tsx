@@ -1,6 +1,6 @@
 import Page from 'components/Page'
 import Hero from 'components/Hero'
-import CodeblockCTA from 'sections/ContactCTA'
+import CodeblockCTA from 'components/Contact'
 
 const seo = {
   title: 'Page Not Found',

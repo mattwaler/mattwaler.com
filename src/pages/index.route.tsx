@@ -1,10 +1,10 @@
 import Hero from 'components/Hero'
-import Skills from 'sections/Skills'
-import ContactCTA from 'sections/ContactCTA'
+import Skills from 'pages/index/Skills'
+import ContactCTA from 'components/Contact'
 import { useEffect } from 'react'
 import { toast } from 'react-hot-toast'
 import Page from 'components/Page'
-import About from 'sections/About'
+import About from 'pages/index/About'
 
 const seo = {
   title: 'Home',

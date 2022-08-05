@@ -1,8 +1,8 @@
 import Hero from 'components/Hero'
-import ContactForm from 'sections/ContactForm'
+import ContactForm from 'pages/contact/views/ContactForm'
 import Page from 'components/Page'
 import Image from 'next/future/image'
-import svg from 'assets/contact.svg'
+import svg from './assets/contact.svg'
 
 const seo = {
   title: 'Contact',

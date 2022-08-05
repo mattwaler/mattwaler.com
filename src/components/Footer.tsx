@@ -1,4 +1,4 @@
-import links from 'data/navigation'
+import { links } from 'components/Header'
 
 export default function PageFooter() {
   return (

@@ -1,5 +1,5 @@
 import { ArrowRightIcon } from '@heroicons/react/outline'
-import work from 'data/work'
+import work from 'pages/work'
 import Text from 'components/Text'
 import Image from 'next/future/image'
 

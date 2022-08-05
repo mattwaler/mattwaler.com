@@ -1,5 +1,5 @@
 import Hero from 'components/Hero'
-import WorkListing from 'sections/WorkListing'
+import WorkListing from 'pages/work/views/WorkListing'
 import Page from 'components/Page'
 
 const heroProps = {

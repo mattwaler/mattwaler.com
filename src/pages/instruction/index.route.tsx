@@ -1,8 +1,8 @@
 import Hero from 'components/Hero'
-import InstructionOverview from 'sections/InstructionOverview'
-import InstructionOfferings from 'sections/InstructionOfferings'
-import InstructionPricing from 'sections/InstructionPricing'
-import InstructionForm from 'sections/InstructionForm'
+import InstructionOverview from 'pages/instruction/views/InstructionOverview'
+import InstructionOfferings from 'pages/instruction/views/InstructionOfferings'
+import InstructionPricing from 'pages/instruction/views/InstructionPricing'
+import InstructionForm from 'pages/instruction/views/InstructionForm'
 import Page from 'components/Page'
 
 const seo = {
