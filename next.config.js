@@ -2,5 +2,10 @@
 
 module.exports = {
   reactStrictMode: false,
-  experimental: { images: { allowFutureImage: true } },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+      unoptimized: true,
+    }
+  },
 }
