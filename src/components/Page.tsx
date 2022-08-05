@@ -31,7 +31,7 @@ export default function Page(props: Props) {
         <link rel="icon" href="/favicons/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicons/180.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
-        <title>{title} | Matt Waler</title>
+        <title>{`${title} | Matt Waler` }</title>
         <meta name="description" content={description} />
       </Head>
 

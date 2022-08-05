@@ -9,12 +9,12 @@ const content = [
       'A non-comprehensive list of the tools that I use day-in and day-out to get my work done:',
     image: '/assets/skills.svg',
     items: [
-      'Alpine.js',
-      'Craft CMS',
-      'Eleventy',
-      'Next.js',
       'React',
+      'Next.js',
       'TailwindCSS',
+      'Craft CMS',
+      'Alpine.js',
+      'Eleventy',
     ],
   },
   {
@@ -23,11 +23,11 @@ const content = [
       "If I'm not writing code, then I am most likely doing one or multiple of the following:",
     image: '/assets/hobbies.svg',
     items: [
-      'Practicing Tennis',
-      'Watching Edgar Wright movies',
-      'Losing Chess matches',
+      'Playing Tennis and Pickleball',
       'Lifting weights',
+      'Losing Chess matches',
       'Listening to Pop-punk music',
+      'Watching Edgar Wright movies',
     ],
   },
 ]

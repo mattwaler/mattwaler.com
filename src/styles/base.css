@@ -23,3 +23,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-indigo-700;
 }
+
+.ReactCollapse--collapse {
+  transition: height 500ms;
+}

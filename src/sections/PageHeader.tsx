@@ -4,6 +4,7 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import links from 'data/navigation'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { Collapse } from 'react-collapse';
 
 export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)
@@ -66,7 +67,7 @@ export default function PageHeader() {
       <div className="container">
         <div className="h-px bg-indigo-200" style={{ opacity: '0.2' }} />
       </div>
-      {isNavOpen && (
+      <Collapse isOpened={isNavOpen}>
         <nav className="container md:hidden">
           {links.internal.map(({ link, name }) => (
             <div key={name}>
@@ -83,7 +84,7 @@ export default function PageHeader() {
             </div>
           ))}
         </nav>
-      )}
+      </Collapse>
     </header>
   )
 }

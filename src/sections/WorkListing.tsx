@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/outline'
 import work from 'data/work'
 import Text from 'components/Text'
+import Image from 'next/future/image'
 
 export default function WorkListing() {
   return (
@@ -12,13 +13,13 @@ export default function WorkListing() {
             index !== 0 && 'pt-12 mt-12 border-t'
           }`}
         >
-          <img
+          <Image
             alt={`${item.title} image`}
             className="w-full object-top object-cover h-72 bg-gray-200 md:w-5/12 rounded-lg shadow-lg"
             src={item.image}
-            loading="lazy"
             width="592"
             height="288"
+            placeholder='blur'
           />
           <div className="flex-1">
             <a target="_blank" href={item.link}>

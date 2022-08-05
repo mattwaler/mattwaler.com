@@ -29,7 +29,7 @@ export default [
       'I can inspect, diagnose, and plan improvements for your current web project.',
     icon: <TemplateIcon />,
     color: 'text-blue-500',
-    link: '/work',
-    linkText: 'View Work',
+    link: '/contact',
+    linkText: 'Contact Me',
   },
 ]
