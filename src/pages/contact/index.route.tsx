@@ -1,5 +1,5 @@
 import Hero from 'components/Hero'
-import ContactForm from 'pages/contact/views/ContactForm'
+import Form from 'pages/contact/views/Form'
 import Page from 'components/Page'
 import Image from 'next/future/image'
 import svg from './assets/contact.svg'
@@ -20,7 +20,7 @@ export default function Contact() {
     <Page {...seo}>
       <Hero {...heroProps} />
       <div className="grid items-center grid-cols-1 container section-spacing md:gap-16 md:grid-cols-2 lg:gap-32">
-        <ContactForm />
+        <Form />
         <Image
           alt="Contact form illustration."
           className="hidden md:block"

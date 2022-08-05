@@ -1,5 +1,5 @@
 import Hero from 'components/Hero'
-import WorkListing from 'pages/work/views/WorkListing'
+import Listing from 'pages/work/views/Listing'
 import Page from 'components/Page'
 
 const heroProps = {
@@ -17,7 +17,7 @@ export default function Work() {
   return (
     <Page {...seo}>
       <Hero {...heroProps} />
-      <WorkListing />
+      <Listing />
     </Page>
   )
 }

@@ -1,10 +1,11 @@
 import Hero from 'components/Hero'
-import Skills from 'pages/index/Skills'
+import Skills from 'pages/index/views/Skills'
 import ContactCTA from 'components/Contact'
 import { useEffect } from 'react'
 import { toast } from 'react-hot-toast'
 import Page from 'components/Page'
-import About from 'pages/index/About'
+import About from 'pages/index/views/About'
+import tripp from 'pages/index/assets/tripp.jpg'
 
 const seo = {
   title: 'Home',
@@ -15,7 +16,7 @@ const heroProps = {
   heading: 'I build websites with modern tools and technologies.',
   paragraph:
     "I am a frontend-focused developer from Ohio. I graduated from Ohio University in 2016 and I've been making websites ever since. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
-  image: '/assets/tripp.jpg',
+  image: tripp,
 }
 
 export default function Home() {

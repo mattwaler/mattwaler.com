@@ -1,10 +1,11 @@
 import clsx from 'clsx'
 import Text from 'components/Text'
+import Image, { StaticImageData } from 'next/future/image'
 
 interface Props {
   heading: string
   paragraph: string
-  image?: string
+  image?: StaticImageData
 }
 
 export default function Hero(props: Props) {
@@ -20,7 +21,7 @@ export default function Hero(props: Props) {
           />
         </div>
         {props.image && (
-          <img
+          <Image
             alt="Hero image."
             className={clsx(
               'order-1 w-64 h-64 rounded-full border-4 border-white bg-gray-400',
@@ -28,6 +29,7 @@ export default function Hero(props: Props) {
             )}
             height={320}
             loading="lazy"
+            placeholder="blur"
             src={props.image}
             width={320}
           />

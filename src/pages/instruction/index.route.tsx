@@ -1,8 +1,8 @@
 import Hero from 'components/Hero'
-import InstructionOverview from 'pages/instruction/views/InstructionOverview'
-import InstructionOfferings from 'pages/instruction/views/InstructionOfferings'
-import InstructionPricing from 'pages/instruction/views/InstructionPricing'
-import InstructionForm from 'pages/instruction/views/InstructionForm'
+import Overview from 'pages/instruction/views/Overview'
+import Offerings from 'pages/instruction/views/Offerings'
+import Pricing from 'pages/instruction/views/Pricing'
+import Form from 'pages/instruction/views/Form'
 import Page from 'components/Page'
 
 const seo = {
@@ -21,10 +21,10 @@ export default function Instruction() {
   return (
     <Page {...seo}>
       <Hero {...heroProps} />
-      <InstructionOverview />
-      <InstructionOfferings />
-      <InstructionPricing />
-      <InstructionForm />
+      <Overview />
+      <Offerings />
+      <Pricing />
+      <Form />
     </Page>
   )
 }
