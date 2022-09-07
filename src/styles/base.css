@@ -17,7 +17,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-indigo-500 rounded;
+  @apply bg-indigo-500;
 }
 
 ::-webkit-scrollbar-thumb:hover {
