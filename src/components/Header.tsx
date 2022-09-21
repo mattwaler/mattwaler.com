@@ -88,21 +88,36 @@ export default function PageHeader() {
         <div className="h-px bg-indigo-200" style={{ opacity: '0.2' }} />
       </div>
       <Collapse isOpened={isNavOpen}>
-        <nav className="container md:hidden">
-          {links.internal.map(({ link, name }) => (
-            <div key={name}>
-              <Link href={link}>
-                <a
-                  className={`block py-4 font-semibold text-sm tracking-tight ${
-                    isActive(link) ? 'text-white' : 'text-indigo-200'
-                  }`}
-                >
-                  {name}
-                </a>
-              </Link>
-              <div className="h-px bg-indigo-200" style={{ opacity: '0.2' }} />
-            </div>
-          ))}
+        <nav className="container md:hidden flex flex-wrap items-center justify-between gap-x-4">
+          <div className="flex items-center gap-4 pb-1">
+            {links.internal.map(({ link, name }) => (
+              <div key={name}>
+                <Link href={link}>
+                  <a
+                    className={`block py-4 font-semibold text-sm tracking-tight ${
+                      isActive(link) ? 'text-white' : 'text-indigo-200'
+                    }`}
+                  >
+                    {name}
+                  </a>
+                </Link>
+              </div>
+            ))}
+          </div>
+          <div className="flex items-center gap-4 pb-1">
+            {links.external.map((link) => (
+              <a
+                key={link.link}
+                aria-label={`${link.name} link`}
+                href={link.link}
+                target="_blank"
+                rel="noopener"
+                className="w-5 h-5 text-indigo-300 transition-colors duration-200 hover:text-white"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
         </nav>
       </Collapse>
     </header>

@@ -13,6 +13,7 @@ module.exports = {
       position: ['bottom', 'right'],
       style: {
         borderRadius: '4px',
+        boxShadow: 'none',
         margin: '16px',
         padding: '8px',
       },

@@ -14,3 +14,7 @@
 .animate-grow {
   animation: grow ease 4s infinite;
 }
+
+.debug-screens {
+  @apply z-auto;
+}
