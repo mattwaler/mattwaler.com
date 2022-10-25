@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import Text from 'components/Text'
-import Image, { StaticImageData } from 'next/future/image'
+import Image, { StaticImageData } from 'next/image'
 
 interface Props {
   heading: string

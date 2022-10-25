@@ -1,7 +1,7 @@
 import Hero from 'components/Hero'
 import Form from 'pages/contact/views/Form'
 import Page from 'components/Page'
-import Image from 'next/future/image'
+import Image from 'next/image'
 import svg from './assets/contact.svg'
 
 const seo = {

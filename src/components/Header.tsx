@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Logo, GitHub, LinkedIn, Instagram } from 'components/Icons'
-import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { Collapse } from 'react-collapse';
@@ -39,26 +39,24 @@ export default function PageHeader() {
   return (
     <header className="gradient-purple text-white">
       <div className="container py-5 flex items-center">
-        <Link href="/">
-          <a className="flex items-center">
-            <span className="w-6 h-6 text-indigo-200">
-              <Logo />
-            </span>
-            <span className="ml-2 leading-none font-extrabold text-xl">
-              mattwaler
-            </span>
-          </a>
+        <Link href="/" className="flex items-center">
+          <span className="w-6 h-6 text-indigo-200">
+            <Logo />
+          </span>
+          <span className="ml-2 leading-none font-extrabold text-xl">
+            mattwaler
+          </span>
         </Link>
         <nav className="ml-auto space-x-4 hidden md:block">
           {links.internal.map(({ link, name }) => (
-            <Link key={name} href={link}>
-              <a
-                className={`text-sm font-semibold transition-colors duration-200 hover:text-white ${
-                  isActive(link) ? 'text-white' : 'text-indigo-200'
-                }`}
-              >
-                {name}
-              </a>
+            <Link
+              key={name}
+              href={link}
+              className={`text-sm font-semibold transition-colors duration-200 hover:text-white ${
+                isActive(link) ? 'text-white' : 'text-indigo-200'
+              }`}
+            >
+              {name}
             </Link>
           ))}
         </nav>
@@ -80,7 +78,7 @@ export default function PageHeader() {
             className="w-6 h-6 md:hidden"
             onClick={() => setNavOpen(!isNavOpen)}
           >
-            {isNavOpen ? <XIcon /> : <MenuIcon />}
+            {isNavOpen ? <XMarkIcon /> : <Bars3Icon />}
           </button>
         </nav>
       </div>
@@ -92,14 +90,13 @@ export default function PageHeader() {
           <div className="flex items-center gap-4 pb-1">
             {links.internal.map(({ link, name }) => (
               <div key={name}>
-                <Link href={link}>
-                  <a
-                    className={`block py-4 font-semibold text-sm tracking-tight ${
-                      isActive(link) ? 'text-white' : 'text-indigo-200'
-                    }`}
-                  >
-                    {name}
-                  </a>
+                <Link
+                  href={link}
+                  className={`block py-4 font-semibold text-sm tracking-tight ${
+                    isActive(link) ? 'text-white' : 'text-indigo-200'
+                  }`}
+                >
+                  {name}
                 </Link>
               </div>
             ))}

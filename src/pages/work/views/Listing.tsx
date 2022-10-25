@@ -1,7 +1,7 @@
-import { ArrowRightIcon } from '@heroicons/react/outline'
+import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import work from 'pages/work'
 import Text from 'components/Text'
-import Image from 'next/future/image'
+import Image from 'next/image'
 
 export default function WorkListing() {
   return (

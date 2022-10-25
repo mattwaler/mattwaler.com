@@ -2,16 +2,16 @@ import Intro from 'components/Intro'
 import {
   ArrowRightIcon,
   AcademicCapIcon,
-  TemplateIcon,
-  TerminalIcon,
-} from '@heroicons/react/outline'
+  LifebuoyIcon,
+  CommandLineIcon,
+} from '@heroicons/react/24/outline'
 
 const skills = [
   {
     name: 'Development',
     description:
       'I can build single page applications, fullstack CMS projects, and everything in between.',
-    icon: <TerminalIcon />,
+    icon: <CommandLineIcon />,
     color: 'text-indigo-500',
     link: '/work',
     linkText: 'View Work',
@@ -29,7 +29,7 @@ const skills = [
     name: 'Consulting',
     description:
       'I can inspect, diagnose, and plan improvements for your current web project.',
-    icon: <TemplateIcon />,
+    icon: <LifebuoyIcon />,
     color: 'text-blue-500',
     link: '/contact',
     linkText: 'Contact Me',

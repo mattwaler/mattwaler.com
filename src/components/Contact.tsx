@@ -1,6 +1,6 @@
 import Prism from 'prismjs'
 import { useEffect, useState } from 'react'
-import { ArrowRightIcon, MusicNoteIcon } from '@heroicons/react/outline'
+import { ArrowRightIcon, MusicalNoteIcon } from '@heroicons/react/24/outline'
 
 let code = `
 let needsMattsHelp = true
@@ -49,13 +49,13 @@ const CodeblockCTA = () => {
             className="w-6 h-6 absolute lg:hidden animate-bounce"
             style={{ top: '-32px', left: '-16px' }}
           >
-            <MusicNoteIcon />
+            <MusicalNoteIcon />
           </span>
           <span
             className="w-8 h-8 absolute hidden lg:block animate-bounce"
             style={{ top: '-32px', left: '-32px' }}
           >
-            <MusicNoteIcon />
+            <MusicalNoteIcon />
           </span>
         </h3>
         <p className="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg">
