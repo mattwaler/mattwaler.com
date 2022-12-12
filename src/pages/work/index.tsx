@@ -1,3 +1,4 @@
+import fitness from './assets/fitness.jpg'
 import trendyminds from './assets/trendyminds.jpg'
 import rev from './assets/rev.jpg'
 import ascend from './assets/ascend.jpg'
@@ -13,6 +14,15 @@ import transport from './assets/transport.jpg'
 import gardenofflavor from './assets/gardenofflavor.jpg'
 
 export default [
+  {
+    title: 'Fitness Timer',
+    description:
+      'A no-fuss fitness timer App that allows a user to customize timer duration, repeats, and rest time.',
+    link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701',
+    image: fitness,
+    color: 'text-blue-500',
+    tools: ['React Native', 'Tailwind'],
+  },
   {
     title: 'TrendyMinds',
     description:
