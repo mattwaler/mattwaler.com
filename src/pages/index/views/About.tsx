@@ -10,11 +10,11 @@ const content = [
     image: '/assets/skills.svg',
     items: [
       'React',
+      'React Native',
       'Next.js',
       'TailwindCSS',
       'Craft CMS',
       'Alpine.js',
-      'Eleventy',
     ],
   },
   {
@@ -23,7 +23,7 @@ const content = [
       "If I'm not writing code, then I am most likely doing one or multiple of the following:",
     image: '/assets/hobbies.svg',
     items: [
-      'Playing Tennis and Pickleball',
+      'Playing Tennis',
       'Lifting weights',
       'Losing Chess matches',
       'Listening to Pop-punk music',
