@@ -9,7 +9,7 @@ const heroProps = {
 }
 
 const seo = {
-  title: 'Work',
+  title: heroProps.heading,
   description: heroProps.paragraph,
 }
 
