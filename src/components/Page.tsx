@@ -22,12 +22,10 @@ export default function Page(props: Props) {
         description={description}
         openGraph={{ title, description, }}
       />
-      <div className="flex flex-col min-h-screen">
-        <Toaster />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-      </div>
+      <Toaster />
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }

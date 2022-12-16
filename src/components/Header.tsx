@@ -37,11 +37,10 @@ export default function PageHeader() {
   const isActive = (path: string) => router.pathname === path
 
   return (
-    <header className="bg-gray-900 border-b">
+    <header className="bg-gray-900 z-50 w-full shadow-lg border-b sticky top-0 left-0 right-0">
       <div className="container py-5 flex items-center">
         <Link href="/" className="flex items-center gap-2">
-          <img className="w-8" src="/assets/logo.svg" alt="Logo" />
-          <span className="font-black text-white text-lg">mattwaler</span>
+          <img className="h-7" src="/assets/logo.svg" alt="Logo" />
         </Link>
         <nav className="ml-auto space-x-4 hidden md:block">
           {links.internal.map(({ link, name }) => (
