@@ -8,7 +8,7 @@ export default {
     description: 'I am a pragmatic frontend developer from Broadview Heights, Ohio.',
     images: [
       {
-        url: 'https://mattwaler.dev/assets/og.jpg',
+        url: 'https://mattwaler.dev/assets/og.png',
         width: 1200,
         height: 627,
         alt: 'mattwaler logo',
