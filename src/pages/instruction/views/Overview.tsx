@@ -1,7 +1,7 @@
 export default function InstructionOverview() {
   return (
     <section id="overview" className="container section-spacing lg:text-lg">
-      <h3 className="font-extrabold text-4xl">
+      <h3 className="font-extrabold text-3xl">
         Frontend Development is constantly changing and evolving at breakneck
         speeds.
       </h3>
