@@ -65,7 +65,7 @@ const CodeblockCTA = () => {
             new website that will knock your socks off.
           </p>
           <a
-            className="inline-flex items-center mt-6 text-indigo-500 rounded font-bold "
+            className="inline-flex items-center mt-6 text-mw-blue rounded font-bold "
             href="/contact/"
           >
             Contact Me

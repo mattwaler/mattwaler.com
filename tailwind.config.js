@@ -22,7 +22,11 @@ module.exports = {
     extend: {
       borderColor: ({ theme }) => ({
         DEFAULT: theme('colors.gray.700')
-      })
+      }),
+      colors: {
+        'mw-blue': '#00EAF8',
+        'mw-purple': '#6D42EF',
+      }
     },
     screens: {
       sm: '640px',

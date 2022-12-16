@@ -12,7 +12,7 @@ const skills = [
     description:
       'I can build single page applications, fullstack CMS projects, and everything in between.',
     icon: <CommandLineIcon />,
-    color: 'text-indigo-500',
+    color: 'text-mw-blue',
     link: '/work',
     linkText: 'View Work',
   },
@@ -21,7 +21,7 @@ const skills = [
     icon: <AcademicCapIcon />,
     description:
       'I am comfortable teaching modern tools like React, Vue, Svelte, and much more.',
-    color: 'text-green-500',
+    color: 'text-mw-purple',
     link: '/instruction',
     linkText: 'View Instruction',
   },

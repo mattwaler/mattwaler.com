@@ -17,13 +17,8 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-600;
+    @apply gradient;
   }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gray-400;
-  }
-
 }
 
 .ReactCollapse--collapse {

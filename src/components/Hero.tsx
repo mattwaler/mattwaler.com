@@ -24,12 +24,12 @@ export default function Hero(props: Props) {
           <Image
             alt="Hero image."
             className={clsx(
-              'order-1 w-64 h-64 rounded-full border-4 border-white bg-gray-400',
+              'gradient p-2',
+              'order-1 w-64 h-64 rounded-full',
               'lg:order-2 lg:w-80 lg:h-80'
             )}
             height={320}
             loading="lazy"
-            placeholder="blur"
             src={props.image}
             width={320}
           />

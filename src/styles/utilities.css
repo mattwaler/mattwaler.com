@@ -12,6 +12,10 @@
     }
   }
 
+  .gradient {
+    background: linear-gradient(134deg, #00EAF8 0%, #6D42EF 100%);
+  }
+
   .animate-grow {
     animation: grow ease 4s infinite;
   }

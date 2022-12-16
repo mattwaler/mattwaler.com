@@ -35,7 +35,7 @@ export default function ContactForm() {
         ></textarea>
       </label>
       <div className="block pt-4">
-        <button type="submit" className="button ml-auto">
+        <button type="submit" className="button w-full">
           Submit
         </button>
       </div>

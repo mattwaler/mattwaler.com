@@ -59,7 +59,7 @@ export default function InstructionPricing() {
             key={item.name}
             className="bg-gray-800 border rounded p-8 flex flex-col items-start shadow-lg"
           >
-            <span className="bg-gray-300 text-gray-900 px-4 py-2 rounded">
+            <span className="bg-gray-600 px-4 py-2 rounded">
               {item.name}
             </span>
             <div className="mt-8 flex items-center leading-none">
@@ -72,7 +72,7 @@ export default function InstructionPricing() {
             <div className="mt-4 space-y-2">
               {item.bullets.map((bullet) => (
                 <div key={bullet} className="flex items-center">
-                  <span className="block w-4 h-4 text-indigo-400">
+                  <span className="block w-4 h-4 text-mw-blue">
                     <CheckCircleIcon />
                   </span>
                   <span className="ml-2">{bullet}</span>

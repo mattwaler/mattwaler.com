@@ -1,6 +1,6 @@
 code[class*='language-'],
 pre[class*='language-'] {
-  @apply text-indigo-100 font-mono text-left whitespace-pre leading-normal text-sm sm:text-base;
+  @apply text-gray-100 font-mono text-left whitespace-pre leading-normal text-sm sm:text-base;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   direction: ltr;
   word-spacing: normal;
@@ -42,7 +42,7 @@ pre[class*='language-'] {
 .token.property,
 .token.keyword,
 .token.tag {
-  @apply text-indigo-500;
+  @apply text-mw-purple;
 }
 
 .token.class-name {
@@ -51,7 +51,7 @@ pre[class*='language-'] {
 
 .token.boolean,
 .token.constant {
-  @apply text-green-500;
+  @apply text-mw-blue;
 }
 
 .token.symbol,
@@ -69,7 +69,7 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-green-500;
+  @apply text-mw-blue;
 }
 
 .token.variable {
