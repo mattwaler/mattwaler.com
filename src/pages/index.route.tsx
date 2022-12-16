@@ -8,12 +8,12 @@ import About from 'pages/index/views/About'
 import tripp from 'pages/index/assets/tripp.jpg'
 
 const seo = {
-  title: 'Matt Waler is a Senior JavaScript Developer, Tennis player, and weightlifting enjoyer.',
-  description: "I am a frontend-focused developer from Ohio. I graduated from Ohio University in 2016 and I've been making websites ever since. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
+  title: 'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',
+  description: "I am a JavaScript-focused developer from Ohio. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
 }
 
 const heroProps = {
-  heading: 'I build websites with modern tools and technologies.',
+  heading: 'I build applications with modern tools and technologies.',
   paragraph: seo.description,
   image: tripp,
 }

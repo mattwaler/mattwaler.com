@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   plugins: [
@@ -17,6 +18,11 @@ module.exports = {
         margin: '16px',
         padding: '8px',
       },
+    },
+    extend: {
+      borderColor: ({ theme }) => ({
+        DEFAULT: theme('colors.gray.700')
+      })
     },
     screens: {
       sm: '640px',

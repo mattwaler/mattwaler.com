@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Logo, GitHub, LinkedIn, Instagram } from 'components/Icons'
+import { GitHub, LinkedIn, Instagram } from 'components/Icons'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -37,15 +37,11 @@ export default function PageHeader() {
   const isActive = (path: string) => router.pathname === path
 
   return (
-    <header className="gradient-purple text-white">
+    <header className="bg-gray-900 border-b">
       <div className="container py-5 flex items-center">
-        <Link href="/" className="flex items-center">
-          <span className="w-6 h-6 text-indigo-200">
-            <Logo />
-          </span>
-          <span className="ml-2 leading-none font-extrabold text-xl">
-            mattwaler
-          </span>
+        <Link href="/" className="flex items-center gap-2">
+          <img className="w-8" src="/assets/logo.svg" alt="Logo" />
+          <span className="font-black text-white text-lg">mattwaler</span>
         </Link>
         <nav className="ml-auto space-x-4 hidden md:block">
           {links.internal.map(({ link, name }) => (
@@ -53,14 +49,14 @@ export default function PageHeader() {
               key={name}
               href={link}
               className={`text-sm font-semibold transition-colors duration-200 hover:text-white ${
-                isActive(link) ? 'text-white' : 'text-indigo-200'
+                isActive(link) ? 'text-white' : 'text-gray-400'
               }`}
             >
               {name}
             </Link>
           ))}
         </nav>
-        <nav className="ml-auto md:ml-20 flex space-x-4 text-indigo-300">
+        <nav className="ml-auto md:ml-20 flex space-x-4">
           {links.external.map((link) => (
             <a
               key={link.link}
@@ -68,7 +64,7 @@ export default function PageHeader() {
               href={link.link}
               target="_blank"
               rel="noopener"
-              className="w-5 h-5 hidden md:block transition-colors duration-200 hover:text-white"
+              className="w-5 h-5 hidden md:block transition-colors text-gray-300 duration-200 hover:text-white"
             >
               {link.icon}
             </a>
@@ -82,9 +78,6 @@ export default function PageHeader() {
           </button>
         </nav>
       </div>
-      <div className="container">
-        <div className="h-px bg-indigo-200" style={{ opacity: '0.2' }} />
-      </div>
       <Collapse isOpened={isNavOpen}>
         <nav className="container md:hidden flex flex-wrap items-center justify-between gap-x-4">
           <div className="flex items-center gap-4 pb-1">
@@ -92,8 +85,8 @@ export default function PageHeader() {
               <div key={name}>
                 <Link
                   href={link}
-                  className={`block py-4 font-semibold text-sm tracking-tight ${
-                    isActive(link) ? 'text-white' : 'text-indigo-200'
+                  className={`block py-4 font-semibold text-sm transition-colors tracking-tight hover:text-white ${
+                    isActive(link) ? 'text-white' : 'text-gray-300'
                   }`}
                 >
                   {name}
@@ -109,7 +102,7 @@ export default function PageHeader() {
                 href={link.link}
                 target="_blank"
                 rel="noopener"
-                className="w-5 h-5 text-indigo-300 transition-colors duration-200 hover:text-white"
+                className="w-5 h-5 text-gray-300 transition-colors duration-200 hover:text-white"
               >
                 {link.icon}
               </a>

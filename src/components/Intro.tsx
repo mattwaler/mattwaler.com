@@ -15,7 +15,7 @@ export default function Intro(props: Props) {
       />
       <Text
         tag="p"
-        className="text-gray-700 mt-1 italic sm:text-lg"
+        className="text-gray-300 mt-1 italic sm:text-lg"
         content={props.subheading}
       />
     </div>

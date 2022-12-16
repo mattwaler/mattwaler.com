@@ -43,8 +43,8 @@ function focusForm(value: string) {
 
 export default function InstructionPricing() {
   return (
-    <section id="pricing" className="section-spacing relative">
-      <div className="bg-gray-900 absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
+    <section id="pricing" className="section-spacing relative border-t">
+      <div className="absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
       <div className="relative container text-white z-20">
         <div className="lg:text-center">
           <h3 className="font-bold text-3xl">One Size Fits All Pricing.</h3>
@@ -57,14 +57,14 @@ export default function InstructionPricing() {
         {pricing.map((item) => (
           <div
             key={item.name}
-            className="bg-white rounded p-8 flex flex-col items-start shadow-lg"
+            className="bg-gray-800 border rounded p-8 flex flex-col items-start shadow-lg"
           >
-            <span className="bg-indigo-100 text-indigo-500 px-4 py-2 rounded">
+            <span className="bg-gray-300 text-gray-900 px-4 py-2 rounded">
               {item.name}
             </span>
             <div className="mt-8 flex items-center leading-none">
               <span className="font-black text-4xl">${item.price}</span>
-              <span className="text-gray-700 text-sm ml-2">
+              <span className="text-gray-300 text-sm ml-2">
                 for {item.duration} mins
               </span>
             </div>

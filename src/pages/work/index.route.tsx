@@ -1,6 +1,7 @@
 import Hero from 'components/Hero'
 import Listing from 'pages/work/views/Listing'
 import Page from 'components/Page'
+import Contact from 'components/Contact'
 
 const heroProps = {
   heading: 'Take a gander at some of projects I have worked on.',
@@ -9,7 +10,7 @@ const heroProps = {
 }
 
 const seo = {
-  title: heroProps.heading,
+  title: heroProps.heading.replace('.', ''),
   description: heroProps.paragraph,
 }
 
@@ -18,6 +19,7 @@ export default function Work() {
     <Page {...seo}>
       <Hero {...heroProps} />
       <Listing />
+      <Contact />
     </Page>
   )
 }

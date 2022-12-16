@@ -1,6 +1,6 @@
 export default function InstructionForm() {
   return (
-    <section id="schedule" className="section-spacing">
+    <section id="schedule" className="section-spacing border-t">
       <div className="container">
         <div className="lg:text-center">
           <h3 className="font-bold text-3xl">Let's Get Started</h3>

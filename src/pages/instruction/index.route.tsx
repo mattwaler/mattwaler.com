@@ -12,7 +12,7 @@ const heroProps = {
 }
 
 const seo = {
-  title: heroProps.heading,
+  title: heroProps.heading.replace('.', ''),
   description: heroProps.paragraph,
 }
 

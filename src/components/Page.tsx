@@ -18,9 +18,9 @@ export default function Page(props: Props) {
       {devMode && <div className="debug-screens" />}
       <div />
       <NextSeo
-        title={`${title} | Matt Waler`}
+        title={title}
         description={description}
-        openGraph={{ title: `${title} | Matt Waler`, description, }}
+        openGraph={{ title, description, }}
       />
       <div className="flex flex-col min-h-screen">
         <Toaster />

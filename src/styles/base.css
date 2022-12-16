@@ -1,29 +1,33 @@
-html,
-body {
-  width: 100%;
-  @apply font-sans antialiased text-gray-900 bg-gray-100 overflow-x-hidden;
-}
+@layer base {
+  html,
+  body {
+    width: 100%;
+    @apply font-sans antialiased bg-gray-900 text-gray-100 overflow-x-hidden;
+  }
 
-* {
-  @apply relative z-10;
-}
+  * {
+    @apply relative z-10;
+  }
 
-::-webkit-scrollbar {
-  @apply w-3 h-2;
-}
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
 
-::-webkit-scrollbar-track {
-  @apply bg-gray-900;
-}
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-indigo-500;
-}
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-indigo-700;
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+
 }
 
 .ReactCollapse--collapse {
   transition: height 500ms;
 }
+
