@@ -16,7 +16,7 @@ export default function Hero(props: Props) {
           <Text tag="h1" className="h1" content={props.heading} />
           <Text
             tag="p"
-            className={clsx("mt-4 text-base sm:text-lg lg:text-xl text-indigo-100", !props.image && 'lg:max-w-2xl')}
+            className={clsx("mt-4 text-base sm:text-lg lg:text-xl text-gray-200", !props.image && 'lg:max-w-2xl')}
             content={props.paragraph}
           />
         </div>
