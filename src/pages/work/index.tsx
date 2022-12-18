@@ -1,4 +1,4 @@
-import fitness from './assets/fitness.jpg'
+import fitness from './assets/fitness.png'
 import trendyminds from './assets/trendyminds.jpg'
 import rev from './assets/rev.jpg'
 import ascend from './assets/ascend.jpg'
