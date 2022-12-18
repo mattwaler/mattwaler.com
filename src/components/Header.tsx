@@ -37,7 +37,7 @@ export default function PageHeader() {
   const isActive = (path: string) => router.pathname === path
 
   return (
-    <header className="bg-gray-900 z-50 w-full shadow-lg border-b sticky top-0 left-0 right-0">
+    <header className="bg-gray-900 w-full border-b">
       <div className="container py-5 flex items-center">
         <Link href="/" className="flex items-center gap-2">
           <img className="h-7" src="/assets/logo.svg" alt="Logo" />
