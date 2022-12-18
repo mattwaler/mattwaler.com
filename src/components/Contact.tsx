@@ -47,25 +47,25 @@ const CodeblockCTA = () => {
           <h3 className="relative inline text-2xl font-extrabold leading-tight lg:text-3xl">
             Do you want to build a website?
             <span
-              className="w-6 h-6 absolute lg:hidden animate-bounce"
+              className="text-mw-purple w-6 h-6 absolute lg:hidden animate-bounce"
               style={{ top: '-32px', left: '-16px' }}
             >
-              <MusicalNoteIcon />
+              <MusicalNoteIcon className="text-mw-purple" />
             </span>
             <span
               className="w-8 h-8 absolute hidden lg:block animate-bounce"
               style={{ top: '-32px', left: '-32px' }}
             >
-              <MusicalNoteIcon />
+              <MusicalNoteIcon className="text-mw-purple" />
             </span>
           </h3>
           <p className="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg">
-            Don't get <strong className="font-bold italic">Frozen</strong> with a
+            Don't get <strong className="font-bold italic text-mw-blue">Frozen</strong> with a
             site you don't love. I can refactor, refresh, or just rebuild you a
             new website that will knock your socks off.
           </p>
           <a
-            className="inline-flex items-center mt-6 text-mw-blue rounded font-bold "
+            className="inline-flex items-center mt-6 text-mw-teal rounded font-bold "
             href="/contact/"
           >
             Contact Me

@@ -40,7 +40,7 @@ export default function InstructionOfferings() {
               <div className="mt-auto space-y-2">
                 {item.bullets.map((bullet) => (
                   <div key={bullet} className="flex items-center">
-                    <span className="block w-4 h-4 text-mw-blue">
+                    <span className="block w-4 h-4 text-mw-teal">
                       <CheckCircleIcon />
                     </span>
                     <span className="ml-2">{bullet}</span>

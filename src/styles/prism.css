@@ -42,7 +42,7 @@ pre[class*='language-'] {
 .token.property,
 .token.keyword,
 .token.tag {
-  @apply text-mw-purple;
+  @apply text-blue-400;
 }
 
 .token.class-name {
@@ -51,7 +51,7 @@ pre[class*='language-'] {
 
 .token.boolean,
 .token.constant {
-  @apply text-mw-blue;
+  @apply text-teal-400;
 }
 
 .token.symbol,
@@ -69,7 +69,7 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-  @apply text-mw-blue;
+  @apply text-mw-teal;
 }
 
 .token.variable {
@@ -100,7 +100,7 @@ pre[class*='language-'] {
 }
 
 .token.function {
-  color: #dad085;
+  @apply text-yellow-200;
 }
 
 .token.regex {

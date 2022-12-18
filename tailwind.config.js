@@ -24,8 +24,9 @@ module.exports = {
         DEFAULT: theme('colors.gray.700')
       }),
       colors: {
-        'mw-blue': '#00EAF8',
-        'mw-purple': '#6D42EF',
+        'mw-teal': '#00EAF8',
+        'mw-blue': '#4A79F2',
+        'mw-purple': '#6A46EF',
       }
     },
     screens: {

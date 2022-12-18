@@ -1,6 +1,6 @@
 @layer components {
   .button {
-    @apply inline-block text-sm px-4 py-3 rounded font-black uppercase tracking-wide bg-mw-purple text-gray-100;
+    @apply inline-block text-sm px-4 py-3 rounded font-black uppercase tracking-wide bg-mw-blue text-gray-100;
   }
 
   .h1 {
@@ -8,7 +8,7 @@
   }
 
   .input {
-    @apply rounded bg-gray-800 border focus:border-indigo-500;
+    @apply rounded bg-gray-800 border focus:border-mw-blue;
   }
 
   .section-spacing {

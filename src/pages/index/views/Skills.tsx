@@ -12,7 +12,7 @@ const skills = [
     description:
       'I can build single page applications, fullstack CMS projects, and everything in between.',
     icon: <CommandLineIcon />,
-    color: 'text-mw-blue',
+    color: 'text-mw-teal',
     link: '/work',
     linkText: 'View Work',
   },
@@ -30,7 +30,7 @@ const skills = [
     description:
       'I can inspect, diagnose, and plan improvements for your current web project.',
     icon: <LifebuoyIcon />,
-    color: 'text-blue-500',
+    color: 'text-mw-blue',
     link: '/contact',
     linkText: 'Contact Me',
   },
