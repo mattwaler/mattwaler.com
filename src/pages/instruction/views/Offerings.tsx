@@ -25,7 +25,7 @@ export default function InstructionOfferings() {
     <section id="offerings" className="bg-gray-900 border-t">
       <div className="container section-spacing">
         <div className="lg:text-center">
-          <h3 className="font-bold text-3xl">What I Can Offer.</h3>
+          <h3 className="font-bold text-2xl lg:text-3xl">What I Can Offer.</h3>
           <p className="mt-2 text-lg">
             I only teach the languages, tooling, and frameworks I know
             intimately.

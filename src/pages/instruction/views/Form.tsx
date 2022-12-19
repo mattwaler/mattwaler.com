@@ -3,7 +3,7 @@ export default function InstructionForm() {
     <section id="schedule" className="section-spacing border-t">
       <div className="container">
         <div className="lg:text-center">
-          <h3 className="font-bold text-3xl">Let's Get Started</h3>
+          <h3 className="font-bold text-2xl lg:text-3xl">Let's Get Started</h3>
           <p className="mt-2 text-lg">
             Fill out and submit the form below and we can start building cool
             stuff together.

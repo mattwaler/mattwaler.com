@@ -60,9 +60,9 @@ const CodeblockCTA = () => {
             </span>
           </h3>
           <p className="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg">
-            Don't get <strong className="font-bold italic text-mw-blue">Frozen</strong> with a
-            site you don't love. I can refactor, refresh, or just rebuild you a
-            new website that will knock your socks off.
+            Don't get <strong className="font-bold italic text-mw-blue">Frozen</strong> with an
+            app you don't love. I can refactor, refresh, or just rebuild you a
+            new web-based application that will knock your socks off.
           </p>
           <a
             className="inline-flex items-center mt-6 text-mw-teal rounded font-bold "

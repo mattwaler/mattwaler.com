@@ -6,7 +6,7 @@ import Contact from 'components/Contact'
 const heroProps = {
   heading: 'Take a gander at some of projects I have worked on.',
   paragraph:
-    'I have built a lot of websites since I got started in 2016. Listed below is a non-exhaustive representation of the web applications I have helped develop and deploy.',
+    'I have built a lot of applications since I got started in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed recently.',
 }
 
 const seo = {
