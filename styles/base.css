@@ -1,7 +1,6 @@
 @layer base {
-  body {
-    width: 100%;
-    @apply font-sans antialiased bg-gray-900 text-gray-100 overflow-x-hidden;
+  html {
+    @apply w-full scroll-smooth font-sans antialiased bg-gray-900 text-gray-100 overflow-x-hidden;
   }
 
   * {

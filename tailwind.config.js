@@ -16,7 +16,6 @@ module.exports = {
       padding: '1.5rem',
     },
     debugScreens: {
-      position: ['bottom', 'right'],
       style: {
         borderRadius: '4px',
         boxShadow: 'none',

@@ -2,6 +2,7 @@ import { NextSeo } from "next-seo"
 import { Toaster } from 'react-hot-toast'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import BackToTop from "./BackToTop"
 
 interface Props {
   children: React.ReactNode
@@ -16,16 +17,18 @@ export default function Page(props: Props) {
   return (
     <>
       {devMode && <div className="debug-screens" />}
-      <div />
       <NextSeo
         title={title}
         description={description}
         openGraph={{ title, description, }}
       />
-      <Toaster />
       <Header />
-      <main>{children}</main>
+      <main>
+        {children}
+      </main>
       <Footer />
+      <BackToTop />
+      <Toaster />
     </>
   )
 }
