@@ -1,5 +1,5 @@
-import Intro from 'components/Intro'
-import Text from 'components/Text'
+import Intro from '../components/Intro'
+import Text from '../components/Text'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 const content = [

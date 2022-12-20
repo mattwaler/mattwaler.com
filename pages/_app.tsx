@@ -1,7 +1,7 @@
-import 'styles/main.css'
+import 'styles/_app.css'
 import Head from 'next/head'
 import { DefaultSeo } from "next-seo"
-import SEO from "../../next-seo.config"
+import SEO from "next-seo.config"
 import Favicons from 'components/Favicons'
 
 export default function MyApp({ Component, pageProps }: any) {

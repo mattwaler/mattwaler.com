@@ -1,8 +1,8 @@
 import Hero from 'components/Hero'
-import Overview from 'pages/instruction/views/Overview'
-import Offerings from 'pages/instruction/views/Offerings'
-import Pricing from 'pages/instruction/views/Pricing'
-import Form from 'pages/instruction/views/Form'
+import Overview from 'blocks/InstructionOverview'
+import Offerings from 'blocks/InstructionOfferings'
+import Pricing from 'blocks/InstructionPricing'
+import Form from 'blocks/InstructionForm'
 import Page from 'components/Page'
 
 const heroProps = {

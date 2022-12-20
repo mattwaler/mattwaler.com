@@ -1,5 +1,5 @@
 import Hero from 'components/Hero'
-import CodeblockCTA from 'components/Contact'
+import CodeblockCTA from 'blocks/ContactCTA'
 import Page from 'components/Page'
 
 const seo = {

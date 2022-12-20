@@ -1,7 +1,7 @@
 import Hero from 'components/Hero'
-import Listing from 'pages/work/views/Listing'
+import Listing from 'blocks/WorkListing'
 import Page from 'components/Page'
-import Contact from 'components/Contact'
+import Contact from 'blocks/ContactCTA'
 
 const heroProps = {
   heading: 'Take a gander at some of projects I have worked on.',

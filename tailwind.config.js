@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './assets/**/*.{ts,tsx}',
+    './blocks/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './pages/**/*.{ts,tsx}',
+  ],
   plugins: [
     require('@tailwindcss/forms'),
     require('tailwindcss-debug-screens'),

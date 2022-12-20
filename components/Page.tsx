@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo"
 import { Toaster } from 'react-hot-toast'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 interface Props {
   children: React.ReactNode

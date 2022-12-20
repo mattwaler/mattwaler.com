@@ -1,11 +1,11 @@
 import Hero from 'components/Hero'
-import Skills from 'pages/index/views/Skills'
-import ContactCTA from 'components/Contact'
+import Skills from 'blocks/HomeSkills'
+import ContactCTA from 'blocks/ContactCTA'
 import { useEffect } from 'react'
 import { toast } from 'react-hot-toast'
 import Page from 'components/Page'
-import About from 'pages/index/views/About'
-import tripp from 'pages/index/assets/tripp.jpg'
+import About from 'blocks/HomeAbout'
+import tripp from 'assets/tripp.jpg'
 
 const seo = {
   title: 'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',

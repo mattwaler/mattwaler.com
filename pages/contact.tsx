@@ -1,8 +1,8 @@
 import Hero from 'components/Hero'
-import Form from 'pages/contact/views/Form'
+import Form from 'blocks/ContactForm'
 import Page from 'components/Page'
 import Image from 'next/image'
-import svg from './assets/contact.svg'
+import svg from 'assets/contact.svg'
 
 const heroProps = {
   heading: "Let's get in touch.",

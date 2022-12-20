@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import Text from 'components/Text'
+import Text from '../components/Text'
 import Image, { StaticImageData } from 'next/image'
 
 interface Props {
