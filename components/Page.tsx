@@ -1,9 +1,9 @@
-import { NextSeo } from "next-seo"
 import { Toaster } from 'react-hot-toast'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import BackToTop from "./BackToTop"
 import { useRouter } from "next/router"
+import Head from 'next/head'
 
 interface Props {
   children: React.ReactNode
@@ -19,12 +19,21 @@ export default function Page(props: Props) {
   return (
     <>
       {devMode && <div className="debug-screens" />}
-      <NextSeo
-        title={title}
-        description={description}
-        openGraph={{ title, description, }}
-        canonical={`https://mattwaler.dev${router.pathname}`}
-      />
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:url" content="https://mattwaler.dev/assets/og.png" />
+        <meta property="og:site_name" content="Matt Waler" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="https://mattwaler.dev/assets/og.png" />
+        <meta property="og:image:alt" content="Matt Waler's Logo" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
+        <link rel="canonical" href={`https://mattwaler.dev${router.pathname}`} />
+      </Head>
       <Header />
       <main>
         {children}
