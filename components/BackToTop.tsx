@@ -6,22 +6,17 @@ export default function BackToTop() {
   const { y } = useWindowScroll()
   const showButton = y > 200
 
-  function scrollToTop() {
-    return window.scroll(0,0)
-  }
-
   return (
-    <button
+    <a
       aria-label="Back to top"
-      onClick={scrollToTop}
-      disabled={!showButton}
+      href="#top"
       className={clsx(
         "fixed z-50 bottom-6 right-6 rounded-full transition-opacity gradient p-0.5 shadow-lg",
-        showButton ? 'opacity-100': 'opacity-0'
+        showButton ? 'opacity-100': 'opacity-0 pointer-events-none'
       )}
     >
       <ArrowUpCircleIcon className="w-10 h-10" />
-    </button>
+    </a>
   )
 
 }
