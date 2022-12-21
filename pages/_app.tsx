@@ -14,6 +14,7 @@ export default function MyApp({ Component, pageProps }: any) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         />
+        <meta name="robots" content="all" />
         <Favicons />
       </Head>
       <Component {...pageProps} />

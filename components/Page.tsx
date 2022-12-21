@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import BackToTop from "./BackToTop"
+import { useRouter } from "next/router"
 
 interface Props {
   children: React.ReactNode
@@ -13,6 +14,7 @@ interface Props {
 export default function Page(props: Props) {
   const devMode = process.env.NODE_ENV === 'development'
   const { children, description, title } = props
+  const router = useRouter()
 
   return (
     <>
@@ -21,6 +23,7 @@ export default function Page(props: Props) {
         title={title}
         description={description}
         openGraph={{ title, description, }}
+        canonical={`https://mattwaler.dev${router.pathname}`}
       />
       <Header />
       <main>
