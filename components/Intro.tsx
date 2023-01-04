@@ -1,4 +1,4 @@
-import Text from '../components/Text'
+import Balancer from 'react-wrap-balancer'
 
 interface Props {
   heading: string
@@ -8,16 +8,16 @@ interface Props {
 export default function Intro(props: Props) {
   return (
     <div className="md:text-center">
-      <Text
-        tag="h2"
-        className="text-3xl leading-tight font-extrabold sm:text-4xl"
-        content={props.heading}
-      />
-      <Text
-        tag="p"
-        className="text-gray-300 mt-1 italic sm:text-lg"
-        content={props.subheading}
-      />
+      <h2 className="h2 leading-tight font-extrabold">
+        <Balancer>
+          {props.heading}
+        </Balancer>
+      </h2>
+      <p className="text-gray-300 mt-1 italic sm:text-lg">
+        <Balancer>
+          {props.subheading}
+        </Balancer>
+      </p>
     </div>
   )
 }

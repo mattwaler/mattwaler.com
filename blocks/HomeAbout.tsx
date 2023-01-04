@@ -1,6 +1,6 @@
-import Intro from '../components/Intro'
-import Text from '../components/Text'
+import Balancer from 'react-wrap-balancer'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import Intro from '../components/Intro'
 
 const content = [
   {
@@ -54,12 +54,12 @@ const About = () => (
           />
         </div>
         <div className={!isEven(index) ? 'order-2 md:order-1' : ''}>
-          <h3 className="text-2xl md:text-3xl font-bold">{section.heading}</h3>
-          <Text
-            content={section.subheading}
-            className="mt-2 text-lg md:text-xl"
-            tag="p"
-          />
+          <h3 className="h4 font-bold">{section.heading}</h3>
+          <p className="mt-2 text-lg md:text-xl">
+            <Balancer>
+              {section.subheading}
+            </Balancer>
+          </p>
           <ul className="mt-4 flex flex-col gap-2">
             {section.items.map((item) => (
               <li className="flex items-center gap-2 md:text-lg" key={item}>

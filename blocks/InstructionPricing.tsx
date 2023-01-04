@@ -47,7 +47,7 @@ export default function InstructionPricing() {
       <div className="absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
       <div className="relative container text-white z-20">
         <div className="lg:text-center">
-          <h3 className="font-bold text-2xl lg:text-3xl">One Size Fits All Pricing.</h3>
+          <h2 className="h2">One Size Fits All Pricing.</h2>
           <p className="mt-2 text-lg">
             Completely personalized sessions, all at one low price.
           </p>

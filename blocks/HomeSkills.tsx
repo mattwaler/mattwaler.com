@@ -52,9 +52,9 @@ const Skills = () => (
               {skill.icon}
             </span>
             <div className="ml-6 md:ml-0 flex-1 flex flex-col">
-              <h2 className="font-extrabold leading-none text-xl md:mt-6 md:text-2xl">
+              <h3 className="h4 md:mt-6">
                 {skill.name}
-              </h2>
+              </h3>
               <p className="mt-2 md:mt-3 text-gray-300">{skill.description}</p>
               <span className="block h-4"></span>
               <a

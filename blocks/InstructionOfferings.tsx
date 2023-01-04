@@ -25,7 +25,7 @@ export default function InstructionOfferings() {
     <section id="offerings" className="bg-gray-900 border-t">
       <div className="container section-spacing">
         <div className="lg:text-center">
-          <h3 className="font-bold text-2xl lg:text-3xl">What I Can Offer.</h3>
+          <h2 className="h2">What I Can Offer.</h2>
           <p className="mt-2 text-lg">
             I only teach the languages, tooling, and frameworks I know
             intimately.
@@ -34,7 +34,7 @@ export default function InstructionOfferings() {
         <div className="mt-16 grid gap-16 grid-cols-1 lg:gap-24 lg:grid-cols-3">
           {offerings.map((item) => (
             <div key={item.heading} className="flex flex-col">
-              <h4 className="font-bold text-lg">{item.heading}</h4>
+              <h3 className="h4">{item.heading}</h3>
               <p className="mt-2">{item.description}</p>
               <span className="mt-8"></span>
               <div className="mt-auto space-y-2">
