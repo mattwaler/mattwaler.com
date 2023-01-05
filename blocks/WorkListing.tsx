@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import Balancer from 'react-wrap-balancer'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import work from 'assets/work'
+import Text from 'components/Text'
+import Image from 'next/image'
 
 export default function WorkListing() {
   return (
@@ -23,22 +23,22 @@ export default function WorkListing() {
           />
           <div className="flex-1">
             <a target="_blank" href={item.link}>
-              <h2 className="h4">
-                <Balancer>
-                  {item.title}
-                </Balancer>
-              </h2>
-              <p className={`text-sm font-medium underline ${item.color}`}>
-                <Balancer>
-                  {item.link}
-                </Balancer>
-              </p>
+              <Text
+                tag="h2"
+                className="h3"
+                content={item.title}
+              />
+              <Text
+                tag="p"
+                className={`text-sm font-medium underline ${item.color}`}
+                content={item.link}
+              />
             </a>
-            <p className="text-base text-gray-300 mt-3">
-              <Balancer>
-                {item.description}
-              </Balancer>
-            </p>
+            <Text
+              tag="p"
+              className="text-base text-gray-300 mt-3"
+              content={item.description}
+            />
             <ul className="flex flex-wrap items-center gap-1 mt-4">
               {item.tools.map((tool) => (
                 <li

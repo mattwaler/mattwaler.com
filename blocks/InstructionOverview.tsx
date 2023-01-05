@@ -1,13 +1,9 @@
-import Balancer from 'react-wrap-balancer'
-
 export default function InstructionOverview() {
   return (
     <section id="overview" className="container section-spacing lg:text-lg">
       <h2 className="h2">
-        <Balancer>
-          Frontend Development is constantly changing and evolving at breakneck
-          speeds.
-        </Balancer>
+        Frontend Development is constantly changing and evolving at breakneck
+        speeds.
       </h2>
       <p className="mt-8">
         Keeping up can be difficult. That's why I started offering pair
