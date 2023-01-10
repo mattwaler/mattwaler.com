@@ -10,17 +10,13 @@ export default function Text(props: Props) {
   const { className, tag, content } = props
 
   // Reconstruct string with break tag
-  const array = content.split(' ')
-  const length = array.length
-  const withoutLastTwo = array.slice(0, -2)
-  const lastTwoString = `${array[length - 2]}&nbsp;${array[length - 1]}`
-  const newArray = [...withoutLastTwo, lastTwoString]
-  const newString = newArray.join(' ')
+  const a = content.split(' ')
+  a.splice(a.length - 2, 2, `${a[a.length - 2]}&nbsp;${a[a.length - 1]}`)
 
   return createElement(tag ?? 'span', {
     className,
     dangerouslySetInnerHTML: {
-      __html: lastTwoString.length > 24 ? content : newString,
+      __html: a[a.length-1].length > 24 ? content : a.join(' '),
     },
   })
 }
