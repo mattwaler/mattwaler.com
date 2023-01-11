@@ -9,7 +9,7 @@ interface Props {
 export default function Text(props: Props) {
   const { className, tag, content } = props
 
-  // Reconstruct string with break tag
+  // Deconstruct/Reconstruct String
   const a = content.split(' ')
   a.splice(a.length - 2, 2, `${a[a.length - 2]}&nbsp;${a[a.length - 1]}`)
 
