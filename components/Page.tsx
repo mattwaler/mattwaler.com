@@ -22,17 +22,9 @@ export default function Page(props: Props) {
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:url" content="https://mattwaler.dev/assets/og.png" />
-        <meta property="og:site_name" content="Matt Waler" />
+        <link rel="canonical" href={`https://mattwaler.dev${router.pathname}`} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://mattwaler.dev/assets/og.png" />
-        <meta property="og:image:alt" content="Matt Waler's Logo" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="627" />
-        <link rel="canonical" href={`https://mattwaler.dev${router.pathname}`} />
       </Head>
       <Header />
       <main>
