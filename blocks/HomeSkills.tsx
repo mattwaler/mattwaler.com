@@ -55,7 +55,7 @@ const Skills = () => (
               <h3 className="h4 md:mt-6">
                 {skill.name}
               </h3>
-              <p className="mt-2 md:mt-3 text-gray-300">{skill.description}</p>
+              <p className="mt-2 md:mt-3 text-slate-300">{skill.description}</p>
               <span className="block h-4"></span>
               <a
                 className={`mt-auto flex md:justify-center items-center font-extrabold ${skill.color}`}

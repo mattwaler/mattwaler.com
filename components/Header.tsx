@@ -37,7 +37,7 @@ export default function PageHeader() {
   const isActive = (path: string) => router.pathname === path
 
   return (
-    <header className="bg-gray-900 w-full border-b">
+    <header className="bg-slate-900 w-full border-b">
       <div className="container py-5 flex items-center">
         <Link href="/" className="flex items-center gap-2">
           <img className="h-7" src="/assets/logo.svg" alt="Logo" />
@@ -48,7 +48,7 @@ export default function PageHeader() {
               key={name}
               href={link}
               className={`text-sm font-semibold transition-colors duration-200 hover:text-white ${
-                isActive(link) ? 'text-white' : 'text-gray-400'
+                isActive(link) ? 'text-white' : 'text-slate-400'
               }`}
             >
               {name}
@@ -63,7 +63,7 @@ export default function PageHeader() {
               href={link.link}
               target="_blank"
               rel="noopener"
-              className="w-5 h-5 hidden md:block transition-colors text-gray-300 duration-200 hover:text-white"
+              className="w-5 h-5 hidden md:block transition-colors text-slate-300 duration-200 hover:text-white"
             >
               {link.icon}
             </a>
@@ -85,7 +85,7 @@ export default function PageHeader() {
                 <Link
                   href={link}
                   className={`block py-4 font-semibold text-sm transition-colors tracking-tight hover:text-white ${
-                    isActive(link) ? 'text-white' : 'text-gray-300'
+                    isActive(link) ? 'text-white' : 'text-slate-300'
                   }`}
                 >
                   {name}
@@ -101,7 +101,7 @@ export default function PageHeader() {
                 href={link.link}
                 target="_blank"
                 rel="noopener"
-                className="w-5 h-5 text-gray-300 transition-colors duration-200 hover:text-white"
+                className="w-5 h-5 text-slate-300 transition-colors duration-200 hover:text-white"
               >
                 {link.icon}
               </a>

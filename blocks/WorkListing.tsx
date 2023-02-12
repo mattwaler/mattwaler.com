@@ -15,7 +15,7 @@ export default function WorkListing() {
         >
           <Image
             alt={`${item.title} image`}
-            className="w-full object-top object-cover h-72 bg-gray-800 md:w-5/12 rounded-lg shadow-lg"
+            className="w-full object-top object-cover h-72 bg-slate-800 md:w-5/12 rounded-lg shadow-lg"
             src={item.image}
             width="592"
             height="288"
@@ -36,14 +36,14 @@ export default function WorkListing() {
             </a>
             <Text
               tag="p"
-              className="text-base text-gray-300 mt-3"
+              className="text-base text-slate-300 mt-3"
               content={item.description}
             />
             <ul className="flex flex-wrap items-center gap-1 mt-4">
               {item.tools.map((tool) => (
                 <li
                   key={tool}
-                  className="text-xs tracking-tight font-bold uppercase bg-gray-700 text-gray-100 px-3 py-1 rounded-2xl"
+                  className="text-xs tracking-tight font-bold uppercase bg-slate-700 text-slate-100 px-3 py-1 rounded-2xl"
                 >
                   {tool}
                 </li>
