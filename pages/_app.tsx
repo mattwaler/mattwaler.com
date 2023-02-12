@@ -1,5 +1,6 @@
 import 'styles/_app.css'
 import Head from 'next/head'
+import { Toaster } from 'react-hot-toast'
 
 export default function MyApp({ Component, pageProps }: any) {
   return (
@@ -33,6 +34,7 @@ export default function MyApp({ Component, pageProps }: any) {
           sizes="32x32"
         />
       </Head>
+      <Toaster />
       <Component {...pageProps} />
     </>
   )

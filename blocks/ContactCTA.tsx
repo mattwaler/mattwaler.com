@@ -1,30 +1,7 @@
-import Prism from 'prismjs'
-import { useEffect, useState } from 'react'
 import { ArrowRightIcon, MusicalNoteIcon } from '@heroicons/react/24/outline'
+import code from 'assets/code'
 
-let code = `
-let needsMattsHelp = true
-
-const contactMatt = (message) => {
-  return alert(message)
-}
-
-if (needsMattsHelp) {
-  contactMatt("Let's get started!")
-}
-`
-
-const CodeblockCTA = () => {
-  const [highlightedCode, setHighlightedCode] = useState('')
-  useEffect(() => {
-    const newCode = Prism.highlight(
-      code,
-      Prism.languages.javascript,
-      'javascript'
-    )
-    setHighlightedCode(newCode)
-  }, [])
-
+export default function ContactCTA() {
   return (
     <div className="border-t">
       <section className="container flex flex-wrap items-center section-spacing">
@@ -37,11 +14,7 @@ const CodeblockCTA = () => {
             <div className="rounded-full w-3 h-3 bg-yellow-500"></div>
             <div className="rounded-full w-3 h-3 bg-green-500"></div>
           </div>
-          <div className="py-6">
-            <pre>
-              <code dangerouslySetInnerHTML={{ __html: highlightedCode }}></code>
-            </pre>
-          </div>
+          <pre dangerouslySetInnerHTML={{ __html: code }} />
         </div>
         <div className="w-full max-w-2xl mx-auto mt-12 lg:mt-0 lg:w-1/2 lg:pl-16">
           <h3 className="relative inline h4">
@@ -78,5 +51,3 @@ const CodeblockCTA = () => {
     </div>
   )
 }
-
-export default CodeblockCTA
