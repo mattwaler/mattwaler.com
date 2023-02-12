@@ -1,5 +1,4 @@
 import { ArrowRightIcon, MusicalNoteIcon } from '@heroicons/react/24/outline'
-import code from 'assets/code'
 
 export default function ContactCTA() {
   return (
@@ -14,7 +13,34 @@ export default function ContactCTA() {
             <div className="rounded-full w-3 h-3 bg-yellow-500"></div>
             <div className="rounded-full w-3 h-3 bg-green-500"></div>
           </div>
-          <pre dangerouslySetInnerHTML={{ __html: code }} />
+          <div className="pt-8 pb-4 grid grid-cols-1 font-mono">
+            <span>
+              <span className="text-mw-blue">let</span> needsMattsHelp ={' '}
+              <span className="text-mw-teal">true</span>
+            </span>
+            <span className="mt-4">
+              <span className="text-mw-blue">const</span>{' '}
+              <span className="text-yellow-200">contactMatt</span> = (message)
+              {' => {'}
+            </span>
+            <span className="ml-4">
+              <span className="text-mw-blue">return</span>{' '}
+              <span className="text-yellow-200">alert</span>
+              {'(message)'}
+            </span>
+            <span>{'}'}</span>
+            <span className="mt-4">
+              <span className="text-mw-blue">if</span>
+              {' (needsMattsHelp) {'}
+            </span>
+            <span className="ml-4">
+              <span className="text-yellow-200">contactMatt</span>
+              {'('}
+              <span className="text-mw-teal">"Let's get started!"</span>
+              {')'}
+            </span>
+            <span>{'}'}</span>
+          </div>
         </div>
         <div className="w-full max-w-2xl mx-auto mt-12 lg:mt-0 lg:w-1/2 lg:pl-16">
           <h3 className="relative inline h4">
@@ -33,9 +59,10 @@ export default function ContactCTA() {
             </span>
           </h3>
           <p className="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg">
-            Don't get <strong className="font-bold italic text-mw-blue">Frozen</strong> with an
-            app you don't love. I can refactor, refresh, or just rebuild you a
-            new web-based application that will knock your socks off.
+            Don't get{' '}
+            <strong className="font-bold italic text-mw-blue">Frozen</strong>{' '}
+            with an app you don't love. I can refactor, refresh, or just rebuild
+            you a new web-based application that will knock your socks off.
           </p>
           <a
             className="inline-flex items-center mt-6 text-mw-teal rounded font-bold "
