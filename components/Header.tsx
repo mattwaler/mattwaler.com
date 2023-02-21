@@ -47,7 +47,7 @@ export default function PageHeader() {
             <Link
               key={name}
               href={link}
-              className={`text-sm font-semibold transition-colors duration-200 hover:text-white ${
+              className={`text-sm font-semibold transition-colors hover:text-white ${
                 isActive(link) ? 'text-white' : 'text-slate-400'
               }`}
             >
@@ -63,7 +63,7 @@ export default function PageHeader() {
               href={link.link}
               target="_blank"
               rel="noopener"
-              className="w-5 h-5 hidden md:block transition-colors text-slate-300 duration-200 hover:text-white"
+              className="w-5 h-5 hidden md:block transition-colors text-slate-300 hover:text-white"
             >
               {link.icon}
             </a>
@@ -85,7 +85,7 @@ export default function PageHeader() {
                 <Link
                   href={link}
                   className={`block py-4 font-semibold text-sm transition-colors tracking-tight hover:text-white ${
-                    isActive(link) ? 'text-white' : 'text-slate-300'
+                    isActive(link) ? 'text-white' : 'text-slate-400'
                   }`}
                 >
                   {name}
@@ -101,7 +101,7 @@ export default function PageHeader() {
                 href={link.link}
                 target="_blank"
                 rel="noopener"
-                className="w-5 h-5 text-slate-300 transition-colors duration-200 hover:text-white"
+                className="w-5 h-5 text-slate-400 transition-colors hover:text-white"
               >
                 {link.icon}
               </a>
