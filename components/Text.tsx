@@ -11,7 +11,9 @@ export default function Text(props: Props) {
 
   // Deconstruct/Reconstruct String
   const a = content.split(' ')
-  a.splice(a.length - 2, 2, `${a[a.length - 2]}&nbsp;${a[a.length - 1]}`)
+  if (a.length > 1) {
+    a.splice(a.length - 2, 2, `${a[a.length - 2]}&nbsp;${a[a.length - 1]}`)
+  }
 
   return createElement(tag ?? 'span', {
     className,
