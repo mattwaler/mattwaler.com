@@ -19,15 +19,11 @@ export default function WorkListing() {
             src={item.image}
             width="592"
             height="288"
-            placeholder='blur'
+            placeholder="blur"
           />
           <div className="flex-1">
             <a target="_blank" href={item.link}>
-              <Text
-                tag="h2"
-                className="h3"
-                content={item.title}
-              />
+              <Text tag="h2" className="h3" content={item.title} />
               <Text
                 tag="p"
                 className={`text-sm font-medium underline ${item.color}`}

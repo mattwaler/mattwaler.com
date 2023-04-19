@@ -6,7 +6,7 @@ import svg from 'assets/contact.svg'
 const heroProps = {
   heading: "Let's get in touch.",
   paragraph:
-  'Thank you for taking the time to poke around my site. If you are interested in connecting, fill out the contact form below. I will do my best to respond within 24 hours.',
+    'Thank you for taking the time to poke around my site. If you are interested in connecting, fill out the contact form below. I will do my best to respond within 24 hours.',
 }
 
 export const metadata = {

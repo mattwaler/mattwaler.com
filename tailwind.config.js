@@ -24,13 +24,13 @@ module.exports = {
     },
     extend: {
       borderColor: ({ theme }) => ({
-        DEFAULT: theme('colors.slate.700')
+        DEFAULT: theme('colors.slate.700'),
       }),
       colors: {
         'mw-teal': '#00EAF8',
         'mw-blue': '#4A79F2',
         'mw-purple': '#6A46EF',
-      }
+      },
     },
     screens: {
       sm: '640px',

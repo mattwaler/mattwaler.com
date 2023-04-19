@@ -13,7 +13,7 @@
   }
 
   .gradient {
-    background: linear-gradient(134deg, #00EAF8 0%, #6D42EF 100%);
+    background: linear-gradient(134deg, #00eaf8 0%, #6d42ef 100%);
   }
 
   .animate-grow {
@@ -24,4 +24,3 @@
     @apply z-auto;
   }
 }
-

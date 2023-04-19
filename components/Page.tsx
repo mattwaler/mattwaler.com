@@ -1,6 +1,6 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import BackToTop from "./BackToTop"
+import BackToTop from './BackToTop'
 
 interface Props {
   children: React.ReactNode
@@ -14,9 +14,7 @@ export default function Page(props: Props) {
     <>
       {devMode && <div className="debug-screens" />}
       <Header />
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
       <BackToTop />
     </>

@@ -5,15 +5,17 @@ import Skills from 'app/_skills'
 import About from 'app/_about'
 
 export const metadata = {
-  title: 'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',
-  description: "I am a JavaScript-focused developer from Ohio. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.",
+  title:
+    'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',
+  description:
+    'I am a JavaScript-focused developer from Ohio. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.',
 }
 
 export default function Home() {
   return (
     <>
       <Hero
-        heading='I build applications with modern tools and technologies.'
+        heading="I build applications with modern tools and technologies."
         paragraph={metadata.description}
         image={tripp}
       />

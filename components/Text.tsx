@@ -18,7 +18,7 @@ export default function Text(props: Props) {
   return createElement(tag ?? 'span', {
     className,
     dangerouslySetInnerHTML: {
-      __html: a[a.length-1].length > 24 ? content : a.join(' '),
+      __html: a[a.length - 1].length > 24 ? content : a.join(' '),
     },
   })
 }

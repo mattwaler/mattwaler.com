@@ -9,12 +9,7 @@ export default function ContactForm() {
       <input type="hidden" name="form-name" value="contact" />
       <label className="block">
         <p className="font-bold">Name:</p>
-        <input
-          name="name"
-          type="text"
-          required
-          className="mt-2 input w-full"
-        />
+        <input name="name" type="text" required className="mt-2 input w-full" />
       </label>
       <label className="block pt-6">
         <p className="font-bold">Email:</p>

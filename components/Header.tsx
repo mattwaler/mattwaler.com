@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Collapse } from 'react-collapse';
+import { Collapse } from 'react-collapse'
 import links from 'assets/links'
 
 export default function PageHeader() {
