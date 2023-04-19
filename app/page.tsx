@@ -1,7 +1,7 @@
 import Hero from 'components/Hero'
-import Skills from 'app/_Skills'
+import Skills from 'app/_skills'
 import ContactCTA from 'components/ContactCTA'
-import About from 'app/_About'
+import About from 'app/_about'
 import tripp from 'assets/tripp.jpg'
 
 export const metadata = {
