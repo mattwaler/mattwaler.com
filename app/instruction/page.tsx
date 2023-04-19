@@ -1,8 +1,8 @@
 import Hero from 'components/Hero'
-import Overview from 'app/instruction/__overview'
-import Offerings from 'app/instruction/__offerings'
-import Pricing from 'app/instruction/__pricing'
-import Form from 'app/instruction/__form'
+import Overview from 'app/instruction/_overview'
+import Offerings from 'app/instruction/_offerings'
+import Pricing from 'app/instruction/_pricing'
+import Form from 'app/instruction/_form'
 
 const heroProps = {
   heading: 'Schedule a personalized pair programming session.',

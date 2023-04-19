@@ -1,8 +1,8 @@
 import tripp from 'assets/tripp.jpg'
 import Hero from 'components/Hero'
 import ContactCTA from 'components/ContactCTA'
-import Skills from 'app/__skills'
-import About from 'app/__about'
+import Skills from 'app/_skills'
+import About from 'app/_about'
 
 export const metadata = {
   title: 'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',

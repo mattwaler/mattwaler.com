@@ -1,5 +1,5 @@
 import Hero from 'components/Hero'
-import Listing from 'app/work/__listing'
+import Listing from 'app/work/_listing'
 import Contact from 'components/ContactCTA'
 
 const heroProps = {
