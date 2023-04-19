@@ -1,5 +1,5 @@
 import Hero from 'components/Hero'
-import Form from 'app/contact/_form'
+import Form from 'app/contact/__form'
 import Image from 'next/image'
 import svg from 'assets/contact.svg'
 
