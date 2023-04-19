@@ -10,7 +10,6 @@ import hamilton from 'assets/hamilton.jpg'
 import theta from 'assets/theta.jpg'
 import IUH from 'assets/iuhealth.jpg'
 import riley from 'assets/riley.jpg'
-import sexyhair from 'assets/sexyhair.jpg'
 import transport from 'assets/transport.jpg'
 import gardenofflavor from 'assets/gardenofflavor.jpg'
 
