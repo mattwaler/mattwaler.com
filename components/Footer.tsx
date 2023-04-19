@@ -1,4 +1,4 @@
-import { links } from '../components/Header'
+import links from 'components/Links'
 
 export default function PageFooter() {
   return (

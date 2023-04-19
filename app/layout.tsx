@@ -1,11 +1,13 @@
 import 'styles/_app.css'
-import Head from 'next/head'
-import { Toaster } from 'react-hot-toast'
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+import BackToTop from 'components/BackToTop'
+import Toaster from 'components/Toaster'
 
-export default function MyApp({ Component, pageProps }: any) {
+export default function Layout({ children }) {
   return (
-    <>
-      <Head>
+    <html lang="en">
+      <head>
         <meta charSet="UTF-8" />
         <meta
           name="viewport"
@@ -16,7 +18,10 @@ export default function MyApp({ Component, pageProps }: any) {
         <meta property="og:locale" content="en_US" />
         <meta property="og:url" content="https://mattwaler.dev/assets/og.png" />
         <meta property="og:site_name" content="Matt Waler" />
-        <meta property="og:image" content="https://mattwaler.dev/assets/og.png" />
+        <meta
+          property="og:image"
+          content="https://mattwaler.dev/assets/og.png"
+        />
         <meta property="og:image:alt" content="Matt Waler's Logo" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="627" />
@@ -33,9 +38,14 @@ export default function MyApp({ Component, pageProps }: any) {
           href="/favicons/favicon-32x32.png"
           sizes="32x32"
         />
-      </Head>
-      <Toaster />
-      <Component {...pageProps} />
-    </>
+      </head>
+      <body>
+        <Header />
+        <main>{children}</main>
+        <Toaster />
+        <BackToTop />
+        <Footer />
+      </body>
+    </html>
   )
 }

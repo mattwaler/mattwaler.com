@@ -1,6 +1,5 @@
 import Hero from 'components/Hero'
-import Form from 'blocks/ContactForm'
-import Page from 'components/Page'
+import Form from 'app/contact/_Form'
 import Image from 'next/image'
 import svg from 'assets/contact.svg'
 
@@ -10,14 +9,14 @@ const heroProps = {
   'Thank you for taking the time to poke around my site. If you are interested in connecting, fill out the contact form below. I will do my best to respond within 24 hours.',
 }
 
-const seo = {
+export const metadata = {
   title: heroProps.heading.replace('.', ''),
   description: heroProps.paragraph,
 }
 
 export default function Contact() {
   return (
-    <Page {...seo}>
+    <>
       <Hero {...heroProps} />
       <div className="grid items-center grid-cols-1 container section-spacing md:gap-16 md:grid-cols-2 lg:gap-32">
         <Form />
@@ -28,6 +27,6 @@ export default function Contact() {
           src={svg}
         />
       </div>
-    </Page>
+    </>
   )
 }

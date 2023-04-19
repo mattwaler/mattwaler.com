@@ -1,40 +1,19 @@
+'use client'
+
 import { useState, useEffect } from 'react'
-import { GitHub, LinkedIn, Instagram } from '../components/Icons'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import { Collapse } from 'react-collapse';
-
-export const links = {
-  internal: [
-    { name: 'Contact', link: '/contact' },
-    { name: 'Instruction', link: '/instruction' },
-    { name: 'Work', link: '/work' },
-  ],
-  external: [
-    { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/mattwaler' },
-    {
-      name: 'Instagram',
-      icon: <Instagram />,
-      link: 'https://www.instagram.com/mattwaler',
-    },
-    {
-      name: 'LinkedIn',
-      icon: <LinkedIn />,
-      link: 'https://www.linkedin.com/in/mattwaler/',
-    },
-  ],
-}
+import links from 'components/Links'
 
 export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)
-  const router = useRouter()
+  const pathname = usePathname()
 
-  useEffect(() => {
-    router.events.on('routeChangeComplete', () => setNavOpen(false))
-  }, [])
+  useEffect(() => setNavOpen(false), [pathname])
 
-  const isActive = (path: string) => router.pathname === path
+  const isActive = (path: string) => pathname === path
 
   return (
     <header className="bg-slate-900 w-full border-b">

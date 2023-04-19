@@ -1,3 +1,5 @@
+'use client'
+
 import { useWindowScroll } from "react-use"
 import { ArrowUpCircleIcon } from "@heroicons/react/24/outline"
 import clsx from "clsx"
