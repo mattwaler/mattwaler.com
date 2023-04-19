@@ -1,4 +1,4 @@
-import { GitHub, LinkedIn, Instagram } from './Icons'
+import { GitHub, LinkedIn, Instagram } from '../components/Icons'
 
 export default {
   internal: [
