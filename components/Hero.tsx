@@ -32,7 +32,6 @@ export default function Hero(props: Props) {
               'lg:order-2 lg:w-80 lg:h-80'
             )}
             height={320}
-            loading="lazy"
             src={props.image}
             width={320}
           />

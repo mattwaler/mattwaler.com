@@ -8,6 +8,8 @@ const content = [
     subheading:
       'A non-comprehensive list of the tools that I use day-in and day-out to get my work done:',
     image: '/assets/skills.svg',
+    imageWidth: 440,
+    imageHeight: 320,
     items: [
       'React',
       'Next.js',
@@ -22,6 +24,8 @@ const content = [
     subheading:
       "If I'm not writing code, then I am most likely doing one or multiple of the following:",
     image: '/assets/hobbies.svg',
+    imageWidth: 440,
+    imageHeight: 240,
     items: [
       'Playing Tennis',
       'Lifting weights',
@@ -48,6 +52,8 @@ const About = () => (
         <div className={!isEven(index) ? 'order-1 md:order-2' : ''}>
           <img
             alt={`${section.heading} illustration.`}
+            width={section.imageWidth}
+            height={section.imageHeight}
             className="w-2/3 mx-auto md:w-full"
             loading="lazy"
             src={section.image}
