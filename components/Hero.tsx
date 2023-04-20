@@ -24,18 +24,22 @@ export default function Hero(props: Props) {
           />
         </div>
         {props.image && (
-          <Image
-            src={props.image}
-            placeholder="blur"
-            alt="Hero image."
+          <div
             className={clsx(
-              'gradient p-2',
+              'flex-none gradient overflow-hidden',
               'order-1 w-64 h-64 rounded-full',
               'lg:order-2 lg:w-80 lg:h-80'
             )}
-            height={320}
-            width={320}
-          />
+          >
+            <Image
+              src={props.image}
+              role="presentation"
+              alt=""
+              fill
+              className='p-2 rounded-full'
+              placeholder='blur'
+            />
+          </div>
         )}
       </div>
     </section>
