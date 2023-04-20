@@ -25,6 +25,8 @@ export default function Hero(props: Props) {
         </div>
         {props.image && (
           <Image
+            src={props.image}
+            placeholder="blur"
             alt="Hero image."
             className={clsx(
               'gradient p-2',
@@ -32,7 +34,6 @@ export default function Hero(props: Props) {
               'lg:order-2 lg:w-80 lg:h-80'
             )}
             height={320}
-            src={props.image}
             width={320}
           />
         )}
