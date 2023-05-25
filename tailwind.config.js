@@ -24,7 +24,7 @@ module.exports = {
     },
     extend: {
       borderColor: ({ theme }) => ({
-        DEFAULT: theme('colors.slate.700'),
+        DEFAULT: theme('colors.slate.800'),
       }),
       colors: {
         'mw-teal': '#00EAF8',
