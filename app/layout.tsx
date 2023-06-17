@@ -16,11 +16,11 @@ export default function Layout({ children }) {
         <meta name="robots" content="all" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:url" content="https://mattwaler.dev/assets/og.png" />
+        <meta property="og:url" content="https://mattwaler.com/assets/og.png" />
         <meta property="og:site_name" content="Matt Waler" />
         <meta
           property="og:image"
-          content="https://mattwaler.dev/assets/og.png"
+          content="https://mattwaler.com/assets/og.png"
         />
         <meta property="og:image:alt" content="Matt Waler's Logo" />
         <meta property="og:image:width" content="1200" />
