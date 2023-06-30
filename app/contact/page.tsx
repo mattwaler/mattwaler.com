@@ -5,7 +5,7 @@ import svg from 'assets/contact.svg'
 
 export const metadata = {
   alternates: {
-    canonical: '/contact'
+    canonical: 'https://mattwaler.com/contact'
   },
   title: "Let's get in touch",
   description:

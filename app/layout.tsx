@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     apple: '/favicons/apple-touch-icon-152x152.png',
     icon: '/favicons/favicon.svg',
   },
-  metadataBase: new URL('https://mattwaler.com'),
   openGraph: {
     images: [{
       url: '/assets/og.png',

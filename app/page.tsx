@@ -6,7 +6,7 @@ import About from 'app/_about'
 
 export const metadata = {
   alternates: {
-    canonical: '/'
+    canonical: 'https://mattwaler.com'
   },
   title:
     'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',

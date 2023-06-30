@@ -4,7 +4,7 @@ import Contact from 'components/ContactCTA'
 
 export const metadata = {
   alternates: {
-    canonical: '/work'
+    canonical: 'https://mattwaler.com/work'
   },
   title: 'Take a gander at some of projects I have worked on',
   description:

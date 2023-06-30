@@ -6,7 +6,7 @@ import Form from 'app/instruction/_form'
 
 export const metadata = {
   alternates: {
-    canonical: '/instruction'
+    canonical: 'https://mattwaler.com/instruction'
   },
   title: 'Schedule a personalized pair programming session',
   description:
