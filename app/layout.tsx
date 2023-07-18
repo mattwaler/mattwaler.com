@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [{
-      url: '/assets/og.png',
+      url: 'https://mattwaler.com/assets/og.png',
       alt: 'Matt Waler Logo',
       width: 1200,
       height: 627,
