@@ -29,7 +29,7 @@ const content = [
     items: [
       'Playing Tennis',
       'Lifting weights',
-      'Losing Chess matches',
+      'Losing Marvel Snap games',
       'Listening to pop-punk music',
       'Watching Edgar Wright movies',
     ],
