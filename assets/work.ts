@@ -30,7 +30,7 @@ export default [
     link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701',
     image: fitness,
     color: 'text-[#3b82f6]',
-    tools: ['React Native', 'Tailwind'],
+    tools: ['Swift', 'Swift UI'],
   },
   {
     title: 'TrendyMinds',
