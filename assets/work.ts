@@ -15,15 +15,6 @@ import gardenofflavor from 'assets/gardenofflavor.jpg'
 
 export default [
   {
-    title: 'Hylant',
-    description:
-      'A monolithic Craft CMS website for an insurance, employee benefits and risk management consulting company.',
-    link: 'https://hylant.com/',
-    image: hylant,
-    color: 'text-[#6bbbae]',
-    tools: ['Craft CMS', 'Tailwind', 'Alpine', 'Sprig'],
-  },
-  {
     title: 'Fitness Timer',
     description:
       'A no-fuss fitness timer App that allows a user to customize timer duration, repeats, and rest time.',
@@ -31,6 +22,15 @@ export default [
     image: fitness,
     color: 'text-[#3b82f6]',
     tools: ['Swift', 'Swift UI'],
+  },
+  {
+    title: 'Hylant',
+    description:
+      'A monolithic Craft CMS website for an insurance, employee benefits and risk management consulting company.',
+    link: 'https://hylant.com/',
+    image: hylant,
+    color: 'text-[#6bbbae]',
+    tools: ['Craft CMS', 'Tailwind', 'Alpine', 'Sprig'],
   },
   {
     title: 'TrendyMinds',
