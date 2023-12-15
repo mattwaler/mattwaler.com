@@ -3,9 +3,7 @@ module.exports = {
   reactStrictMode: false,
   output: 'export',
   distDir: '.dist',
-  experimental: {
-    appDir: true,
-  },
+  experimental: {},
   images: {
     unoptimized: true,
   },
