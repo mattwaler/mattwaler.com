@@ -3,9 +3,13 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import BackToTop from 'components/BackToTop'
 import Toaster from 'components/Toaster'
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mattwaler.com'),
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     apple: '/favicons/apple-touch-icon-152x152.png',
     icon: '/favicons/favicon.svg',
@@ -25,11 +29,12 @@ export const metadata: Metadata = {
     follow: true,
     index: true,
   },
-  viewport: {
-    initialScale: 1,
-    viewportFit: 'cover',
-    width: 'device-width',
-  },
+}
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  viewportFit: 'cover',
+  width: 'device-width',
 }
 
 export default function Layout({ children }) {
