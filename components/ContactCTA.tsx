@@ -6,7 +6,7 @@ export default function ContactCTA() {
       <section className="container flex flex-wrap items-center section-spacing">
         <div
           aria-hidden="true"
-          className="w-full lg:w-1/2 bg-slate-800 p-4 text-white rounded-lg shadow-lg text-sm sm:text-base"
+          className="w-full lg:w-1/2 bg-zinc-800 p-4 text-white rounded-lg shadow-lg text-sm sm:text-base"
         >
           <div className="space-x-2 flex items-center">
             <div className="rounded-full w-3 h-3 bg-red-500"></div>

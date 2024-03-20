@@ -59,14 +59,14 @@ export default function InstructionPricing() {
         {pricing.map((item) => (
           <div
             key={item.name}
-            className="bg-slate-800 border rounded p-8 flex flex-col items-start shadow-lg"
+            className="bg-zinc-800 border rounded p-8 flex flex-col items-start shadow-lg"
           >
             <span className="bg-mw-purple font-bold px-4 py-2 rounded">
               {item.name}
             </span>
             <div className="mt-8 flex items-center leading-none">
               <span className="font-black text-4xl">${item.price}</span>
-              <span className="text-slate-300 text-sm ml-2">
+              <span className="text-zinc-300 text-sm ml-2">
                 for {item.duration} mins
               </span>
             </div>

@@ -3,7 +3,7 @@ import Year from 'components/Year'
 
 export default function PageFooter() {
   return (
-    <footer className="container text-slate-400 mb-6 mt-8 sm:mt-16 text-sm flex flex-wrap justify-center items-center">
+    <footer className="container text-zinc-400 mb-6 mt-8 sm:mt-16 text-sm flex flex-wrap justify-center items-center">
       <span>
         Waler Media LLC | © <Year />
       </span>
@@ -15,7 +15,7 @@ export default function PageFooter() {
             href={link.link}
             target="_blank"
             rel="noopener"
-            className="w-5 h-5 text-slate-400 transition-colors hover:text-white"
+            className="w-5 h-5 text-zinc-400 transition-colors hover:text-white"
           >
             {link.icon}
           </a>

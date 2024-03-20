@@ -1,6 +1,7 @@
 @layer base {
   html {
-    @apply w-full scroll-smooth font-sans antialiased bg-slate-900 text-slate-100 overflow-x-hidden;
+    @apply w-full scroll-smooth font-sans antialiased text-zinc-100 overflow-x-hidden;
+    @apply bg-gradient-to-r from-zinc-900 to-zinc-950
   }
 
   * {
@@ -12,7 +13,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-slate-800;
+    @apply bg-zinc-800;
   }
 
   ::-webkit-scrollbar-thumb {

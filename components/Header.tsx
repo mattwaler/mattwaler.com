@@ -16,7 +16,7 @@ export default function PageHeader() {
   const isActive = (path: string) => pathname === path
 
   return (
-    <header className="bg-slate-900 w-full border-b">
+    <header className="w-full border-b">
       <div className="container py-5 flex items-center">
         <Link href="/" className="flex items-center gap-2">
           <img className="h-7" src="/assets/logo.svg" alt="Logo" />
@@ -27,7 +27,7 @@ export default function PageHeader() {
               key={name}
               href={link}
               className={`text-sm font-semibold transition-colors hover:text-white ${
-                isActive(link) ? 'text-white' : 'text-slate-400'
+                isActive(link) ? 'text-white' : 'text-zinc-400'
               }`}
             >
               {name}
@@ -42,7 +42,7 @@ export default function PageHeader() {
               href={link.link}
               target="_blank"
               rel="noopener"
-              className="w-5 h-5 hidden md:block transition-colors text-slate-300 hover:text-white"
+              className="w-5 h-5 hidden md:block transition-colors text-zinc-300 hover:text-white"
             >
               {link.icon}
             </a>
@@ -64,7 +64,7 @@ export default function PageHeader() {
                 <Link
                   href={link}
                   className={`block py-4 font-semibold text-sm transition-colors tracking-tight hover:text-white ${
-                    isActive(link) ? 'text-white' : 'text-slate-400'
+                    isActive(link) ? 'text-white' : 'text-zinc-400'
                   }`}
                 >
                   {name}
@@ -80,7 +80,7 @@ export default function PageHeader() {
                 href={link.link}
                 target="_blank"
                 rel="noopener"
-                className="w-5 h-5 text-slate-400 transition-colors hover:text-white"
+                className="w-5 h-5 text-zinc-400 transition-colors hover:text-white"
               >
                 {link.icon}
               </a>

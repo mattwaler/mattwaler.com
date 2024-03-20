@@ -2,6 +2,7 @@ export default function ContactForm() {
   return (
     <form
       data-netlify="true"
+      data-test="123"
       name="contact"
       method="POST"
       action="/?contact=true"
