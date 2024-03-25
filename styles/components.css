@@ -1,6 +1,6 @@
 @layer components {
   .button {
-    @apply inline-block text-sm px-4 py-3 rounded font-black uppercase tracking-wide bg-mw-blue text-zinc-100;
+    @apply inline-block px-4 py-3 rounded font-bold bg-mw-blue text-zinc-100;
   }
 
   .h1 {

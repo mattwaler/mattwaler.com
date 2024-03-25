@@ -1,5 +1,3 @@
-import Text from '../components/Text'
-
 interface Props {
   heading: string
   subheading: string
@@ -8,12 +6,8 @@ interface Props {
 export default function Intro(props: Props) {
   return (
     <div className="md:text-center">
-      <Text tag="h2" className="h2" content={props.heading} />
-      <Text
-        tag="p"
-        className="text-zinc-300 mt-1 italic sm:text-lg"
-        content={props.subheading}
-      />
+      <h2 className="h2 text-pretty">{props.heading}</h2>
+      <p className='text-pretty text-zinc-300 mt-1 italic sm:text-lg'></p>
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-import Text from '../components/Text'
 import Image, { StaticImageData } from 'next/image'
 
 interface Props {
@@ -13,15 +12,15 @@ export default function Hero(props: Props) {
     <section className="border-b text-white py-8 lg:py-32">
       <div className="container flex items-center flex-col gap-8 lg:gap-16 lg:flex-row">
         <div className="w-full order-2 lg:order-1">
-          <Text tag="h1" className="h1" content={props.heading} />
-          <Text
-            tag="p"
+          <h1 className="h1 text-pretty">{props.heading}</h1>
+          <p
             className={clsx(
-              'mt-4 text-base sm:text-lg lg:text-xl text-zinc-200',
+              'text-pretty mt-4 text-base sm:text-lg lg:text-xl text-zinc-200',
               !props.image && 'lg:max-w-2xl'
             )}
-            content={props.paragraph}
-          />
+          >
+            {props.paragraph}
+          </p>
         </div>
         {props.image && (
           <Image

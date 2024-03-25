@@ -22,7 +22,7 @@ const offerings = [
 
 export default function InstructionOfferings() {
   return (
-    <section id="offerings" className="bg-zinc-900 border-t">
+    <section id="offerings" className="border-t">
       <div className="container section-spacing">
         <div className="lg:text-center">
           <h2 className="h2">What I Can Offer.</h2>

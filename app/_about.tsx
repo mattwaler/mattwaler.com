@@ -1,5 +1,4 @@
 import Intro from '../components/Intro'
-import Text from '../components/Text'
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
 
 const content = [
@@ -61,11 +60,9 @@ const About = () => (
         </div>
         <div className={!isEven(index) ? 'order-2 md:order-1' : ''}>
           <h3 className="h4">{section.heading}</h3>
-          <Text
-            content={section.subheading}
-            className="mt-2 text-lg md:text-xl"
-            tag="p"
-          />
+          <p className='text-pretty mt-2 text-lg md:text-xl'>
+            {section.subheading}
+          </p>
           <ul className="mt-4 flex flex-col gap-2">
             {section.items.map((item) => (
               <li className="flex items-center gap-2 md:text-lg" key={item}>
