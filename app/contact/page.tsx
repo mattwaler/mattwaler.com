@@ -11,7 +11,7 @@ export const metadata = {
   description: `
       Thank you for taking the time to poke around my site!
       If you are interested in connecting, fill out the contact form below.
-      I will get back to you as soon as possible, I promise.
+      I will get back to you as soon as possible.
     `,
 }
 
