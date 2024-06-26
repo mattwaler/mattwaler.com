@@ -5,11 +5,14 @@ import svg from 'assets/contact.svg'
 
 export const metadata = {
   alternates: {
-    canonical: 'https://mattwaler.com/contact'
+    canonical: 'https://mattwaler.com/contact',
   },
   title: "Let's get in touch",
-  description:
-    'Thank you for taking the time to poke around my site. If you are interested in connecting, fill out the contact form below. I will do my best to respond within 24 hours.',
+  description: `
+      Thank you for taking the time to poke around my site!
+      If you are interested in connecting, fill out the contact form below.
+      I will get back to you as soon as possible, I promise.
+    `,
 }
 
 export default function Contact() {

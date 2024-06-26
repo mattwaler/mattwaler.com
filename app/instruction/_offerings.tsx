@@ -5,7 +5,7 @@ const offerings = [
     heading: 'The Big Names',
     description:
       'The stuff we constantly hear about. These are the skills that can get you hired anywhere.',
-    bullets: ['React', 'React Native', 'Typescript', 'Vue'],
+    bullets: ['React', 'React Native', 'Typescript', 'Swift'],
   },
   {
     heading: 'The Lesser Knowns',
