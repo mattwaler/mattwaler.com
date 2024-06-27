@@ -19,7 +19,7 @@ export default [
     title: 'Agone',
     description:
       'Agone is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
-    link: 'https://apps.apple.com/us/app/agone-recurring-tasks-tracker/id6478084115',
+    link: 'https://agone.mattwaler.com',
     image: agone,
     color: 'text-[#6A3DE8]',
     tools: ['Swift', 'Swift UI', 'Swift Data'],
