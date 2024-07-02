@@ -11,14 +11,14 @@ export const metadata = {
   title:
     'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',
   description:
-    'I am a JavaScript-focused developer from Ohio. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.',
+    'My name is Matt Waler, and I am a developer from Ohio specializing in JavaScript and Swift. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.',
 }
 
 export default function Home() {
   return (
     <>
       <Hero
-        heading="I build applications with modern tools and technologies."
+        heading="I build websites and mobile applications."
         paragraph={metadata.description}
         image={tripp}
       />

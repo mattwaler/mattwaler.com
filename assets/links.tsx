@@ -2,9 +2,10 @@ import { GitHub, LinkedIn, Instagram } from '../components/Icons'
 
 export default {
   internal: [
+    { name: 'Apps', link: '/apps' },
+    { name: 'Websites', link: '/websites' },
     { name: 'Contact', link: '/contact' },
     { name: 'Instruction', link: '/instruction' },
-    { name: 'Work', link: '/work' },
   ],
   external: [
     { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/mattwaler' },

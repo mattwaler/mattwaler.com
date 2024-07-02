@@ -2,37 +2,37 @@ import Intro from '../components/Intro'
 import {
   ArrowRightIcon,
   AcademicCapIcon,
-  LifebuoyIcon,
   CommandLineIcon,
+  GlobeAltIcon,
 } from '@heroicons/react/24/outline'
 
 const skills = [
   {
-    name: 'Development',
+    name: 'Applications',
     description:
-      'I can build single page applications, fullstack CMS projects, and everything in between.',
+      'I can create and publish iOS applications directly to the App Store.',
     icon: <CommandLineIcon />,
     color: 'text-mw-teal',
-    link: '/work',
-    linkText: 'View Work',
+    link: '/apps',
+    linkText: 'View Apps',
+  },
+  {
+    name: 'Websites',
+    description:
+      'I can build single page applications, fullstack CMS projects, and everything in between.',
+    icon: <GlobeAltIcon />,
+    color: 'text-mw-blue',
+    link: '/websites',
+    linkText: 'View Websites',
   },
   {
     name: 'Instruction',
     icon: <AcademicCapIcon />,
     description:
-      'I am comfortable teaching modern tools like React, Vue, Svelte, and much more.',
+      'I am comfortable teaching any of the tools I use in my day-to-day development life.',
     color: 'text-mw-purple',
     link: '/instruction',
     linkText: 'View Instruction',
-  },
-  {
-    name: 'Consulting',
-    description:
-      'I can inspect, diagnose, and plan improvements for your current web project.',
-    icon: <LifebuoyIcon />,
-    color: 'text-mw-blue',
-    link: '/contact',
-    linkText: 'Contact Me',
   },
 ]
 
