@@ -6,7 +6,7 @@ export const metadata = {
   description: 'A simple and easy-to-use recurring task tracker.',
   openGraph: {
     images: [{
-      url: 'https://mattwaler.com/images/agone-og.png',
+      url: 'https://mattwaler.com/assets/agone-og.png',
       alt: 'Matt Waler Logo',
       width: 1440,
       height: 906,
