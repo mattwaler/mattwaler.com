@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     images: [{
       url: 'https://mattwaler.com/assets/agone-og.png',
-      alt: 'Matt Waler Logo',
+      alt: 'Agone OG Image',
       width: 1440,
       height: 906,
     }],
@@ -41,7 +41,9 @@ export default function Work() {
       {/* Hero */}
       <section className="container section-spacing pb-0 flex flex-col lg:flex-row items-center justify-between gap-24">
         <div className="flex-1">
-          <img src="/assets/agone.svg" alt="Agone logo" className="size-16" />
+          <div className="bg-white size-16 flex items-center justify-center rounded-lg">
+            <img src="/assets/agone.svg" alt="Agone logo" className="size-14" />
+          </div>
           <h1 className="mt-4 text-4xl xl:text-6xl font-extrabold tracking-tight text-balance">
             Agone makes{' '}
             <span className="text-agone-blue">tracking recurring tasks</span> and{' '}
@@ -135,7 +137,15 @@ export default function Work() {
             is yours and yours alone, and will sync seamlessly between all of
             your devices.
           </p>
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center gap-4 mt-8">
+            <a target="_blank" href={appStoreLink}>
+              <img
+                src="/assets/app-store.svg"
+                alt="Download Agone on the App Store"
+                height="53"
+                width="160"
+              />
+            </a>
             <a
               target="_blank"
               href="https://www.privacypolicies.com/live/b7154941-c4a9-429a-814d-410182d5a0cc"
