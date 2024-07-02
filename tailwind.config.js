@@ -30,6 +30,8 @@ module.exports = {
         'mw-teal': '#00EAF8',
         'mw-blue': '#4A79F2',
         'mw-purple': '#6A46EF',
+        'agone-purp': "#6a3ee9",
+        'agone-blue': "#536dfe",
       },
     },
     screens: {
