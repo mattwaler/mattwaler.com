@@ -9,7 +9,7 @@ export const metadata = {
     canonical: 'https://mattwaler.com'
   },
   title:
-    'Matt Waler is a Senior JavaScript Developer, Tennis player, and avid Weightlifter.',
+    'Matt Waler builds websites and mobile applications with JavaScript and Swift.',
   description:
     'My name is Matt Waler, and I am a developer from Ohio specializing in JavaScript and Swift. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.',
 }
