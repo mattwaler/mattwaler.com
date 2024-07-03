@@ -17,7 +17,7 @@ const content = [
   {
     heading: 'Fitness Timer',
     description:
-      'A no-fuss fitness timer App that allows a user to customize timer duration, repeats, and rest time.',
+      'A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.',
     link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone',
     image: fitness,
     color: 'text-[#3b82f6]',

@@ -77,7 +77,6 @@ export default function Work() {
         </div>
         <div className="w-[300px] h-[400px] lg:w-[450px] lg:h-[600px] overflow-hidden">
           <Image
-            placeholder="blur"
             src={items}
             alt="View of Agone app in the items view."
             height="909"
