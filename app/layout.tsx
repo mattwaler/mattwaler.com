@@ -39,10 +39,12 @@ export const viewport: Viewport = {
   themeColor: "#09090b",
 }
 
+const devMode = process.env.NODE_ENV == 'development'
+
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={devMode ? 'debug-screens' : ''}>
         <Header />
         <main>{children}</main>
         <Toaster />
