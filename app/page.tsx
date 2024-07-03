@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <Hero
-        heading={`I build websites and mobile applications.`}
+        heading={`I build websites and applications with JavaScript and Swift.`}
         paragraph={metadata.description}
         image={tripp}
       />

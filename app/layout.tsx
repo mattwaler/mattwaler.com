@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       url: 'https://mattwaler.com/assets/og.png',
       alt: 'Matt Waler Logo',
       width: 1440,
-      height: 678,
+      height: 682,
     }],
     locale: 'en_US',
     siteName: 'Matt Waler',

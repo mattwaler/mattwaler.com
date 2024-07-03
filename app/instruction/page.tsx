@@ -8,7 +8,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://mattwaler.com/instruction'
   },
-  title: 'Schedule a personalized pair programming session',
+  title: 'Matt Waler offers personalized pair programming sessions for Frontend and Swift Development',
   description:
     'I offer pair programming sessions for developers to help sharpen their skills with modern frontend tools and frameworks. Ask questions as you work alongside a living breathing person.',
 }
@@ -16,7 +16,7 @@ export const metadata = {
 export default function Instruction() {
   return (
     <>
-      <Hero heading={`${metadata.title}.`} paragraph={metadata.description} />
+      <Hero heading={`Schedule a personalized pair programming session.`} paragraph={metadata.description} />
       <Overview />
       <Offerings />
       <Pricing />

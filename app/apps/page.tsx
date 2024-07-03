@@ -6,7 +6,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://mattwaler.com/apps'
   },
-  title: 'I create simple and powerful applications for any Apple Device',
+  title: 'Matt Waler creates simple and powerful applications for any Apple Device',
   description:
     'I have recently started dipping my toes into Swift and iOS applications. Take a look at what I have completed so far.',
 }
@@ -14,7 +14,10 @@ export const metadata = {
 export default function Work() {
   return (
     <>
-      <Hero heading={`${metadata.title}.`} paragraph={metadata.description} />
+      <Hero
+        heading={`I create simple and powerful applications for any Apple Device.`}
+        paragraph={metadata.description}
+      />
       <Listing />
       <Contact />
     </>
