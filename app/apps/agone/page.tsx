@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { LockClosedIcon } from '@heroicons/react/24/solid'
 import agone from 'assets/agone.svg'
-import items from 'assets/items.png'
-import groups from 'assets/groups.png'
+import items from 'assets/items.webp'
+import groups from 'assets/groups.webp'
 import appStore from 'assets/app-store.svg'
 
 export const metadata = {
