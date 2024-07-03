@@ -149,9 +149,9 @@ export default function Work() {
             <a
               target="_blank"
               href="https://www.privacypolicies.com/live/b7154941-c4a9-429a-814d-410182d5a0cc"
-              className="bg-agone-blue text-white font-semibold lg:text-lg px-6 py-3 rounded-lg"
+              className="bg-agone-blue text-white font-semibold lg:text-lg px-6 py-3 rounded-lg flex items-center justify-center"
             >
-              Privacy Policy &rarr;
+              Privacy <span className="hidden sm:inline">&nbsp;Policy &rarr;</span>
             </a>
           </div>
         </div>

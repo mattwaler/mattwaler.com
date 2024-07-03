@@ -27,11 +27,11 @@ const content = [
 const isEven = (index: number) => index % 2 === 0
 
 const About = () => (
-  <section className="container section-spacing grid grid-cols-1 gap-12 sm:gap-24">
+  <section className="container section-spacing grid grid-cols-1 gap-24">
     {content.map((section, index) => (
       <div
         key={section.heading}
-        className="grid items-center gap-8 grid-cols-1 md:grid-cols-2 md:gap-24"
+        className="grid items-center gap-8 grid-cols-1 md:grid-cols-2 md:gap-16"
       >
         <div className={!isEven(index) ? 'order-1 md:order-2' : ''}>
           <Image

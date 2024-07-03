@@ -4,13 +4,11 @@ import Image from 'next/image'
 
 export default function WorkListing() {
   return (
-    <section className="container section-spacing">
+    <section className="container section-spacing grid grid-cols-1 gap-24">
       {work.map((item, index) => (
         <article
           key={item.title}
-          className={`flex gap-8 flex-col items-center md:flex-row md:gap-16 ${
-            index !== 0 && 'pt-12 mt-12 border-t'
-          }`}
+          className={`flex gap-8 flex-col items-center md:flex-row md:gap-16`}
         >
           <Image
             alt={`${item.title} image`}

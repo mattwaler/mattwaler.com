@@ -6,7 +6,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://mattwaler.com/websites'
   },
-  title: 'Take a gander at some of websites I have worked on',
+  title: 'I create highly engaging and authorable web experiences',
   description:
     'I have built a lot of websites since I got started in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed recently.',
 }

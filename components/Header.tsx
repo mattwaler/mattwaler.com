@@ -57,13 +57,13 @@ export default function PageHeader() {
         </nav>
       </div>
       <Collapse isOpened={isNavOpen}>
-        <nav className="container md:hidden flex flex-wrap items-center justify-between gap-x-4">
-          <div className="flex items-center gap-4 pb-1">
+        <nav className="container md:hidden flex flex-col flex-wrap gap-x-4">
+          <div className="flex items-center gap-4">
             {links.internal.map(({ link, name }) => (
               <div key={name}>
                 <Link
                   href={link}
-                  className={`block py-4 font-semibold text-sm transition-colors tracking-tight hover:text-white ${
+                  className={`block font-semibold text-sm transition-colors tracking-tight hover:text-white ${
                     isActive(link) ? 'text-white' : 'text-zinc-400'
                   }`}
                 >
@@ -72,7 +72,7 @@ export default function PageHeader() {
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-4 pb-1">
+          <div className="flex items-center gap-4 py-4">
             {links.external.map((link) => (
               <a
                 key={link.link}

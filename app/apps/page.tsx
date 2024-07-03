@@ -6,7 +6,7 @@ export const metadata = {
   alternates: {
     canonical: 'https://mattwaler.com/apps'
   },
-  title: 'I publish simple but powerful mobile applications for use on Apple Devices',
+  title: 'I create simple and powerful applications for any Apple Device',
   description:
     'I have recently started dipping my toes into Swift and iOS applications. Take a look at what I have completed so far.',
 }
