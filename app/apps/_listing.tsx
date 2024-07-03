@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import agone from 'assets/agone.jpg'
 import fitness from 'assets/fitness.jpg'
+import Link from 'next/link'
 
 const content = [
   {
@@ -44,7 +45,9 @@ const About = () => (
           />
         </div>
         <div className={!isEven(index) ? 'order-2 md:order-1' : ''}>
-          <h3 className={`h3 ${section.color}`}>{section.heading}</h3>
+          <Link href={section.link}>
+            <h3 className={`h3 ${section.color}`}>{section.heading}</h3>
+          </Link>
           <p className={`text-pretty mt-2 text-lg xl:text-xl text-zinc-300`}>
             {section.description}
           </p>
@@ -58,7 +61,7 @@ const About = () => (
               </li>
             ))}
           </ul>
-          <a
+          <Link
             href={section.link}
             className={`inline-flex items-center text-lg mt-6 ${section.color} font-bold`}
           >
@@ -66,7 +69,7 @@ const About = () => (
             <span className="w-4 ml-1">
               <ArrowRightIcon />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     ))}

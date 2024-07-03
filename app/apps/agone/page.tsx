@@ -1,3 +1,11 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import { LockClosedIcon } from '@heroicons/react/24/solid'
+import agone from 'assets/agone.svg'
+import items from 'assets/items.png'
+import groups from 'assets/groups.png'
+import appStore from 'assets/app-store.svg'
+
 export const metadata = {
   alternates: {
     canonical: 'https://mattwaler.com/apps/agone',
@@ -42,7 +50,7 @@ export default function Work() {
       <section className="container section-spacing pb-0 flex flex-col lg:flex-row items-center justify-between gap-24">
         <div className="flex-1">
           <div className="bg-white size-16 flex items-center justify-center rounded-lg">
-            <img src="/assets/agone.svg" alt="Agone logo" className="size-14" />
+            <Image src={agone} alt="" className='size-14' />
           </div>
           <h1 className="mt-4 text-4xl xl:text-6xl font-extrabold tracking-tight text-balance">
             Agone makes{' '}
@@ -56,8 +64,8 @@ export default function Work() {
           </p>
           <div className="mt-6">
             <a target="_blank" href={appStoreLink}>
-              <img
-                src="/assets/app-store.svg"
+              <Image
+                src={appStore}
                 alt="Download Agone on the App Store"
                 height="53"
                 width="160"
@@ -69,8 +77,9 @@ export default function Work() {
           </div>
         </div>
         <div className="w-[300px] h-[400px] lg:w-[450px] lg:h-[600px] overflow-hidden">
-          <img
-            src="/assets/items.png"
+          <Image
+            placeholder="blur"
+            src={items}
             alt="View of Agone app in the items view."
             height="909"
             width="450"
@@ -81,8 +90,9 @@ export default function Work() {
       <section className="section-spacing pb-0 border-t">
         <div className="container flex flex-col xl:flex-row items-center justify-between gap-12">
           <div className="w-[300px] h-[400px] xl:w-[450px] xl:h-[600px] overflow-hidden order-last xl:order-first">
-            <img
-              src="/assets/groups.png"
+            <Image
+              placeholder="blur"
+              src={groups}
               alt="View of Agone app in the groups view."
               height="909"
               width="450"
@@ -117,18 +127,7 @@ export default function Work() {
       {/* Privacy */}
       <section className="section-spacing border-t">
         <div className="container sm:max-w-screen-xs lg:max-w-screen-sm xl:max-w-[700px] text-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-12 h-12 text-agone-blue mx-auto mb-4"
-          >
-            <path
-              fillRule="evenodd"
-              d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <LockClosedIcon className='size-12 text-agone-blue mx-auto mb-4' />
           <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight text-zinc-100 mb-6 text-balance">
             Agone will never have ads, trackers, or signup forms.
           </h2>
@@ -139,8 +138,8 @@ export default function Work() {
           </p>
           <div className="flex justify-center gap-4 mt-8">
             <a target="_blank" href={appStoreLink}>
-              <img
-                src="/assets/app-store.svg"
+              <Image
+                src={appStore}
                 alt="Download Agone on the App Store"
                 height="53"
                 width="160"

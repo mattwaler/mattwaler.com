@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import work from 'assets/work'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function WorkListing() {
   return (
@@ -14,17 +15,18 @@ export default function WorkListing() {
             alt={`${item.title} image`}
             className="w-full object-top object-cover h-72 bg-zinc-800 md:w-5/12 rounded-lg shadow-lg"
             src={item.image}
+            loading='lazy'
             width="592"
             height="288"
             placeholder="blur"
           />
           <div className="flex-1">
-            <a target="_blank" href={item.link}>
+            <Link target="_blank" href={item.link}>
               <h2 className="h3 text-pretty">{item.title}</h2>
               <p className={`text-sm text-pretty font-medium underline ${item.color}`}>
                 {item.link}
               </p>
-            </a>
+            </Link>
             <p className='text-pretty text-base text-zinc-300 mt-3'>
               {item.description}
             </p>
@@ -38,7 +40,7 @@ export default function WorkListing() {
                 </li>
               ))}
             </ul>
-            <a
+            <Link
               target="_blank"
               href={item.link}
               className={`inline-flex items-center mt-6 ${item.color} font-bold`}
@@ -47,7 +49,7 @@ export default function WorkListing() {
               <span className="w-4 ml-1">
                 <ArrowRightIcon />
               </span>
-            </a>
+            </Link>
           </div>
         </article>
       ))}
