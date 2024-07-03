@@ -44,8 +44,8 @@ const About = () => (
           />
         </div>
         <div className={!isEven(index) ? 'order-2 md:order-1' : ''}>
-          <h3 className={`h2 ${section.color}`}>{section.heading}</h3>
-          <p className={`text-pretty mt-2 text-lg md:text-xl text-zinc-300`}>
+          <h3 className={`h3 ${section.color}`}>{section.heading}</h3>
+          <p className={`text-pretty mt-2 text-lg xl:text-xl text-zinc-300`}>
             {section.description}
           </p>
           <ul className="flex flex-wrap items-center gap-1 mt-4">

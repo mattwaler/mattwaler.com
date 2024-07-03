@@ -3,6 +3,7 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 import BackToTop from 'components/BackToTop'
 import Toaster from 'components/Toaster'
+import ClipPaths from 'components/ClipPaths'
 import { Metadata, Viewport } from 'next'
 
 export const metadata: Metadata = {
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
     images: [{
       url: 'https://mattwaler.com/assets/og.png',
       alt: 'Matt Waler Logo',
-      width: 1200,
-      height: 627,
+      width: 1440,
+      height: 678,
     }],
     locale: 'en_US',
     siteName: 'Matt Waler',
@@ -47,6 +48,7 @@ export default function Layout({ children }) {
         <Toaster />
         <BackToTop />
         <Footer />
+        <ClipPaths />
       </body>
     </html>
   )

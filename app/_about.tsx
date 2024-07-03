@@ -68,7 +68,7 @@ const About = () => (
           <ul className="mt-4 flex flex-col gap-2">
             {section.items.map((item) => (
               <li className="flex items-center gap-2 md:text-lg" key={item}>
-                <CheckCircleIcon className="w-5 h-5 text-mw-purple" />
+                <CheckCircleIcon className="w-5 h-5 text-mw-blue" />
                 {item}
               </li>
             ))}
