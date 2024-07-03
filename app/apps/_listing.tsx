@@ -41,6 +41,7 @@ const About = () => (
             height={945}
             className="w-full mx-auto rounded-lg shadow"
             loading="lazy"
+            placeholder="blur"
             src={section.image}
           />
         </div>
