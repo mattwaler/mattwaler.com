@@ -73,7 +73,7 @@ export default function InstructionPricing() {
             <div className="mt-4 space-y-2">
               {item.bullets.map((bullet) => (
                 <div key={bullet} className="flex items-center">
-                  <span className="block w-4 h-4 text-mw-teal">
+                  <span className="block w-4 h-4 text-mw-blue">
                     <CheckCircleIcon />
                   </span>
                   <span className="ml-2">{bullet}</span>

@@ -12,8 +12,12 @@
     }
   }
 
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-tl from-mw-purple via-mw-blue to-mw-teal;
+  }
+
   .gradient {
-    background: linear-gradient(134deg, #00eaf8 0%, #6d42ef 100%);
+    @apply bg-gradient-to-tl from-mw-purple via-mw-blue to-mw-teal;
   }
 
   .animate-grow {
