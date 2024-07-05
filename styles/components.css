@@ -20,7 +20,7 @@
   }
 
   .input {
-    @apply rounded bg-zinc-800 border focus:border-mw-blue;
+    @apply rounded bg-zinc-800 border border-zinc-600 focus:border-mw-blue;
   }
 
   .section-spacing {

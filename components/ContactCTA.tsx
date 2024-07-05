@@ -1,4 +1,5 @@
 import { ArrowRightIcon, MusicalNoteIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 export default function ContactCTA() {
   return (
@@ -64,15 +65,15 @@ export default function ContactCTA() {
             with an app you don't love. I can refactor, refresh, or just rebuild
             you a new app or website that will knock your socks off.
           </p>
-          <a
-            className="inline-flex items-center mt-6 text-mw-teal rounded font-bold "
-            href="/contact/"
+          <Link
+            className="inline-flex button items-center mt-6 rounded"
+            href="/contact"
           >
             Contact Me
             <span className="w-4 h-4 ml-1">
               <ArrowRightIcon />
             </span>
-          </a>
+          </Link>
         </div>
       </section>
     </div>

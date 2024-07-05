@@ -48,9 +48,6 @@ export default function Work() {
       {/* Hero */}
       <section className="container section-spacing pb-0 flex flex-col lg:flex-row items-center justify-between gap-24">
         <div className="flex-1">
-          <div className="bg-white size-16 flex items-center justify-center rounded-lg">
-            <Image src={agone} alt="" className='size-14' />
-          </div>
           <h1 className="mt-4 text-4xl xl:text-6xl font-extrabold tracking-tight text-balance">
             Agone makes{' '}
             <span className="text-agone-blue">tracking recurring tasks</span> and{' '}
