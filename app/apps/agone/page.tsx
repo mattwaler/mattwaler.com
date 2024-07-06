@@ -50,8 +50,8 @@ export default function Work() {
         <div className="flex-1">
           <h1 className="mt-4 text-4xl xl:text-6xl font-extrabold tracking-tight text-balance">
             Agone makes{' '}
-            <span className="text-agone-blue">tracking recurring tasks</span> and{' '}
-            <span className="text-agone-blue">task organization</span> dead simple.
+            <span className="text-gradient">tracking recurring tasks</span> and{' '}
+            <span className="text-gradient">task organization</span> dead simple.
           </h1>
           <p className="text-lg xl:text-2xl text-zinc-400 mt-4 text-balance">
             Keeping track of all of life's recurring tasks is impossible. Make
@@ -104,7 +104,7 @@ export default function Work() {
             <ol className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-12 my-7 lg:my-14">
               {steps.map((step, index) => (
                 <li key={index} className="flex gap-4">
-                  <span className="flex items-center justify-center h-8 w-8 bg-agone-blue rounded-full text-zinc-100 text-xl font-bold">
+                  <span className="flex items-center justify-center h-8 w-8 gradient rounded-full text-zinc-100 text-xl font-bold">
                     {index + 1}
                   </span>
                   <div className="flex-1">
@@ -122,7 +122,7 @@ export default function Work() {
       {/* Privacy */}
       <section className="section-spacing border-t">
         <div className="container sm:max-w-screen-xs lg:max-w-screen-sm xl:max-w-[700px] text-center">
-          <LockClosedIcon className='size-12 text-agone-blue mx-auto mb-4' />
+          <LockClosedIcon className='size-12 text-mw-blue mx-auto mb-4' />
           <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight text-zinc-100 mb-6 text-balance">
             Agone will never have ads, trackers, or signup forms.
           </h2>
@@ -143,7 +143,7 @@ export default function Work() {
             <a
               target="_blank"
               href="https://www.privacypolicies.com/live/b7154941-c4a9-429a-814d-410182d5a0cc"
-              className="bg-agone-blue text-white font-semibold lg:text-lg px-6 py-3 rounded-lg flex items-center justify-center"
+              className="button lg:text-lg px-6 py-3 rounded-lg flex items-center justify-center"
             >
               Privacy <span className="hidden sm:inline">&nbsp;Policy &rarr;</span>
             </a>

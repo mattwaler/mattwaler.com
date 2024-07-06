@@ -11,7 +11,7 @@ const content = [
       'Agone is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
     link: '/apps/agone',
     image: agone,
-    color: 'text-agone-blue',
+    color: 'text-mw-purple',
     tools: ['Swift', 'Swift UI', 'Swift Data'],
   },
   {

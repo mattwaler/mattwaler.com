@@ -1,4 +1,5 @@
 import 'styles/_app.css'
+import Alert from 'components/Alert'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import BackToTop from 'components/BackToTop'
@@ -45,6 +46,7 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className={devMode ? 'debug-screens' : ''}>
+        <Alert />
         <Header />
         <main>{children}</main>
         <Toaster />

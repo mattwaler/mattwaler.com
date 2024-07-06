@@ -10,9 +10,7 @@ import links from 'assets/links'
 export default function PageHeader() {
   const [isNavOpen, setNavOpen] = useState(false)
   const pathname = usePathname()
-
   useEffect(() => setNavOpen(false), [pathname])
-
   const isActive = (path: string) => pathname === path
 
   return (
