@@ -10,7 +10,7 @@ interface Props {
 export default function Hero(props: Props) {
   return (
     <section className="border-b text-white py-8 lg:py-32">
-      <div className="container flex items-center flex-col gap-8 lg:gap-16 lg:flex-row">
+      <div className="container flex items-center flex-col gap-12 lg:gap-16 lg:flex-row">
         <div className="w-full order-2 lg:order-1">
           <h1 className="h1 pb-2 xl:pb-4 text-balance text-gradient">
             {props.heading}
@@ -25,21 +25,21 @@ export default function Hero(props: Props) {
           </p>
         </div>
         {props.image && (
-          <>
+          <div className="relative flex-none order-1 lg:order-2 size-64 lg:size-80 xl:size-96">
             <Image
               style={{ clipPath: "url('#blob')" }}
               src={props.image}
               role="presentation"
               alt=""
-              width={320}
-              height={320}
-              className={clsx(
-                'flex-none overflow-hidden',
-                'order-1 size-64',
-                'lg:order-2 lg:size-80 xl:size-96'
-              )}
+              width={384}
+              height={384}
+              className="z-10 relative"
             />
-          </>
+            <div
+              className="z-0 absolute inset-0 gradient size-full scale-110 rotate-[7deg]"
+              style={{ clipPath: "url('#blob')" }}
+            />
+          </div>
         )}
       </div>
     </section>
