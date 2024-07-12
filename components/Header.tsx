@@ -56,7 +56,10 @@ export default function PageHeader() {
       </div>
       <Collapse isOpened={isNavOpen}>
         <nav className="container md:hidden flex flex-col flex-wrap gap-x-4">
-          <div className="flex items-center gap-4">
+          <div
+            className="flex items-center gap-4"
+            inert={!isNavOpen}
+          >
             {links.internal.map(({ link, name }) => (
               <div key={name}>
                 <Link

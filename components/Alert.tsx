@@ -27,7 +27,7 @@ export default function Alert() {
             <span className="sm:hidden">Agone: Recurring Task Tracker</span>
           </Link>
           <div className="flex items-center gap-2">
-            <button onClick={() => setShowAlert(false)}>
+            <button onClick={() => setShowAlert(false)} aria-label="Dismiss alert">
               <XMarkIcon className="size-6" />
             </button>
           </div>
