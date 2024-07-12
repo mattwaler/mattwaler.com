@@ -29,8 +29,8 @@ export default function Hero(props: Props) {
             <Image
               style={{ clipPath: "url('#blob')" }}
               src={props.image}
-              role="presentation"
               alt=""
+              priority
               width={384}
               height={384}
               className="z-10 relative"

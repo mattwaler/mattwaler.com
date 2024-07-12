@@ -1,4 +1,4 @@
-import tripp from 'assets/tripp.jpg'
+import tripp from 'assets/tripp.webp'
 import Hero from 'components/Hero'
 import ContactCTA from 'components/ContactCTA'
 import Skills from 'app/_skills'

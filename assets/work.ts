@@ -1,18 +1,18 @@
-import hylant from 'assets/hylant.jpg'
-import fitness from 'assets/fitness.jpg'
-import trendyminds from 'assets/trendyminds.jpg'
-import rev from 'assets/rev.jpg'
-import ascend from 'assets/ascend.jpg'
-import sea from 'assets/sea.jpg'
-import bfi from 'assets/brighterfutures.jpg'
-import covid from 'assets/covid.jpg'
-import hamilton from 'assets/hamilton.jpg'
+import ascend from 'assets/ascend.webp'
+import bfi from 'assets/brighterfutures.webp'
+import covid from 'assets/covid.webp'
+import gardenofflavor from 'assets/gardenofflavor.webp'
+import hamilton from 'assets/hamilton.webp'
+import hylant from 'assets/hylant.webp'
+import IUH from 'assets/iuhealth.webp'
+import rev from 'assets/rev.webp'
+import riley from 'assets/riley.webp'
+import sea from 'assets/sea.webp'
+
+// Still need webps
 import theta from 'assets/theta.jpg'
-import IUH from 'assets/iuhealth.jpg'
-import riley from 'assets/riley.jpg'
 import transport from 'assets/transport.jpg'
-import gardenofflavor from 'assets/gardenofflavor.jpg'
-import agone from 'assets/agone.jpg'
+import trendyminds from 'assets/trendyminds.jpg'
 
 export default [
   {

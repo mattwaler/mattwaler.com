@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
-import agone from 'assets/agone.jpg'
-import fitness from 'assets/fitness.jpg'
+import agone from 'assets/agone.webp'
+import fitness from 'assets/fitness.webp'
 import Link from 'next/link'
 
 const content = [
