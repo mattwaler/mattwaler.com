@@ -8,11 +8,9 @@ import IUH from 'assets/iuhealth.webp'
 import rev from 'assets/rev.webp'
 import riley from 'assets/riley.webp'
 import sea from 'assets/sea.webp'
-
-// Still need webps
-import theta from 'assets/theta.jpg'
-import transport from 'assets/transport.jpg'
-import trendyminds from 'assets/trendyminds.jpg'
+import theta from 'assets/theta.webp'
+import transport from 'assets/transport.webp'
+import trendyminds from 'assets/trendyminds.webp'
 
 export default [
   {
