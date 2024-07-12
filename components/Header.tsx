@@ -56,13 +56,11 @@ export default function PageHeader() {
       </div>
       <Collapse isOpened={isNavOpen}>
         <nav className="container md:hidden flex flex-col flex-wrap gap-x-4">
-          <div
-            className="flex items-center gap-4"
-            inert={!isNavOpen}
-          >
+          <div className="flex items-center gap-4">
             {links.internal.map(({ link, name }) => (
               <div key={name}>
                 <Link
+                  aria-disabled={!isNavOpen}
                   href={link}
                   className={`block font-semibold text-sm transition-colors tracking-tight hover:text-white ${
                     isActive(link) ? 'text-white' : 'text-zinc-400'
@@ -77,6 +75,7 @@ export default function PageHeader() {
             {links.external.map((link) => (
               <a
                 key={link.link}
+                aria-disabled={!isNavOpen}
                 aria-label={`${link.name} link`}
                 href={link.link}
                 target="_blank"
