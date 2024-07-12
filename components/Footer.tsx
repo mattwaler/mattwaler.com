@@ -1,4 +1,4 @@
-import links from 'assets/links'
+import { links } from 'components/Header'
 import Year from 'components/Year'
 
 export default function PageFooter() {

@@ -1,12 +1,12 @@
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
-import work from 'assets/work'
+import work from './_websites'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function WorkListing() {
   return (
     <section className="container section-spacing grid grid-cols-1 gap-24">
-      {work.map((item, index) => (
+      {work.map((item) => (
         <article
           key={item.title}
           className={`flex gap-8 flex-col items-center md:flex-row md:gap-16`}

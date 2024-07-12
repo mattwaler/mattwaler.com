@@ -5,9 +5,31 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Collapse } from 'react-collapse'
-import links from 'assets/links'
+import { GitHub, LinkedIn, Instagram } from '../components/Icons'
 
-export default function PageHeader() {
+export const links = {
+  internal: [
+    { name: 'Apps', link: '/apps' },
+    { name: 'Websites', link: '/websites' },
+    { name: 'Contact', link: '/contact' },
+    { name: 'Instruction', link: '/instruction' },
+  ],
+  external: [
+    { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/mattwaler' },
+    {
+      name: 'Instagram',
+      icon: <Instagram />,
+      link: 'https://www.instagram.com/mattwaler',
+    },
+    {
+      name: 'LinkedIn',
+      icon: <LinkedIn />,
+      link: 'https://www.linkedin.com/in/mattwaler/',
+    },
+  ],
+}
+
+export default function Header() {
   const [isNavOpen, setNavOpen] = useState(false)
   const pathname = usePathname()
   useEffect(() => setNavOpen(false), [pathname])
