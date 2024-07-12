@@ -59,7 +59,7 @@ export default function ContactCTA() {
               <MusicalNoteIcon className="text-mw-purple" />
             </span>
           </h3>
-          <p className="mt-2 sm:mt-4 text-sm sm:text-base lg:text-lg">
+          <p className="mt-2 sm:mt-4 text-pretty text-sm sm:text-base lg:text-lg">
             Don't get{' '}
             <strong className="font-bold italic text-mw-blue">Frozen</strong>{' '}
             with an app you don't love. I can refactor, refresh, or just rebuild
