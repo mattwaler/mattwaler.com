@@ -11,14 +11,6 @@ export const metadata = {
   },
   title: 'Agone: Recurring Task Tracker',
   description: 'A simple and easy-to-use recurring task tracker.',
-  openGraph: {
-    images: [{
-      url: 'https://mattwaler.com/assets/agone-og.png',
-      alt: 'Agone OG Image',
-      width: 1440,
-      height: 906,
-    }],
-  },
 }
 
 const appStoreLink = "https://apps.apple.com/us/app/agone-recurring-tasks-tracker/id6478084115?platform=iphone"
