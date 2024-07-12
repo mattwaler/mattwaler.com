@@ -1,3 +1,5 @@
+'use client'
+
 import { links } from 'components/Header'
 import Year from 'components/Year'
 

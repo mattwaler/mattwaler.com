@@ -39,7 +39,7 @@ export default function Header() {
     <header className="w-full border-b">
       <div className="container py-5 flex items-center">
         <Link href="/" className="flex items-center gap-2">
-          <img className="h-7" src="/assets/logo.svg" alt="Logo" />
+          <img className="h-7 w-auto" width={127} height={28} src="/assets/logo.svg" alt="Logo" />
         </Link>
         <nav className="ml-auto space-x-4 hidden md:block">
           {links.internal.map(({ link, name }) => (
@@ -62,7 +62,7 @@ export default function Header() {
               href={link.link}
               target="_blank"
               rel="noopener"
-              className="w-5 h-5 hidden md:block transition-colors text-zinc-300 hover:text-white"
+              className="size-5 hidden md:block transition-colors text-zinc-300 hover:text-white"
             >
               {link.icon}
             </a>
@@ -77,8 +77,8 @@ export default function Header() {
         </nav>
       </div>
       <Collapse isOpened={isNavOpen}>
-        <nav className="container md:hidden flex flex-col flex-wrap gap-x-4">
-          <div className="flex items-center gap-4">
+        <nav className="container md:hidden flex flex-col flex-wrap gap-5">
+          <div className="flex items-center gap-5">
             {links.internal.map(({ link, name }) => (
               <div key={name}>
                 <Link
@@ -93,7 +93,7 @@ export default function Header() {
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-4 py-4">
+          <div className="flex items-center gap-4 pb-5">
             {links.external.map((link) => (
               <a
                 key={link.link}
@@ -102,7 +102,7 @@ export default function Header() {
                 href={link.link}
                 target="_blank"
                 rel="noopener"
-                className="w-5 h-5 text-zinc-400 transition-colors hover:text-white"
+                className="size-6 text-zinc-400 transition-colors hover:text-white"
               >
                 {link.icon}
               </a>
