@@ -12,10 +12,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
-  icons: {
-    apple: '/favicons/apple-touch-icon-152x152.png',
-    icon: '/favicons/favicon.svg',
-  },
   openGraph: {
     locale: 'en_US',
     siteName: 'Matt Waler',
