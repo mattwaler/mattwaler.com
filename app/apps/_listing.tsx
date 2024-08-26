@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
-import agone from 'assets/agone.webp'
+import agone from 'assets/agone.jpg'
 import fitness from 'assets/fitness.webp'
 import Link from 'next/link'
 
@@ -11,7 +11,7 @@ const content = [
       'Agone is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
     link: '/apps/agone',
     image: agone,
-    color: 'text-mw-purple',
+    color: 'text-mw-blue',
     tools: ['Swift', 'Swift UI', 'Swift Data'],
   },
   {
