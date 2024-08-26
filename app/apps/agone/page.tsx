@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import { LockClosedIcon } from '@heroicons/react/24/solid'
-import agone from 'assets/agone.svg'
+import home from 'assets/home.webp'
 import items from 'assets/items.webp'
-import groups from 'assets/groups.webp'
 import appStore from 'assets/app-store.svg'
 
 export const metadata = {
@@ -66,7 +65,7 @@ export default function Work() {
         </div>
         <div className="w-[300px] h-[400px] lg:w-[450px] lg:h-[600px] overflow-hidden">
           <Image
-            src={items}
+            src={home}
             alt="View of Agone app in the items view."
             height="909"
             width="450"
@@ -79,7 +78,7 @@ export default function Work() {
           <div className="w-[300px] h-[400px] xl:w-[450px] xl:h-[600px] overflow-hidden order-last xl:order-first">
             <Image
               placeholder="blur"
-              src={groups}
+              src={items}
               alt="View of Agone app in the groups view."
               height="909"
               width="450"
