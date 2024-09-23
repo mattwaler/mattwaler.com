@@ -14,11 +14,11 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
     "@heroicons/react": "^2.0.12",
     "clsx": "^2.0.0",
     "next": "^14.0.4",
     "react": "^18.2.0",
-    "react-collapse": "^5.1.1",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.1.0",
     "react-use": "^17.4.0"

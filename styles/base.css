@@ -25,7 +25,3 @@
     @apply gradient;
   }
 }
-
-.ReactCollapse--collapse {
-  transition: height 500ms;
-}

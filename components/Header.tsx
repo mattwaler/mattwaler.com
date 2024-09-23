@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Collapse } from 'react-collapse'
 import { GitHub, LinkedIn, Instagram } from '../components/Icons'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 export const links = {
   internal: [
@@ -30,6 +30,7 @@ export const links = {
 }
 
 export default function Header() {
+  const [parent] = useAutoAnimate()
   const [isNavOpen, setNavOpen] = useState(false)
   const pathname = usePathname()
   useEffect(() => setNavOpen(false), [pathname])
@@ -76,40 +77,42 @@ export default function Header() {
           </button>
         </nav>
       </div>
-      <Collapse isOpened={isNavOpen}>
-        <nav className="container md:hidden flex flex-col flex-wrap gap-5">
-          <div className="flex items-center gap-5">
-            {links.internal.map(({ link, name }) => (
-              <div key={name}>
-                <Link
+      <div ref={parent}>
+        {isNavOpen && (
+          <nav className="container md:hidden flex flex-col flex-wrap gap-5">
+            <div className="flex items-center gap-5">
+              {links.internal.map(({ link, name }) => (
+                <div key={name}>
+                  <Link
+                    aria-disabled={!isNavOpen}
+                    href={link}
+                    className={`block font-semibold text-sm transition-colors tracking-tight hover:text-white ${
+                      isActive(link) ? 'text-white' : 'text-zinc-400'
+                    }`}
+                  >
+                    {name}
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-4 pb-5">
+              {links.external.map((link) => (
+                <a
+                  key={link.link}
                   aria-disabled={!isNavOpen}
-                  href={link}
-                  className={`block font-semibold text-sm transition-colors tracking-tight hover:text-white ${
-                    isActive(link) ? 'text-white' : 'text-zinc-400'
-                  }`}
+                  aria-label={`${link.name} link`}
+                  href={link.link}
+                  target="_blank"
+                  rel="noopener"
+                  className="size-6 text-zinc-400 transition-colors hover:text-white"
                 >
-                  {name}
-                </Link>
-              </div>
-            ))}
-          </div>
-          <div className="flex items-center gap-4 pb-5">
-            {links.external.map((link) => (
-              <a
-                key={link.link}
-                aria-disabled={!isNavOpen}
-                aria-label={`${link.name} link`}
-                href={link.link}
-                target="_blank"
-                rel="noopener"
-                className="size-6 text-zinc-400 transition-colors hover:text-white"
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-        </nav>
-      </Collapse>
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+          </nav>
+        )}
+      </div>
     </header>
   )
 }
