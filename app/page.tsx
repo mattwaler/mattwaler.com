@@ -1,8 +1,8 @@
-import tripp from 'assets/tripp.webp'
 import Hero from 'components/Hero'
 import ContactCTA from 'components/ContactCTA'
 import Skills from 'app/_skills'
 import About from 'app/_about'
+import fam from 'assets/fam.webp'
 
 export const metadata = {
   alternates: {
@@ -20,7 +20,7 @@ export default function Home() {
       <Hero
         heading={`I build websites and applications with JavaScript and Swift.`}
         paragraph={metadata.description}
-        image={tripp}
+        image={fam}
       />
       <About />
       <Skills />
