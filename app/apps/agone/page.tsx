@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { LockClosedIcon } from '@heroicons/react/24/solid'
-import home from 'assets/home.webp'
-import items from 'assets/items.webp'
 import appStore from 'assets/app-store.svg'
+import Phone from 'components/Phone'
+import simulator from 'assets/simulator.webp'
 
 export const metadata = {
   alternates: {
@@ -29,7 +29,7 @@ const steps = [
   },
   {
     heading: 'Upgrade to Premium',
-    body: 'If you are enjoying the app, consider upgrading to lifetime premium! This will allow you to create more than 20 items.',
+    body: 'If you are enjoying the app, consider upgrading to premium! This will allow you to create more than 10 items.',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function Work() {
   return (
     <>
       {/* Hero */}
-      <section className="container section-spacing pb-0 flex flex-col lg:flex-row items-center justify-between gap-24">
+      <section className="container section-spacing flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
         <div className="flex-1">
           <h1 className="mt-4 text-4xl xl:text-6xl font-extrabold tracking-tight text-balance">
             Agone makes{' '}
@@ -63,27 +63,30 @@ export default function Work() {
             </p>
           </div>
         </div>
-        <div className="w-[300px] h-[400px] lg:w-[450px] lg:h-[600px] overflow-hidden">
-          <Image
-            src={home}
-            alt="View of Agone app in the items view."
-            height="909"
-            width="450"
-          />
+        <div className="w-[240px] sm:w-[360px]">
+          <Phone>
+            <Image
+              className="absolute inset-0 size-full object-cover"
+              src={simulator}
+              alt="View of Agone app in the items view."
+            />
+          </Phone>
         </div>
       </section>
       {/* Steps */}
-      <section className="section-spacing pb-0 border-t">
-        <div className="container flex flex-col xl:flex-row items-center justify-between gap-12">
-          <div className="w-[300px] h-[400px] xl:w-[450px] xl:h-[600px] overflow-hidden order-last xl:order-first">
-            <Image
-              placeholder="blur"
-              src={items}
-              alt="View of Agone app in the groups view."
-              height="909"
-              width="450"
-              loading="lazy"
-            />
+      <section className="section-spacing border-t">
+        <div className="container flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="w-[300px] order-last lg:order-first">
+            <Phone>
+              <Image
+                placeholder="blur"
+                src={simulator}
+                alt="View of Agone app in the groups view."
+                height="909"
+                width="450"
+                loading="lazy"
+              />
+            </Phone>
           </div>
           <div className="flex-1">
             <h2 className="text-3xl lg:text-4xl font-extrabold tracking-tight text-zinc-100">
