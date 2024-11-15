@@ -37,7 +37,7 @@ export default function Work() {
   return (
     <>
       {/* Hero */}
-      <section className="container section-spacing flex flex-col md:flex-row items-center justify-between gap-12 md:gap-24">
+      <section className="container section-spacing flex flex-col md:flex-row items-center justify-between gap-12 xl:gap-24">
         <div className="flex-1">
           <h1 className="mt-4 text-4xl xl:text-6xl font-extrabold tracking-tight text-balance">
             Agone makes{' '}
@@ -75,8 +75,8 @@ export default function Work() {
       </section>
       {/* Steps */}
       <section className="section-spacing border-t">
-        <div className="container flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="w-[300px] order-last lg:order-first">
+        <div className="container flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-24">
+          <div className="hidden lg:block w-[360px] order-last lg:order-first">
             <Phone>
               <Image
                 placeholder="blur"

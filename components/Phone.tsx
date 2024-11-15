@@ -1,6 +1,6 @@
 export default function Phone(props) {
   return (
-    <div className="relative aspect-[288/600] max-w-72 rounded-[45px] shadow-[0_0_2px_2px_rgba(255,255,255,0.1)] border-8 border-zinc-900 ml-1">
+    <div className="relative aspect-[288/600] rounded-[45px] shadow-[0_0_2px_2px_rgba(255,255,255,0.1)] border-8 border-zinc-900 ml-1">
       {props.notch && (
         <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-[90px] h-[22px] bg-zinc-900 rounded-full z-20"></div>
       )}
