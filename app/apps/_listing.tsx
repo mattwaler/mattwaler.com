@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
-import agone from 'assets/agone.jpg'
-import fitness from 'assets/fitness.webp'
 import Link from 'next/link'
+import Phone from 'components/Phone'
+import agoneHome from 'assets/agone-home.webp'
+import agoneAll from 'assets/agone-all.webp'
+import oftSettings from 'assets/oft-settings.webp'
+import oftCountdown from 'assets/oft-countdown.webp'
 
 const content = [
   {
@@ -10,7 +13,7 @@ const content = [
     description:
       'Agone is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
     link: '/apps/agone',
-    image: agone,
+    images: [agoneHome, agoneAll],
     color: 'text-mw-blue',
     tools: ['Swift', 'Swift UI', 'Swift Data'],
   },
@@ -19,7 +22,7 @@ const content = [
     description:
       'A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.',
     link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone',
-    image: fitness,
+    images: [oftCountdown, oftSettings],
     color: 'text-[#3b82f6]',
     tools: ['Swift', 'Swift UI'],
   },
@@ -34,16 +37,20 @@ const About = () => (
         key={section.heading}
         className="grid items-center gap-8 grid-cols-1 md:grid-cols-2 md:gap-16"
       >
-        <div className={!isEven(index) ? 'order-1 md:order-2' : ''}>
-          <Image
-            alt={`${section.heading} illustration.`}
-            width={1200}
-            height={945}
-            className="w-full mx-auto rounded-lg shadow"
-            loading="lazy"
-            placeholder="blur"
-            src={section.image}
-          />
+        <div className={`@container flex gap-4 ${!isEven(index) ? 'order-1 md:order-2' : ''}`}>
+          {section.images.map((image, index) => (
+            <Phone key={index}>
+              <Image
+                alt={`${section.heading} illustration.`}
+                width={1206}
+                height={2622}
+                className="size-full object-cover mx-auto"
+                loading="lazy"
+                placeholder="blur"
+                src={image}
+              />
+            </Phone>
+          ))}
         </div>
         <div className={!isEven(index) ? 'order-2 md:order-1' : ''}>
           <Link href={section.link}>

@@ -2,7 +2,8 @@ import Image from 'next/image'
 import { LockClosedIcon } from '@heroicons/react/24/solid'
 import appStore from 'assets/app-store.svg'
 import Phone from 'components/Phone'
-import simulator from 'assets/simulator.webp'
+import agoneHome from 'assets/agone-home.webp'
+import agoneAll from 'assets/agone-all.webp'
 
 export const metadata = {
   alternates: {
@@ -66,8 +67,8 @@ export default function Work() {
         <div className="w-[240px] sm:w-[360px]">
           <Phone>
             <Image
-              className="absolute inset-0 size-full object-cover"
-              src={simulator}
+              className="size-full object-cover"
+              src={agoneHome}
               alt="View of Agone app in the items view."
             />
           </Phone>
@@ -80,7 +81,7 @@ export default function Work() {
             <Phone>
               <Image
                 placeholder="blur"
-                src={simulator}
+                src={agoneAll}
                 alt="View of Agone app in the groups view."
                 height="909"
                 width="450"
