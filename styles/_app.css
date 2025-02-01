@@ -1,8 +1,21 @@
-@import 'tailwindcss/base';
+@import 'tailwindcss';
 @import './base.css';
-
-@import 'tailwindcss/components';
 @import './components.css';
-
-@import 'tailwindcss/utilities';
 @import './utilities.css';
+
+@plugin '@tailwindcss/forms';
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 2rem;
+}
+
+@theme {
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --color-mw-teal: #00EAF8;
+  --color-mw-blue: #4A79F2;
+  --color-mw-purple: #6A46EF;
+}
