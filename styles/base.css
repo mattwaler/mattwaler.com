@@ -9,7 +9,12 @@
 
   html,
   body {
-    @apply w-full scroll-smooth font-sans antialiased text-zinc-100 bg-zinc-950 overflow-x-hidden;
+    @apply w-full scroll-smooth font-sans antialiased text-zinc-100 bg-zinc-950/50 overflow-x-hidden;
+  }
+
+  html {
+    background-image: url(/assets/paper.webp);
+    @apply bg-repeat;
   }
 
   * {
