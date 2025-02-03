@@ -1,7 +1,5 @@
-import Image from 'next/image'
 import { ArrowRightIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import Phone from 'components/Phone'
 import agoneHome from 'assets/agone-home.webp'
 import agoneAll from 'assets/agone-all.webp'
 import oftSettings from 'assets/oft-settings.webp'

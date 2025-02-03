@@ -45,7 +45,7 @@ export default function PhoneCarousel(props) {
               width={1206}
               height={2622}
               style={{ zIndex: index }}
-              className={`col-start-1 row-start-1 size-full transition-opacity duration-500 ${activeIndex === index ? 'opacity-1' : 'opacity-0'}`}
+              className={`col-start-1 row-start-1 size-full transition-opacity duration-500 ${activeIndex === index ? 'opacity-100' : 'opacity-0'}`}
               placeholder="blur"
               src={image}
             />
