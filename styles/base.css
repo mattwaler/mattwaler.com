@@ -9,7 +9,7 @@
 
   html,
   body {
-    @apply w-full scroll-smooth font-sans antialiased text-zinc-100 bg-gray-950 overflow-x-hidden;
+    @apply w-full scroll-smooth font-sans antialiased text-zinc-100 bg-black overflow-x-hidden;
   }
 
   button {

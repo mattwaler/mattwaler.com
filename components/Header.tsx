@@ -37,7 +37,7 @@ export default function Header() {
   const isActive = (path: string) => pathname === path
 
   return (
-    <header className="w-full border-b">
+    <header className="w-full">
       <div className="container py-5 flex items-center">
         <Link href="/" className="flex items-center gap-2">
           <img className="h-7 w-auto" width={127} height={28} src="/assets/logo.svg" alt="Logo" />

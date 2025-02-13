@@ -75,7 +75,7 @@ export default function Work() {
         </div>
       </section>
       {/* Steps */}
-      <section className="section-spacing border-t">
+      <section className="section-spacing">
         <div className="container flex flex-col lg:flex-row items-center justify-between gap-12 xl:gap-24">
           <div className="hidden lg:block w-[360px] order-last lg:order-first">
             <Phone>
@@ -115,7 +115,7 @@ export default function Work() {
         </div>
       </section>
       {/* Privacy */}
-      <section className="section-spacing border-t">
+      <section className="section-spacing">
         <div className="container sm:max-w-screen-xs lg:max-w-screen-sm xl:max-w-[700px] text-center">
           <LockClosedIcon className='size-12 text-mw-blue mx-auto mb-4' />
           <h2 className="text-3xl lg:text-5xl font-extrabold tracking-tight text-zinc-100 mb-6 text-balance">

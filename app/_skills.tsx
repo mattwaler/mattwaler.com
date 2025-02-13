@@ -37,7 +37,7 @@ const skills = [
 ]
 
 const Skills = () => (
-  <section className="border-t">
+  <section className='max-w-screen-xl mx-auto'>
     <div className="relative container section-spacing">
       <Intro
         heading="Jack of all trades. Master of some."
@@ -53,7 +53,7 @@ const Skills = () => (
             </span>
             <div className="ml-6 md:ml-0 flex-1 flex flex-col">
               <h3 className="h4 md:mt-6">{skill.name}</h3>
-              <p className="mt-2 text-pretty md:mt-3 text-zinc-300">{skill.description}</p>
+              <p className="mt-2 text-balance md:mt-3 text-zinc-300">{skill.description}</p>
               <span className="block h-4"></span>
               <a
                 className={`mt-auto flex md:justify-center items-center font-extrabold ${skill.color}`}

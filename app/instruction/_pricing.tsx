@@ -44,7 +44,7 @@ function focusForm(value: string) {
 
 export default function InstructionPricing() {
   return (
-    <section id="pricing" className="section-spacing relative border-t">
+    <section id="pricing" className="section-spacing relative">
       <div className="absolute w-full h-full top-0 left-0 z-0 lg:h-4/6"></div>
       <div className="relative container text-white z-20">
         <div className="lg:text-center">

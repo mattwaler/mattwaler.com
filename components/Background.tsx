@@ -5,7 +5,7 @@ const Background = () => (
     height="560"
     preserveAspectRatio="none"
     viewBox="0 0 1440 560"
-    className="fixed inset-0 min-w-screen min-h-screen z-0 opacity-20 object-cover"
+    className="fixed inset-0 min-w-[120vw] min-h-[120vh] z-0 opacity-20 object-cover"
   >
     <g fill="none" mask='url("#SvgjsMask1000")'>
       <path fill="#0e2a47" d="M0 0h1440v560H0z"></path>

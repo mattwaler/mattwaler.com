@@ -28,7 +28,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: 'cover',
   width: 'device-width',
-  themeColor: "#09090b",
+  themeColor: "#03080e",
 }
 
 const devMode = process.env.NODE_ENV == 'development'

@@ -20,7 +20,7 @@ export default function Alert() {
   return (
     <div ref={parent}>
       { showAlert && (
-        <div className="w-full gradient text-zinc-900 border-t py-3">
+        <div className="w-full gradient text-zinc-900 py-3">
           <div className="container flex items-center justify-between">
             <Link href="/apps/agone" className="font-bold underline">
               <span className="hidden sm:block">
