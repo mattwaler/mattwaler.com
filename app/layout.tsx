@@ -37,7 +37,6 @@ export default function Layout({ children }) {
   return (
     <html lang="en">
       <body className={devMode ? 'debug-screens' : ''}>
-        <Alert />
         <Header />
         <main>{children}</main>
         <Toaster />
