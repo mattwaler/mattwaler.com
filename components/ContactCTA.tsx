@@ -7,26 +7,26 @@ export default function ContactCTA() {
       <section className="container flex flex-wrap items-center section-spacing">
         <div
           aria-hidden="true"
-          className="w-full lg:w-1/2 bg-zinc-800 p-4 text-white rounded-lg shadow-lg text-sm sm:text-base lg:text-lg"
+          className="w-full lg:w-1/2 bg-zinc-900 text-white rounded-lg overflow-hidden shadow-lg text-sm sm:text-base lg:text-lg"
         >
-          <div className="space-x-2 flex items-center">
+          <div className="space-x-2 flex items-center p-4 pb-5 border-b-2">
             <div className="rounded-full w-3 h-3 bg-red-500"></div>
             <div className="rounded-full w-3 h-3 bg-yellow-500"></div>
             <div className="rounded-full w-3 h-3 bg-green-500"></div>
           </div>
-          <div className="pt-8 pb-4 grid grid-cols-1 font-mono">
+          <div className="p-4 grid grid-cols-1 font-mono">
             <span>
               <span className="text-mw-blue">let</span> needsMattsHelp ={' '}
               <span className="text-mw-teal">true</span>
             </span>
             <span className="mt-4">
               <span className="text-mw-blue">const</span>{' '}
-              <span className="text-yellow-200">contactMatt</span> = (message)
+              <span className="text-mw-purple">contactMatt</span> = (message)
               {' => {'}
             </span>
             <span className="ml-4">
               <span className="text-mw-blue">return</span>{' '}
-              <span className="text-yellow-200">alert</span>
+              <span className="text-mw-purple">alert</span>
               {'(message)'}
             </span>
             <span>{'}'}</span>
@@ -35,7 +35,7 @@ export default function ContactCTA() {
               {' (needsMattsHelp) {'}
             </span>
             <span className="ml-4">
-              <span className="text-yellow-200">contactMatt</span>
+              <span className="text-mw-purple">contactMatt</span>
               {'('}
               <span className="text-mw-teal">"Let's get started!"</span>
               {')'}

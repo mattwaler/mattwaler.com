@@ -24,6 +24,6 @@
   }
 
   .section-spacing {
-    @apply py-8 md:py-16 lg:py-24;
+    @apply my-12 md:my-24 lg:my-36;
   }
 }

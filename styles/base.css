@@ -25,10 +25,10 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-zinc-800;
+    @apply bg-zinc-900;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-tl from-mw-purple via-mw-blue to-mw-teal;
+    @apply bg-zinc-600 rounded-lg;
   }
 }
