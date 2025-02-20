@@ -42,7 +42,6 @@ export default function Layout({ children }) {
         <BackToTop />
         <Footer />
         <ClipPaths />
-        <a className="hidden" rel="me" href="https://mastodon.social/@mattwaler">Mastodon</a>
         <Background />
       </body>
     </html>
