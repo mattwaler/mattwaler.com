@@ -11,16 +11,17 @@ import sea from 'assets/sea.webp'
 import theta from 'assets/theta.webp'
 import transport from 'assets/transport.webp'
 import trendyminds from 'assets/trendyminds.webp'
+import paramount from 'assets/paramount.webp'
 
 export default [
   {
-    title: 'Hylant',
+    title: 'Rev Indy',
     description:
-      'A monolithic Craft CMS website for an insurance, employee benefits and risk management consulting company.',
-    link: 'https://hylant.com/',
-    image: hylant,
-    color: 'text-[#6bbbae]',
-    tools: ['Craft CMS', 'Tailwind', 'Alpine', 'Sprig'],
+      'A modular marketing website to bring awareness to the Rev Indy fundraising event that takes place every year.',
+    link: 'https://revindy.org/',
+    image: rev,
+    color: 'text-[#bdcb81]',
+    tools: ['Craft', 'Tailwind', 'Alpine'],
   },
   {
     title: 'TrendyMinds',
@@ -32,13 +33,22 @@ export default [
     tools: ['Craft', 'Tailwind', 'Alpine'],
   },
   {
-    title: 'Rev Indy',
+    title: 'Paramount Schools of Excellence',
     description:
-      'A modular marketing website to bring awareness to the Rev Indy fundraising event that takes place every year.',
-    link: 'https://revindy.org/',
-    image: rev,
-    color: 'text-[#c8a976]',
+      'A CMS built for a group of public schools that teaches academic content and life lessons through a structured, high-quality curriculum.',
+    link: 'https://paramountindy.org/',
+    image: paramount,
+    color: 'text-[#64bd62]',
     tools: ['Craft', 'Tailwind', 'Alpine'],
+  },
+  {
+    title: 'Hylant',
+    description:
+      'A monolithic Craft CMS website for an insurance, employee benefits and risk management consulting company.',
+    link: 'https://hylant.com/',
+    image: hylant,
+    color: 'text-[#6bbbae]',
+    tools: ['Craft CMS', 'Tailwind', 'Alpine', 'Sprig'],
   },
   {
     title: 'Ascend Indiana',
