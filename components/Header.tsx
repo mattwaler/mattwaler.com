@@ -12,7 +12,6 @@ export const links = {
     { name: 'Apps', link: '/apps' },
     { name: 'Websites', link: '/websites' },
     { name: 'Contact', link: '/contact' },
-    { name: 'Instruction', link: '/instruction' },
   ],
   external: [
     { name: 'GitHub', icon: <GitHub />, link: 'https://github.com/mattwaler' },
@@ -42,7 +41,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2">
           <img className="h-7 w-auto" width={127} height={28} src="/assets/logo.svg" alt="Logo" />
         </Link>
-        <nav className="ml-auto space-x-4 hidden md:block">
+        <nav className="ml-auto space-x-6 hidden md:block">
           {links.internal.map(({ link, name }) => (
             <Link
               key={name}

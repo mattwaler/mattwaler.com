@@ -26,13 +26,13 @@ const skills = [
     linkText: 'View Websites',
   },
   {
-    name: 'Instruction',
+    name: 'Consulting',
     icon: <AcademicCapIcon />,
     description:
-      'I am comfortable teaching any of the tools I use in my day-to-day development life.',
+      'I can provide insights and consulting for any of my day-to-day tools.',
     color: 'text-mw-purple',
-    link: '/instruction',
-    linkText: 'View Instruction',
+    link: '/contact',
+    linkText: 'Contact Me',
   },
 ]
 
