@@ -11,7 +11,7 @@ export const metadata = {
   title:
     'Matt Waler builds websites and mobile applications with JavaScript and Swift.',
   description:
-    'My name is Matt Waler, and I am a developer from Ohio specializing in JavaScript and Swift. I am a firm believer that simple, pragmatic, and readable code is far superior to complex abstractions.',
+    'My name is Matt Waler, and I am a senior developer from Ohio. I have been been writing frontend code for 10 years and have helped design and deploy hundreds of websites for my clients.',
 }
 
 export default function Home() {

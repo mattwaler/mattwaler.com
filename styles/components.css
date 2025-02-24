@@ -4,19 +4,19 @@
   }
 
   .h1 {
-    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black;
   }
 
   .h2 {
-    @apply text-2xl sm:text-3xl md:text-4xl font-black leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl font-black;
   }
 
   .h3 {
-    @apply text-xl sm:text-2xl md:text-3xl font-black leading-tight;
+    @apply text-xl sm:text-2xl md:text-3xl font-black;
   }
 
   .h4 {
-    @apply text-lg sm:text-xl md:text-2xl font-black leading-tight;
+    @apply text-lg sm:text-xl md:text-2xl font-black;
   }
 
   .input {

@@ -12,12 +12,12 @@ export default function Hero(props: Props) {
     <section className="text-white section-spacing mt-6 sm:mt-12 lg:mt-24">
       <div className="container flex items-center flex-col gap-12 lg:gap-16 lg:flex-row">
         <div className="w-full order-2 lg:order-1">
-          <h1 className="h1 pb-2 xl:pb-4 text-balance text-gradient">
+          <h1 className="h1 text-balance text-gradient">
             {props.heading}
           </h1>
           <p
             className={clsx(
-              'text-pretty text-base sm:text-lg lg:text-xl xl:text-2xl text-zinc-300',
+              'mt-6 text-pretty text-base sm:text-lg lg:text-xl xl:text-2xl text-zinc-300',
               !props.image && 'lg:max-w-2xl'
             )}
           >
