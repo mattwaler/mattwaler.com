@@ -1,0 +1,2 @@
+Sitemap: https://mattwaler.com/sitemap.xml
+User-agent: *
