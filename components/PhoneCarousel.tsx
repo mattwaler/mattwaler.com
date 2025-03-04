@@ -4,9 +4,11 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ArrowLeftCircleIcon } from '@heroicons/react/24/solid'
 import Phone from 'components/Phone'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
 
 export default function PhoneCarousel(props) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [parent] = useAutoAnimate()
 
   function previous(e) {
     e.preventDefault()
@@ -37,18 +39,21 @@ export default function PhoneCarousel(props) {
         <ArrowLeftCircleIcon className="size-12" />
       </button>
       <Phone>
-        <div className='grid grid-cols-1 grid-rows-1'>
+        <div ref={parent}>
           {props.images.map((image, index) => (
-            <Image
-              key={index}
-              alt={''}
-              width={1206}
-              height={2622}
-              style={{ zIndex: index }}
-              className={`col-start-1 row-start-1 size-full transition-opacity duration-500 ${activeIndex === index ? 'opacity-100' : 'opacity-0'}`}
-              placeholder="blur"
-              src={image}
-            />
+            <>
+              {activeIndex === index && (
+                <Image
+                  key={index}
+                  placeholder="blur"
+                  alt={''}
+                  width={1206}
+                  height={2622}
+                  style={{ zIndex: index }}
+                  src={image}
+                />
+              )}
+            </>
           ))}
         </div>
       </Phone>
