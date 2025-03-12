@@ -17,7 +17,7 @@ export default function Hero(props: Props) {
           </h1>
           <p
             className={clsx(
-              'mt-6 text-balance text-base sm:text-lg lg:text-xl xl:text-2xl text-zinc-300',
+              'mt-4 text-pretty lg:text-balance text-base sm:text-lg lg:text-xl xl:text-2xl text-zinc-300',
               !props.image && 'lg:max-w-2xl'
             )}
           >

@@ -4,7 +4,6 @@ export default async function sitemap() {
   const slugs = [
     '',
     '/contact',
-    '/instruction',
     '/apps',
     '/apps/agone',
     '/websites'
