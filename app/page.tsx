@@ -22,8 +22,8 @@ export default function Home() {
         paragraph={metadata.description}
         image={fam}
       />
-      <About />
       <Skills />
+      <About />
       <ContactCTA />
     </>
   )
