@@ -12,8 +12,18 @@ import theta from 'assets/theta.webp'
 import transport from 'assets/transport.webp'
 import trendyminds from 'assets/trendyminds.webp'
 import paramount from 'assets/paramount.webp'
+import kcl from 'assets/kingscourtlandscaping.webp'
 
 export default [
+  {
+    title: 'Kings Court Landscaping',
+    description:
+      'A fully static marketing website for a local landscaping company that provides lots of different services.',
+    link: 'https://kingscourtlandscaping.com',
+    image: kcl,
+    color: 'text-[#ecb742]',
+    tools: ['Astro', 'Tailwind', 'Alpine'],
+  },
   {
     title: 'Rev Indy',
     description:
