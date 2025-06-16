@@ -48,7 +48,7 @@ const About = () => (
     {content.map((section, index) => (
       <div
         key={section.heading}
-        className="mt-16 grid items-center gap-8 grid-cols-1 md:mt-32 md:grid-cols-2 md:gap-24"
+        className="mt-8 grid items-center gap-8 grid-cols-1 md:mt-32 md:grid-cols-2 md:gap-24"
       >
         <div className={!isEven(index) ? 'order-1 md:order-2' : ''}>
           <img

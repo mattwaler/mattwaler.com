@@ -43,7 +43,7 @@ const Skills = () => (
         heading="Jack of all trades. Master of some."
         subheading="I can make myself useful in a whole number of ways."
       />
-      <div className="mt-12 grid gap-12 sm:gap-16 sm:mt-24 grid-cols-1 md:text-center md:grid-cols-3 lg:gap-24">
+      <div className="mt-8 grid gap-12 sm:gap-16 sm:mt-24 grid-cols-1 md:text-center md:grid-cols-3 lg:gap-24">
         {skills.map((skill) => (
           <div key={skill.name} className="flex md:flex-col">
             <span
