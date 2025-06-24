@@ -1,0 +1,45 @@
+---
+import Layout from '@/layouts/Layout.astro'
+
+const meta = {
+  title:
+    'Contact Matt Waler',
+  description:
+    'Get in touch with Matt Waler to start your next web or mobile application.',
+}
+---
+
+<Layout meta={meta}>
+  <div
+    class="prose prose-invert py-4"
+    x-data="{ hasSubmitted: window.location.search.includes('success=true') }"
+  >
+    <h1>Contact</h1>
+    <p>Thank you for taking the time to view my website. If you are interested in connecting, fill out the contact form below. I will get back to you as soon as possible.</p>
+    <form
+      name="Contact Form"
+      method="POST"
+      action="/contact/?success=true"
+      class="grid grid-cols-1 gap-8 mt-8"
+      data-netlify="true"
+      x-show="!hasSubmitted"
+    >
+      <label class="grid grid-cols-1">
+        <p class="!m-0">Name</p>
+        <input required class="bg-black border-gray-600" type="text">
+      </label>
+      <label class="grid grid-cols-1">
+        <p class="!m-0">Email</p>
+        <input required class="bg-black border-gray-600" type="email">
+      </label>
+      <label class="grid grid-cols-1">
+        <p class="!m-0">Message</p>
+        <textarea required rows="5" class="bg-black border-gray-600"></textarea>
+      </label>
+      <div>
+        <button class="border border-gray-600 py-2 px-8" type="submit">Submit</button>
+      </div>
+    </form>
+    <p x-show="hasSubmitted" class="text-primary">Form submitted successfully!</p>
+  </div>
+</Layout>

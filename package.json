@@ -1,42 +1,25 @@
 {
-  "name": "mattwaler.com",
-  "version": "0.1.0",
-  "private": true,
+  "name": "mattwaler",
+  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "build": "next build",
-    "dev": "next dev",
-    "format": "prettier --write .",
-    "start": "next start"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier ./src/**/*.{astro,css,js,json,ts} --write"
   },
   "dependencies": {
-    "@formkit/auto-animate": "^0.8.2",
-    "@heroicons/react": "^2.0.12",
-    "clsx": "^2.0.0",
-    "next": "^15.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.1.0",
-    "react-use": "^17.4.0"
-  },
-  "devDependencies": {
+    "@astrojs/alpinejs": "^0.4.8",
+    "@astrojs/sitemap": "^3.2.1",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.0.3",
-    "@types/node": "^22.13.0",
-    "@types/react": "^19.0.8",
-    "postcss": "^8.3.6",
-    "postcss-import": "^16.1.0",
-    "prettier": "^3.1.1",
-    "sharp": "^0.33.5",
-    "tailwindcss": "^4.0.3",
-    "typescript": "^5.7.3"
-  },
-  "optionalDependencies": {
-    "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
-    "lightningcss-linux-x64-gnu": "^1.29.1"
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.10",
+    "astro": "^5.10.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "shiki": "^3.1.0",
+    "tailwindcss": "^4.1.10",
+    "tailwindcss-debug-screens": "^3.0.1"
   }
 }

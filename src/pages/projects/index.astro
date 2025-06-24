@@ -1,0 +1,52 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import websites from '@/assets/websites'
+import apps from '@/assets/apps'
+
+const meta = {
+  title:
+    'Matt Waler builds websites and mobile applications with JavaScript and Swift.',
+  description:
+    'Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs.',
+}
+---
+
+<Layout meta={meta}>
+  <div class="prose prose-invert py-4">
+    <h1>Projects</h1>
+    <p>
+      I have built a lot of websites and mobile applications since I started
+      back in 2016. Listed below is a non-exhaustive representation of what I
+      have developed and deployed.
+    </p>
+    <h2>Apps</h2>
+    <ul>
+      {
+        apps.map((app) => (
+          <li>
+            <a
+              target={app.link.startsWith('/') ? '_self' : '_blank'}
+              href={app.link}
+            >
+              {app.heading}
+            </a>
+            <p class="mt-1">{app.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+    <h2>Websites</h2>
+    <ul>
+      {
+        websites.map((website) => (
+          <li>
+            <a target="_blank" href={website.link}>
+              {website.title}
+            </a>
+            <p class="mt-1">{website.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>

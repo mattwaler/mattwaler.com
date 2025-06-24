@@ -1,0 +1,92 @@
+---
+import '../styles/global.css'
+
+import Profile from '../components/Profile.astro'
+import Contact from '../components/Contact.astro'
+import ContentLink from '../components/ContentLink.astro'
+import { ClientRouter } from "astro:transitions"
+
+const { meta } = Astro.props
+
+const links = [
+  { url: '/', name: 'home.html' },
+  { url: '/contact/', name: 'contact.html' },
+  { url: '/projects/', name: 'projects.html' },
+]
+---
+
+<!doctype html>
+<html lang="en" class="bg-black text-gray-100 font-mono">
+  <head>
+    <meta
+      name="robots"
+      content="index, follow, noodp, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="revisit" content="after 7 days" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Pragma" content="cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      crossorigin="anonymous"
+      href="/img/logo.svg"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={Astro.url} />
+    <meta name="geo.region" content="US-OH" />
+    <meta name="author" content="Matt Waler" />
+    <meta name="publisher" content="Matt Waler" />
+    <meta name="copyright" content="Matt Waler" />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content="https://mattwaler.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={meta.ogImage ?? 'https://mattwaler.com/img/meta.png'} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="mattwaler.com" />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <meta name="abstract" content={meta.description} />
+    <ClientRouter />
+  </head>
+  <body
+    class:list={[
+      'lg:h-screen lg:w-screen lg:overflow-hidden flex items-center justify-center p-4',
+      { 'debug-screens': import.meta.env.DEV },
+    ]}
+  >
+    <div
+      class="w-full flex-1 max-w-7xl lg:h-[calc(100vh-4rem)] border border-gray-600 rounded-2xl overflow-hidden shadow-2xl relative bg-black grid grid-cols-1 lg:grid-cols-[380px_1fr] grid-rows-[40px_1fr]"
+    >
+      <div class="lg:col-span-2 px-8 lg:px-6 flex items-center justify-start gap-2 border-b border-gray-600">
+        <div class="rounded-full size-3 bg-red-500"></div>
+        <div class="rounded-full size-3 bg-yellow-500"></div>
+        <div class="rounded-full size-3 bg-green-500"></div>
+      </div>
+      <aside
+        class="p-8 h-full flex-1 overflow-y-auto order-2 lg:order-1 lg:p-6 flex flex-col border-t lg:border-t-0 lg:border-r border-gray-600"
+      >
+        <Profile />
+        <Contact />
+      </aside>
+      <div class="p-0 order-1 lg:order-2 overflow-y-auto">
+        <header
+          class="flex bg-black border-b border-gray-600 sticky top-0 z-10 flex-none overflow-x-auto"
+        >
+          {links.map(link => (
+            <ContentLink href={link.url} name={link.name} />
+          ))}
+        </header>
+        <main class="p-6 max-h-full ">
+          <slot />
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

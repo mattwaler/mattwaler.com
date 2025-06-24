@@ -1,2 +1,2 @@
-Sitemap: https://mattwaler.com/sitemap.xml
 User-agent: *
+Sitemap: https://mattwaler.com/sitemap-index.xml

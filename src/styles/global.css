@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "tailwindcss-debug-screens";
+
+@theme {
+  --color-primary: #7ee787;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+@utility button {
+  @apply rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-950 shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+@utility section-margin {
+  @apply my-16 sm:my-24 lg:my-32;
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    @apply w-2 h-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-black border-l border-gray-600;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600;
+  }
+
+
+  html {
+    @apply antialiased font-normal scroll-smooth bg-gray-950 text-white;
+    @apply bg-gradient-to-r from-blue-600 to-violet-600
+  }
+
+  body {
+    @apply size-full;
+    touch-action: manipulation;
+  }
+
+  button {
+    @apply hover:cursor-pointer;
+  }
+
+  pre.astro-code {
+    @apply !bg-transparent;
+  }
+
+  pre.astro-code code {
+    @apply block;
+    counter-reset: step;
+    counter-increment: step 0;
+  }
+
+  pre.astro-code code .line {
+    @apply relative;
+  }
+
+  pre.astro-code code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    @apply text-gray-600 pr-2;
+  }
+}
+
