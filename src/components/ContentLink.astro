@@ -1,7 +1,7 @@
 ---
 interface Props {
-  name: string,
-  href: string,
+  name: string
+  href: string
 }
 
 const { name, href } = Astro.props as Props
@@ -14,14 +14,14 @@ console.log(pathname)
   href={href}
   class:list={[
     'tab-link',
-    'flex items-center gap-2 py-2 px-4 text-xs cursor-pointer',
+    'flex cursor-pointer items-center gap-2 px-4 py-2 text-xs',
     'bg-black',
     'text-gray-100',
     'hover:text-primary',
     'border-b-2 border-b-transparent',
     '!border-r',
     '!border-r-gray-600',
-    { '!border-b-primary text-primary': pathname == href }
+    { '!border-b-primary text-primary': pathname == href },
   ]}
 >
   <svg

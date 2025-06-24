@@ -18,6 +18,7 @@
     "astro": "^5.10.0",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "shiki": "^3.1.0",
     "tailwindcss": "^4.1.10",
     "tailwindcss-debug-screens": "^3.0.1"

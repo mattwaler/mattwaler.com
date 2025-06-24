@@ -22,21 +22,20 @@
 
 @layer base {
   ::-webkit-scrollbar {
-    @apply w-2 h-1.5;
+    @apply h-1.5 w-2;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-black border-l border-gray-600;
+    @apply border-l border-gray-600 bg-black;
   }
 
   ::-webkit-scrollbar-thumb {
     @apply bg-gray-600;
   }
 
-
   html {
-    @apply antialiased font-normal scroll-smooth bg-gray-950 text-white;
-    @apply bg-gradient-to-r from-blue-600 to-violet-600
+    @apply scroll-smooth bg-gray-950 font-normal text-white antialiased;
+    @apply bg-gradient-to-r from-blue-600 to-violet-600;
   }
 
   body {
@@ -65,7 +64,6 @@
   pre.astro-code code .line::before {
     content: counter(step);
     counter-increment: step;
-    @apply text-gray-600 pr-2;
+    @apply pr-2 text-gray-600;
   }
 }
-
