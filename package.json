@@ -23,6 +23,7 @@
     "tailwindcss-debug-screens": "^3.0.1"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.44.0"
+    "@rollup/rollup-linux-x64-gnu": "^4.44.0",
+    "lightningcss-linux-x64-gnu": "^1.30.1"
   }
 }
