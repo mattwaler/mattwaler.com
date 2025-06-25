@@ -93,18 +93,19 @@ const links = [
         class="flex h-full flex-1 flex-col gap-6 overflow-y-auto border-b border-gray-600 p-8 lg:border-r lg:border-b-0 lg:p-6"
       >
         <Headshot />
-        <div :class="!$store.isNavOpen && 'hidden lg:block'">
+        <div x-cloak :class="!$store.isNavOpen && 'hidden lg:block'">
           <Intro />
         </div>
-        <div class="mt-auto hidden lg:block">
+        <div x-cloak class="mt-auto hidden lg:block">
           <Terminal />
         </div>
-        <div :class="!$store.isNavOpen && 'hidden lg:block'">
+        <div x-cloak :class="!$store.isNavOpen && 'hidden lg:block'">
           <Socials />
         </div>
       </aside>
       <div class="overflow-y-auto p-0">
         <header
+          x-cloak
           class="sticky top-0 z-10 flex flex-col lg:flex-row flex-none overflow-x-auto border-b border-gray-600 bg-black"
           :class="!$store.isNavOpen && 'hidden lg:flex'"
         >
