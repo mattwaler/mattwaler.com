@@ -1,0 +1,48 @@
+---
+import { Picture } from 'astro:assets'
+import HeadshotPicture from '@/assets/headshot.jpg'
+---
+
+<div class="flex gap-4 items-center">
+  <a href="/" aria-label="Go to homepage">
+    <Picture
+      src={HeadshotPicture}
+      formats={['webp']}
+      width={256}
+      height={256}
+      alt={'Profile picture Matt Waler'}
+      class="border-primary mx-auto h-24 w-24 rounded-xl border-3 object-cover sm:mx-0"
+    />
+  </a>
+  <div>
+    <h1
+      class="text-text-primary relative mb-1 inline-block text-2xl font-extrabold"
+    >
+      Matt Waler
+    </h1>
+    <p class="text-primary mb-2 text-sm">
+      Web & iOS Developer
+    </p>
+    <p
+      class="flex items-center text-sm text-gray-400"
+    >
+      <svg
+        class="-mt-0.5 mr-2 inline"
+        fill="none"
+        height="14"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="14"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle
+          cx="12"
+          cy="10"
+          r="3"></circle></svg
+      >
+      Ohio, USA
+    </p>
+  </div>
+</div>

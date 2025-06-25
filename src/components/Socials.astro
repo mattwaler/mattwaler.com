@@ -1,24 +1,27 @@
 ---
-import SocialIcon from './SocialIcon.astro'
+import Email from '@/assets/email.svg'
+import Instagram from '@/assets/instagram.svg'
+import LinkedIn from '@/assets/linkedin.svg'
+import Github from '@/assets/github.svg'
 
 const socials = [
   {
-    icon: 'github',
+    Icon: Github,
     link: 'https://github.com/mattwaler',
     title: 'View GitHub Profile',
   },
   {
-    icon: 'linkedIn',
+    Icon: LinkedIn,
     link: 'https://www.linkedin.com/in/mattwaler/',
     title: 'View LinkedIn Profile',
   },
   {
-    icon: 'instagram',
+    Icon: Instagram,
     link: 'https://www.instagram.com/mattwaler',
     title: 'View LinkedIn Profile',
   },
   {
-    icon: 'email',
+    Icon: Email,
     link: '/contact/',
     title: 'Send Email',
     target: '_self',
@@ -26,7 +29,7 @@ const socials = [
 ]
 ---
 
-<div class="mt-6 flex flex-wrap justify-between gap-3">
+<div class="flex flex-wrap lg:justify-between gap-3">
   {
     socials.map((social) => (
       <a
@@ -36,7 +39,7 @@ const socials = [
         rel="noopener noreferrer"
         class="hover:bg-primary flex h-10 w-10 items-center justify-center rounded-lg border border-gray-600 bg-black text-gray-100 transition-all duration-150 hover:-translate-y-0.5 hover:text-black"
       >
-        <SocialIcon icon={social.icon} />
+        <social.Icon />
       </a>
     ))
   }
