@@ -6,7 +6,7 @@ import Socials from '@/components/Socials.astro'
 import Headshot from '@/components/Headshot.astro'
 import Terminal from '@/components/Terminal.astro'
 import ContentLink from '@/components/ContentLink.astro'
-import { ClientRouter } from 'astro:transitions'
+import { ClientRouter, fade } from 'astro:transitions'
 import Menu from '@/assets/menu.svg'
 import Close from '@/assets/close.svg'
 
@@ -20,7 +20,7 @@ const links = [
 ---
 
 <!doctype html>
-<html lang="en" class="bg-black font-mono text-gray-100">
+<html lang="en" class="bg-black font-mono text-gray-100" transition:name="root" transition:animate="none">
   <head>
     <meta
       name="robots"
@@ -116,7 +116,7 @@ const links = [
             ))
           }
         </header>
-        <main class="max-h-full p-6">
+        <main class="max-h-full p-6" transition:animate={fade({ duration: '0.5s' })}>
           <slot />
         </main>
       </div>
