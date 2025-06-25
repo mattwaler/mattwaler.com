@@ -8,6 +8,7 @@ import Terminal from '@/components/Terminal.astro'
 import ContentLink from '@/components/ContentLink.astro'
 import Menu from '@/assets/menu.svg'
 import Close from '@/assets/close.svg'
+import ClientRouter from 'astro/components/ClientRouter.astro'
 
 const { meta } = Astro.props
 
@@ -19,7 +20,11 @@ const links = [
 ---
 
 <!doctype html>
-<html lang="en" class="bg-black font-mono text-gray-100">
+<html
+  lang="en"
+  class="bg-black font-mono text-gray-100"
+  transition:name="root" transition:animate="none"
+>
   <head>
     <meta
       name="robots"
@@ -59,6 +64,7 @@ const links = [
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
     <meta name="abstract" content={meta.description} />
+    <ClientRouter />
   </head>
   <body
     class:list={[

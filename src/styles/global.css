@@ -5,6 +5,9 @@
 
 @theme {
   --color-primary: #7ee787;
+  --color-mw-blue: #4A79F2;
+  --color-mw-purple: #6A46EF;
+  --color-mw-teal: #01E9F8;
 }
 
 @utility container {
