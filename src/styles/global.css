@@ -4,10 +4,10 @@
 @plugin "tailwindcss-debug-screens";
 
 @theme {
-  --color-primary: #7ee787;
-  --color-mw-blue: #4A79F2;
-  --color-mw-purple: #6A46EF;
-  --color-mw-teal: #01E9F8;
+  --color-code-red: #ff7b72;
+  --color-code-green: #7ee787;
+  --color-code-blue: #79c0ff;
+  --color-code-orange: #ffa657;
 }
 
 @utility container {
