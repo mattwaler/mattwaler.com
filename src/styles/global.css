@@ -15,14 +15,6 @@
   padding-inline: 2rem;
 }
 
-@utility button {
-  @apply rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-950 shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2;
-}
-
-@utility section-margin {
-  @apply my-16 sm:my-24 lg:my-32;
-}
-
 @layer base {
   ::-webkit-scrollbar {
     @apply h-1.5 w-2;
