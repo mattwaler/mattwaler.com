@@ -1,0 +1,23 @@
+---
+import Layout from "./Layout.astro"
+import Arrow from '@/assets/arrow.svg'
+
+const { frontmatter } = Astro.props
+
+const meta = {
+  title: frontmatter.title,
+  description: frontmatter.description
+}
+---
+
+<Layout meta={meta}>
+  <div class="typography">
+    <a class="flex items-center gap-1 !hover:no-underline mb-6" href="/blog/">
+      <Arrow class="size-4" />
+      <span>
+        Blog
+      </span>
+    </a>
+    <slot />
+  </div>
+</Layout>

@@ -15,6 +15,7 @@ const links = [
   { url: '/', name: 'home.html' },
   { url: '/contact/', name: 'contact.html' },
   { url: '/projects/', name: 'projects.html' },
+  { url: '/blog/', name: 'blog.html' },
 ]
 ---
 
@@ -118,8 +119,9 @@ const links = [
             ))
           }
         </header>
-        <main class="max-h-full p-6">
+        <main class="max-h-full px-6 pt-10">
           <slot />
+          <div class="h-10"></div>
         </main>
       </div>
     </div>

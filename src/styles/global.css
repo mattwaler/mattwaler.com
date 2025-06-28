@@ -15,6 +15,11 @@
   padding-inline: 2rem;
 }
 
+@utility typography {
+  @apply prose prose-sm prose-invert lg:prose-base;
+  @apply [&_a]:text-code-green [&_a]:no-underline;
+}
+
 @layer base {
   ::-webkit-scrollbar {
     @apply h-1.5 w-2;
@@ -40,10 +45,6 @@
 
   button {
     @apply hover:cursor-pointer;
-  }
-
-  pre.astro-code {
-    @apply !bg-transparent;
   }
 
   pre.astro-code code {

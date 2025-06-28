@@ -2,15 +2,46 @@
 import Layout from '../layouts/Layout.astro'
 
 const meta = {
-  title:
-    'Matt Waler builds websites and mobile applications with JavaScript and Swift.',
+  title: `Matt Waler's blog, chock full of his thoughts and ramblings.`,
   description:
-    'My name is Matt Waler, and I am a senior developer from Ohio. I have been been writing frontend code for 10 years and have helped design and deploy hundreds of websites for my clients.',
+    'Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!',
 }
+
+interface Post {
+  url: string
+  frontmatter: {
+    title: string
+    description: string
+    date: string
+  }
+}
+
+const posts: Post[] = Object.values(
+  import.meta.glob('./blog/*.md', { eager: true })
+)
+const sortedPosts = posts.sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).getTime() -
+    new Date(a.frontmatter.date).getTime()
+)
 ---
 
 <Layout meta={meta}>
-  <div class="prose prose-invert py-4">
+  <div class="typography">
     <h1>Blog</h1>
+    <p>
+      Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme.
+      Come for the bugs, stay for the fixes! We don't have a ton here just yet,
+      but don't worry, more is on the way!
+    </p>
+    <ul>
+      {
+        sortedPosts.map((post) => (
+          <li>
+            <a href={post.url}>{post.frontmatter.title}</a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </Layout>
