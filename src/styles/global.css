@@ -47,6 +47,14 @@
     @apply hover:cursor-pointer;
   }
 
+  pre.astro-code.github-dark {
+    @apply border border-gray-600 !py-4 !rounded-none !bg-transparent;
+  }
+
+  pre.astro-code.github-dark code {
+    @apply !text-sm;
+  }
+
   pre.astro-code code {
     @apply block;
     counter-reset: step;
@@ -60,6 +68,6 @@
   pre.astro-code code .line::before {
     content: counter(step);
     counter-increment: step;
-    @apply pr-2 text-gray-600;
+    @apply pr-4 text-gray-600;
   }
 }
