@@ -28,7 +28,8 @@ export class MyTailwindElement extends LitElement {
     `
   }
   // RIGHT HERE! THIS IS THE MAGIC!
-  // This method tells Lit to render the markup inside the HTML tag, as-is, without the shadow dom.
+  // This method tells Lit to render the markup inside the
+  // HTML tag, as-is, without the shadow dom.
   createRenderRoot() {
 		return this
 	}
@@ -38,4 +39,10 @@ export class MyTailwindElement extends LitElement {
 customElements.define('my-tailwind-element', MyTailwindElement)
 ```
 
-This is available in there documentation [here](https://lit.dev/docs/components/shadow-dom/#implementing-createrenderroot). They talk about some of the shortcomings and why this is not recommended, but if you are using Tailwind in your projects, the benefits of having access to Tailwind far outweigh the cost of not being able to scope styling to your elements.
+Now you can use it somewhere else in your project like so:
+
+```html
+<my-tailwind-element></my-tailwind-element>
+```
+
+[This is available in the documentation here](https://lit.dev/docs/components/shadow-dom/#implementing-createrenderroot). They talk about some of the shortcomings and why this is not recommended, but if you are using Tailwind in your projects, the benefits of having access to Tailwind far outweigh the cost of not being able to scope styling to your elements.
