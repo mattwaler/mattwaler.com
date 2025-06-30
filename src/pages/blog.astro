@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { sortPosts } from '@/helpers/Post'
+import type { Post } from '@/helpers/Post'
 
 const meta = {
   title: `Matt Waler's blog, chock full of his thoughts and ramblings.`,
@@ -7,22 +9,8 @@ const meta = {
     'Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!',
 }
 
-interface Post {
-  url: string
-  frontmatter: {
-    title: string
-    description: string
-    date: string
-  }
-}
-
 const posts: Post[] = Object.values(
   import.meta.glob('./blog/*.md', { eager: true })
-)
-const sortedPosts = posts.sort(
-  (a, b) =>
-    new Date(b.frontmatter.date).getTime() -
-    new Date(a.frontmatter.date).getTime()
 )
 ---
 
@@ -36,7 +24,7 @@ const sortedPosts = posts.sort(
     </p>
     <ul>
       {
-        sortedPosts.map((post) => (
+        sortPosts(posts).map((post) => (
           <li>
             <a href={post.url}>{post.frontmatter.title}</a>
           </li>

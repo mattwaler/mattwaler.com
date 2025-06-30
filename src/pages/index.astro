@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { sortPosts } from '@/helpers/Post'
+import type { Post } from '@/helpers/Post'
 
 const meta = {
   title:
@@ -7,6 +9,12 @@ const meta = {
   description:
     'Matt Waler builds websites and applications using tools like Astro, React, React Native, Swift, and TailwindCSS.',
 }
+
+const posts: Post[] = Object.values(
+  import.meta.glob('./blog/*.md', { eager: true })
+)
+
+const sortedPosts = sortPosts(posts).slice(0, 3)
 ---
 
 <Layout meta={meta}>
@@ -15,6 +23,14 @@ const meta = {
     <p>
       Whether it's a static website or a full-blown iOS application, I’m all about taking ideas and turning them into clean, easy-to-use products. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when necessary.
     </p>
+    <h3>Recent Posts</h3>
+    <ul>
+      {sortedPosts.map(post => (
+        <li>
+          <a href={post.url}>{post.frontmatter.title}</a>
+        </li>
+      ))}
+    </ul>
     <h3>Skills</h3>
     <ul>
       <li>Alpine.js</li>
