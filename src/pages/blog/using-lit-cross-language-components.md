@@ -61,6 +61,3 @@ export class ProviderCard extends LitElement {
 // Define it so you can use it everywhere!
 customElements.define('star-ratings', StarRatings)
 ```
-
-
-
