@@ -71,9 +71,11 @@ const links = [
     ]}
     x-data
   >
+    <!-- Code Editor -->
     <div
       class="relative grid w-full max-w-7xl flex-1 grid-cols-1 grid-rows-[40px_1fr] overflow-hidden rounded-2xl border border-gray-600 bg-black shadow-2xl lg:h-[calc(100vh-4rem)] lg:grid-cols-[340px_1fr]"
     >
+      <!-- Top Navigation Bar -->
       <div
         class="flex items-center justify-start gap-2 border-b border-gray-600 px-8 lg:col-span-2 lg:px-6"
       >
@@ -93,20 +95,22 @@ const links = [
           </span>
         </button>
       </div>
+      <!-- Sidebar/Header -->
       <aside
         class="flex h-full flex-1 flex-col gap-6 overflow-y-auto border-b border-gray-600 p-8 lg:border-r lg:border-b-0 lg:p-6"
       >
         <Headshot />
-        <div x-cloak :class="!$store.isNavOpen && 'hidden lg:block'">
+        <div class="hidden lg:block">
           <Intro />
         </div>
         <div x-cloak class="mt-auto hidden lg:block">
           <Terminal />
         </div>
-        <div x-cloak :class="!$store.isNavOpen && 'hidden lg:block'">
+        <div class="hidden lg:block">
           <Socials />
         </div>
       </aside>
+      <!-- Navigation & Page Content -->
       <div class="overflow-y-auto p-0">
         <header
           x-cloak
@@ -123,6 +127,13 @@ const links = [
           <slot />
           <div class="h-10"></div>
         </main>
+        <div class="flex flex-col gap-6 lg:hidden border-t border-gray-600 p-8">
+          <Intro />
+          <Socials />
+          <div>
+            <button @click="window.scrollTo(0,0)" class="text-code-green font-bold">Back to top</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
