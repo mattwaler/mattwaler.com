@@ -1,17 +1,15 @@
 ---
-import { Picture } from 'astro:assets'
 import HeadshotPicture from '@/assets/headshot.jpg'
+import ImageBlur from './ImageBlur.astro'
 ---
 
 <div class="flex gap-4 items-center">
   <a href="/" aria-label="Go to homepage">
-    <Picture
+    <ImageBlur
       src={HeadshotPicture}
-      formats={['webp']}
       width={256}
       height={256}
-      alt={'Profile picture Matt Waler'}
-      class="border-code-green mx-auto h-24 w-24 rounded-xl border-3 object-cover sm:mx-0"
+      class="border-code-green mx-auto size-24 object-center rounded-xl border-3 object-cover sm:mx-0"
     />
   </a>
   <div>
