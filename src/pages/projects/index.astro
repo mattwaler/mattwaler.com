@@ -1,7 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import websites from '@/assets/websites'
-import apps from '@/assets/apps'
+import projects from '@/assets/projects'
 
 const meta = {
   title:
@@ -19,31 +18,18 @@ const meta = {
       back in 2016. Listed below is a non-exhaustive representation of what I
       have developed and deployed.
     </p>
-    <h2>Apps</h2>
     <ul>
       {
-        apps.map((app) => (
+        projects.map((project) => (
           <li>
             <a
-              target={app.link.startsWith('/') ? '_self' : '_blank'}
-              href={app.link}
+              target={project.link.startsWith('/') ? '_self' : '_blank'}
+              href={project.link}
             >
-              {app.heading}
+              {project.title}
             </a>
-            <p class="mt-1">{app.description}</p>
-          </li>
-        ))
-      }
-    </ul>
-    <h2>Websites</h2>
-    <ul>
-      {
-        websites.map((website) => (
-          <li>
-            <a target="_blank" href={website.link}>
-              {website.title}
-            </a>
-            <p class="mt-1">{website.description}</p>
+            <p class="mt-1">{project.description}</p>
+            <p class="-mt-3 text-xs text-gray-500">Built with {project.tools.join(', ')}</p>
           </li>
         ))
       }
