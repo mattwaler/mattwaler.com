@@ -21,6 +21,11 @@
 }
 
 @layer base {
+  input, textarea {
+    @apply focus:!ring focus:!ring-code-green;
+  }
+
+
   ::-webkit-scrollbar {
     @apply h-1.5 w-2;
   }
