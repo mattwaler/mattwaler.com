@@ -1,15 +1,16 @@
 ---
 import HeadshotPicture from '@/assets/headshot.jpg'
 import ImageBlur from './ImageBlur.astro'
+import Pin from '@/assets/pin.svg'
 ---
 
-<div class="flex gap-4 items-center">
+<div class="flex items-center gap-4">
   <a href="/" aria-label="Go to homepage">
     <ImageBlur
       src={HeadshotPicture}
       width={256}
       height={256}
-      class="border-code-green mx-auto size-24 object-center rounded-xl border-3 object-cover sm:mx-0"
+      class="border-code-green mx-auto size-24 rounded-xl border-3 object-cover object-center sm:mx-0"
     />
   </a>
   <div>
@@ -18,28 +19,9 @@ import ImageBlur from './ImageBlur.astro'
     >
       Matt Waler
     </p>
-    <p class="text-code-green mb-2 text-sm">
-      Web/App Developer
-    </p>
-    <p
-      class="flex items-center text-sm text-gray-400"
-    >
-      <svg
-        class="mr-2 inline"
-        fill="none"
-        height="14"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="14"
-        xmlns="http://www.w3.org/2000/svg"
-        ><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle
-          cx="12"
-          cy="10"
-          r="3"></circle></svg
-      >
+    <p class="text-code-green mb-2 text-sm">Web/App Developer</p>
+    <p class="flex items-center text-sm text-gray-400">
+      <Pin />
       Ohio
     </p>
   </div>

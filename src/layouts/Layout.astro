@@ -86,6 +86,7 @@ const links = [
           class="ml-auto lg:hidden"
           x-cloak
           @click="$store.isNavOpen = !$store.isNavOpen"
+          aria-label="Toggle site navigation"
         >
           <span x-show="!$store.isNavOpen">
             <Menu />
