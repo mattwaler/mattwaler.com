@@ -1,0 +1,14 @@
+---
+const { project } = Astro.props
+---
+
+<li>
+  <a
+    target={project.link.startsWith('/') ? '_self' : '_blank'}
+    href={project.link}
+  >
+    {project.title}
+  </a>
+  <p class="mt-1">{project.description}</p>
+  <p class="-mt-3 text-xs text-gray-500">Built with {project.tools.join(', ')}</p>
+</li>
