@@ -1,8 +1,11 @@
 ---
-layout: '../../layouts/Markdown.astro'
+layout: '../../layouts/Blog.astro'
 date: 06/29/2025
 title: Using Tailwind CSS with Lit and HTML Custom Elements
 description: In order to use tailwind with lit and custom html elements, you need to disable the shadow dom. Here's how you do that!
+tags:
+  - Tailwind
+  - Lit
 ---
 
 # Using Tailwind CSS with Lit and HTML Custom Elements

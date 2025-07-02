@@ -4,12 +4,13 @@ import { sortPosts } from '@/helpers/Post'
 import type { Post } from '@/helpers/Post'
 import projects from '@/assets/projects'
 import ProjectLink from '@/components/ProjectLink.astro'
+import PostLink from '@/components/PostLink.astro'
 
 const meta = {
   title:
-    'Matt Waler builds websites and applications with a variety of modern tools and technologies.',
+    'Matt Waler builds websites and applications with modern tools and technologies',
   description:
-    'Matt Waler builds websites and applications using tools like Astro, React, React Native, Swift, and Tailwind CSS.',
+    'Matt Waler builds websites and applications with a variety of modern tools and technologies like Astro, React, React Native, Swift, and Tailwind CSS.',
 }
 
 const posts: Post[] = Object.values(
@@ -23,20 +24,25 @@ const sortedPosts = sortPosts(posts).slice(0, 3)
   <div class="typography">
     <h1>I build websites and applications using modern tools and technologies.</h1>
     <p>
-      Whether it's a static website or a full-blown iOS application, I’m all about taking ideas and turning them into clean, easy-to-use products. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when necessary.
+      Whether it's a static website or a full-blown iOS application, I’m all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.
     </p>
-    <h2>Skills</h2>
+    <h2>If you need a website, I can get you going with any of these technologies:</h2>
     <ul>
       <li>Alpine.js</li>
       <li>Astro.js</li>
-      <li>JavaScript & Typescript</li>
-      <li>React & React Native</li>
-      <li>Swift</li>
+      <li>Craft CMS</li>
+      <li>Next.js</li>
+      <li>Statamic</li>
       <li>Tailwind CSS</li>
     </ul>
-    <a class="text-code-green font-bold" href="/projects/">Take a look at some of my projects.</a>
-    <h2>Hobbies</h2>
+    <h2>If you need an iOS application, I can get you published to the App Store with:</h2>
     <ul>
+      <li>React Native</li>
+      <li>Swift</li>
+    </ul>
+    <h2>If I care about my personal life, I am most likely doing one of these things right now:</h2>
+    <ul>
+      <li>Taking care of Klaus, my son (french bulldog)</li>
       <li>Getting worse at tennis</li>
       <li>Lifting weights and feeling very sore</li>
       <li>Botching recipes in the kitchen</li>
@@ -44,16 +50,13 @@ const sortedPosts = sortPosts(posts).slice(0, 3)
       <li>Listening to pop-punk music (mainly MGK)</li>
       <li>Watching Edgar Wright films</li>
     </ul>
-    <a class="text-code-green font-bold" href="/contact/">Get in touch with me.</a>
-    <h2>Recent Posts</h2>
+    <h2>My most recent ramblings:</h2>
     <ul>
       {sortedPosts.map(post => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
+        <PostLink post={post} />
       ))}
     </ul>
-    <h2>Recent Projects</h2>
+    <h2>My most recent projects:</h2>
     <ul>
       {projects.slice(0, 3).map(project => (
         <ProjectLink project={project} />

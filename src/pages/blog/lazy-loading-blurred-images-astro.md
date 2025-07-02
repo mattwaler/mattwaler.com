@@ -1,8 +1,12 @@
 ---
-layout: '../../layouts/Markdown.astro'
+layout: '../../layouts/Blog.astro'
 date: 06/30/2025
 title: Lazy Loading Blurred Images in Astro
 description: How to create a lazy blur-up image effect on your images in an Astro project.
+tags:
+  - Astro
+  - Alpine
+  - Tailwind
 ---
 
 # Lazy Loading Blurred Images in Astro

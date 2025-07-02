@@ -1,8 +1,11 @@
 ---
-layout: '../../layouts/Markdown.astro'
+layout: '../../layouts/Blog.astro'
 date: 06/27/2025
 title: Using Lit to create cross-language components
 description: On larger projects that utilize multiple templating languages to accomplish server-side and client-side rendering, using lit to create custom html elements can solve your problems.
+tags:
+  - Lit
+  - JavaScript
 ---
 
 # Using Lit to create cross-language components

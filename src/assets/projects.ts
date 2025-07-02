@@ -14,18 +14,18 @@ export default [
     tools: ['Swift', 'Swift UI', 'Swift Data'],
   },
   {
-    title: 'Oft: Fitness Timer App',
-    description:
-      'A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.',
-    link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone',
-    tools: ['Swift', 'Swift UI'],
-  },
-  {
     title: 'Rev Indy',
     description:
       'A modular marketing website to bring awareness to the Rev Indy fundraising event that takes place every year.',
     link: 'https://revindy.org/',
     tools: ['Craft', 'Tailwind', 'Alpine'],
+  },
+  {
+    title: 'Oft: Fitness Timer App',
+    description:
+      'A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.',
+    link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone',
+    tools: ['Swift', 'Swift UI'],
   },
   {
     title: 'TrendyMinds',

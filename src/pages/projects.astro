@@ -1,6 +1,7 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 import projects from '@/assets/projects'
+import ProjectLink from '@/components/ProjectLink.astro'
 
 const meta = {
   title:
@@ -12,7 +13,7 @@ const meta = {
 
 <Layout meta={meta}>
   <div class="typography">
-    <h1>Projects</h1>
+    <h1>See what I've built.</h1>
     <p>
       I have built a lot of websites and mobile applications since I started
       back in 2016. Listed below is a non-exhaustive representation of what I
@@ -21,16 +22,7 @@ const meta = {
     <ul>
       {
         projects.map((project) => (
-          <li>
-            <a
-              target={project.link.startsWith('/') ? '_self' : '_blank'}
-              href={project.link}
-            >
-              {project.title}
-            </a>
-            <p class="mt-1">{project.description}</p>
-            <p class="-mt-3 text-xs text-gray-500">Built with {project.tools.join(', ')}</p>
-          </li>
+          <ProjectLink project={project} />
         ))
       }
     </ul>
