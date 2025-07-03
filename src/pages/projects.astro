@@ -4,8 +4,7 @@ import projects from '@/assets/projects'
 import ProjectLink from '@/components/ProjectLink.astro'
 
 const meta = {
-  title:
-    'Projects Matt Waler has built since 2016',
+  title: 'Projects Matt Waler has built since 2016',
   description:
     'Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs',
 }
@@ -20,11 +19,7 @@ const meta = {
       have developed and deployed.
     </p>
     <ul>
-      {
-        projects.map((project) => (
-          <ProjectLink project={project} />
-        ))
-      }
+      {projects.map((project) => <ProjectLink project={project} />)}
     </ul>
   </div>
 </Layout>

@@ -17,7 +17,7 @@ const {
   x-data="{ showBlur: !$refs.image.complete }"
 >
   <div
-    class="absolute inset-0 size-full z-10"
+    class="absolute inset-0 z-10 size-full"
     x-show="showBlur"
     x-transition.opacity.duration.100ms
   >
@@ -29,7 +29,7 @@ const {
       loading="eager"
       alt=""
       src={src}
-      class="object-cover object-center absolute inset-0 size-full"
+      class="absolute inset-0 size-full object-cover object-center"
     />
   </div>
   <Image
@@ -43,6 +43,6 @@ const {
     sizes={sizes}
     alt={alt}
     loading="lazy"
-    class="object-cover object-center absolute inset-0 size-full z-0"
+    class="absolute inset-0 z-0 size-full object-cover object-center"
   />
 </div>

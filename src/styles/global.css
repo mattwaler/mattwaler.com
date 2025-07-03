@@ -21,10 +21,10 @@
 }
 
 @layer base {
-  input, textarea {
-    @apply focus:!ring focus:!ring-code-green;
+  input,
+  textarea {
+    @apply focus:!ring-code-green focus:!ring;
   }
-
 
   ::-webkit-scrollbar {
     @apply h-1.5 w-2;
@@ -53,7 +53,7 @@
   }
 
   pre.astro-code.github-dark {
-    @apply border border-gray-600 !py-4 !rounded-none !bg-transparent;
+    @apply !rounded-none border border-gray-600 !bg-transparent !py-4;
   }
 
   pre.astro-code.github-dark code {

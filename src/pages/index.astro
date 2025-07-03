@@ -22,11 +22,18 @@ const sortedPosts = sortPosts(posts).slice(0, 3)
 
 <Layout meta={meta}>
   <div class="typography">
-    <h1>I build websites and applications using modern tools and technologies.</h1>
+    <h1>
+      I build websites and applications using modern tools and technologies.
+    </h1>
     <p>
-      Whether it's a static website or a full-blown iOS application, I’m all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.
+      Whether it's a static website or a full-blown iOS application, I’m all
+      about taking ideas and turning them into something tangible. I pride
+      myself on keeping my code simple, practical, and easy to maintain,
+      resorting to complexity only when absolutely necessary.
     </p>
-    <h2>If you need a website, I can get you going with any of these technologies:</h2>
+    <h2>
+      If you need a website, I can get you going with any of these technologies:
+    </h2>
     <ul>
       <li>Alpine.js</li>
       <li>Astro.js</li>
@@ -35,12 +42,17 @@ const sortedPosts = sortPosts(posts).slice(0, 3)
       <li>Statamic</li>
       <li>Tailwind CSS</li>
     </ul>
-    <h2>If you need an iOS application, I can get you published to the App Store with:</h2>
+    <h2>
+      If you need an iOS application, I can get you published to the App Store
+      with:
+    </h2>
     <ul>
       <li>React Native</li>
       <li>Swift</li>
     </ul>
-    <h2>If I am not working, you will probably catch me doing one of these things:</h2>
+    <h2>
+      If I am not working, you will probably catch me doing one of these things:
+    </h2>
     <ul>
       <li>Taking care of Klaus, my son (french bulldog)</li>
       <li>Getting worse at tennis</li>
@@ -52,15 +64,11 @@ const sortedPosts = sortPosts(posts).slice(0, 3)
     </ul>
     <h2>My most recent ramblings:</h2>
     <ul>
-      {sortedPosts.map(post => (
-        <PostLink post={post} />
-      ))}
+      {sortedPosts.map((post) => <PostLink post={post} />)}
     </ul>
     <h2>My most recent projects:</h2>
     <ul>
-      {projects.slice(0, 3).map(project => (
-        <ProjectLink project={project} />
-      ))}
+      {projects.slice(0, 3).map((project) => <ProjectLink project={project} />)}
     </ul>
   </div>
 </Layout>

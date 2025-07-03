@@ -10,5 +10,7 @@ const { project } = Astro.props
     {project.title}
   </a>
   <p class="mt-1">{project.description}</p>
-  <p class="-mt-2 text-xs text-gray-500">Built with {project.tools.join(', ')}</p>
+  <p class="-mt-2 text-xs text-gray-500">
+    Built with {project.tools.join(', ')}
+  </p>
 </li>

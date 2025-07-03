@@ -20,10 +20,7 @@ const links = [
 ---
 
 <!doctype html>
-<html
-  lang="en"
-  class="bg-black font-mono text-gray-100"
->
+<html lang="en" class="bg-black font-mono text-gray-100">
   <head>
     <meta
       name="robots"
@@ -73,7 +70,7 @@ const links = [
   >
     <!-- Code Editor -->
     <div
-      class="relative grid w-full  flex-1 grid-cols-1 grid-rows-[40px_1fr] overflow-hidden rounded-2xl border border-gray-600 bg-black shadow-2xl md:max-w-2xl lg:max-w-7xl lg:h-[calc(100vh-4rem)] lg:grid-cols-[340px_1fr]"
+      class="relative grid w-full flex-1 grid-cols-1 grid-rows-[40px_1fr] overflow-hidden rounded-2xl border border-gray-600 bg-black shadow-2xl md:max-w-2xl lg:h-[calc(100vh-4rem)] lg:max-w-7xl lg:grid-cols-[340px_1fr]"
     >
       <!-- Top Navigation Bar -->
       <div
@@ -115,7 +112,7 @@ const links = [
       <div class="overflow-y-auto p-0">
         <header
           x-cloak
-          class="sticky top-0 z-10 flex flex-col lg:flex-row flex-none overflow-x-auto border-b border-gray-600 bg-black"
+          class="sticky top-0 z-10 flex flex-none flex-col overflow-x-auto border-b border-gray-600 bg-black lg:flex-row"
           :class="!$store.isNavOpen && 'hidden lg:flex'"
         >
           {
@@ -128,11 +125,14 @@ const links = [
           <slot />
           <div class="h-10"></div>
         </main>
-        <div class="flex flex-col gap-6 lg:hidden border-t border-gray-600 p-8">
+        <div class="flex flex-col gap-6 border-t border-gray-600 p-8 lg:hidden">
           <Intro />
           <Socials />
           <div>
-            <button @click="window.scrollTo(0,0)" class="text-code-green font-bold">Back to top</button>
+            <button
+              @click="window.scrollTo(0,0)"
+              class="text-code-green font-bold">Back to top</button
+            >
           </div>
         </div>
       </div>
