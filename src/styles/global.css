@@ -20,7 +20,7 @@
   @apply [&_a]:text-code-green [&_a]:no-underline;
 }
 
-@utility gutters {
+@utility px-base {
   @apply px-4 sm:px-8;
 }
 
