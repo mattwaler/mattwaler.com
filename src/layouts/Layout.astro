@@ -70,11 +70,11 @@ const links = [
   >
     <!-- Code Editor -->
     <div
-      class="relative grid w-full flex-1 grid-cols-1 grid-rows-[40px_1fr] overflow-hidden rounded-2xl border border-gray-600 bg-black shadow-2xl md:max-w-2xl lg:h-[calc(100vh-4rem)] lg:max-w-7xl lg:grid-cols-[340px_1fr]"
+      class="relative grid w-full flex-1 grid-cols-1 grid-rows-[40px_1fr] overflow-hidden rounded-2xl border border-gray-600 bg-black shadow-2xl md:max-w-2xl lg:h-[calc(100vh-4rem)] lg:max-w-5xl lg:grid-cols-[340px_1fr]"
     >
       <!-- Top Navigation Bar -->
       <div
-        class="flex items-center justify-start gap-2 border-b border-gray-600 px-8 lg:col-span-2 lg:px-6"
+        class="gutters flex items-center justify-start gap-2 border-b border-gray-600 lg:col-span-2"
       >
         <div class="size-3 rounded-full bg-red-500"></div>
         <div class="size-3 rounded-full bg-yellow-500"></div>
@@ -95,7 +95,7 @@ const links = [
       </div>
       <!-- Sidebar/Header -->
       <aside
-        class="flex h-full flex-1 flex-col gap-6 overflow-y-auto border-b border-gray-600 px-4 py-6 lg:border-r lg:border-b-0 lg:p-8"
+        class="flex h-full flex-1 flex-col gap-6 overflow-y-auto border-b border-gray-600 gutters py-6 lg:border-r lg:border-b-0 lg:py-8"
       >
         <Headshot />
         <div class="hidden lg:block">
@@ -121,7 +121,7 @@ const links = [
             ))
           }
         </header>
-        <main class="max-h-full px-4 pt-8 lg:p-12">
+        <main class="max-h-full gutters pt-8 lg:pt-12">
           <slot />
           <div class="h-8 lg:h-12"></div>
         </main>

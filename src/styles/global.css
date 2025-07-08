@@ -20,6 +20,10 @@
   @apply [&_a]:text-code-green [&_a]:no-underline;
 }
 
+@utility gutters {
+  @apply px-4 sm:px-8;
+}
+
 @layer base {
   input,
   textarea {
