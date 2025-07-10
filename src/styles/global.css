@@ -16,7 +16,7 @@
 }
 
 @utility typography {
-  @apply text-pretty prose prose-sm prose-invert lg:prose-base lg:max-w-none;
+  @apply text-pretty prose prose-sm prose-invert lg:prose-base;
   @apply [&_a]:text-code-green [&_a]:no-underline;
 }
 
