@@ -35,4 +35,4 @@ Simpler code often avoids abstractions, multiple file traversal, and prop drilli
 
 In Agency-based development, many clients benefit from the same set of solutions. When it comes to building out a CMS, many of the building blocks to construct pages share the same core markup and functionality. By keeping things simple, isolated to single files, and scoped, pieces from projects can be easily shared across clients and speed up development time significantly.
 
-It is for these main reasons that every time we start a new project at TrendyMinds, we first remind ourselves: Keep It Simple, Stupid.
+Every time I start a new project, I remind myself to Keep It Simple, Stupid.
