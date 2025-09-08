@@ -4,6 +4,7 @@
 @plugin "tailwindcss-debug-screens";
 
 @theme {
+  --breakpoint-2xl: initial;
   --color-code-red: #ff7b72;
   --color-code-green: #7ee787;
   --color-code-blue: #79c0ff;
@@ -16,7 +17,7 @@
 }
 
 @utility typography {
-  @apply text-pretty prose prose-sm prose-invert lg:prose-base;
+  @apply text-pretty prose prose-sm prose-invert lg:prose-base max-w-[768px];
   @apply [&_a]:text-code-green [&_a]:no-underline;
 }
 
