@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Fragment, useState } from 'react'
 import Image from 'next/image'
 import { ArrowLeftCircleIcon } from '@heroicons/react/24/solid'
 import Phone from 'components/Phone'
@@ -41,7 +41,7 @@ export default function PhoneCarousel(props) {
       <Phone>
         <div ref={parent}>
           {props.images.map((image, index) => (
-            <>
+            <Fragment key={index}>
               {activeIndex === index && (
                 <Image
                   key={index}
@@ -53,7 +53,7 @@ export default function PhoneCarousel(props) {
                   src={image}
                 />
               )}
-            </>
+            </Fragment>
           ))}
         </div>
       </Phone>

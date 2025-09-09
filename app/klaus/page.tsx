@@ -1,0 +1,110 @@
+export const metadata = {
+  alternates: {
+    canonical: 'https://mattwaler.com/klaus'
+  },
+  title:
+    'Klaus Care Instructions',
+  description:
+    'A page that explains the process of taking care of our child, Klaus, the french bulldog.',
+}
+
+
+export default function Klaus() {
+  return (
+    <>
+      <div className="prose prose-invert container py-24">
+        <h1>Taking Care of Klaus</h1>
+        <p>A cheat sheet for taking care of Klaus!</p>
+        <h2>Feeding Schedule</h2>
+        <p>
+          We feed Klaus at 8:45 AM for breakfast and again at 3:45 PM for
+          dinner. His food container is located on the floor inside of the
+          hallway closet adjacent to the kitchen.
+        </p>
+        <p>
+          For both meals, we give him 3 full scoops of the provided 1/4 cup
+          measuring cup into his blue slow feed container, which is probably in
+          the drying rack next to the sink!
+        </p>
+        <p>
+          We also give him 1/2 of an allergy pill (generic zyrtec) with each
+          meal, which are located in the white Frenchie shaped container on the
+          island above and to the left when you are standing in front of the
+          sink!
+        </p>
+        <p>
+          We also treat Klaus to a "Greenie" once a day around noon. They are
+          located in the upstairs hallway cabinet on the left side of the middle
+          shelf in a large white resealable bag.
+        </p>
+        <h2>Potty Schedule</h2>
+        <p>
+          When Klaus is up and active, we usually take him out every 2ish hours.
+          However, if he is drinking water and playing heavily, be sure to take
+          him out as soon as playtime is over to avoid an accident!
+        </p>
+        <p>
+          Klaus usually poops 2-3 times a day, once right in the morning,
+          another time between noon and two, and occasionally around bedtime.
+        </p>
+        <h2>Crating Klaus</h2>
+        <p>
+          We also crate Klaus when we leave the house. To get Klaus into the
+          crate, remove any leashes or collars on him first, and leave a few
+          treats like a breadcrumb trail towards the crate, with a couple also
+          inside towards the back of the crate. You may have to coax him by
+          saying "Crate" in a cute voice to get him to move towards the treats!
+          When he goes in, close and lock the door behind him please!
+        </p>
+        <p>
+          Please make sure the only things in his crate when you leave are his
+          snuggle buddy dog toy, his blue nyla-bone, and a small blanket or two.
+        </p>
+        <p>
+          Klaus can spend up to 4 hours in the crate if tired out sufficiently
+          before leaving!
+        </p>
+        <p>
+          At bedtime, we take the crate into our bedroom (last door on the right
+          at the end of the hallway) and place it next to the dresser, to the
+          right of the wall plug located there. If you are staying overnight,
+          you can move the crate into the bedroom and sleep in the bed!
+        </p>
+        <h2>Treats & Supplies</h2>
+        <p>
+          We have a couple of black magnetic pouches around the house filled
+          with treats that you can use for Klaus. One is attached to the leash,
+          and two others should be in the storage bin on our hall tree next to
+          the door that goes out into the garage. Extra treats may be found in a
+          blue resealable bag inside the same hallway cabinet bin that contains
+          the "Greenies!"
+        </p>
+        <p>
+          All of Klaus's treats, medications, and cleaning supplies are located
+          in the hallway cabinet bin.
+        </p>
+        <h2>Other Notes</h2>
+        <p>
+          Klaus can generally be trusted upstairs, but be sure to keep the
+          bedrooms, office, and pocket door to the basement closed throughout
+          the day to avoid him sneaking off into those rooms and causing
+          trouble.
+        </p>
+        <p>
+          Do not leave Klaus unwatched in the basement, and if you are down
+          there, do not let him jump up onto the couch. He has a tendency to try
+          and mark it!
+        </p>
+        <p>
+          If you notice his face folds are looking damp or red, you can use a
+          tissue from the living room table and wipe them out!
+        </p>
+        <p>
+          After Klaus goes to the bathroom, you may want to dab him afterwards
+          or else you might find some marks on your clothes if he decides to sit
+          on your lap when he gets sleepy!
+        </p>
+      </div>
+    </>
+  )
+}

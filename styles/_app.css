@@ -4,6 +4,7 @@
 @import './utilities.css';
 
 @plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
 
 @utility container {
 	margin-inline: auto;
