@@ -45,7 +45,7 @@ export default function ContactCTA() {
         </div>
         <div className="w-full max-w-2xl mx-auto mt-12 lg:mt-0 lg:w-1/2 lg:pl-16">
           <h3 className="relative inline h4">
-            Do you want to build a new app?
+            Do you want to build a website?
             <span
               className="text-mw-purple w-6 h-6 absolute lg:hidden animate-bounce"
               style={{ top: '-32px', left: '-16px' }}

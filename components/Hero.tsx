@@ -9,7 +9,7 @@ interface Props {
 
 export default function Hero(props: Props) {
   return (
-    <section className="text-white section-spacing mt-6 sm:mt-12 lg:mt-24">
+    <section className="text-white section-spacing mt-6 sm:mt-12 lg:mt-24 relative">
       <div className="container flex items-center flex-col gap-12 lg:gap-16 lg:flex-row">
         <div className="w-full order-2 lg:order-1">
           <h1 className="h1 text-balance text-gradient">
@@ -17,7 +17,7 @@ export default function Hero(props: Props) {
           </h1>
           <p
             className={clsx(
-              'mt-4 text-pretty lg:text-balance text-base sm:text-lg lg:text-xl xl:text-2xl text-zinc-300',
+              'mt-4 text-pretty lg:text-balance text-base sm:text-lg lg:text-xl text-zinc-300',
               !props.image && 'lg:max-w-2xl'
             )}
           >
@@ -33,7 +33,7 @@ export default function Hero(props: Props) {
               priority
               width={384}
               height={384}
-              className="z-10 relative"
+              className="z-10 relative grayscale"
             />
             <div
               className="z-0 absolute inset-0 gradient size-full scale-110 rotate-[7deg]"

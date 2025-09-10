@@ -5,7 +5,6 @@ import BackToTop from 'components/BackToTop'
 import Toaster from 'components/Toaster'
 import ClipPaths from 'components/ClipPaths'
 import { Metadata, Viewport } from 'next'
-import Background from 'components/Background'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mattwaler.com'),
@@ -42,7 +41,6 @@ export default function Layout({ children }) {
         <BackToTop />
         <Footer />
         <ClipPaths />
-        <Background />
       </body>
     </html>
   )
