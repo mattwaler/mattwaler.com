@@ -1,6 +1,6 @@
 # 🌐 My Personal Website
 
-My personal portfolio site, built on Next.js and Tailwind!
+My personal portfolio site, built on Astro!
 
 ## ⭐️ Requirements
 
@@ -11,9 +11,9 @@ My personal portfolio site, built on Next.js and Tailwind!
 
 This project uses the following tools:
 
-- [Next.js](https://nextjs.org/)
+- [Astro.js](https://astro.build/)
 - [TailwindCSS](https://tailwindcss.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Alpine](https://alpinejs.dev/)
 
 ## 🛠 Getting Started
 

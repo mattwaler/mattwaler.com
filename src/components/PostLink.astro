@@ -1,0 +1,11 @@
+---
+const { post } = Astro.props
+---
+
+<li class="py-2">
+  <a href={post.url}>{post.frontmatter.title}</a>
+  <p class="mt-1">{post.frontmatter.description}</p>
+  <p class="-mt-2 text-xs text-gray-500">
+    {post.frontmatter.date}, {post.frontmatter.tags.join(', ')}
+  </p>
+</li>

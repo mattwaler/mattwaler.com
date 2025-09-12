@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@plugin "tailwindcss-debug-screens";
+
+@theme {
+  --color-code-red: #ff7b72;
+  --color-code-green: #7ee787;
+  --color-code-blue: #79c0ff;
+  --color-code-orange: #ffa657;
+}
+
+@utility container {
+  margin-inline: auto;
+  @apply px-4 lg:px-8;
+}
+
+@utility typography {
+  @apply text-pretty prose prose-sm prose-invert lg:prose-base;
+  @apply [&_a]:text-code-green [&_a]:no-underline;
+}
+
+@utility typography-light {
+  @apply text-pretty prose prose-sm lg:prose-base;
+  @apply [&_a]:text-code-green [&_a]:no-underline;
+}
+
+@utility px-base {
+  @apply px-4 sm:px-8;
+}
+
+@layer base {
+  input,
+  textarea {
+    @apply focus:!ring-code-green focus:!ring;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-1.5 w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply border-l border-gray-600 bg-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600;
+  }
+
+  html {
+    @apply scroll-smooth bg-gray-950 font-normal text-white antialiased;
+    @apply bg-gradient-to-r from-blue-600 to-violet-600;
+  }
+
+  body {
+    @apply size-full;
+    touch-action: manipulation;
+  }
+
+  button {
+    @apply hover:cursor-pointer;
+  }
+
+  pre.astro-code.github-dark {
+    @apply !rounded-none border border-gray-600 !bg-transparent !py-4;
+  }
+
+  pre.astro-code.github-dark code {
+    @apply !text-sm;
+  }
+
+  pre.astro-code code {
+    @apply block;
+    counter-reset: step;
+    counter-increment: step 0;
+  }
+
+  pre.astro-code code .line {
+    @apply relative;
+  }
+
+  pre.astro-code code .line::before {
+    content: counter(step);
+    counter-increment: step;
+    @apply pr-4 text-gray-600;
+  }
+}
