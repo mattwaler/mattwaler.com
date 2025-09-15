@@ -48,9 +48,7 @@
   }
 
   html {
-    @apply scroll-smooth bg-blue-600 font-normal text-white antialiased font-mono;
-    @apply bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600;
-    @apply lg:bg-gradient-to-r lg:from-blue-600 lg:to-purple-600;
+    @apply scroll-smooth antialiased;
   }
 
   body {

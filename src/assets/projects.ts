@@ -1,17 +1,17 @@
 export default [
   {
+    title: 'Repeaters: Track Recurring Tasks',
+    description:
+      'Repeaters is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
+    link: 'https://repeaters.mattwaler.com',
+    tools: ['Swift', 'Swift UI', 'Swift Data'],
+  },
+  {
     title: 'Kings Court Landscaping',
     description:
       'A fully static marketing website for a local landscaping company that provides lots of different services.',
     link: 'https://kingscourtlandscaping.com',
     tools: ['Astro', 'Tailwind', 'Alpine'],
-  },
-  {
-    title: 'Agone: Task Tracker App',
-    description:
-      'Agone is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
-    link: '/projects/agone/',
-    tools: ['Swift', 'Swift UI', 'Swift Data'],
   },
   {
     title: 'Rev Indy',

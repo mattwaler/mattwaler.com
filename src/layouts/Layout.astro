@@ -20,7 +20,14 @@ const links = [
 ---
 
 <!doctype html>
-<html lang="en">
+<html
+  lang="en"
+  class:list={[
+    'bg-blue-600 font-mono font-normal text-white',
+    'bg-gradient-to-b from-blue-600 via-purple-600 to-blue-600',
+    'lg:bg-gradient-to-r lg:from-blue-600 lg:to-purple-600',
+  ]}
+>
   <head>
     <meta
       name="robots"
@@ -63,7 +70,7 @@ const links = [
   </head>
   <body
     class:list={[
-      'flex items-center justify-center pb-16 p-4 lg:pb-4 lg:h-screen lg:w-screen lg:overflow-hidden',
+      'flex items-center justify-center p-4 pb-16 lg:h-screen lg:w-screen lg:overflow-hidden lg:pb-4',
       { 'debug-screens': import.meta.env.DEV },
     ]}
     x-data
@@ -95,7 +102,7 @@ const links = [
       </div>
       <!-- Sidebar/Header -->
       <aside
-        class="flex h-full flex-1 flex-col gap-6 overflow-y-auto border-b border-gray-600 px-base py-6 lg:border-r lg:border-b-0 lg:py-8"
+        class="px-base flex h-full flex-1 flex-col gap-6 overflow-y-auto border-b border-gray-600 py-6 lg:border-r lg:border-b-0 lg:py-8"
       >
         <Headshot />
         <div class="hidden lg:block">
@@ -115,13 +122,9 @@ const links = [
           class="sticky top-0 z-10 flex flex-none flex-col overflow-x-auto border-b border-gray-600 bg-black lg:flex-row"
           :class="!$store.isNavOpen && 'hidden lg:flex'"
         >
-          {
-            links.map((link) => (
-              <NavLink href={link.url} name={link.name} />
-            ))
-          }
+          {links.map((link) => <NavLink href={link.url} name={link.name} />)}
         </header>
-        <main class="max-h-full px-base pt-8 lg:pt-12">
+        <main class="px-base max-h-full pt-8 lg:pt-12">
           <slot />
           <div class="h-8 lg:h-12"></div>
         </main>
