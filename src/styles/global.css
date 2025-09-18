@@ -44,7 +44,19 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-600;
+    @apply bg-gray-600 rounded-lg;
+  }
+
+  .horizontal::-webkit-scrollbar-track {
+    @apply border-none h-4;
+  }
+
+  .horizontal::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-lg h-4;
+  }
+
+  .horizontal::-webkit-scrollbar {
+    @apply h-3;
   }
 
   html {

@@ -1,12 +1,14 @@
 ---
 import Blank from '../layouts/Blank.astro'
+import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets'
-import dad from '@/assets/dad.jpg'
 
 const meta = {
   title: 'Dad',
   description: 'An endlessly growing list of things my dad taught me.',
 }
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/dad-*.webp')
 
 const lessons = [
   `Measure twice, cut once.`,
@@ -70,12 +72,24 @@ const lessons = [
   `Support your children in their passions, not force them.`,
   `Accepting your children as they are is the most important thing you can do as a parent.`,
 ]
+
+console.log(Object.values(images))
+const imagesArray = Object.values(images)
+console.log(imagesArray[0]())
 ---
 
 <Blank meta={meta}>
-  <div class="typography-light dark:typography container py-8 px-8">
-    <Image class='rounded-lg' src={dad} alt="My dad" />
-    <h1>This one's for you, Dad.</h1>
+  <div class="typography container py-8 px-8">
+    <div class="pb-4 flex gap-6 horizontal overflow-x-auto snap-x snap-mandatory w-full">
+      {Object.values(images).map(image => (
+        <Image
+          class='!my-0 rounded-lg flex-shrink-0 w-auto object-cover h-128 max-w-[80%] snap-center'
+          src={image()}
+          alt=""
+        />
+      ))}
+    </div>
+    <h1 class="pt-8">This one's for you, Dad.</h1>
     <p>
       I figured I would take a page out of your book and <strong>make</strong> something
       for you, something that I plan on supporting for the rest of my life.
