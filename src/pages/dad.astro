@@ -83,7 +83,7 @@ console.log(imagesArray[0]())
     <div class="pb-4 flex gap-6 horizontal overflow-x-auto snap-x snap-mandatory w-full">
       {Object.values(images).map(image => (
         <Image
-          class='!my-0 rounded-lg flex-shrink-0 w-auto object-cover h-128 max-w-[80%] snap-center'
+          class='!my-0 rounded-lg flex-shrink-0 w-auto object-cover max-h-64 lg:max-h-96 max-w-[80%] snap-center'
           src={image()}
           alt=""
         />
