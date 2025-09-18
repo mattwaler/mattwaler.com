@@ -3,14 +3,18 @@ import Blank from '../layouts/Blank.astro'
 import type { ImageMetadata } from 'astro'
 import { Image } from 'astro:assets'
 
+const imageObject = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/dad-*.webp'
+)
+const images = Object.values(imageObject)
+
 const meta = {
   title: 'Dad',
   description: 'An endlessly growing list of things my dad taught me.',
+  ogImage: `https://mattwaler.com/dad.jpg`,
+  ogWidth: "1080",
+  ogHeight: "720",
 }
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/dad-*.webp'
-)
 
 const lessons = [
   `Measure twice, cut once.`,
@@ -81,8 +85,9 @@ const lessons = [
     class="horizontal flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-4"
   >
     {
-      Object.values(images).map((image) => (
+      images.map((image) => (
         <Image
+          format='jpg'
           class="!my-0 max-h-64 w-auto max-w-[80%] flex-shrink-0 snap-center rounded-lg object-cover lg:max-h-96"
           src={image()}
           alt=""
