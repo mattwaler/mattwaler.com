@@ -1,6 +1,6 @@
 ---
 import Blank from '../layouts/Blank.astro'
-import type { ImageMetadata } from 'astro';
+import type { ImageMetadata } from 'astro'
 import { Image } from 'astro:assets'
 
 const meta = {
@@ -8,7 +8,9 @@ const meta = {
   description: 'An endlessly growing list of things my dad taught me.',
 }
 
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/dad-*.webp')
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/dad-*.webp'
+)
 
 const lessons = [
   `Measure twice, cut once.`,
@@ -72,48 +74,45 @@ const lessons = [
   `Support your children in their passions, not force them.`,
   `Accepting your children as they are is the most important thing you can do as a parent.`,
 ]
-
-console.log(Object.values(images))
-const imagesArray = Object.values(images)
-console.log(imagesArray[0]())
 ---
 
 <Blank meta={meta}>
-  <div class="typography container py-8 px-8">
-    <div class="pb-4 flex gap-6 horizontal overflow-x-auto snap-x snap-mandatory w-full">
-      {Object.values(images).map(image => (
+  <div
+    class="horizontal flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-4"
+  >
+    {
+      Object.values(images).map((image) => (
         <Image
-          class='!my-0 rounded-lg flex-shrink-0 w-auto object-cover max-h-64 lg:max-h-96 max-w-[80%] snap-center'
+          class="!my-0 max-h-64 w-auto max-w-[80%] flex-shrink-0 snap-center rounded-lg object-cover lg:max-h-96"
           src={image()}
           alt=""
         />
-      ))}
-    </div>
-    <h1 class="pt-8">This one's for you, Dad.</h1>
-    <p>
-      I figured I would take a page out of your book and <strong>make</strong> something
-      for you, something that I plan on supporting for the rest of my life.
-    </p>
-    <p>
-      You have taught me so many things, too many to count. But more
-      importantly, you taught me what family really means. It means showing up
-      for one another, supporting one another, and most of all, loving one
-      another.
-    </p>
-    <p>
-      You are the foundation that our family is built upon, and such a great
-      role model for what it means to be a father. I am so lucky that not only did I get the best father, I got a best friend too.
-    </p>
-    <p>
-      Underneath this text is a living breathing list of just some of the things you've taught me. You may not have said these directly, but I learned them from you. I plan on adding another lesson every year for the rest of my life, because I know you still have so much to teach me.
-    </p>
-    <h2>{lessons.length} Things My Dad Taught Me</h2>
-    <ol>
-      {lessons.map(lesson => (
-        <li>
-          {lesson}
-        </li>
-      ))}
-    </ol>
+      ))
+    }
   </div>
+  <h1 class="pt-8">This one's for you, Dad.</h1>
+  <p>
+    I figured I would take a page out of your book and <strong>make</strong> something
+    for you, something that I plan on supporting for the rest of my life.
+  </p>
+  <p>
+    You have taught me so many things, too many to count. But more importantly,
+    you taught me what family really means. It means showing up for one another,
+    supporting one another, and most of all, loving one another.
+  </p>
+  <p>
+    You are the foundation that our family is built upon, and such a great role
+    model for what it means to be a father. I am so lucky that not only did I
+    get the best father, I got a best friend too.
+  </p>
+  <p>
+    Underneath this text is a living breathing list of just some of the things
+    you've taught me. You may not have said these directly, but I learned them
+    from you. I plan on adding another lesson every year for the rest of my
+    life, because I know you still have so much to teach me.
+  </p>
+  <h2>{lessons.length} Things My Dad Taught Me</h2>
+  <ol>
+    {lessons.map((lesson) => <li>{lesson}</li>)}
+  </ol>
 </Blank>

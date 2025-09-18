@@ -47,6 +47,8 @@ const { meta } = Astro.props
     <meta name="abstract" content={meta.description} />
   </head>
   <body class:list={['', { 'debug-screens': import.meta.env.DEV }]} x-data>
-    <slot />
+    <div class="typography container py-16 px-8">
+      <slot />
+    </div>
   </body>
 </html>

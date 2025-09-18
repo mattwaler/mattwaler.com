@@ -16,12 +16,7 @@
 }
 
 @utility typography {
-  @apply text-pretty prose prose-sm prose-invert lg:prose-base;
-  @apply [&_a]:text-code-green [&_a]:no-underline;
-}
-
-@utility typography-light {
-  @apply text-pretty prose prose-sm lg:prose-base;
+  @apply text-pretty prose prose-invert;
   @apply [&_a]:text-code-green [&_a]:no-underline;
 }
 
