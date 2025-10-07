@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
-@plugin "tailwindcss-debug-screens";
 
 @theme {
   --color-code-red: #ff7b72;

@@ -6,6 +6,7 @@ import Socials from '@/components/Socials.astro'
 import Headshot from '@/components/Headshot.astro'
 import Terminal from '@/components/Terminal.astro'
 import NavLink from '@/components/NavLink.astro'
+import Tailwind from '@/components/Tailwind.astro'
 import Menu from '@/assets/menu.svg'
 import Close from '@/assets/close.svg'
 
@@ -75,6 +76,7 @@ const links = [
     ]}
     x-data
   >
+    {import.meta.env.DEV && (<Tailwind />)}
     <!-- Code Editor -->
     <div
       class="relative grid w-full flex-1 grid-cols-1 grid-rows-[40px_1fr] overflow-hidden rounded-2xl border border-gray-600 bg-black shadow-2xl md:max-w-2xl lg:h-[calc(100vh-4rem)] lg:max-w-6xl lg:grid-cols-[340px_1fr]"
