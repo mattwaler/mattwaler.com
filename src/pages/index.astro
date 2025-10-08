@@ -17,7 +17,7 @@ const posts: Post[] = Object.values(
   import.meta.glob('./blog/*.md', { eager: true })
 )
 
-const sortedPosts = sortPosts(posts).slice(0, 3)
+const sortedPosts = sortPosts(posts).slice(0, 2)
 ---
 
 <Layout meta={meta}>
@@ -62,13 +62,13 @@ const sortedPosts = sortPosts(posts).slice(0, 3)
       <li>Listening to pop-punk music (mainly MGK)</li>
       <li>Watching Edgar Wright films</li>
     </ul>
+    <h2>My most recent projects:</h2>
+    <ul>
+      {projects.slice(0, 2).map((project) => <ProjectLink project={project} />)}
+    </ul>
     <h2>My most recent ramblings:</h2>
     <ul>
       {sortedPosts.map((post) => <PostLink post={post} />)}
-    </ul>
-    <h2>My most recent projects:</h2>
-    <ul>
-      {projects.slice(0, 3).map((project) => <ProjectLink project={project} />)}
     </ul>
   </div>
 </Layout>
