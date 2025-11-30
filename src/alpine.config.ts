@@ -22,7 +22,6 @@ typedDivs.forEach(div => {
     typedDiv.removeAttribute('data-typed')
     // Insert New Div & Type!
     div.parentNode.insertBefore(typedDiv, div.nextSibling)
-    div.classList.add('sr-only')
     new Typed(typedDiv, {
       strings: [div.innerHTML],
       showCursor: false,
