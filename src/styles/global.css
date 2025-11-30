@@ -15,7 +15,7 @@
 }
 
 @utility typography {
-  @apply text-pretty prose prose-invert;
+  @apply prose prose-invert;
   @apply [&_a]:text-code-green [&_a]:no-underline;
 }
 
@@ -24,6 +24,14 @@
 }
 
 @layer base {
+  [x-cloak] {
+    @apply hidden!;
+  }
+
+  [data-typed] {
+    @apply sr-only;
+  }
+
   input,
   textarea {
     @apply focus:!ring-code-green focus:!ring;
