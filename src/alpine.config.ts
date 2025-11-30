@@ -25,6 +25,7 @@ typedDivs.forEach(div => {
     div.classList.add('sr-only')
     new Typed(typedDiv, {
       strings: [div.innerHTML],
+      showCursor: false,
       backSpeed: 0,
       backDelay: 0,
       loop: false,
