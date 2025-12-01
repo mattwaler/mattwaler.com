@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source("../../src/");
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
@@ -29,7 +29,7 @@
   }
 
   [data-typed] {
-    @apply sr-only;
+    @apply opacity-0;
   }
 
   input,
