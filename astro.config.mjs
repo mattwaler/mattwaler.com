@@ -14,5 +14,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   output: 'static',
-  integrations: [alpinejs({ entrypoint: '/src/alpine.config.ts' }), sitemap()],
+  integrations: [alpinejs({ entrypoint: '/src/app.ts' }), sitemap()],
 });
