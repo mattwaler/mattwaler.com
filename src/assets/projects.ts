@@ -19,6 +19,7 @@ export default [
       'A modular marketing website to bring awareness to the Rev Indy fundraising event that takes place every year.',
     link: 'https://revindy.org/',
     tools: ['Craft', 'Tailwind', 'Alpine'],
+    trendy: true,
   },
   {
     title: 'Oft: Fitness Timer App',
@@ -33,6 +34,7 @@ export default [
       'An Indiana-based marketing agency focused on delivering digital experiences to clients that improve lives.',
     link: 'https://trendyminds.com',
     tools: ['Craft', 'Tailwind', 'Alpine'],
+    trendy: true,
   },
   {
     title: 'Paramount Schools of Excellence',
@@ -40,6 +42,7 @@ export default [
       'A CMS built for a group of public schools that teaches academic content and life lessons through a structured, high-quality curriculum.',
     link: 'https://paramountindy.org/',
     tools: ['Craft', 'Tailwind', 'Alpine'],
+    trendy: true,
   },
   {
     title: 'Hylant',
@@ -47,6 +50,7 @@ export default [
       'A monolithic Craft CMS website for an insurance, employee benefits and risk management consulting company.',
     link: 'https://hylant.com/',
     tools: ['Craft CMS', 'Tailwind', 'Alpine', 'Sprig'],
+    trendy: true,
   },
   {
     title: 'Ascend Indiana',
@@ -54,6 +58,7 @@ export default [
       'A website that aims to help individuals find meaningful jobs or internships in the greater Indianapolis area.',
     link: 'https://ascendindiana.com/',
     tools: ['Craft', 'Tailwind', 'Alpine'],
+    trendy: true,
   },
   {
     title: 'Search Institute',
@@ -61,6 +66,7 @@ export default [
       'A research-aggregate website focused on providing tools for people to promote youth development.',
     link: 'https://searchinstitute.org',
     tools: ['Craft', 'Tailwind', 'Alpine', 'React', 'Algolia'],
+    trendy: true,
   },
   {
     title: 'Brighter Futures Indiana',
@@ -68,6 +74,7 @@ export default [
       'A website built to offer information for families in their search for high quality learning experiences for their children.',
     link: 'https://brighterfuturesindiana.org',
     tools: ['Craft', 'Tailwind', 'Alpine'],
+    trendy: true,
   },
   {
     title: 'Covid Resources',
@@ -75,6 +82,7 @@ export default [
       'A web tool to help business owners calculate both supplies and the maximum number of occupants they can allow.',
     link: 'https://covid.trendyminds.com',
     tools: ['Eleventy', 'Tailwind', 'Svelte'],
+    trendy: true,
   },
   {
     title: 'Hamilton Exhibits',
@@ -82,6 +90,7 @@ export default [
       'A website highlighting Hamilton Exhibits innovative brand spaces and how they can make an impact.',
     link: 'https://www.hamilton-exhibits.com/',
     tools: ['Craft', 'React', 'Gatsby'],
+    trendy: true,
   },
   {
     title: 'Kappa Alpha Theta',
@@ -89,6 +98,7 @@ export default [
       'A nation-wide website to communicate and highlight the first Greek-letter fraternity for women.',
     link: 'https://kappaalphatheta.org',
     tools: ['Craft', 'React'],
+    trendy: true,
   },
   {
     title: 'IU Health',
@@ -96,6 +106,7 @@ export default [
       'A full-service web application for the Indiana branch of University Hospitals.',
     link: 'https://iuhealth.org',
     tools: ['Craft', 'Tailwind', 'Alpine', 'React', 'Algolia'],
+    trendy: true,
   },
   {
     title: 'Riley Childrens',
@@ -103,6 +114,7 @@ export default [
       'A monolithic web application for the Pediatric branches of University Hospitals in Indiana.',
     link: 'https://rileychildrens.org',
     tools: ['Craft', 'Tailwind', 'Alpine', 'React', 'Algolia'],
+    trendy: true,
   },
   {
     title: 'Transport Services',

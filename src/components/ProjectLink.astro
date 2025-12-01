@@ -13,4 +13,9 @@ const { project } = Astro.props
   <p class="-mt-2 text-xs text-gray-500">
     Built with {project.tools.join(', ')}
   </p>
+  {project.trendy && (
+    <p class="-mt-2 text-xs text-gray-500 italic">
+      Completed while employed at <a class="underline" target="_blank" href="https://trendyminds.com">TrendyMinds</a>
+    </p>
+  )}
 </li>
