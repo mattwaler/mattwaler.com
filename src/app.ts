@@ -11,7 +11,7 @@ typedDivs.forEach(div => {
   const id = div.getAttribute('data-typed')
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
 
-  if (!reduced.matches && !sessionStorage.getItem(id) || true) {
+  if (!reduced.matches && !sessionStorage.getItem(id)) {
     // Get div attributes
     const attr = div.attributes
 
