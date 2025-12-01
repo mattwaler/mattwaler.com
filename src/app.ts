@@ -8,12 +8,14 @@ export default (Alpine: Alpine) => {
 // Add Typing Animation
 const typedDivs = document.querySelectorAll('[data-typed]')
 typedDivs.forEach(div => {
-  div.classList.add('relative')
   const id = div.getAttribute('data-typed')
-  if (!sessionStorage.getItem(id) || import.meta.env.DEV) {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
+
+  if (!reduced.matches && !sessionStorage.getItem(id) || true) {
+    // Get div attributes
     const attr = div.attributes
 
-    // Create Clickable Div
+    // Create clickable opaque div
     const clickableDiv = document.createElement('div')
     clickableDiv.innerHTML = div.innerHTML
     for (let i = 0; i < attr.length; i++) {
@@ -24,7 +26,7 @@ typedDivs.forEach(div => {
     clickableDiv.removeAttribute('data-typed')
     clickableDiv.classList.add('opacity-0', 'relative', 'z-[1]')
 
-    // Create Typing Div
+    // Create non-clickable visible div overtop
     const typedDiv = document.createElement('div')
     for (let i = 0; i < attr.length; i++) {
       const attribute = attr[i];
@@ -32,22 +34,21 @@ typedDivs.forEach(div => {
     }
     typedDiv.setAttribute('data-typing', '')
     typedDiv.removeAttribute('data-typed')
+    typedDiv.setAttribute('role', 'presentation')
     typedDiv.classList.add('absolute!', 'inset-0!', 'size-full!', 'z-[2]!', 'pointer-events-none!')
 
-    // Wipe Div & Create New Structure
+    // Clean out parent div and insert new divs
     div.innerHTML = ""
     div.appendChild(clickableDiv)
     div.appendChild(typedDiv)
     div.setAttribute('class', 'relative')
     div.removeAttribute('data-typed')
 
-    // Type New Div!
+    // Initiate typing effect
     new Typed(typedDiv, {
       strings: [clickableDiv.innerHTML],
       showCursor: false,
-      contentType: 'html',
-      backSpeed: 0,
-      backDelay: 0,
+      typeSpeed: 1,
       loop: false,
       onComplete() {
         typedDiv.classList.add('hidden!')
