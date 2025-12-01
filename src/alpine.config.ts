@@ -25,6 +25,7 @@ typedDivs.forEach(div => {
     new Typed(typedDiv, {
       strings: [div.innerHTML],
       showCursor: false,
+      contentType: 'html',
       backSpeed: 0,
       backDelay: 0,
       loop: false,
