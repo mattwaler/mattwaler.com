@@ -46,7 +46,7 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-600 rounded-lg;
+    @apply bg-gray-600;
   }
 
   .horizontal::-webkit-scrollbar-track {
