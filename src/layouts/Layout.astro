@@ -68,7 +68,8 @@ const links = [
     <title>{meta.title}</title>
     <meta name="description" content={meta.description} />
     <meta name="abstract" content={meta.description} />
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
   </head>
   <body
     class:list={[
