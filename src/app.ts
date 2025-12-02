@@ -5,15 +5,23 @@ export default (Alpine: Alpine) => {
   Alpine.store('isNavOpen', false)
 }
 
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 // Add Typing Animation
 const typedDivs = document.querySelectorAll('[data-typed]')
-typedDivs.forEach(div => {
+typedDivs.forEach(async div => {
   const id = div.getAttribute('data-typed')
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)")
 
   if (!reduced.matches && !sessionStorage.getItem(id) || import.meta.env.DEV) {
     // Get div attributes
     const attr = div.attributes
+
+    if (div.getAttribute('data-typed-delay')) {
+      await delay(div.getAttribute('data-typed-delay'))
+    }
 
     // Create clickable opaque div
     const clickableDiv = document.createElement('div')
@@ -48,7 +56,7 @@ typedDivs.forEach(div => {
     new Typed(typedDiv, {
       strings: [clickableDiv.innerHTML],
       showCursor: false,
-      typeSpeed: 1,
+      typeSpeed: 10,
       loop: false,
       onComplete() {
         typedDiv.classList.add('hidden!')

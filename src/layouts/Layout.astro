@@ -119,9 +119,18 @@ const links = [
       </aside>
       <!-- Navigation & Page Content -->
       <div class="overflow-y-auto p-0">
+        <!-- Desktop Header -->
         <header
-          class="sticky top-0 z-10 flex flex-none flex-col overflow-x-auto border-b border-gray-600 bg-black lg:flex-row"
+          class="hidden sticky top-0 z-10 lg:flex flex-none flex-col overflow-x-auto border-b border-gray-600 bg-black lg:flex-row"
           :class="!$store.isNavOpen && 'hidden lg:flex'"
+        >
+          {links.map((link) => <NavLink href={link.url} name={link.name} />)}
+        </header>
+        <!-- Mobile Header -->
+        <header
+          x-cloak
+          class="lg:hidden sticky top-0 z-10 flex flex-none flex-col overflow-x-auto border-b border-gray-600 bg-black lg:flex-row"
+          :class="!$store.isNavOpen && 'hidden'"
         >
           {links.map((link) => <NavLink href={link.url} name={link.name} />)}
         </header>
