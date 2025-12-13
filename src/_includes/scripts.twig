@@ -1,0 +1,13 @@
+{% if env.devMode %}
+  <script type="module" src="http://localhost:5173/@vite/client"></script>
+  <script type="module" src="http://localhost:5173/src/_bundle/app.js"></script>
+  <link rel="stylesheet" href="http://localhost:5173/src/_bundle/app.css">
+{% else %}
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/app.js" defer></script>
+{% endif %}
+
+<link rel="stylesheet" href="/prism.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">

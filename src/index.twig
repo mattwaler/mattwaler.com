@@ -1,0 +1,138 @@
+---
+title: 'Matt Waler builds websites, iOS apps, and plays a ton of tennis.'
+description: 'Matt Waler is a web and iOS developer based in Ohio.'
+masonry:
+  - forehand.mp4
+  - masonry-1.jpg
+  - masonry-4.jpg
+  - masonry-2.jpg
+  - bench.mp4
+  - masonry-3.jpg
+  - masonry-7.jpg
+  - masonry-6.jpg
+  - serve.mp4
+  - masonry-8.jpg
+  - masonry-9.jpg
+  - masonry-10.jpg
+  - masonry-11.jpg
+  - masonry-5.jpg
+  - deadlift.mp4
+  - masonry-12.jpg
+tools:
+  - Tailwind
+  - Alpine
+  - Astro
+  - Nextjs
+  - TypeScript
+  - Swift
+  - Statamic
+  - Laravel
+---
+
+{% extends "_includes/layout.twig" %}
+
+{% block body %}
+  <section
+    class="
+      py-32 lg:py-48 flex items-center justify-center
+      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
+    "
+  >
+    <div class="container md:text-center">
+      <div class="space-y-6 overlap max-w-4xl mx-auto">
+        {# Reserve Space #}
+        <div class="space-y-6">
+          <p class="h1 opacity-0" role="presentation" aria-hidden="true">
+            I develop websites, iOS applications, and play far too much Tennis.
+          </p>
+          <p class="text-2xl text-blue-200 text-balance">
+            I also have a wife, a french bulldog, and an obsession with minimalism.
+          </p>
+        </div>
+        {# Actual Content #}
+        <div>
+          <h1 class="h1">
+            I develop websites, iOS applications, and
+            <span
+              x-data="{ typed: null }"
+              x-intersect:leave="typed.destroy(); $el.innerText = 'play far too much tennis.'"
+              x-init="
+                () => typed = new Typed($el, {
+                  strings: [
+                    'listen to too much&nbsp;mgk.',
+                    'redesign my website too&nbsp;often.',
+                    'order too much&nbsp;Chipotle.'
+                  ],
+                  typeSpeed: 60,
+                  startDelay: 1500,
+                  backDelay: 1000,
+                })
+              "
+            > play far too much Tennis.
+            </span>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-white -mt-1 border-b border-white" } %}
+
+  <section class="bg-white py-24 space-y-12 md:space-y-24">
+    <div class="container text-balance text-center">
+      <h2 class="h2">Who is Matt Waler?</h2>
+      <h3 class="h5 mt-3 text-gray-600">
+        They always say to show, don't tell.
+      </h3>
+    </div>
+    <div
+      class="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] container max-w-none gap-3 md:gap-5 grid-rows-[masonry]"
+      x-init="new window.Masonry($el)"
+    >
+      {% for asset in masonry %}
+        {% if 'mp4' in asset %}
+          <video
+            x-data="{ show: false }"
+            x-intersect:enter.threshold.25="show = true"
+            :class="show ? 'opacity-100' : 'opacity-0'"
+            class="rounded-xl transition-opacity duration-500 pointer-events-none"
+            autoplay muted playsinline loop src="masonry/{{ asset }}"
+          ></video>
+        {% else %}
+          <img
+            x-data="{ show: false }"
+            x-intersect:enter.threshold.25="show = true"
+            :class="show ? 'opacity-100' : 'opacity-0'"
+            src="masonry/{{ asset }}"
+            loading="lazy"
+            class="rounded-xl transition-opacity duration-500"
+            alt=""
+          >
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-white scale-y-[-1.01] border-b border-white" } %}
+
+  <section class="relative z-2 bg-white py-24 bg-linear-to-b from-blue-950 to-blue-600">
+    <div class="container">
+      <div class="md:text-center text-balance">
+        <h2 class="h2 text-white">What does Matt Waler do?</h2>
+        <h3 class="h5 text-blue-200 mt-4">Oh, you want to talk shop? Let's get right to it.</h3>
+      </div>
+      <div class="text-base mt-12 mb-16 text-balance sm:text-center max-w-3xl mx-auto">
+        <p class="text-lg text-blue-200">Whether it's a static website or a full-blown iOS application, I’m all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.</p>
+      </div>
+      <div class="grid grid-cols-4 max-w-screen-sm mx-auto justify-center gap-8">
+        {% for tool in tools %}
+          <div class="flex flex-col items-center gap-2.5">
+            {% include '_includes/icons/' ~ tool|lower ~ '.twig' with { class: "size-10 xs:size-16 text-white" } %}
+            <p class="text-xs text-blue-100 font-mono text-balance">{{ tool }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+@import 'tailwindcss' source('../../src');
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 2rem;
+}
+
+@utility button {
+  @apply bg-black px-4 py-2 rounded-full font-medium text-white;
+}
+
+@utility overlap {
+  @apply grid grid-cols-1 *:col-start-1 *:row-start-1;
+}
+
+@utility h1 {
+  @apply font-extrabold text-4xl md:text-5xl lg:text-6xl;
+}
+
+@utility h2 {
+  @apply font-extrabold text-3xl md:text-4xl lg:text-5xl;
+}
+
+@utility h3 {
+  @apply font-bold text-2xl md:text-3xl lg:text-4xl;
+}
+
+@utility h4 {
+  @apply font-medium text-xl md:text-2xl lg:text-3xl;
+}
+
+@utility h5 {
+  @apply font-medium text-lg md:text-xl lg:text-2xl;
+}
+
+@utility h6 {
+  @apply font-medium lg:text-lg;
+}
+
+@theme {
+  --breakpoint-2xl: initial;
+  --font-sans: "Source Sans 3", sans-serif;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  html {
+    @apply antialiased bg-white text-gray-900 font-sans;
+  }
+
+  body {
+    @apply overflow-x-clip;
+  }
+}
+
+@layer components {
+  .horizontal::-webkit-scrollbar-track {
+    @apply border-none h-3;
+  }
+
+  .horizontal::-webkit-scrollbar-thumb {
+    @apply bg-gray-950 rounded-lg h-4;
+  }
+
+  .horizontal::-webkit-scrollbar {
+    @apply h-3;
+  }
+}

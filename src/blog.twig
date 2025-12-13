@@ -1,0 +1,54 @@
+---
+title:
+  Read Matt Waler's thoughts and ramblings on web development, app development, and life.
+description:
+  Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!
+---
+
+{% extends "_includes/layout.twig" %}
+
+{% block body %}
+  <section
+    class="
+      py-32 flex items-center justify-center
+      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
+    "
+  >
+    <div class="container md:text-center">
+      <div class="space-y-6 overlap">
+        <div class="space-y-6 w-full max-w-3xl mx-auto">
+          <h1 class="h1 text-balance">
+            Sneak a peek inside my head.
+          </h1>
+          <p class="text-2xl text-blue-200 text-balance">
+            Sorry, you're probably going to regret doing that. Here on my blog you
+            will find coding tips, tech rants, coffee-fueled tutorials, and the
+            occasional meme. We don't have a ton here just yet, but don't worry, more
+            is on the way!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-white -mt-1 border-b border-white" } %}
+
+<section class="container max-w-2xl mx-auto py-24">
+  <div class="space-y-12">
+    {% for post in collections.blog %}
+      <article class="space-y-2">
+          <time datetime="{{ post.data.date | date('Y-m-d') }}" class="block text-sm">
+            {{ post.data.date | date('F j, Y') }}
+          </time>
+          <h2 class="h4 text-pretty">
+            <a href="{{ post.url }}" class="block underline hover:no-underline">
+            {{ post.data.title }}
+            </a>
+          </h2>
+          <p>{{ post.data.description }}</p>
+      </article>
+    {% endfor %}
+   </div>
+</section>
+
+{% endblock %}

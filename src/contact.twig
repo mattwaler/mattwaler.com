@@ -1,0 +1,65 @@
+---
+title:
+  Contact Matt Waler about your next website or application.
+description:
+  Get in touch with Matt Waler to start your next web or mobile application.
+---
+
+{% extends "_includes/layout.twig" %}
+
+{% block body %}
+  <section
+    class="
+      py-32 flex items-center justify-center
+      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
+    "
+  >
+    <div class="container md:text-center">
+      <div class="space-y-6 overlap">
+        {# Reserve Space #}
+        <div class="space-y-6 w-full max-w-3xl mx-auto">
+          <h1 class="h1">
+            Let's get in touch.
+          </h1>
+          <p class="text-2xl text-blue-200 text-balance">
+            Thank you for taking the time to view my website. If you are interested in connecting, fill out the contact form below. I will get back to you as soon as possible.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-white -mt-1 border-b border-white" } %}
+
+  <div class="container pb-24 max-w-3xl"  x-data>
+    <div x-show="window.location.search.includes('contact=true')">
+      <p class="h4 pt-16">Message sent! Thanks for reaching out!</p>
+    </div>
+    <form
+      action="/contact/?contact=true"
+      class="mt-8 grid grid-cols-1 gap-8"
+      method="POST"
+      name="Contact Form"
+      {# x-show="!window.location.search.includes('contact=true')" #}
+    >
+      <input type="hidden" name="form-name" value="Contact Form">
+      <label class="grid grid-cols-1">
+        <p>Name</p>
+        <input required="" class="rounded bg-gray-200 border-none" type="text">
+      </label>
+      <label class="grid grid-cols-1">
+        <p>Email</p>
+        <input required="" class="rounded bg-gray-200 border-none" type="email">
+      </label>
+      <label class="grid grid-cols-1">
+        <p>Message</p>
+        <textarea required="" rows="5" class="rounded bg-gray-200 border-none"></textarea>
+      </label>
+      <div>
+        <button class="button rounded" type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}

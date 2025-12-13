@@ -1,0 +1,65 @@
+<div
+  class="w-full h-0"
+  x-data
+  x-intersect:enter="$dispatch('top-enter')"
+  x-intersect:leave="$dispatch('top-leave')"
+></div>
+
+<header
+  x-cloak
+  class="fixed top-4 left-0 right-0 w-full z-50"
+  x-data="{ isTop: window.scrollY === 0, showMobile: false }"
+  @top-enter.window="isTop = true"
+  @top-leave.window="isTop = false"
+>
+  <div class="container">
+    <div
+      x-ref="navigation"
+      :class="{
+        'text-white mx-auto rounded-full py-2 flex-wrap flex gap-x-4': true,
+        'gap-y-2 items-center justify-between duration-500 transition-all max-w-full': true,
+        'w-full px-0': isTop,
+        'bg-black/50 backdrop-blur w-3xl px-4': !isTop || showMobile,
+      }"
+    >
+      {# Logo #}
+      <a href="/" class="flex items-center justify-start gap-1 flex-none md:w-40">
+        {% include '/icons/logo.twig' with { class: "size-8" } %}
+        <span class="font-bold text-lg">mattwaler</span>
+      </a>
+      {# Desktop Links #}
+      <div class="justify-center items-center gap-8 hidden md:flex">
+        {% for item in navigation %}
+          <a class="text-lg font-medium text-white/90" href="{{ item.route }}">{{ item.name }}</a>
+        {% endfor %}
+      </div>
+      {# CTA & Menu #}
+      <div class="flex-none items-center justify-end flex gap-4 md:w-40">
+        <a class="button" href="/contact">Get In Touch</a>
+        <button
+          class="flex items-center justify-center md:hidden"
+          @click="showMobile = !showMobile"
+        >
+          <span x-show="!showMobile">
+            {% include '/icons/menu.twig' with { class: "size-6" } %}
+          </span>
+          <span x-show="showMobile">
+            {% include '/icons/close.twig' with { class: "size-6" } %}
+          </span>
+        </button>
+      </div>
+    </div>
+    {# Mobile Links #}
+    <div
+      class="bg-black/50 px-4 py-2 mt-1 flex items-center justify-center gap-8 backdrop-blur rounded-full text-white md:hidden"
+      x-anchor.bottom="$refs.navigation"
+      x-cloak
+      x-transition.duration.300ms
+      x-show="showMobile"
+    >
+      {% for item in navigation %}
+        <a class="font-medium text-lg" href="{{ item.route }}">{{ item.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</header>

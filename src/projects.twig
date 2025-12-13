@@ -1,0 +1,59 @@
+---
+title:
+  Projects Matt Waler has built since 2016.
+description:
+  Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs.
+---
+
+{% extends "_includes/layout.twig" %}
+
+{% block body %}
+  <section
+    class="
+      py-32 flex items-center justify-center
+      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
+    "
+  >
+    <div class="container md:text-center">
+      <div class="space-y-6 overlap">
+        {# Reserve Space #}
+        <div class="space-y-6 w-full max-w-3xl mx-auto">
+          <h1 class="h1 text-balance">
+            See what I've built.
+          </h1>
+          <p class="text-2xl text-blue-200 text-balance">
+            I have built a lot of websites and mobile applications since I started
+            back in 2016. Listed below is a non-exhaustive representation of what I
+            have developed and deployed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-white -mt-1 border-b border-white" } %}
+
+  <section class="container max-w-2xl mx-auto py-24">
+    <div class="space-y-12">
+      {% for project in projects %}
+        <article class="space-y-2">
+            <span class="block text-sm">
+              {{ project.tools|join(', ') }}
+            </span>
+            <h2 class="h4 text-pretty">
+              <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="block underline hover:no-underline">
+              {{ project.title }}
+              </a>
+            </h2>
+            <p class="text-pretty">{{ project.description }}</p>
+            {% if project.trendy %}
+              <span class="block text-sm italic">
+                Completed while employed at <a href="https://trendyminds.com">TrendyMinds</a>.
+              </span>
+            {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+{% endblock %}

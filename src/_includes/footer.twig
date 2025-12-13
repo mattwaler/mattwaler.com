@@ -1,0 +1,22 @@
+{% set socials = [
+  { name: 'GitHub', url: 'https://github.com/mattwaler' },
+  { name: 'Instagram', url: 'https://instagram.com/mattwaler' },
+  { name: 'LinkedIn', url: 'https://linkedin.com/in/mattwaler' }
+] %}
+
+
+<footer class="">
+  <div class="mx-auto container py-6 md:flex md:items-center md:justify-between">
+    <div class="flex justify-center gap-x-6 md:order-2">
+      {% for social in socials %}
+        <a target="_blank" rel="noopener noreferrer" href="{{ social.url }}" class=" hover:text-white">
+          <span class="sr-only">{{ social.name }}</span>
+          {% include 'icons/' ~ social.name|lower ~ '.twig' with { class: "size-6" } %}
+        </a>
+      {% endfor %}
+    </div>
+    <p class="mt-8 text-center font-medium text-sm/6 md:order-1 md:mt-0">
+      &copy; <span x-data x-text="new Date().getFullYear()"></span> Waler Media, LLC. All rights reserved.
+    </p>
+  </div>
+</footer>

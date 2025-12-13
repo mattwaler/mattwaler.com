@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    [x-cloak] { display: none!important; }
+  </style>
+  {% include 'scripts.twig' %}
+  {% include 'meta.twig' %}
+  <title>{{ title }} | TEA Stack</title>
+</head>
+
+<body class="{{ env.devMode ? 'debug-screens' }}">
+  {% include 'header.twig' %}
+  {% block body %}
+    <main class="bg-white">
+      {{ content|raw }}
+    </main>
+  {% endblock %}
+  {% include 'footer.twig' %}
+</body>
+
+</html>
