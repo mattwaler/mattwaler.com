@@ -20,7 +20,7 @@ description:
           <h1 class="h1 text-balance">
             Sneak a peek inside my head.
           </h1>
-          <p class="text-2xl text-blue-200 text-balance">
+          <p class="h6 text-blue-200 text-balance">
             Sorry, you're probably going to regret doing that. Here on my blog you
             will find coding tips, tech rants, coffee-fueled tutorials, and the
             occasional meme. We don't have a ton here just yet, but don't worry, more
@@ -40,8 +40,8 @@ description:
           <time datetime="{{ post.data.date | date('Y-m-d') }}" class="block text-sm">
             {{ post.data.date | date('F j, Y') }}
           </time>
-          <h2 class="h4 text-pretty">
-            <a href="{{ post.url }}" class="block underline hover:no-underline">
+          <h2 class="h4 font-bold text-pretty">
+            <a href="{{ post.url }}" class="block hover:underline">
             {{ post.data.title }}
             </a>
           </h2>

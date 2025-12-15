@@ -21,7 +21,7 @@ description:
           <h1 class="h1 text-balance">
             See what I've built.
           </h1>
-          <p class="text-2xl text-blue-200 text-balance">
+          <p class="h6 text-blue-200 text-balance">
             I have built a lot of websites and mobile applications since I started
             back in 2016. Listed below is a non-exhaustive representation of what I
             have developed and deployed.
@@ -41,8 +41,8 @@ description:
               {{ project.tools|join(', ') }}
             </span>
             <h2 class="h4 text-pretty">
-              <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="block underline hover:no-underline">
-              {{ project.title }}
+              <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="block hover:underline font-bold">
+                {{ project.title }}
               </a>
             </h2>
             <p class="text-pretty">{{ project.description }}</p>

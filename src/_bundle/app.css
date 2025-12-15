@@ -36,7 +36,7 @@
 }
 
 @utility h6 {
-  @apply font-medium lg:text-lg;
+  @apply font-medium md:text-lg lg:text-xl;
 }
 
 @theme {
