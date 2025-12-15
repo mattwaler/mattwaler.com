@@ -4,12 +4,11 @@
   { name: 'LinkedIn', url: 'https://linkedin.com/in/mattwaler' }
 ] %}
 
-
 <footer class="">
   <div class="mx-auto container py-6 md:flex md:items-center md:justify-between">
     <div class="flex justify-center gap-x-6 md:order-2">
       {% for social in socials %}
-        <a target="_blank" rel="noopener noreferrer" href="{{ social.url }}" class=" hover:text-white">
+        <a target="_blank" rel="noopener noreferrer" href="{{ social.url }}" class="text-gray-800 hover:text-gray-600 transition-colors">
           <span class="sr-only">{{ social.name }}</span>
           {% include 'icons/' ~ social.name|lower ~ '.twig' with { class: "size-6" } %}
         </a>
