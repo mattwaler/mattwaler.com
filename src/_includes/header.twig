@@ -23,10 +23,12 @@
       }"
     >
       {# Logo #}
-      <a href="/" class="flex items-center justify-start gap-1 flex-none md:w-40">
-        {% include '/icons/logo.twig' with { class: "size-8" } %}
-        <span class="font-bold text-lg">mattwaler</span>
-      </a>
+      <div class="flex items-center justify-start flex-none md:w-40">
+        <a href="/" class="flex items-center gap-1">
+          {% include '/icons/logo.twig' with { class: "size-8" } %}
+          <span class="font-bold text-lg">mattwaler</span>
+        </a>
+      </div>
       {# Desktop Links #}
       <div class="justify-center items-center gap-8 hidden md:flex">
         {% for item in navigation %}

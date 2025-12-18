@@ -7,6 +7,10 @@
 	padding-inline: 2rem;
 }
 
+@utility input {
+  @apply form-input rounded bg-gray-200 border-gray-200 focus:outline-2;
+}
+
 @utility button {
   @apply bg-black px-4 py-2 rounded-full font-medium text-white;
 }
