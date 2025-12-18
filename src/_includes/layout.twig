@@ -14,11 +14,9 @@
 
 <body class="{{ env.devMode ? 'debug-screens' }}">
   {% include 'header.twig' %}
-  {% block body %}
-    <main class="bg-white">
-      {{ content|raw }}
-    </main>
-  {% endblock %}
+  <main>
+    {% block body %}{% endblock %}
+  </main>
   {% include 'footer.twig' %}
 </body>
 
