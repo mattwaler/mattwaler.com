@@ -26,18 +26,18 @@
       <div class="flex items-center justify-start flex-none md:w-40">
         <a href="/" class="flex items-center gap-1">
           {% include '/icons/logo.twig' with { class: "size-8" } %}
-          <span class="font-bold text-lg">mattwaler</span>
+          <span class="text-lg font-medium">matt<span class="font-extrabold">waler</span></span>
         </a>
       </div>
       {# Desktop Links #}
       <div class="justify-center items-center gap-8 hidden md:flex">
         {% for item in navigation %}
-          <a class="text-lg font-medium text-white/90" href="{{ item.route }}">{{ item.name }}</a>
+          <a class="font-medium text-white/90" href="{{ item.route }}">{{ item.name }}</a>
         {% endfor %}
       </div>
       {# CTA & Menu #}
       <div class="flex-none items-center justify-end flex gap-4 md:w-40">
-        <a class="button" href="/contact">Get In Touch</a>
+        <a class="button max-[400px]:hidden" href="/contact">Get In Touch</a>
         <button
           aria-label="toggle navigation"
           class="flex items-center justify-center md:hidden"
