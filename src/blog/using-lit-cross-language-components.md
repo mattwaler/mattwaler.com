@@ -1,10 +1,8 @@
 ---
-layout: 'blog.twig'
 date: 2025-06-27
 title: Using Lit to create cross-language components
 description: On larger projects that utilize multiple templating languages to accomplish server-side and client-side rendering, using lit to create custom html elements can solve your problems.
 tags:
-  - blog
   - Lit
   - JavaScript
 ---

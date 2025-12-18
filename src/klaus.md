@@ -1,5 +1,5 @@
 ---
-layout: "blog.twig"
+layout: "markdown.twig"
 title:
   "Klaus Care Instructions"
 description:

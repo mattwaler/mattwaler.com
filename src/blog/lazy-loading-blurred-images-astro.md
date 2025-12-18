@@ -1,10 +1,8 @@
 ---
-layout: 'blog.twig'
 date: 2025-06-30
 title: Lazy Loading Blurred Images in Astro
 description: How to create a lazy blur-up image effect on your images in an Astro project.
 tags:
-  - blog
   - Astro
   - Alpine
   - Tailwind

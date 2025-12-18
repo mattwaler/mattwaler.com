@@ -1,11 +1,9 @@
 ---
-layout: 'blog.twig'
 date: 2025-07-23
 title: Simplicity in Agency Development
 description:
   By keeping things simple, isolated to single files, and scoped, pieces from projects can be easily shared across clients and speed up development time significantly.
 tags:
-  - blog
   - Agency
   - Alpine
   - Tailwind

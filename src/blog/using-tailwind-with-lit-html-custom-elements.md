@@ -1,10 +1,8 @@
 ---
-layout: 'blog.twig'
 date: 2025-06-29
 title: Using Tailwind CSS with Lit and HTML Custom Elements
 description: In order to use tailwind with lit and custom html elements, you need to disable the shadow dom. Here's how you do that!
 tags:
-  - blog
   - Tailwind
   - Lit
 ---
