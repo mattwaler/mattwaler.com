@@ -38,23 +38,23 @@ description:
     </div>
     <form
       action="/contact/?contact=true"
+      netlify
       class="mt-8 grid grid-cols-1 gap-8"
       method="POST"
       name="Contact Form"
-      {# x-show="!window.location.search.includes('contact=true')" #}
     >
       <input type="hidden" name="form-name" value="Contact Form">
       <label class="grid grid-cols-1">
         <p>Name</p>
-        <input required="" class="rounded bg-gray-200 border-none" type="text">
+        <input required="" name="name" class="rounded bg-gray-200 border-none" type="text">
       </label>
       <label class="grid grid-cols-1">
         <p>Email</p>
-        <input required="" class="rounded bg-gray-200 border-none" type="email">
+        <input required="" name="email" class="rounded bg-gray-200 border-none" type="email">
       </label>
       <label class="grid grid-cols-1">
         <p>Message</p>
-        <textarea required="" rows="5" class="rounded bg-gray-200 border-none"></textarea>
+        <textarea required="" name="message" rows="5" class="rounded bg-gray-200 border-none"></textarea>
       </label>
       <div>
         <button class="button rounded" type="submit">Submit</button>
