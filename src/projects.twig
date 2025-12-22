@@ -31,17 +31,31 @@ description:
     </div>
   </section>
 
-  {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-white -mt-1 border-b border-white" } %}
+  {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-gray-100 -mt-1 border-b border-gray-100" } %}
 
-  <section class="container max-w-2xl mx-auto py-24">
-    <div class="space-y-12">
+  <section class="py-24 bg-linear-to-b from-gray-100 to-white">
+    <div class="container grid items-start grid-cols-1 sm:grid-cols-2 gap-12">
       {% for project in projects %}
-        <article class="space-y-2">
+        <article class="bg-white rounded-xl shadow-xl overflow-clip w-full">
+          <img
+            width="1200"
+            height="945"
+            loading="lazy"
+            class="aspect-1200/975 w-full h-auto"
+            src="/projects/{{ project.title|lower|replace({ ' ': '-' }) }}.webp"
+            alt=""
+          >
+          <div class="p-8 space-y-2 border-t-2">
             <span class="block text-sm">
               {{ project.tools|join(', ') }}
             </span>
             <h2 class="h4 text-pretty">
-              <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer" class="block hover:underline font-bold">
+              <a
+                href="{{ project.link }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block font-bold hover:text-blue-600 transition-colors"
+              >
                 {{ project.title }}
               </a>
             </h2>
@@ -51,6 +65,7 @@ description:
                 Completed while employed at <a href="https://trendyminds.com">TrendyMinds</a>.
               </span>
             {% endif %}
+          </div>
         </article>
       {% endfor %}
     </div>

@@ -1,6 +1,7 @@
 export default [
   {
-    title: 'Repeaters: Track Recurring Tasks',
+    title: 'Repeaters',
+    img: null,
     description:
       'Repeaters is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
     link: 'https://repeaters.mattwaler.com',
@@ -22,7 +23,7 @@ export default [
     trendy: true,
   },
   {
-    title: 'Oft: Fitness Timer App',
+    title: 'Oft',
     description:
       'A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.',
     link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone',

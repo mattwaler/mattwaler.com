@@ -12,7 +12,8 @@
   <title>{{ title }} | TEA Stack</title>
 </head>
 
-<body class="{{ env.devMode ? 'debug-screens' }}">
+<body>
+  {% include 'debug.twig' %}
   {% include 'header.twig' %}
   <main>
     {% block body %}{% endblock %}
