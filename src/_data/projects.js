@@ -1,7 +1,13 @@
 export default [
   {
+    title: 'Cakewalk Development',
+    description:
+      'Cakewalk Development is a two-man development agency that aims to make web development easier for individuals and small businesses that have a lot on their plates.',
+    link: 'https://cakewalkdev.com',
+    tools: ['11ty', 'Tailwind', 'Alpine'],
+  },
+  {
     title: 'Repeaters',
-    img: null,
     description:
       'Repeaters is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
     link: 'https://repeaters.mattwaler.com',
