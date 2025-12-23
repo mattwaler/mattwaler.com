@@ -1,26 +1,14 @@
-<div
-  class="w-full h-0"
-  x-data
-  x-intersect:enter="$dispatch('top-enter')"
-  x-intersect:leave="$dispatch('top-leave')"
-></div>
-
 <header
-  x-cloak
-  class="fixed top-4 left-0 right-0 w-full z-50"
-  x-data="{ isTop: window.scrollY === 0, showMobile: false }"
-  @top-enter.window="isTop = true"
-  @top-leave.window="isTop = false"
+  class="absolute top-4 left-0 right-0 w-full z-50"
+  x-data="{ showMobile: false }"
 >
   <div class="container">
     <div
       x-ref="navigation"
-      :class="{
-        'text-white mx-auto rounded-full py-2 flex-wrap flex gap-x-4': true,
-        'gap-y-2 items-center justify-between duration-500 transition-all max-w-full': true,
-        'w-full px-0': isTop,
-        'bg-black/50 backdrop-blur w-3xl px-4': !isTop || showMobile,
-      }"
+      class="
+        text-white mx-auto rounded-full py-2 flex-wrap flex gap-x-4
+        gap-y-2 items-center justify-between duration-500 transition-all max-w-full
+      "
     >
       {# Logo #}
       <div class="flex items-center justify-start flex-none md:w-40">
@@ -42,6 +30,7 @@
           aria-label="toggle navigation"
           class="flex items-center justify-center md:hidden"
           @click="showMobile = !showMobile"
+          x-ref="button"
         >
           <span x-show="!showMobile">
             {% include '/icons/menu.twig' with { class: "size-6" } %}
@@ -54,14 +43,14 @@
     </div>
     {# Mobile Links #}
     <div
-      class="bg-black/50 px-4 py-2 mt-1 flex items-center justify-center gap-8 backdrop-blur rounded-full text-white md:hidden"
-      x-anchor.bottom="$refs.navigation"
+      class="bg-black/75 px-4 py-2 mt-1 inline-flex flex-col items-center justify-center gap-4 backdrop-blur rounded-2xl text-white md:hidden"
+      x-anchor.bottom-end.offset.8="$refs.button"
       x-cloak
       x-transition.duration.300ms
       x-show="showMobile"
     >
       {% for item in navigation %}
-        <a class="font-medium text-lg" href="{{ item.route }}">{{ item.name }}</a>
+        <a class="font-medium text-lg px-4" href="{{ item.route }}">{{ item.name }}</a>
       {% endfor %}
     </div>
   </div>

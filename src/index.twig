@@ -124,7 +124,7 @@ tools:
       <div class="text-base mt-12 mb-16 text-balance md:text-center max-w-3xl mx-auto">
         <p class="text-lg text-blue-200">Whether it's a static website or a full-blown iOS application, I’m all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.</p>
       </div>
-      <div class="grid grid-cols-4 max-w-screen-sm mx-auto justify-center gap-8">
+      <div class="grid grid-cols-2 min-[420px]:grid-cols-4 max-w-screen-sm mx-auto justify-center gap-8">
         {% for tool in tools %}
           <div class="flex flex-col items-center gap-2.5">
             {% include '_includes/icons/' ~ tool|lower ~ '.twig' with { class: "size-10 xs:size-16 text-white" } %}

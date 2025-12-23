@@ -33,7 +33,7 @@ description:
   {% include '_includes/icons/waves.twig' with { class: "text-blue-950 bg-white -mt-1 border-b border-white" } %}
 
   <div class="container pb-24 max-w-3xl"  x-data>
-    <div x-show="window.location.search.includes('contact=true')">
+    <div x-cloak x-show="window.location.search.includes('contact=true')">
       <p class="h4 pt-16">Message sent! Thanks for reaching out!</p>
     </div>
     <form

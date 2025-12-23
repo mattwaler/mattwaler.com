@@ -12,7 +12,7 @@
 }
 
 @utility button {
-  @apply bg-black px-4 py-2 rounded-full font-medium text-white;
+  @apply bg-black/75 backdrop-blur px-4 py-2 rounded-full font-medium text-white;
 }
 
 @utility overlap {
@@ -49,6 +49,11 @@
 }
 
 @layer base {
+
+  @view-transition {
+    navigation: auto;
+  }
+
   *,
   ::after,
   ::before,
