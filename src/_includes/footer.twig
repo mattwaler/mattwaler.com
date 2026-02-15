@@ -4,11 +4,29 @@
   { name: 'LinkedIn', url: 'https://linkedin.com/in/mattwaler' }
 ] %}
 
-<footer class="">
+  {% include '/icons/waves.twig' with { class: "text-blue-600 -mt-1 border-b border-white scale-y-[-1.01]" } %}
+
+<section class="py-24 bg-linear-to-b from-blue-600 to-blue-950 text-white">
+  <div class="container md:text-center text-balance max-w-3xl mx-auto space-y-6">
+    <h2 class="h2">Let's work together.</h2>
+    <p class="h6 text-blue-200">
+      Have a project in mind, or just want to say hello? I'd love to hear from you.
+    </p>
+    <div>
+      <a href="/contact/" class="button">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-blue-950 text-white/75">
   <div class="mx-auto container py-6 md:flex md:items-center md:justify-between">
     <div class="flex justify-center gap-x-6 md:order-2">
       {% for social in socials %}
-        <a target="_blank" rel="noopener noreferrer" href="{{ social.url }}" class="text-gray-800 hover:text-gray-600 transition-colors">
+        <a
+          class="hover:text-white transition-colors"
+          target="_blank"
+          rel="noopener noreferrer" href="{{ social.url }}"
+        >
           <span class="sr-only">{{ social.name }}</span>
           {% include 'icons/' ~ social.name|lower ~ '.twig' with { class: "size-6" } %}
         </a>

@@ -54,14 +54,14 @@
     </div>
     {# Mobile Links #}
     <div
-      class="bg-black/50 px-4 py-2 mt-1 flex items-center justify-center gap-8 backdrop-blur rounded-full text-white md:hidden"
-      x-anchor.bottom="$refs.navigation"
+      class="bg-black/50 px-4 mt-1 flex items-center justify-center backdrop-blur rounded-full text-white md:hidden"
+      x-anchor.bottom-end="$refs.navigation"
       x-cloak
       x-transition.duration.300ms
       x-show="showMobile"
     >
       {% for item in navigation %}
-        <a class="font-medium text-lg" href="{{ item.route }}">{{ item.name }}</a>
+        <a class="font-medium text-lg px-4 py-2" href="{{ item.route }}">{{ item.name }}</a>
       {% endfor %}
     </div>
   </div>

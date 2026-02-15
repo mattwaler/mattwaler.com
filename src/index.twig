@@ -135,4 +135,88 @@ tools:
     </div>
   </section>
 
+  {% include '_includes/icons/waves.twig' with { class: "rotate-180 text-blue-600 bg-white -mt-1 border-b border-white scale-y-[-1.01]" } %}
+
+  <section class="bg-white py-24">
+    <div class="container">
+      <div class="md:text-center text-balance">
+        <h2 class="h2">What is Matt Waler thinking lately?</h2>
+        <h3 class="h5 mt-3 text-gray-600">
+          Thoughts, tutorials, and the occasional rant.
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
+        {% for post in collections.blog | slice(0, 3) %}
+          <article class="bg-white border rounded-xl shadow-xl overflow-clip">
+            <div class="p-8 space-y-2">
+              <time datetime="{{ post.data.date | date('Y-m-d') }}" class="block text-sm text-gray-600">
+                {{ post.data.date | date('F j, Y') }}
+              </time>
+              <h4 class="h5 text-pretty">
+                <a href="{{ post.url }}" class="block font-bold hover:underline">
+                  {{ post.data.title }}
+                </a>
+              </h4>
+              <p class="text-pretty lg:line-clamp-3">{{ post.data.description }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="mt-12 md:text-center">
+        <a href="/blog/" class="button">View All Posts</a>
+      </div>
+    </div>
+  </section>
+
+  {% include '_includes/icons/waves.twig' with { class: "text-gray-100 bg-white scale-y-[-1.01] border-b border-white" } %}
+
+  <section class="py-24 bg-linear-to-b from-gray-100 to-white">
+    <div class="container">
+      <div class="md:text-center text-balance">
+        <h2 class="h2">What is Matt Waler building?</h2>
+        <h3 class="h5 mt-3 text-gray-600">
+          A few things I've built recently.
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 xl:grid-cols-3 gap-12 mt-12">
+        {% for project in projects | slice(0, 3) %}
+          <article class="bg-white rounded-xl shadow-xl overflow-clip w-full sm:flex xl:block">
+            <img
+              width="1200"
+              height="945"
+              loading="lazy"
+              class="aspect-1200/975 w-full h-auto bg-gray-200 sm:w-1/3 sm:aspect-auto sm:self-stretch sm:object-cover xl:w-full xl:aspect-1200/975"
+              src="/projects/{{ project.title|lower|replace({ ' ': '-' }) }}.webp"
+              alt=""
+            >
+            <div class="p-8 space-y-2 border-t-2 sm:border-t-0 sm:border-l-2 sm:flex-1 xl:border-l-0 xl:border-t-2">
+              <span class="block text-sm text-gray-600">
+                {{ project.tools|join(', ') }}
+              </span>
+              <h4 class="h5 text-pretty">
+                <a
+                  href="{{ project.link }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="block font-bold hover:underline transition-colors"
+                >
+                  {{ project.title }}
+                </a>
+              </h4>
+              <p class="text-pretty">{{ project.description }}</p>
+              {% if project.trendy %}
+                <span class="block text-sm italic text-gray-600">
+                  Completed while employed at <a href="https://trendyminds.com">TrendyMinds</a>.
+                </span>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="mt-12 md:text-center">
+        <a href="/projects/" class="button">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
 {% endblock %}
