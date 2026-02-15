@@ -7,15 +7,17 @@
   {% include '/icons/waves.twig' with { class: "text-blue-600 -mt-1 border-b border-white scale-y-[-1.01]" } %}
 
 <section class="py-24 bg-linear-to-b from-blue-600 to-blue-950 text-white">
-  <div class="container md:text-center text-balance max-w-3xl mx-auto space-y-6">
-    <h2 class="h2">Let's work together.</h2>
-    <p class="h6 text-blue-200">
-      Have a project in mind, or just want to say hello? I'd love to hear from you.
-    </p>
-    <div>
-      <a href="/contact/" class="button">Get in Touch</a>
+  {% if page.url != '/contact/' %}
+    <div class="container md:text-center text-balance max-w-3xl mx-auto space-y-6">
+      <h2 class="h2">Let's work together.</h2>
+      <p class="h6 text-blue-200">
+        Have a project in mind, or just want to say hello? I'd love to hear from you.
+      </p>
+      <div>
+        <a href="/contact/" class="button">Get in Touch</a>
+      </div>
     </div>
-  </div>
+  {% endif %}
 </section>
 
 <footer class="bg-blue-950 text-white/75">
