@@ -15,7 +15,6 @@ import navigation from '../data/navigation.js'
 
 <header
   transition:persist
-  x-cloak
   class="fixed top-4 left-0 right-0 w-full z-50"
   x-data="{ isTop: window.scrollY === 0, showMobile: false }"
   @top-enter.window="isTop = true"
@@ -24,9 +23,8 @@ import navigation from '../data/navigation.js'
   <div class="container">
     <div
       x-ref="navigation"
+      class="text-white mx-auto rounded-full py-2 flex-wrap flex gap-x-4 gap-y-2 items-center justify-between duration-500 transition-all max-w-full w-full px-0"
       :class="{
-        'text-white mx-auto rounded-full py-2 flex-wrap flex gap-x-4': true,
-        'gap-y-2 items-center justify-between duration-500 transition-all max-w-full': true,
         'w-full px-0': isTop,
         'bg-black/50 backdrop-blur w-3xl px-4': !isTop || showMobile,
       }"
@@ -55,7 +53,7 @@ import navigation from '../data/navigation.js'
           <span x-show="!showMobile">
             <Menu class="size-6" />
           </span>
-          <span x-show="showMobile">
+          <span x-show="showMobile" style="display:none">
             <Close class="size-6" />
           </span>
         </button>
