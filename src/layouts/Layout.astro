@@ -1,0 +1,62 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Debug from '../components/Debug.astro'
+import '../styles/app.css'
+
+interface Props {
+  title: string
+  description?: string
+  ogImage?: string
+}
+
+const { title, description = '', ogImage } = Astro.props
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    [x-cloak] { display: none!important; }
+  </style>
+  <meta name="robots" content="index, follow, noodp, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Pragma" content="cache">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/svg+xml" crossorigin="anonymous" href="/logo.svg">
+  <link rel="sitemap" href="/sitemap-index.xml">
+  <meta name="geo.region" content="US-OH">
+  <meta name="author" content="Matt Waler">
+  <meta name="publisher" content="Matt Waler">
+  <meta name="copyright" content="Matt Waler">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content="https://mattwaler.com">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content={ogImage ?? 'https://mattwaler.com/masonry/masonry-5.jpg'}>
+  <meta property="og:image:width" content="576">
+  <meta property="og:image:height" content="384">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="mattwaler.com">
+  <ClientRouter />
+  <title>{title} | TEA Stack</title>
+  <meta name="description" content={description}>
+  <meta name="abstract" content={description}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <Debug />
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    import '../scripts/app.js'
+  </script>
+</body>
+</html>

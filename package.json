@@ -2,20 +2,15 @@
   "name": "mattwaler",
   "version": "1.0.0",
   "description": "Personal website for Matt Waler.",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "NODE_ENV=production npm-run-all clean build:vite build:11ty",
-    "build:11ty": "eleventy --quiet",
-    "build:vite": "vite build",
-    "clean": "rm -rf dist",
-    "dev": "NODE_ENV=development npm-run-all -p dev:*",
-    "dev:11ty": "eleventy --quiet --serve",
-    "dev:vite": "vite"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "keywords": [
     "tailwind",
-    "eleventy",
+    "astro",
     "alpine"
   ],
   "author": "Matt Waler",
@@ -28,15 +23,11 @@
     "typed.js": "^2.1.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
-    "@factorial/eleventy-plugin-twig": "^0.2.0",
+    "@astrojs/sitemap": "^3.7.1",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.6",
-    "npm-run-all": "^4.1.5",
-    "tailwindcss": "^4.0.0",
-    "twig": "^1.15.4",
-    "vite": "^7.2.7"
+    "astro": "^6.0.4",
+    "tailwindcss": "^4.0.0"
   }
 }
