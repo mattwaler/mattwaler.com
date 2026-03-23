@@ -118,17 +118,17 @@ const recentProjects = projects.slice(0, 3)
         asset.endsWith('.mp4') ? (
           <video
             x-data="{ show: false }"
-            x-intersect:enter.threshold.25="show = true"
+            x-intersect:enter.threshold.75="show = true"
             :class="show ? 'opacity-100' : 'opacity-0'"
             class="rounded-xl transition-opacity duration-500 pointer-events-none"
-            autoplay muted playsinline loop src={`/masonry/${asset}`}
+            autoplay muted playsinline loop src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/masonry/${asset}`}
           ></video>
         ) : (
           <img
             x-data="{ show: false }"
-            x-intersect:enter.threshold.25="show = true"
+            x-intersect:enter.threshold.75="show = true"
             :class="show ? 'opacity-100' : 'opacity-0'"
-            src={`/masonry/${asset}`}
+            src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/masonry/${asset}`}
             loading="lazy"
             class="rounded-xl transition-opacity duration-500"
             alt=""
@@ -211,7 +211,7 @@ const recentProjects = projects.slice(0, 3)
               height="945"
               loading="lazy"
               class="aspect-1200/975 w-full h-auto bg-gray-200 sm:w-1/3 sm:aspect-auto sm:self-stretch sm:object-cover xl:w-full xl:aspect-1200/975"
-              src={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}.webp`}
+              src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}.webp`}
               alt=""
             />
             <div class="p-8 space-y-2 border-t-2 sm:border-t-0 sm:border-l-2 sm:flex-1 xl:border-l-0 xl:border-t-2">
