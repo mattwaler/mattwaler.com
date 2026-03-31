@@ -8,9 +8,36 @@ const { class: className = '' } = Astro.props
   class={className}
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 1000 100"
+  aria-hidden="true"
 >
-  <g fill="currentColor">
-    <path d="M0 0v99.7C62 69 122.4 48.7 205 66c83.8 17.6 160.5 20.4 240-12 54-22 110-26 173-10a392.2 392.2 0 0 0 222-5c55-17 110.3-36.9 160-27.2V0H0Z" opacity=".5"></path>
-    <path d="M0 0v74.7C62 44 122.4 28.7 205 46c83.8 17.6 160.5 25.4 240-7 54-22 110-21 173-5 76.5 19.4 146.5 23.3 222 0 55-17 110.3-31.9 160-22.2V0H0Z"></path>
+  <g class="wave-back" fill="currentColor" opacity="0.25">
+    <path d="M0 0 V65 C166 110 333 20 500 65 C667 110 833 20 1000 65 C1167 110 1333 20 1500 65 C1667 110 1833 20 2000 65 V0 Z" />
+  </g>
+  <g class="wave-front -translate-y-px" fill="currentColor">
+    <path d="M0 0 V55 C83 100 167 10 250 55 C333 100 417 10 500 55 C583 100 667 10 750 55 C833 100 917 10 1000 55 C1083 100 1167 10 1250 55 C1333 100 1417 10 1500 55 C1583 100 1667 10 1750 55 C1833 100 1917 10 2000 55 V0 Z" />
   </g>
 </svg>
+
+<style>
+  @keyframes wave-left {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @keyframes wave-right {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+  }
+  .wave-back {
+    transform-box: fill-box;
+    animation: wave-left 12s linear infinite;
+  }
+  .wave-front {
+    transform-box: fill-box;
+    animation: wave-right 10s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wave-back, .wave-front {
+      animation-play-state: paused;
+    }
+  }
+</style>
