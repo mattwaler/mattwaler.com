@@ -1,22 +1,41 @@
 ---
 interface Props {
-  class?: string
+  background?: string
+  foreground?: string
+  rotate?: boolean
 }
-const { class: className = '' } = Astro.props
+const { background = 'white', foreground = '#162456', rotate = false } = Astro.props
 ---
-<svg
-  class={className}
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1000 100"
-  aria-hidden="true"
+
+<div
+  class="relative"
+  style={{ 'background-color': foreground, color: background }}
 >
-  <g class="wave-back" fill="currentColor" opacity="0.25">
-    <path d="M0 0 V65 C166 110 333 20 500 65 C667 110 833 20 1000 65 C1167 110 1333 20 1500 65 C1667 110 1833 20 2000 65 V0 Z" />
-  </g>
-  <g class="wave-front -translate-y-px" fill="currentColor">
-    <path d="M0 0 V55 C83 100 167 10 250 55 C333 100 417 10 500 55 C583 100 667 10 750 55 C833 100 917 10 1000 55 C1083 100 1167 10 1250 55 C1333 100 1417 10 1500 55 C1583 100 1667 10 1750 55 C1833 100 1917 10 2000 55 V0 Z" />
-  </g>
-</svg>
+  <div class:list={['relative', rotate ? 'rotate-180' : '']}>
+    <!-- Top & Bottom Guards To Prevent Borders -->
+    <div
+      class="h-1 absolute -top-1 left-0 right-0 w-full"
+      style={{ 'background-color': background }}
+    ></div>
+    <div
+      class="h-1 absolute bottom-1 left-0 right-0 w-full"
+      style={{ 'background-color': foreground }}
+    ></div>
+    <!-- Animation SVG -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1000 100"
+      aria-hidden="true"
+    >
+      <g class:list={["wave-front"]} fill="currentColor" opacity="0.25">
+        <path d="M0 0 V65 C166 110 333 20 500 65 C667 110 833 20 1000 65 C1167 110 1333 20 1500 65 C1667 110 1833 20 2000 65 V0 Z" />
+      </g>
+      <g class:list={["wave-back"]} fill="currentColor">
+        <path d="M0 0 V55 C83 100 167 10 250 55 C333 100 417 10 500 55 C583 100 667 10 750 55 C833 100 917 10 1000 55 C1083 100 1167 10 1250 55 C1333 100 1417 10 1500 55 C1583 100 1667 10 1750 55 C1833 100 1917 10 2000 55 V0 Z" />
+      </g>
+    </svg>
+  </div>
+</div>
 
 <style>
   @keyframes wave-left {
