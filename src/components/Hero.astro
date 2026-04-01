@@ -17,14 +17,14 @@ const reserveTitle = titlePhrases?.length
     <div class="space-y-6 overlap">
       {reserveTitle && (
         <div class="space-y-6 w-full max-w-3xl mx-auto">
-          <p role="presentation" aria-hidden="true" class="h1 text-balance opacity-0">
+          <p role="presentation" aria-hidden="true" class="h1 opacity-0">
             {reserveTitle}
           </p>
           {description && <p class="h6 opacity-75 text-balance">{description}</p>}
         </div>
       )}
       <div class="space-y-6 w-full max-w-3xl mx-auto">
-        <h1 class="h1 text-balance">
+        <h1 class="h1">
           {titlePhrases?.length ? (
             <>
               {title}{' '}
