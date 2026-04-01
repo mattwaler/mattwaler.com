@@ -24,7 +24,7 @@ const reserveTitle = titlePhrases?.length
         </div>
       )}
       <div class="space-y-6 w-full max-w-3xl mx-auto">
-        <h1 class="h1">
+        <h1 class:list={["h1", !reserveTitle && 'text-balance']}>
           {titlePhrases?.length ? (
             <>
               {title}{' '}
