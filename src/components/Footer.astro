@@ -29,7 +29,7 @@ const pathname = Astro.url.pathname
 
 <footer class="">
   <div class="mx-auto container py-6 md:flex md:items-center md:justify-between">
-    <div class="flex justify-center gap-x-6 md:order-2">
+    <div class="flex justify-start gap-x-6 md:order-2">
       {socials.map(({ name, url, Icon }) => (
         <a
           class="hover:text-white transition-colors"
@@ -42,7 +42,7 @@ const pathname = Astro.url.pathname
         </a>
       ))}
     </div>
-    <p class="mt-4 text-center font-medium text-sm/6 md:order-1 md:mt-0">
+    <p class="mt-4 font-medium text-sm/6 md:order-1 md:mt-0">
       &copy; {new Date().getFullYear()} Waler Media, LLC. All rights reserved.
     </p>
   </div>
