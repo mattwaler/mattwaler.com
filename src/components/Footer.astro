@@ -11,9 +11,12 @@ const socials = [
 ]
 
 const pathname = Astro.url.pathname
+const noCtaLinks = [
+  '/contact/', '/dad/', '/klaus/'
+]
 ---
 
-{pathname !== '/contact/' && (
+{!noCtaLinks.includes(pathname) && (
     <section class="py-24">
     <div class="container md:text-center text-balance max-w-3xl mx-auto space-y-6">
       <h2 class="h2">Let's work together.</h2>
