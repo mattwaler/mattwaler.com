@@ -1,4 +1,13 @@
 @import 'tailwindcss' source('..');
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-25%); }
+}
+
+@utility animate-marquee {
+  animation: marquee 18s linear infinite;
+}
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
