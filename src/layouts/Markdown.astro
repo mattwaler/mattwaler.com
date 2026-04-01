@@ -10,19 +10,14 @@ interface Props {
 const { title, description } = Astro.props
 ---
 <Layout title={title} description={description}>
-  <section
-    class="
-      py-32 flex items-center justify-center
-      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
-    "
-  >
+  <section class="pt-48 pb-24 flex items-center justify-center">
     <div class="container md:text-center">
       <div class="space-y-6 overlap">
         <div class="space-y-6 w-full max-w-4xl mx-auto">
           <h1 class="h1 text-balance">
             {title}
           </h1>
-          <p class="h6 text-blue-200 text-balance">
+          <p class="h6 opacity-75 text-balance">
             {description}
           </p>
         </div>
@@ -30,9 +25,11 @@ const { title, description } = Astro.props
     </div>
   </section>
 
-  <Waves rotate />
+  <Waves foreground='#f3f4f6' />
 
-  <div class="container prose py-24 md:prose-lg md:max-w-3xl">
-    <slot />
-  </div>
+  <section class="bg-linear-to-t from-white to-gray-100 to-90%">
+    <div class="container prose py-24 md:prose-lg md:max-w-3xl">
+      <slot />
+    </div>
+  </section>
 </Layout>

@@ -57,12 +57,8 @@ const recentProjects = projects.slice(0, 3)
   title="Matt Waler builds websites, iOS apps, and plays a ton of tennis."
   description="Matt Waler is a web and iOS developer based in Ohio."
 >
-  <section
-    class="
-      py-32 lg:py-56 flex items-center justify-center
-      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
-    "
-  >
+  <!-- Hero -->
+  <section class="py-32 lg:py-56 flex items-center justify-center bg-linear-to-b from-white to-gray-100 to-90%">
     <div class="container md:text-center">
       <div class="space-y-6 overlap max-w-4xl mx-auto">
         <!-- Reserve Space -->
@@ -70,7 +66,7 @@ const recentProjects = projects.slice(0, 3)
           <p class="h1 opacity-0" role="presentation" aria-hidden="true">
             I develop websites, iOS applications, and play far too much Tennis.
           </p>
-          <p class="h6 text-blue-200 text-balance">
+          <p class="h6 opacity-75 text-balance">
             I also have a wife, a french bulldog, and an obsession with minimalism.
           </p>
         </div>
@@ -101,8 +97,30 @@ const recentProjects = projects.slice(0, 3)
     </div>
   </section>
 
-  <Waves rotate />
+  <!-- Skills -->
+  <Waves background="#f3f4f6" />
+  <section class="relative z-2 bg-white py-24 bg-linear-to-b from-blue-950 to-blue-600">
+    <div class="container">
+      <div class="md:text-center text-balance">
+        <h2 class="h2 text-white">What does Matt Waler do?</h2>
+        <h3 class="h5 text-blue-200 mt-4">Oh, you want to talk shop? Let's get right to it.</h3>
+      </div>
+      <div class="text-base mt-12 mb-16 text-balance md:text-center max-w-3xl mx-auto">
+        <p class="text-lg text-blue-200">Whether it's a static website or a full-blown iOS application, I'm all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.</p>
+      </div>
+      <div class="grid grid-cols-2 min-[420px]:grid-cols-4 max-w-screen-sm mx-auto justify-center gap-8">
+        {tools.map(({ name, Icon }) => (
+          <div class="flex flex-col items-center gap-2.5">
+            <Icon class="size-10 xs:size-16 text-white" />
+            <p class="text-xs text-blue-100 font-mono text-balance">{name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
+  <!-- Masonry -->
+  <Waves rotate foreground="#155dfc" />
   <section class="bg-white py-24 space-y-12 md:space-y-24">
     <div class="container text-balance text-center">
       <h2 class="h2">Who is Matt Waler?</h2>
@@ -138,63 +156,9 @@ const recentProjects = projects.slice(0, 3)
     </div>
   </section>
 
-  <Waves />
 
-  <section class="relative z-2 bg-white py-24 bg-linear-to-b from-blue-950 to-blue-600">
-    <div class="container">
-      <div class="md:text-center text-balance">
-        <h2 class="h2 text-white">What does Matt Waler do?</h2>
-        <h3 class="h5 text-blue-200 mt-4">Oh, you want to talk shop? Let's get right to it.</h3>
-      </div>
-      <div class="text-base mt-12 mb-16 text-balance md:text-center max-w-3xl mx-auto">
-        <p class="text-lg text-blue-200">Whether it's a static website or a full-blown iOS application, I'm all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.</p>
-      </div>
-      <div class="grid grid-cols-2 min-[420px]:grid-cols-4 max-w-screen-sm mx-auto justify-center gap-8">
-        {tools.map(({ name, Icon }) => (
-          <div class="flex flex-col items-center gap-2.5">
-            <Icon class="size-10 xs:size-16 text-white" />
-            <p class="text-xs text-blue-100 font-mono text-balance">{name}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <Waves foreground='white' background="#155dfc" />
-
-  <section class="bg-white py-24">
-    <div class="container">
-      <div class="md:text-center text-balance">
-        <h2 class="h2">What is Matt Waler thinking lately?</h2>
-        <h3 class="h5 mt-3 text-gray-600">
-          Thoughts, tutorials, and the occasional rant.
-        </h3>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
-        {recentPosts.map(post => (
-          <article class="bg-white border rounded-xl shadow-xl overflow-clip">
-            <div class="p-8 space-y-2">
-              <time datetime={post.data.date.toISOString().split('T')[0]} class="block text-sm text-gray-600">
-                {formatDate(post.data.date)}
-              </time>
-              <h4 class="h5 text-pretty">
-                <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} class="block font-bold hover:underline">
-                  {post.data.title}
-                </a>
-              </h4>
-              <p class="text-pretty lg:line-clamp-3">{post.data.description}</p>
-            </div>
-          </article>
-        ))}
-      </div>
-      <div class="mt-12 md:text-center">
-        <a href="/blog/" class="button">View All Posts</a>
-      </div>
-    </div>
-  </section>
-
+  <!-- Projects -->
   <Waves foreground="#f3f4f6" />
-
   <section class="py-24 bg-linear-to-b from-gray-100 to-white">
     <div class="container">
       <div class="md:text-center text-balance">
@@ -243,4 +207,39 @@ const recentProjects = projects.slice(0, 3)
       </div>
     </div>
   </section>
+
+  <!-- Blog -->
+  <Waves foreground="#162456" background="white" />
+  <section class="bg-linear-to-b from-blue-950 to-blue-600 py-24">
+    <div class="container">
+      <div class="md:text-center text-balance text-white">
+        <h2 class="h2">What is Matt Waler thinking?</h2>
+        <h3 class="h5 mt-3 opacity-80">
+          Thoughts, tutorials, and the occasional rant.
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
+        {recentPosts.map(post => (
+          <article class="bg-white border rounded-xl shadow-xl overflow-clip">
+            <div class="p-8 space-y-2">
+              <time datetime={post.data.date.toISOString().split('T')[0]} class="block text-sm text-gray-600">
+                {formatDate(post.data.date)}
+              </time>
+              <h4 class="h5 text-pretty">
+                <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} class="block font-bold hover:underline">
+                  {post.data.title}
+                </a>
+              </h4>
+              <p class="text-pretty lg:line-clamp-3">{post.data.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="mt-12 md:text-center">
+        <a href="/blog/" class="button">View All Posts</a>
+      </div>
+    </div>
+  </section>
+  <Waves rotate foreground="#155dfc" />
+
 </Layout>

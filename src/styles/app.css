@@ -20,7 +20,7 @@
 }
 
 @utility h1 {
-  @apply font-extrabold text-4xl md:text-5xl lg:text-6xl;
+  @apply font-extrabold text-5xl md:text-6xl lg:text-7xl;
 }
 
 @utility h2 {

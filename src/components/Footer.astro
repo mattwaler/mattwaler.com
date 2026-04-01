@@ -13,23 +13,21 @@ const socials = [
 const pathname = Astro.url.pathname
 ---
 
-<Waves foreground="#155dfc" />
-
-<section class="py-24 bg-linear-to-b from-blue-600 to-blue-950 text-white">
-  {pathname !== '/contact/' && (
+{pathname !== '/contact/' && (
+    <section class="py-24">
     <div class="container md:text-center text-balance max-w-3xl mx-auto space-y-6">
       <h2 class="h2">Let's work together.</h2>
-      <p class="h6 text-blue-200">
+      <p class="h6">
         Have a project in mind, or just want to say hello? I'd love to hear from you.
       </p>
       <div>
         <a href="/contact/" class="button">Get in Touch</a>
       </div>
     </div>
-  )}
-</section>
+  </section>
+)}
 
-<footer class="bg-blue-950 text-white/75">
+<footer class="">
   <div class="mx-auto container py-6 md:flex md:items-center md:justify-between">
     <div class="flex justify-center gap-x-6 md:order-2">
       {socials.map(({ name, url, Icon }) => (

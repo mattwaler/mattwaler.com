@@ -71,19 +71,14 @@ const lessons = [
 ---
 
 <Layout title={title} description={description}>
-  <section
-    class="
-      py-32 flex items-center justify-center
-      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
-    "
-  >
+  <section class="pb-24 pt-48 flex items-center justify-center">
     <div class="container md:text-center">
       <div class="space-y-6 overlap">
         <div class="space-y-6 w-full max-w-4xl mx-auto">
           <h1 class="h1 text-balance">
             {title}
           </h1>
-          <p class="text-2xl text-blue-200 text-balance">
+          <p class="text-2xl opacity-75 text-balance">
             {description}
           </p>
         </div>
@@ -91,42 +86,44 @@ const lessons = [
     </div>
   </section>
 
-  <Waves rotate />
+  <Waves foreground="#f3f4f6" />
 
-  <section class="container pb-24 prose md:prose-lg">
-    <div class="horizontal flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
-      {Array.from({ length: images + 1 }, (_, i) => (
-        <img
-          class="my-0! max-h-64 w-auto max-w-[80%] shrink-0 snap-center rounded-lg object-cover lg:max-h-96"
-          src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/dad/dad-${i}.webp`}
-          alt=""
-        />
-      ))}
-    </div>
-    <p>
-      I figured I would take a page out of your book and <strong>make</strong> something
-      for you, something that I plan on updating every year.
-    </p>
-    <p>
-      You have taught me so many things, too many to count. But most importantly,
-      you taught me what family really means. It means showing up for one another,
-      supporting one another, and most of all, loving one another.
-    </p>
-    <p>
-      You are the foundation that our family is built upon, and such a great role
-      model for what it means to be a father. I am so lucky that not only do I
-      have a great father, I have a best friend too.
-    </p>
-    <p>
-      Below is list of {lessons.length} things
-      you have taught me. You may not have said these verbatim, but I learned them
-      from you nonetheless.
-    </p>
-    <h2>{lessons.length} Things My Dad Taught Me</h2>
-    <ol>
-      {lessons.map(lesson => (
-        <li>{lesson}</li>
-      ))}
-    </ol>
-  </section>
+  <div class="bg-linear-to-b from-gray-100 to-white to-90%">
+    <section class="container py-24 prose md:prose-lg">
+      <div class="horizontal flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
+        {Array.from({ length: images + 1 }, (_, i) => (
+          <img
+            class="my-0! max-h-64 w-auto max-w-[80%] shrink-0 snap-center rounded-lg object-cover lg:max-h-96"
+            src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/dad/dad-${i}.webp`}
+            alt=""
+          />
+        ))}
+      </div>
+      <p>
+        I figured I would take a page out of your book and <strong>make</strong> something
+        for you, something that I plan on updating every year.
+      </p>
+      <p>
+        You have taught me so many things, too many to count. But most importantly,
+        you taught me what family really means. It means showing up for one another,
+        supporting one another, and most of all, loving one another.
+      </p>
+      <p>
+        You are the foundation that our family is built upon, and such a great role
+        model for what it means to be a father. I am so lucky that not only do I
+        have a great father, I have a best friend too.
+      </p>
+      <p>
+        Below is list of {lessons.length} things
+        you have taught me. You may not have said these verbatim, but I learned them
+        from you nonetheless.
+      </p>
+      <h2>{lessons.length} Things My Dad Taught Me</h2>
+      <ol>
+        {lessons.map(lesson => (
+          <li>{lesson}</li>
+        ))}
+      </ol>
+    </section>
+  </div>
 </Layout>

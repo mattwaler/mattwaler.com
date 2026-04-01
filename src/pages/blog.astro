@@ -14,19 +14,14 @@ const formatDate = (date: Date) =>
   title="Read Matt Waler's thoughts and ramblings on web development, app development, and life."
   description="Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!"
 >
-  <section
-    class="
-      py-32 flex items-center justify-center
-      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
-    "
-  >
+  <section class="pb-24 pt-48 flex items-center justify-center">
     <div class="container md:text-center">
       <div class="space-y-6 overlap">
         <div class="space-y-6 w-full max-w-3xl mx-auto">
           <h1 class="h1 text-balance">
             Sneak a peek inside my head.
           </h1>
-          <p class="h6 text-blue-200 text-balance">
+          <p class="h6 opacity-75 text-balance">
             Sorry, you're probably going to regret doing that. Here on my blog you
             will find coding tips, tech rants, coffee-fueled tutorials, and the
             occasional meme. We don't have a ton here just yet, but don't worry, more
@@ -37,13 +32,13 @@ const formatDate = (date: Date) =>
     </div>
   </section>
 
-  <Waves rotate />
+  <Waves />
 
-  <section class="container max-w-2xl mx-auto py-24">
-    <div class="space-y-12">
+  <section class="py-24 bg-linear-to-t text-white from-blue-600 to-blue-950 to-90%">
+    <div class="space-y-12 container max-w-2xl mx-auto">
       {posts.map(post => (
         <article class="space-y-2">
-          <time datetime={post.data.date.toISOString().split('T')[0]} class="block text-sm">
+          <time datetime={post.data.date.toISOString().split('T')[0]} class="block text-sm opacity-75">
             {formatDate(post.data.date)}
           </time>
           <h2 class="h4 font-bold text-pretty">
@@ -51,9 +46,12 @@ const formatDate = (date: Date) =>
               {post.data.title}
             </a>
           </h2>
-          <p>{post.data.description}</p>
+          <p class="opacity-75">{post.data.description}</p>
         </article>
       ))}
     </div>
   </section>
+
+  <Waves rotate foreground="#155dfc" />
+
 </Layout>

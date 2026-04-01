@@ -8,19 +8,14 @@ import projects from '../data/projects.js'
   title="Projects Matt Waler has built since 2016."
   description="Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs."
 >
-  <section
-    class="
-      py-32 flex items-center justify-center
-      text-white bg-linear-to-b from-blue-600 to-blue-950 to-90%
-    "
-  >
+  <section class="pb-24 pt-48 flex items-center justify-center">
     <div class="container md:text-center">
       <div class="space-y-6 overlap">
         <div class="space-y-6 w-full max-w-3xl mx-auto">
           <h1 class="h1 text-balance">
             See what I've built.
           </h1>
-          <p class="h6 text-blue-200 text-balance">
+          <p class="h6 opacity-75 text-balance">
             I have built a lot of websites and mobile applications since I started
             back in 2016. Listed below is a non-exhaustive representation of what I
             have developed and deployed.
@@ -30,9 +25,9 @@ import projects from '../data/projects.js'
     </div>
   </section>
 
-  <Waves rotate background='#f3f4f6' />
+  <Waves rotate foreground="white" background="#f3f4f6" />
 
-  <section class="py-24 bg-linear-to-b from-gray-100 to-white">
+  <section class="py-24 bg-gray-100">
     <div class="container grid items-start grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
       {projects.map(project => (
         <article class="bg-white rounded-xl shadow-xl overflow-clip w-full">
@@ -69,4 +64,7 @@ import projects from '../data/projects.js'
       ))}
     </div>
   </section>
+
+  <Waves foreground="white" background="#f3f4f6" />
+
 </Layout>
