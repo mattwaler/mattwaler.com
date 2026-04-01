@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
 import Waves from '../components/icons/Waves.astro'
 
 const allPosts = await getCollection('blog')
@@ -14,23 +15,10 @@ const formatDate = (date: Date) =>
   title="Read Matt Waler's thoughts and ramblings on web development, app development, and life."
   description="Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!"
 >
-  <section class="pb-24 pt-48 flex items-center justify-center">
-    <div class="container md:text-center">
-      <div class="space-y-6 overlap">
-        <div class="space-y-6 w-full max-w-3xl mx-auto">
-          <h1 class="h1 text-balance">
-            Sneak a peek inside my head.
-          </h1>
-          <p class="h6 opacity-75 text-balance">
-            Sorry, you're probably going to regret doing that. Here on my blog you
-            will find coding tips, tech rants, coffee-fueled tutorials, and the
-            occasional meme. We don't have a ton here just yet, but don't worry, more
-            is on the way!
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Hero
+    title="Sneak a peek inside my head."
+    description="Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
+  />
 
   <Waves />
 

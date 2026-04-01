@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string
+  description?: string
+  titlePhrases?: string[]
+}
+
+const { title, description, titlePhrases } = Astro.props
+
+const reserveTitle = titlePhrases?.length
+  ? `${title} ${titlePhrases.reduce((a, b) => (a.length > b.length ? a : b))}`
+  : undefined
+---
+
+<section class="pb-12 pt-32 lg:pb-24 lg:pt-48 flex items-center justify-center">
+  <div class="container md:text-center">
+    <div class="space-y-6 overlap">
+      {reserveTitle && (
+        <div class="space-y-6 w-full max-w-3xl mx-auto">
+          <p role="presentation" aria-hidden="true" class="h1 opacity-0">
+            {reserveTitle}
+          </p>
+          {description && <p class="h6 opacity-75 text-balance">{description}</p>}
+        </div>
+      )}
+      <div class="space-y-6 w-full max-w-3xl mx-auto">
+        <h1 class="h1 text-balance">
+          {titlePhrases?.length ? (
+            <>
+              {title}{' '}
+              <span
+                x-data={`{ typed: null, phrases: ${JSON.stringify(titlePhrases)} }`}
+                x-init="() => typed = new Typed($el, { strings: phrases.slice(1), typeSpeed: 60, startDelay: 1500, backDelay: 1000 })"
+                x-intersect:leave="typed.destroy(); $el.innerText = phrases[0]"
+              >{titlePhrases[0]}</span>
+            </>
+          ) : title}
+        </h1>
+        {description && !reserveTitle && (
+          <p class="h6 opacity-75 text-balance">
+            {description}
+          </p>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

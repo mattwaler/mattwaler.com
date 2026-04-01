@@ -8,7 +8,7 @@ const { background = 'white', foreground = '#162456', rotate = false } = Astro.p
 ---
 
 <div
-  class="relative"
+  class="relative overflow-hidden"
   style={{ 'background-color': foreground, color: background }}
 >
   <div class:list={['relative', rotate ? 'rotate-180' : '']}>
@@ -26,6 +26,7 @@ const { background = 'white', foreground = '#162456', rotate = false } = Astro.p
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1000 100"
       aria-hidden="true"
+      class="w-[200%] -ml-[50%] md:w-full md:ml-0"
     >
       <g class:list={["wave-front"]} fill="currentColor" opacity="0.25">
         <path d="M0 0 V65 C166 110 333 20 500 65 C667 110 833 20 1000 65 C1167 110 1333 20 1500 65 C1667 110 1833 20 2000 65 V0 Z" />

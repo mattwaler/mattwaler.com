@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
 import Waves from '../components/icons/Waves.astro'
 import projects from '../data/projects.js'
 ---
@@ -8,22 +9,10 @@ import projects from '../data/projects.js'
   title="Projects Matt Waler has built since 2016."
   description="Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs."
 >
-  <section class="pb-24 pt-48 flex items-center justify-center">
-    <div class="container md:text-center">
-      <div class="space-y-6 overlap">
-        <div class="space-y-6 w-full max-w-3xl mx-auto">
-          <h1 class="h1 text-balance">
-            See what I've built.
-          </h1>
-          <p class="h6 opacity-75 text-balance">
-            I have built a lot of websites and mobile applications since I started
-            back in 2016. Listed below is a non-exhaustive representation of what I
-            have developed and deployed.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Hero
+    title="See what I've built."
+    description="I have built a lot of websites and mobile applications since I started back in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed."
+  />
 
   <Waves rotate foreground="white" background="#f3f4f6" />
 

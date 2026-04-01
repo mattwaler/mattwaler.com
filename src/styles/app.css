@@ -20,7 +20,7 @@
 }
 
 @utility h1 {
-  @apply font-extrabold text-5xl md:text-6xl lg:text-7xl;
+  @apply font-extrabold text-4xl md:text-5xl lg:text-6xl;
 }
 
 @utility h2 {
@@ -45,7 +45,7 @@
 
 @theme {
   --breakpoint-2xl: initial;
-  --font-sans: "Source Sans 3", sans-serif;
+  --font-sans: "Outfit", sans-serif;
 }
 
 @layer base {

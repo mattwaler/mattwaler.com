@@ -1,5 +1,6 @@
 ---
 import Layout from './Layout.astro'
+import Hero from '../components/Hero.astro'
 import Waves from '../components/icons/Waves.astro'
 
 interface Props {
@@ -10,20 +11,7 @@ interface Props {
 const { title, description } = Astro.props
 ---
 <Layout title={title} description={description}>
-  <section class="pt-48 pb-24 flex items-center justify-center">
-    <div class="container md:text-center">
-      <div class="space-y-6 overlap">
-        <div class="space-y-6 w-full max-w-4xl mx-auto">
-          <h1 class="h1 text-balance">
-            {title}
-          </h1>
-          <p class="h6 opacity-75 text-balance">
-            {description}
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Hero title={title} description={description} />
 
   <Waves foreground='#f3f4f6' />
 
