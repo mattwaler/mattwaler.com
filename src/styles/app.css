@@ -21,7 +21,7 @@
 }
 
 @utility input {
-  @apply form-input rounded bg-gray-200 border-gray-200 focus:outline-2;
+  @apply form-input rounded text-gray-900 bg-gray-200 border-gray-200 focus:outline-2;
 }
 
 @utility button {
