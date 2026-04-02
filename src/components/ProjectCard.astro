@@ -1,0 +1,45 @@
+---
+interface Props {
+  project: {
+    title: string
+    description: string
+    link: string
+    tools: string[]
+    trendy?: boolean
+  }
+}
+
+const { project } = Astro.props
+---
+
+<a
+  href={project.link}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="bg-white hover:rotate-4 transition-transform rounded-xl shadow-xl overflow-clip w-full md:flex md:items-center xl:block group"
+>
+  <img
+    width="1200"
+    height="945"
+    loading="lazy"
+    class="aspect-1200/600 object-cover object-top w-full h-auto bg-gray-200 md:w-1/3 md:aspect-auto md:self-stretch md:object-cover xl:w-full xl:aspect-1200/975"
+    src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}.webp`}
+    alt=""
+  />
+  <div class="p-8 space-y-2 border-t-2 md:border-t-0 md:border-l-2 md:flex-1 xl:border-l-0 xl:border-t-2">
+    <span class="block text-sm text-gray-600">
+      {project.tools.join(', ')}
+    </span>
+    <h4 class="h5 text-pretty">
+      <span class="block font-bold">
+        {project.title}
+      </span>
+    </h4>
+    <p class="text-pretty">{project.description}</p>
+    {project.trendy && (
+      <span class="block text-sm italic text-gray-600">
+        Completed while employed at TrendyMinds.
+      </span>
+    )}
+  </div>
+</a>

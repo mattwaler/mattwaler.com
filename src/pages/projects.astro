@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/icons/Waves.astro'
 import projects from '../data/projects.js'
+import ProjectCard from '../components/ProjectCard.astro'
 ---
 
 <Layout
@@ -17,39 +18,9 @@ import projects from '../data/projects.js'
   <Waves rotate foreground="white" background="#f3f4f6" />
 
   <section class="section bg-gray-100">
-    <div class="container grid items-start grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-12">
+    <div class="container grid items-start grid-cols-1 xl:grid-cols-3 gap-12">
       {projects.map(project => (
-        <article class="bg-white rounded-xl shadow-xl overflow-clip w-full">
-          <img
-            width="1200"
-            height="945"
-            loading="lazy"
-            class="aspect-1200/975 w-full h-auto bg-gray-200"
-            src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}.webp`}
-            alt=""
-          />
-          <div class="p-8 space-y-2 border-t-2">
-            <span class="block text-sm text-gray-600">
-              {project.tools.join(', ')}
-            </span>
-            <h2 class="h5 text-pretty">
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block font-bold hover:underline transition-colors"
-              >
-                {project.title}
-              </a>
-            </h2>
-            <p class="text-pretty">{project.description}</p>
-            {project.trendy && (
-              <span class="block text-sm italic text-gray-600">
-                Completed while employed at <a href="https://trendyminds.com">TrendyMinds</a>.
-              </span>
-            )}
-          </div>
-        </article>
+        <ProjectCard project={project} />
       ))}
     </div>
   </section>

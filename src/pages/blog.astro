@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/icons/Waves.astro'
+import BlogCard from '../components/BlogCard.astro'
 
 const allPosts = await getCollection('blog')
 const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -22,20 +23,10 @@ const formatDate = (date: Date) =>
 
   <Waves />
 
-  <section class="section bg-linear-to-t text-white from-blue-600 to-blue-950 to-90%">
-    <div class="space-y-12 container max-w-2xl mx-auto">
+  <section class="section bg-linear-to-t from-blue-600 to-blue-950 to-90%">
+    <div class="container grid grid-cols-1 lg:grid-cols-2 gap-12">
       {posts.map(post => (
-        <article class="space-y-2">
-          <time datetime={post.data.date.toISOString().split('T')[0]} class="block text-sm opacity-75">
-            {formatDate(post.data.date)}
-          </time>
-          <h2 class="h4 font-bold text-pretty">
-            <a href={`/blog/${post.id.replace(/\.md$/, '')}/`} class="block hover:underline">
-              {post.data.title}
-            </a>
-          </h2>
-          <p class="opacity-75">{post.data.description}</p>
-        </article>
+        <BlogCard post={post} />
       ))}
     </div>
   </section>
