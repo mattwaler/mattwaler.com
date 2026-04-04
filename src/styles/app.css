@@ -32,28 +32,38 @@
   @apply grid grid-cols-1 *:col-start-1 *:row-start-1;
 }
 
+/* Turn any element with typography into a container */
+*:has(.h1),
+*:has(.h2),
+*:has(.h3),
+*:has(.h4),
+*:has(.h5),
+*:has(.h6) {
+  @apply @container;
+}
+
 @utility h1 {
-  @apply font-extrabold text-4xl md:text-5xl lg:text-6xl;
+  @apply font-extrabold text-4xl @md:text-5xl @lg:text-6xl;
 }
 
 @utility h2 {
-  @apply font-extrabold text-3xl md:text-4xl lg:text-5xl;
+  @apply font-extrabold text-3xl @md:text-4xl @lg:text-5xl;
 }
 
 @utility h3 {
-  @apply font-bold text-2xl md:text-3xl lg:text-4xl;
+  @apply font-bold text-2xl @md:text-3xl @lg:text-4xl;
 }
 
 @utility h4 {
-  @apply font-medium text-xl md:text-2xl lg:text-3xl;
+  @apply font-medium text-xl @md:text-2xl @lg:text-3xl;
 }
 
 @utility h5 {
-  @apply font-medium text-lg md:text-xl lg:text-2xl;
+  @apply font-medium text-lg @md:text-xl @lg:text-2xl;
 }
 
 @utility h6 {
-  @apply font-medium md:text-lg lg:text-xl;
+  @apply font-medium @md:text-lg @lg:text-xl;
 }
 
 @theme {
@@ -77,6 +87,10 @@
   body {
     @apply overflow-x-clip;
   }
+}
+
+.prose img {
+  @apply rounded-xl border shadow-xl;
 }
 
 @layer components {
