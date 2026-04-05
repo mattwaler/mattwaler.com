@@ -1,0 +1,29 @@
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-25%); }
+}
+
+@utility animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 2rem;
+}
+
+@utility section {
+  @apply py-12 lg:py-24;
+}
+
+@utility input {
+  @apply form-input rounded text-gray-900 bg-gray-200 border-gray-200 focus:outline-2;
+}
+
+@utility button {
+  @apply bg-black px-4 py-2 rounded-full font-medium text-white hover:bg-gray-800 transition-colors;
+}
+
+@utility overlap {
+  @apply grid grid-cols-1 *:col-start-1 *:row-start-1;
+}

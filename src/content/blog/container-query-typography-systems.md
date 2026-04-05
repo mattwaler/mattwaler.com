@@ -39,11 +39,11 @@ For example, here's an excerpt of my old typography styles on this site, written
 
 While this works great for maintaining consistency and adherence to a typography scale, there's one crucial area where this approach breaks down: The dreaded 2-column. You know the one, where you have an image on one side, and your content on the other:
 
-<img class="w-1/2 mx-auto" src="/columns.png" loading="lazy">
+<img class="w-2/3 mx-auto" src="/columns.png" loading="lazy">
 
 In a UI like this, you may be tempted to use your `h2` style, but I can guarantee it will look way large in that context! Now, you may be tempted to utilize the next step down in your type scale, but that introduces another problem. When you inevitably stack on tablet resolutions, now your font is too small!
 
-<img class="w-1/2 mx-auto" src="/stacked.png" loading="lazy">
+<img class="w-2/3 mx-auto" src="/stacked.png" loading="lazy">
 
 
 With the advent and adoption of container queries and the `:has` selector, this phenomenon can finally be solved! Instead of utilizing breakpoint-based typography scales, the solution is to use container-based scales! Peep the code:

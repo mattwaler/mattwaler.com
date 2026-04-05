@@ -1,0 +1,13 @@
+@layer components {
+  .horizontal::-webkit-scrollbar-track {
+    @apply border-none h-3;
+  }
+
+  .horizontal::-webkit-scrollbar-thumb {
+    @apply bg-gray-950 rounded-lg h-4;
+  }
+
+  .horizontal::-webkit-scrollbar {
+    @apply h-3;
+  }
+}

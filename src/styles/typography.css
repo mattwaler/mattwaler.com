@@ -1,0 +1,89 @@
+/* Turn any element with typography into a container */
+*:has(.h1),
+*:has(.h2),
+*:has(.h3),
+*:has(.h4),
+*:has(.h5),
+*:has(.h6) {
+  @apply @container;
+}
+
+@utility h1 {
+  @apply font-extrabold text-4xl @md:text-5xl @lg:text-6xl;
+}
+
+@utility h2 {
+  @apply font-extrabold text-3xl @md:text-4xl @lg:text-5xl;
+}
+
+@utility h3 {
+  @apply font-bold text-2xl @md:text-3xl @lg:text-4xl;
+}
+
+@utility h4 {
+  @apply font-medium text-xl @md:text-2xl @lg:text-3xl;
+}
+
+@utility h5 {
+  @apply font-medium text-lg @md:text-xl @lg:text-2xl;
+}
+
+@utility h6 {
+  @apply font-medium @md:text-lg @lg:text-xl;
+}
+
+@layer base {
+	.rich-text {
+		/* Set the base font size and any breakpoint variations */
+		@apply text-base/relaxed lg:text-lg/relaxed;
+
+		/* Add margin to all elements */
+		> * { @apply mb-[3em]; }
+
+		/* Remove top margin from first element */
+		> *:first-child { @apply !mt-0; }
+
+		/* Remove bottom margin from last element */
+		> *:last-child { @apply !mb-0; }
+
+		/* Headings */
+		h1, h2, h3, h4, h5, h6 { @apply mb-[.5em] mt-[1em] !text-pretty; }
+		h1 { @apply h1; }
+		h2 { @apply h2; }
+		h3 { @apply h3; }
+		h4 { @apply h4; }
+		h5 { @apply h5; }
+		h6 { @apply h6; }
+
+		/* Text */
+		strong { @apply font-bold; }
+		a { @apply font-bold underline; }
+
+		/* Lists */
+		ul { @apply list-disc ml-6; }
+		ol { @apply list-decimal ml-6; }
+		li { @apply pl-2 my-2; }
+		li p { @apply my-4; }
+
+		/* Assets */
+		img { @apply max-w-full mx-auto rounded-xl shadow-xl border; }
+		video, iframe.video { @apply max-w-full mx-auto aspect-video; }
+		figcaption { @apply my-4 text-[smaller]; }
+
+		/* Tables */
+		table { @apply w-full table-auto text-left; }
+		table th { @apply pb-2 pr-2; }
+		table td { @apply pt-2 pr-2 pb-2; }
+		table thead tr { @apply border-b; }
+		table tbody tr:not(:last-of-type) { @apply border-b; }
+
+		/* Other */
+		blockquote { @apply italic pl-6 border-l-4; }
+		pre { @apply bg-black text-white p-4 rounded-xl; }
+		pre code { @apply font-normal text-sm rounded-xl; }
+		code { @apply font-bold; }
+		code::before, code::after { content: none; }
+		pre code::before, pre code::after { content: none; }
+		hr { @apply my-10; }
+	}
+}

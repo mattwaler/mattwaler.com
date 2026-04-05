@@ -10,14 +10,14 @@ interface Props {
 
 const { title, description } = Astro.props
 ---
+
 <Layout title={title} description={description}>
   <Hero title={title} description={description} />
-
   <Waves foreground='#f3f4f6' />
-
-  <section class="bg-linear-to-t from-white to-gray-100 to-90%">
-    <div class="container prose section md:prose-lg md:max-w-3xl">
+  <section class="bg-gray-100 bg-linear-to-b from-gray-100 via-50% via-white to-gray-100 to-90%">
+    <div class="container section rich-text md:max-w-3xl">
       <slot />
     </div>
   </section>
+  <Waves rotate foreground="#f3f4f6" />
 </Layout>

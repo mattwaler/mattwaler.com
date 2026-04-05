@@ -68,7 +68,7 @@ import navigation from '../data/navigation.js'
       x-show="showMobile"
     >
       {navigation.map(item => (
-        <a x-on:click="showMobile = false" class="font-medium text-lg px-4 py-2" href={item.route}>{item.name}</a>
+        <a x-on:click="showMobile = false" class="font-medium opacity-90 px-4 py-2" href={item.route}>{item.name}</a>
       ))}
     </div>
   </div>
