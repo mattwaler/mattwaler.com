@@ -1,4 +1,20 @@
 export default [
+    {
+      title: 'Hamilton Exhibits',
+      description:
+        'A website highlighting Hamilton Exhibits innovative brand spaces and how they can make an impact.',
+      link: 'https://hamilton-ex.com/',
+      tools: ['Statamic', 'Laravel', 'Tailwind', 'Alpine'],
+      trendy: true,
+    },
+    {
+      title: 'TrendyMinds',
+      description:
+        'An Indiana-based marketing agency focused on delivering digital experiences to clients that improve lives.',
+      link: 'https://trendyminds.com',
+      tools: ['Statamic', 'Laravel', 'Tailwind', 'Alpine'],
+      trendy: true,
+  },
   {
     title: 'Cakewalk Development',
     description:
@@ -35,14 +51,7 @@ export default [
     link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone',
     tools: ['Swift', 'Swift UI'],
   },
-  {
-    title: 'TrendyMinds',
-    description:
-      'An Indiana-based marketing agency focused on delivering digital experiences to clients that improve lives.',
-    link: 'https://trendyminds.com',
-    tools: ['Craft', 'Tailwind', 'Alpine'],
-    trendy: true,
-  },
+
   {
     title: 'Paramount Schools of Excellence',
     description:
@@ -91,14 +100,7 @@ export default [
     tools: ['Eleventy', 'Tailwind', 'Svelte'],
     trendy: true,
   },
-  {
-    title: 'Hamilton Exhibits',
-    description:
-      'A website highlighting Hamilton Exhibits innovative brand spaces and how they can make an impact.',
-    link: 'https://www.hamilton-exhibits.com/',
-    tools: ['Craft', 'React', 'Gatsby'],
-    trendy: true,
-  },
+
   {
     title: 'Kappa Alpha Theta',
     description:
