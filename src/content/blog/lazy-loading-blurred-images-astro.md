@@ -101,4 +101,4 @@ import exampleImage from '@/assets/example-image.jpg'
 <ImageBlur src={exampleImage} class="" width={500} height={500} />
 ```
 
-You can view the source code for this exact component on this very site by <a target="_blank" href="https://github.com/mattwaler/mattwaler.com/blob/main/src/components/ImageBlur.astro">visiting the GitHub repository</a>!
+And there you have it!
