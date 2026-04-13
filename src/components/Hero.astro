@@ -3,9 +3,10 @@ interface Props {
   title: string
   description?: string
   titlePhrases?: string[]
+  cta?: { label: string; href: string }
 }
 
-const { title, description, titlePhrases } = Astro.props
+const { title, description, titlePhrases, cta } = Astro.props
 
 const reserveTitle = titlePhrases?.length
   ? `${title} ${titlePhrases.reduce((a, b) => (a.length > b.length ? a : b))}`
@@ -40,6 +41,11 @@ const reserveTitle = titlePhrases?.length
           <p class="h6 opacity-75 text-balance">
             {description}
           </p>
+        )}
+        {cta && (
+          <a href={cta.href} class="button inline-block">
+            {cta.label}
+          </a>
         )}
       </div>
     </div>

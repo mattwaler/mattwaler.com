@@ -7,9 +7,6 @@ import BlogCard from '../components/BlogCard.astro'
 
 const allPosts = await getCollection('blog')
 const posts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-
-const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 ---
 
 <Layout
@@ -19,6 +16,7 @@ const formatDate = (date: Date) =>
   <Hero
     title="Sneak a peek inside my head."
     description="Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
+    cta={{ label: "Subscribe via RSS", href: "/rss.xml" }}
   />
 
   <Waves />

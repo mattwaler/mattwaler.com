@@ -18,6 +18,7 @@
   "dependencies": {
     "@alpinejs/anchor": "^3.15.3",
     "@alpinejs/intersect": "^3.15.2",
+    "@astrojs/rss": "^4.0.18",
     "alpinejs": "^3.1.0",
     "grid-rows-masonry": "^1.2.4",
     "typed.js": "^3.0.0"

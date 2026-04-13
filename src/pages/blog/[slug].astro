@@ -1,19 +1,22 @@
 ---
-import { getCollection, render } from 'astro:content'
-import Markdown from '../../layouts/Markdown.astro'
+import { getCollection, render } from "astro:content";
+import Markdown from "../../layouts/Markdown.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog')
-  return posts.map(post => ({
-    params: { slug: post.id.replace(/\.md$/, '') },
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, "") },
     props: { post },
-  }))
+  }));
 }
 
-const { post } = Astro.props
-const { Content } = await render(post)
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <Markdown title={post.data.title} description={post.data.description}>
   <Content />
+  <div class="mt-12 rich-text">
+    <p>Did you enjoy this post? Consider <a href="/rss.xml">subscribing to the RSS feed</a>!</p>
+  </div>
 </Markdown>
