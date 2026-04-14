@@ -8,11 +8,13 @@ tags:
 
 Using AI is now entirely unavoidable. Pandora's box has been opened, and there's no going back. Instead of trying to put the toothpaste back into the tube, we need to start to identify the best way to work alongside it.
 
-## The worst way: "vibe coding"
+## The worst way: "vibe coding".
 
 Let's start by identifying the ways we shouldn't work with AI, and why.
 
-Vibe coding, or prompting your way to a "working" app with little understanding of what is being generated, produces software that looks functional, until it is far too late. Without the understanding required to guide the AI, the codebase quickly accumulates horrible patterns. In other words, the AI confidently does it's thing, and nobody knows enough to correct course. When things go awry, the only way to solve it is to again ask the AI to inject even worse patterns and solutions into the project.
+Vibe coding, or prompting your way to a "working" app with little understanding of what is being generated, produces software that looks great on the surface, but dogwater under the hood. Without the understanding required to guide the AI, the codebase quickly accumulates horrible patterns. When things go bad, and they will, the only way to solve it is to continue the cycle and ask the AI to inject even more garbage into the project.
+
+## Vibes remove friction, and friction is where you learn.
 
 Skills, intuition, and permanent personal development are built through friction. This friction occurs when you make your own decisions, write your own code, and see for yourself where it breaks. Not only that, but the feeling you get when you finally solve that bug all on your own is what pushes you further into your development journey. When AI robs you of that dopamine hit, you gradually stop forming your own opinions, ideas, and personal growth. AI should be the executor of your plan, not your default first opinion.
 
