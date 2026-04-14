@@ -38,7 +38,7 @@
 		@apply text-base/relaxed lg:text-lg/relaxed;
 
 		/* Add margin to all elements */
-		> * { @apply mb-[3em]; }
+		> * { @apply mb-[2em]; }
 
 		/* Remove top margin from first element */
 		> *:first-child { @apply !mt-0; }
@@ -47,7 +47,7 @@
 		> *:last-child { @apply !mb-0; }
 
 		/* Headings */
-		h1, h2, h3, h4, h5, h6 { @apply mb-[.5em] mt-[1em] !text-pretty; }
+		h1, h2, h3, h4, h5, h6 { @apply mt-[2em] mb-[1em] !text-pretty; }
 		h1 { @apply h1; }
 		h2 { @apply h2; }
 		h3 { @apply h3; }
