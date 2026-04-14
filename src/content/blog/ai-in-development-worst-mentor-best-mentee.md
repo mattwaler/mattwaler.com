@@ -8,7 +8,7 @@ tags:
 
 Using AI is now entirely unavoidable. Pandora's box has been opened, and there's no going back. Instead of trying to put the toothpaste back into the tube, we need to start to identify the best way to work alongside it.
 
-## The worst way: "vibe coding".
+## The worst way: "vibe coding"
 
 Let's start by identifying the ways we shouldn't work with AI, and why.
 
@@ -16,13 +16,13 @@ Vibe coding, or prompting your way to a "working" app with little understanding 
 
 This approach leverages AI as your mentor, and that mentor is willing to solve it all for you without teaching you anything.
 
-## Vibes remove friction, and friction is where you learn.
+## Vibes remove friction, and friction is where you learn
 
 Skills, intuition, and permanent personal development are built through friction. This friction occurs when you make your own decisions, write your own code, and see for yourself where it breaks. Not only that, but the feeling you get when you finally solve that bug all on your own is what pushes you further into your development journey!
 
 When AI robs you of that dopamine hit, you gradually stop chasing that feeling of growth as a developer. You stop forming your own opinions, ideas, and solutions to problems you encounter. You start to both defer to and grow reliant on AI.
 
-## What makes a great mentor, and why can't AI do it?
+## What makes a great mentor, and why AI can't do it
 
 I am so lucky that in my career, I have had multiple mentors that have taught me so much.
 
@@ -34,7 +34,7 @@ After I solved these problems my way, their reviews brought about even more pers
 
 AI cannot and will not ever be able to fulfill this role. It has no memory of your journey, no stake in your growth, and no ability to let you sit with discomfort long enough to learn from it. Ask AI how to do something and it will just... do it. The friction it removes is the exact friction you need to advance from a junior developer to a senior.
 
-## What makes a great mentee, and why does AI do it perfectly?
+## What makes a great mentee, and why AI does it perfectly
 
 The exact reasons that make AI a horrible mentor lend itself to being a perfect mentee. AI is fantastic at taking a specific set of instructions and performing it at lightspeed.
 
