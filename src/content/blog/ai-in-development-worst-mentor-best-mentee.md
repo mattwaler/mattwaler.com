@@ -14,11 +14,13 @@ Let's start by identifying the ways we shouldn't work with AI, and why.
 
 Vibe coding, or prompting your way to a "working" app with little understanding of what is being generated, produces software that looks great on the surface, but dogwater under the hood. Without the understanding required to guide the AI, the codebase quickly accumulates horrible patterns. When things go bad, and they will, the only way to solve it is to continue the cycle and ask the AI to inject even more garbage into the project.
 
+This approach leverages AI as your mentor, and that mentor is willing to solve it all for you without teaching you anything.
+
 ## Vibes remove friction, and friction is where you learn.
 
-Skills, intuition, and permanent personal development are built through friction. This friction occurs when you make your own decisions, write your own code, and see for yourself where it breaks. Not only that, but the feeling you get when you finally solve that bug all on your own is what pushes you further into your development journey. When AI robs you of that dopamine hit, you gradually stop forming your own opinions, ideas, and personal growth. AI should be the executor of your plan, not your default first opinion.
+Skills, intuition, and permanent personal development are built through friction. This friction occurs when you make your own decisions, write your own code, and see for yourself where it breaks. Not only that, but the feeling you get when you finally solve that bug all on your own is what pushes you further into your development journey!
 
-This approach leverages AI as your mentor, and that mentor is willing to solve it all for you without teaching you anything.
+When AI robs you of that dopamine hit, you gradually stop chasing that feeling of growth as a developer. You stop forming your own opinions, ideas, and solutions to problems you encounter. You start to both defer to and grow reliant on AI.
 
 ## What makes a great mentor, and why can't AI do it?
 
@@ -26,7 +28,9 @@ I am so lucky that in my career, I have had multiple mentors that have taught me
 
 My mentors never did the work for me. When I ran into an issue, they would instead offer up their potential solutions, links to documentation, and previous code examples from other projects that solved similar challenges. After that, they sent me off on my way to solve it myself.
 
-Did I struggle for hours? Yes. Did I often have to ask more follow up questions? Absolutely. But those hours were the exact location where I became a better developer. The magic is in the gap between their guidance and my attempts. After I solved these problems my way, their reviews brought about even more personal growth when they showed me cleaner, more performant, and simpler ways to solve problems.
+Did I struggle for hours? Yes. Did I often have to ask more follow up questions? Absolutely. But those hours were the exact location where I became a better developer. The magic is in the gap between their guidance and my attempts.
+
+After I solved these problems my way, their reviews brought about even more personal growth when they showed me far better ways to solve the problems I had just solved on my own.
 
 AI cannot and will not ever be able to fulfill this role. It has no memory of your journey, no stake in your growth, and no ability to let you sit with discomfort long enough to learn from it. Ask AI how to do something and it will just... do it. The friction it removes is the exact friction you need to advance from a junior developer to a senior.
 
