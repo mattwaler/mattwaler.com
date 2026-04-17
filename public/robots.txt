@@ -1,2 +1,4 @@
 User-agent: *
+Allow: /
+
 Sitemap: https://mattwaler.com/sitemap-index.xml
