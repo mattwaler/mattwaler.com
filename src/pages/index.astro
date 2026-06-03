@@ -14,6 +14,7 @@ import Laravel from '../icons/Laravel.svg'
 import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.astro'
 import BlogCard from '../components/BlogCard.astro'
+import type { CollectionEntry } from 'astro:content';
 
 const masonry = [
   'masonry-8.jpg',
@@ -40,7 +41,7 @@ const tools = [
   { name: 'Laravel', Icon: Laravel },
 ]
 
-const allPosts = await getCollection('blog')
+const allPosts: CollectionEntry<'blog'>[] = await getCollection('blog')
 const recentPosts = allPosts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 3)
@@ -106,7 +107,7 @@ const recentProjects = projects.slice(0, 3)
           <video
             x-data="{ show: false }"
             x-intersect:enter.threshold.75="show = true"
-            :class="show ? 'opacity-100' : 'opacity-0'"
+            x-bind:class="show ? 'opacity-100' : 'opacity-0'"
             class="rounded-xl transition-opacity duration-500 pointer-events-none"
             autoplay muted playsinline loop src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/masonry/${asset}`}
           ></video>
@@ -114,7 +115,7 @@ const recentProjects = projects.slice(0, 3)
           <img
             x-data="{ show: false }"
             x-intersect:enter.threshold.75="show = true"
-            :class="show ? 'opacity-100' : 'opacity-0'"
+            x-bind:class="show ? 'opacity-100' : 'opacity-0'"
             src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/masonry/${asset}`}
             loading="lazy"
             class="rounded-xl transition-opacity duration-500"
