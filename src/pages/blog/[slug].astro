@@ -15,7 +15,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Markdown title={post.data.title} description={post.data.description}>
+<Markdown title={post.data.title} description={post.data.description} tags={post.data.tags}>
   <Content />
   <div class="mt-12 rich-text">
     <p>Did you enjoy this post? Consider <a href="/rss.xml">subscribing to the RSS feed</a>!</p>

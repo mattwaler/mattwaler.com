@@ -3,6 +3,8 @@ interface Props {
   post: any
 }
 
+import { slugifyTag } from '../data/tags'
+
 const { post } = Astro.props
 
 const formatDate = (date: Date) =>
@@ -22,15 +24,15 @@ const formatDate = (date: Date) =>
         {post.data.title}
       </span>
     </h4>
+    <p class="text-pretty lg:line-clamp-3">{post.data.description}</p>
     {post.data.tags?.length > 0 && (
-      <ul class="flex flex-wrap gap-2">
+      <ul class="flex flex-wrap gap-x-2 gap-y-1">
         {post.data.tags.map((tag: string) => (
-          <li class="px-3 py-0.5 rounded-full border border-gray-300 text-sm text-gray-600">
-            {tag}
+          <li class="text-sm text-gray-600">
+            #{slugifyTag(tag)}
           </li>
         ))}
       </ul>
     )}
-    <p class="text-pretty lg:line-clamp-3">{post.data.description}</p>
   </div>
 </a>

@@ -2,17 +2,24 @@
 import Layout from './Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import { slugifyTag } from '../data/tags'
 
 interface Props {
   title: string
   description?: string
+  tags?: string[]
 }
 
-const { title, description } = Astro.props
+const { title, description, tags } = Astro.props
+
+const tagLinks = tags?.map(tag => ({
+  label: `#${slugifyTag(tag)}`,
+  href: `/blog/tags/${slugifyTag(tag)}/#posts`,
+}))
 ---
 
 <Layout title={title} description={description}>
-  <Hero title={title} description={description} />
+  <Hero title={title} description={description} tags={tagLinks} />
   <Waves foreground='#f3f4f6' />
   <section class="bg-gray-100 bg-linear-to-b from-gray-100 via-50% via-white to-gray-100 to-90%">
     <div class="container section rich-text md:max-w-3xl">

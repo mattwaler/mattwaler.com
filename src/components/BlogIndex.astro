@@ -21,7 +21,7 @@ const tags = getAllTags(allPosts)
 const pills = [
   {
     slug: 'all',
-    name: 'All',
+    name: 'All Posts',
     active: !activeSlug,
     href: '/blog/#posts',
   },
@@ -52,16 +52,16 @@ const title = activeName
 
   <section id="posts" class="section scroll-mt-24 bg-linear-to-t from-blue-600 to-blue-950 to-90%">
     <div class="container space-y-12">
-      <nav aria-label="Filter posts by category" class="flex flex-wrap justify-start gap-3">
+      <nav aria-label="Filter posts by category" class="flex flex-wrap justify-start gap-x-5 gap-y-3">
         {pills.map(pill => (
           <a
             href={pill.href}
             aria-current={pill.active ? 'true' : undefined}
             class:list={[
-              'px-4 py-1.5 rounded-full text-sm font-medium border transition-colors',
+              'text-base font-medium transition-colors',
               pill.active
-                ? 'bg-white text-blue-950 border-white'
-                : 'text-white border-white/40 hover:bg-white/10',
+                ? 'text-white underline underline-offset-4'
+                : 'text-white/60 hover:text-white',
             ]}
           >
             {pill.name}

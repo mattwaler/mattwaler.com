@@ -4,9 +4,10 @@ interface Props {
   description?: string
   titlePhrases?: string[]
   cta?: { label: string; href: string }
+  tags?: { label: string; href: string }[]
 }
 
-const { title, description, titlePhrases, cta } = Astro.props
+const { title, description, titlePhrases, cta, tags } = Astro.props
 
 const reserveTitle = titlePhrases?.length
   ? `${title} ${titlePhrases.reduce((a, b) => (a.length > b.length ? a : b))}`
@@ -41,6 +42,20 @@ const reserveTitle = titlePhrases?.length
           <p class="h6 opacity-75 text-balance">
             {description}
           </p>
+        )}
+        {tags && tags.length > 0 && (
+          <ul class="flex flex-wrap gap-x-4 gap-y-1 md:justify-center pt-3">
+            {tags.map(tag => (
+              <li>
+                <a
+                  href={tag.href}
+                  class="block text-base font-medium text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  {tag.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         )}
         {cta && (
           <a href={cta.href} class="mt-6 button inline-block">
