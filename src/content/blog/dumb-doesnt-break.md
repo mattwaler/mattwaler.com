@@ -29,11 +29,11 @@ Did I want to love my smart home gadgets? Absolutely. I'm a developer for Christ
 
 ## The $5 board that beat every app
 
-For years, my instinct for every new problem in life was to find the perfect app for it. Todo lists, grocery lists, habits, budgeting. Hell, I even made my own app (which I still love).
+For years, my instinct for every new problem in life was to find the perfect app for it. Todo lists, grocery lists, habits, budgeting. Hell, I even [made my own app](https://repeaters.mattwaler.com) (which I still love, by the way).
 
 I bounced between these apps, each one promising to be the last one I'd ever need. Each one had its own account credentials, its own pricing model, etc. I wasn't aware at the time, but I was spendnig more time organizing my tasks than actually freaking doing them.
 
-On a whim after watching a minimalism YouTube video, I stuck a $5 magnetic dry erase board on the fridge.
+On a whim after watching a minimalism YouTube video, I stuck a [$5 magnetic dry erase board](https://www.amazon.com/Magnetic-Whiteboard-Fridge-Erase-Board/dp/B0C6LZ3HV7/ref=sr_1_25) on the fridge.
 
 That's it. That's the system. Need to pick up sticks in the backyard? Write "sticks" on the board. It has no login, no offline sync capabilities, no nothing. Yet, against all the odds, everyone in the house can see it, use it, and understand it in under a second. You'll never guess what happens next. I picked up the sticks.
 
