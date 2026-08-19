@@ -3,8 +3,7 @@ date: 2025-06-27
 title: Using Lit to create cross-language components
 description: On larger projects that utilize multiple templating languages to accomplish server-side and client-side rendering, using lit to create custom html elements can solve your problems.
 tags:
-  - Lit
-  - JavaScript
+  - Development
 ---
 
 As projects grow, oftentimes you end up utilizing several different templating languages to achieve desired outcomes in performance. For example, many portions of a web page can be server-rendered with things like PHP, but perhaps more interactive elements or slow queries below the viewport can be rendered client-side with a JS library!

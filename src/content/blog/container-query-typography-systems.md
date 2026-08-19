@@ -3,8 +3,7 @@ date: 2026-04-04
 title: Container Query Typography Systems
 description: With the adoption of container queries in all browsers, it's time to use them to fix typography systems.
 tags:
-  - CSS
-  - Tailwind
+  - Development
 ---
 
 In every web project I've ever done, I always end up creating a set of utility classes for each heading type. Things like `h1`, `h2`, and so on.

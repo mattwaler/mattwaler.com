@@ -4,6 +4,7 @@ title: "AI in Development: the Worst Mentor, the Best Mentee"
 description: My personal opinions on how we should be leveraging AI in development to promote individual growth and prevent vibe-coded catastrophes.
 tags:
   - AI
+  - Development
 ---
 
 Using AI is now entirely unavoidable. Pandora's box has been opened, and there's no going back. Instead of trying to put the toothpaste back into the tube, we need to start to identify the best way to work alongside it.

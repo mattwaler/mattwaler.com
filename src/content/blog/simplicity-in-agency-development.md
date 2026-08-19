@@ -5,8 +5,7 @@ description:
   By keeping things simple, isolated to single files, and scoped, pieces from projects can be easily shared across clients and speed up development time significantly.
 tags:
   - Agency
-  - Alpine
-  - Tailwind
+  - Development
 ---
 
 Oftentimes as we grow as developers, we attempt to “level up” our code. We utilize more abstractions, shorthands, and bleeding-edge features to reduce our line counts in our repositories.
