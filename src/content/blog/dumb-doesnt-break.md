@@ -21,7 +21,7 @@ This realization taught me a mantra I try my best to apply to everything I can i
 
 Here's the mental shift that changed things for me. When I look at a product now, I don't see a list of features. I see a list of things that can fail on me.
 
-A "smart" washer with a touch screen isn't just a washing machine. It's a washing machine, a computer, software,  a screen, a wifi chip, etc. Each one of those is another thing that can ruin a weekend on a whim.
+A "smart" washer with a touch screen isn't just a washing machine. It's a washing machine, a computer, software,  a screen, a wifi chip, etc. Each one of those is another thing that can ruin a weekend out of nowhere.
 
 By comparison, my parents' old top loader has no software in sight. Despite that "shortcoming", it has been chugging along for YEARS.
 
@@ -31,17 +31,17 @@ Did I want to love my smart home gadgets? Absolutely. I'm a developer for Christ
 
 For years, my instinct for every new problem in life was to find the perfect app for it. Todo lists, grocery lists, habits, budgeting. Hell, I even [made my own app](https://repeaters.mattwaler.com) (which I still love, by the way).
 
-I bounced between these apps, each one promising to be the last one I'd ever need. Each one had its own account credentials, its own pricing model, etc. I wasn't aware at the time, but I was spendnig more time organizing my tasks than actually freaking doing them.
+I bounced between these apps, each one promising to be the last one I'd ever need. Each one had its own account credentials, its own pricing model, etc. I wasn't aware at the time, but I was spending more time organizing my tasks than actually freaking doing them.
 
 On a whim after watching a minimalism YouTube video, I stuck a [$5 magnetic dry erase board](https://www.amazon.com/Magnetic-Whiteboard-Fridge-Erase-Board/dp/B0C6LZ3HV7/ref=sr_1_25) on the fridge.
 
-That's it. That's the system. Need to pick up sticks in the backyard? Write "sticks" on the board. It has no login, no offline sync capabilities, no nothing. Yet, against all the odds, everyone in the house can see it, use it, and understand it in under a second. You'll never guess what happens next. I picked up the sticks.
+That's it. That's the system. Need to pick up sticks in the backyard? Write "sticks" on the board. It has no login, no offline sync capabilities, no nothing. You'll never guess what happened next. I picked up the sticks.
 
 For the things that do belong on my phone, things that need to leave the house with me, I just make the best of the free Apple apps that came with it.
 
 My wife and I use a shared Reminders list called "Groceries" to quickly add items we need to a simple todo list we can parse while we're walking down the grocery store aisles. We have our own individual iCloud Calendars for personal events and a singular "Shared" calendar for events we both attend.
 
-Are these tools and systems the most powerful ones? Absolutely not, not even close. But they're already there, they sync without issue, and Apple isn't going to delete them on a whim.
+Are these tools and systems the most powerful ones? Absolutely not, not even close. But they're already there, they sync without issue, and Apple isn't going to delete them tomorrow.
 
 ## Simple is a feature
 
@@ -51,4 +51,4 @@ The marketing world (again, my fault, sorry) will keep telling you that smarter 
 
 So before you upgrade something that already works, ask yourself: "What am I actually getting, and what can now break that couldn't break before?"
 
-If the second list is longer than the first, keep the dumb thing. Dumb doesn't break. And a life full of things that don't break is the smartest life you can live.
+If the second list is longer than the first, keep the dumb thing. Dumb doesn't break. And a life full of things that don't break sounds pretty smart to me.
