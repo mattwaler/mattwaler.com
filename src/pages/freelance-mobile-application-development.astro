@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Waves from '../components/Waves.astro'
+import Swift from '../icons/Swift.svg'
+import React from '../icons/React.svg'
+import projects from '../data/projects.js'
+import ProjectCard from '../components/ProjectCard.astro'
+
+const tools = [
+  { name: 'Swift', Icon: Swift },
+  { name: 'React Native', Icon: React },
+]
+
+const pricingFaqs = [
+  {
+    question: 'How much will my app cost?',
+    answer: "Every project gets a fixed price based on your goals and scope, quoted before any work begins. No hourly billing and no surprise invoices along the way.",
+  },
+  {
+    question: 'How do you land on that price?',
+    answer: "I take the time up front to understand what you actually need, the features, the platforms, the timeline, then scope a price that matches it. Not one padded for uncertainty.",
+  },
+  {
+    question: 'What happens if my needs change?',
+    answer: "Scope shifts happen. When they do, I'll walk you through exactly how it affects the price before moving forward, always a conversation, never a surprise charge.",
+  },
+]
+
+const recentProjects = projects
+  .filter(project => project.tools.some(tool => /swift|react native/i.test(tool)))
+  .slice(0, 3)
+
+const title = 'Ohio-based Freelance Mobile App Development by Matt Waler'
+const description = 'Fixed-price freelance mobile app development based in Ohio. Specializing in native iOS apps built with Swift and SwiftUI, or cross-platform apps built with React Native.'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Matt Waler Mobile App Development',
+  description,
+  url: 'https://mattwaler.com/freelance-mobile-application-development/',
+  areaServed: 'United States',
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'OH',
+    addressCountry: 'US',
+  },
+  founder: {
+    '@type': 'Person',
+    name: 'Matt Waler',
+  },
+  priceRange: 'Fixed-price quotes',
+  knowsAbout: ['Swift', 'SwiftUI', 'React Native', 'iOS Development'],
+  makesOffer: pricingFaqs.map(faq => ({
+    '@type': 'Offer',
+    name: faq.question,
+    description: faq.answer,
+  })),
+}
+---
+
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+
+  <!-- Hero -->
+  <Hero
+    title="Ohio-based freelance mobile app development."
+    description="I build native iOS apps and cross-platform mobile apps for businesses that want a pragmatic partner, clear communication, and a fixed price before work starts."
+    cta={{ label: 'Get a Fixed-Price Quote', href: '#contact' }}
+  />
+
+  <!-- Specialization -->
+  <Waves />
+  <section class="relative z-2 bg-white section bg-linear-to-b from-blue-950 to-blue-600">
+    <div>
+      <div class="container md:text-center text-balance">
+        <h2 class="h2 text-white">Native iOS apps or cross-platform mobile apps.</h2>
+        <h3 class="h5 text-blue-200 mt-3">Built with Swift when it needs to feel native. React Native when it needs to run everywhere.</h3>
+      </div>
+      <div class="container text-base mt-12 text-balance md:text-center md:max-w-3xl mx-auto">
+        <p class="text-lg text-blue-200">Some apps need to feel completely at home on iOS, with deep system integration, smooth animations, and App Store-grade performance. Others need to reach iOS and Android from a single codebase without doubling the budget. I specialize in both: Swift and SwiftUI for native iOS apps, and React Native for cross-platform apps that need to ship everywhere at once.</p>
+      </div>
+      <div class="w-full mt-16">
+        <div class="flex justify-center gap-16">
+          {tools.map(({ name, Icon }) => (
+            <div class="flex flex-col items-center gap-2.5 w-24">
+              <Icon class="size-12 text-white" />
+              <p class="text-xs text-blue-100 font-mono text-center">{name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <Waves rotate foreground="#155dfc" />
+  <section class="bg-white section space-y-12">
+    <div class="container text-balance md:text-center">
+      <h2 class="h2">Pragmatic, fixed-price quotes.</h2>
+      <h3 class="h5 mt-3 text-gray-600">
+        Straightforward pricing built around your goals, not the clock.
+      </h3>
+    </div>
+    <div class="container grid grid-cols-1 md:grid-cols-3 gap-8">
+      {pricingFaqs.map(faq => (
+        <div class="bg-gray-100 rounded-xl p-8 space-y-2">
+          <h4 class="h5 text-pretty">{faq.question}</h4>
+          <p class="text-pretty text-gray-600">{faq.answer}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <Waves foreground="#f3f4f6" />
+  <section class="section bg-linear-to-b from-gray-100 to-white">
+    <div class="container">
+      <div class="md:text-center text-balance">
+        <h2 class="h2">Recent work</h2>
+        <h3 class="h5 mt-3 text-gray-600">
+          A few examples of mobile apps I've built recently.
+        </h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-12 mt-12">
+        {recentProjects.map(project => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+      <div class="mt-12 md:text-center">
+        <a href="/projects/" class="button">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <Waves foreground="#162456" background="white" />
+  <section id="contact" class="text-white bg-linear-to-t from-blue-600 to-blue-950 to-90%">
+    <div class="container section max-w-3xl" x-data>
+      <div class="md:text-center text-balance">
+        <h2 class="h2">Let's talk about your app.</h2>
+        <h3 class="h5 mt-3 opacity-80">
+          Tell me a bit about what you need, and I'll get back to you with next steps.
+        </h3>
+      </div>
+      <div x-cloak x-show="window.location.search.includes('contact=true')">
+        <p class="h4 pt-16">Message sent! Thanks for reaching out!</p>
+      </div>
+      <form
+        action="/freelance-mobile-application-development/?contact=true"
+        netlify
+        class="mt-8 grid grid-cols-1 gap-8"
+        method="POST"
+        name="Contact Form"
+      >
+        <input type="hidden" name="form-name" value="Contact Form">
+        <label class="grid grid-cols-1">
+          <p>Name</p>
+          <input required name="name" class="input" type="text">
+        </label>
+        <label class="grid grid-cols-1">
+          <p>Email</p>
+          <input required name="email" class="input" type="email">
+        </label>
+        <label class="grid grid-cols-1">
+          <p>Message</p>
+          <textarea required name="message" rows="5" class="input"></textarea>
+        </label>
+        <div>
+          <button class="button rounded" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+  <Waves rotate foreground="#155dfc" />
+
+</Layout>
