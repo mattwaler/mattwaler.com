@@ -4,12 +4,31 @@ import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.astro'
+
+const title = 'Projects Matt Waler has built since 2016.'
+const description = 'Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs.'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description,
+  url: 'https://mattwaler.com/projects/',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: projects.map((project, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: project.title,
+      description: project.description,
+      url: project.link,
+    })),
+  },
+}
 ---
 
-<Layout
-  title="Projects Matt Waler has built since 2016."
-  description="Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs."
->
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <Hero
     title="See what I've built."
     description="I have built a lot of websites and mobile applications since I started back in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed."

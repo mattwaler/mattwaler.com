@@ -12,6 +12,31 @@ interface Props {
 }
 
 const { title, description = '', ogImage } = Astro.props
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Matt Waler',
+  url: 'https://mattwaler.com',
+  jobTitle: 'Web & iOS Developer',
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'OH',
+    addressCountry: 'US',
+  },
+  sameAs: [
+    'https://github.com/mattwaler',
+    'https://instagram.com/mattwaler',
+    'https://linkedin.com/in/mattwaler',
+  ],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'mattwaler.com',
+  url: 'https://mattwaler.com',
+}
 ---
 
 <!DOCTYPE html>
@@ -49,6 +74,8 @@ const { title, description = '', ogImage } = Astro.props
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..900&display=swap" rel="stylesheet">
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   </head>
   <body>
     <Debug />
