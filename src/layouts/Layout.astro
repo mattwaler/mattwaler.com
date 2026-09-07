@@ -88,9 +88,15 @@ const websiteSchema = {
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   </head>
   <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-60 focus:bg-black focus:text-white focus:font-medium focus:rounded-full focus:px-4 focus:py-2 focus:shadow-lg"
+    >
+      Skip to content
+    </a>
     <Debug />
     <Header />
-    <main>
+    <main id="main" tabindex="-1">
       <slot />
     </main>
     <Footer />
