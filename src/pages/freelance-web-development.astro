@@ -33,7 +33,9 @@ const pricingFaqs = [
   },
 ]
 
-const recentProjects = projects.slice(0, 3)
+const recentProjects = projects
+  .filter(project => !project.tools.includes('Swift'))
+  .slice(0, 3)
 
 const title = 'Ohio-based Freelance Web Development by Matt Waler'
 const description = 'Fixed-price freelance web development based in Ohio. Specializing in CMS-based systems like Laravel, Statamic, and Craft CMS, or fully static sites built with Astro and Next.js.'

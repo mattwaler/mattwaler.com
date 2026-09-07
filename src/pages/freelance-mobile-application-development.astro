@@ -28,7 +28,7 @@ const pricingFaqs = [
 ]
 
 const recentProjects = projects
-  .filter(project => project.tools.some(tool => /swift|react native/i.test(tool)))
+  .filter(project => project.tools.includes('Swift'))
   .slice(0, 3)
 
 const title = 'Ohio-based Freelance Mobile App Development by Matt Waler'
