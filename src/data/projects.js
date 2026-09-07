@@ -20,14 +20,14 @@ export default [
     description:
       'Cakewalk Development is a two-man development agency that aims to make web development easier for individuals and small businesses that have a lot on their plates.',
     link: 'https://cakewalkdev.com',
-    tools: ['11ty', 'Tailwind', 'Alpine'],
+    tools: ['Eleventy', 'Tailwind', 'Alpine'],
   },
   {
     title: 'Repeaters',
     description:
       'Repeaters is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.',
     link: 'https://repeaters.mattwaler.com',
-    tools: ['Swift', 'Swift UI', 'Swift Data'],
+    tools: ['Swift'],
   },
   {
     title: 'Kings Court Landscaping',
@@ -49,7 +49,7 @@ export default [
     description:
       'A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.',
     link: 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone',
-    tools: ['Swift', 'Swift UI'],
+    tools: ['Swift'],
   },
 
   {
@@ -65,7 +65,7 @@ export default [
     description:
       'A monolithic Craft CMS website for an insurance, employee benefits and risk management consulting company.',
     link: 'https://hylant.com/',
-    tools: ['Craft CMS', 'Tailwind', 'Alpine', 'Sprig'],
+    tools: ['Craft', 'Tailwind', 'Alpine'],
     trendy: true,
   },
   {
@@ -97,7 +97,7 @@ export default [
     description:
       'A web tool to help business owners calculate both supplies and the maximum number of occupants they can allow.',
     link: 'https://covid.trendyminds.com',
-    tools: ['Eleventy', 'Tailwind', 'Svelte'],
+    tools: ['Eleventy', 'Tailwind'],
     trendy: true,
   },
 
@@ -126,17 +126,10 @@ export default [
     trendy: true,
   },
   {
-    title: 'Transport Services',
-    description:
-      'A marketing website for a Cleveland-based full-service semi-trailer dealership.',
-    link: 'https://www.transportservices.com/',
-    tools: ['Kentico', 'Sass', 'Pug'],
-  },
-  {
     title: 'Garden of Flavor',
     description:
       'An e-commerce website for a Cleveland-based nature-first juice company.',
     link: 'https://gardenofflavor.com',
-    tools: ['Shopify'],
+    tools: ['Shopify', 'Tailwind'],
   },
 ]

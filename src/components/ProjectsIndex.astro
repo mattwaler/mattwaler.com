@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from './Hero.astro'
+import Waves from './Waves.astro'
+import ProjectCard from './ProjectCard.astro'
+import allProjects from '../data/projects.js'
+import { getAllTools, slugifyTool } from '../data/tools'
+
+interface Props {
+  activeSlug?: string
+}
+
+const { activeSlug } = Astro.props
+
+const projects = allProjects
+  .filter(project => !activeSlug || project.tools.some(tool => slugifyTool(tool) === activeSlug))
+
+const tools = getAllTools(allProjects)
+const pills = [
+  {
+    slug: 'all',
+    name: 'All Projects',
+    active: !activeSlug,
+    href: '/projects#projects',
+  },
+  ...tools.map(tool => ({
+    ...tool,
+    active: tool.slug === activeSlug,
+    href: tool.slug === activeSlug ? '/projects#projects' : `/projects/tools/${tool.slug}#projects`,
+  })),
+]
+
+const activeName = tools.find(tool => tool.slug === activeSlug)?.name
+const title = activeName
+  ? `Projects Matt Waler has built with ${activeName}.`
+  : 'Projects Matt Waler has built since 2016.'
+const description = 'Professional websites and iOS apps built for performance, scalability, and user experience — built to meet client and developer needs.'
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: title,
+  description,
+  url: activeSlug ? `https://mattwaler.com/projects/tools/${activeSlug}` : 'https://mattwaler.com/projects',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: projects.map((project, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: project.title,
+      description: project.description,
+      url: project.link,
+    })),
+  },
+}
+---
+
+<Layout title={title} description={description}>
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <Hero
+    title="See what I've built."
+    description="I have built a lot of websites and mobile applications since I started back in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed."
+  />
+
+  <Waves rotate foreground="white" background="#f3f4f6" />
+
+  <section id="projects" class="section scroll-mt-24 bg-gray-100">
+    <div class="container space-y-12">
+      <nav aria-label="Filter projects by technology" class="flex flex-wrap justify-start gap-x-5 gap-y-3">
+        {pills.map(pill => (
+          <a
+            href={pill.href}
+            aria-current={pill.active ? 'true' : undefined}
+            class:list={[
+              'text-base font-medium transition-colors',
+              pill.active
+                ? 'text-gray-900 underline underline-offset-4'
+                : 'text-gray-500 hover:text-gray-900',
+            ]}
+          >
+            {pill.name}
+          </a>
+        ))}
+      </nav>
+      <div class="grid items-start grid-cols-1 xl:grid-cols-3 gap-12">
+        {projects.map(project => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Waves foreground="white" background="#f3f4f6" />
+
+</Layout>

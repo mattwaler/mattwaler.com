@@ -1,0 +1,15 @@
+---
+import ProjectsIndex from '../../../components/ProjectsIndex.astro'
+import projects from '../../../data/projects.js'
+import { getAllTools } from '../../../data/tools'
+
+export function getStaticPaths() {
+  return getAllTools(projects).map(tool => ({
+    params: { tool: tool.slug },
+  }))
+}
+
+const { tool } = Astro.params
+---
+
+<ProjectsIndex activeSlug={tool} />
