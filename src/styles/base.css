@@ -8,7 +8,7 @@
   }
 
   html {
-    @apply antialiased bg-white text-gray-900 font-sans;
+    @apply antialiased bg-white text-gray-900 font-sans scroll-smooth;
   }
 
   body {

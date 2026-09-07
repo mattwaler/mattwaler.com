@@ -3,6 +3,7 @@ import { ClientRouter } from "astro:transitions";
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Debug from '../components/Debug.astro'
+import ArrowUp from '../icons/ArrowUp.svg'
 import '../styles/app.css'
 
 interface Props {
@@ -92,6 +93,21 @@ const websiteSchema = {
       <slot />
     </main>
     <Footer />
+    <!-- Back To Top -->
+    <button
+      type="button"
+      aria-label="Back to top"
+      class="button fixed bottom-3 right-3 z-50 p-3 shadow-lg hover:bg-gray-800 hover:cursor-pointer"
+      x-data="{ show: false }"
+      x-init="show = window.scrollY > 200"
+      @scroll.window="show = window.scrollY > 200"
+      x-cloak
+      x-show="show"
+      x-transition.duration.300ms
+      @click="window.scrollTo({ top: 0 })"
+    >
+      <ArrowUp class="size-5" />
+    </button>
     <script>
       import '../scripts/app.js'
     </script>
