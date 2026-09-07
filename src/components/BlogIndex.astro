@@ -38,6 +38,11 @@ const title = activeName
   : "Read Matt Waler's thoughts and ramblings on web development, app development, and life."
 const description = 'Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!'
 
+const heroTitle = activeName ? `Read my thoughts about ${activeName}.` : 'Sneak a peek inside my head.'
+const heroDescription = activeName
+  ? `I'm always sure to have a strong opinion, especially on ${activeName}.`
+  : "Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
@@ -57,8 +62,8 @@ const schema = {
 <Layout title={title} description={description}>
   <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   <Hero
-    title="Sneak a peek inside my head."
-    description="Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
+    title={heroTitle}
+    description={heroDescription}
     cta={{ label: "Subscribe via RSS", href: "/rss.xml" }}
   />
 
