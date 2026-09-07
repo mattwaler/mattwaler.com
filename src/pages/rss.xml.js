@@ -9,11 +9,12 @@ export async function GET(context) {
     title: "Matt Waler's Blog",
     description: "Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme.",
     site: context.site,
+    trailingSlash: false,
     items: sorted.map(post => ({
       title: post.data.title,
       description: post.data.description,
       pubDate: post.data.date,
-      link: `/blog/${post.id}/`,
+      link: `/blog/${post.id}`,
     })),
   })
 }

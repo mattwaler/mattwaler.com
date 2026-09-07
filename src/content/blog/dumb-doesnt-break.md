@@ -45,7 +45,7 @@ Are these tools and systems the most powerful ones? Absolutely not, not even clo
 
 ## Simple is a feature
 
-If you've read my post on [simplicity in agency development](/blog/simplicity-in-agency-development/), you know I already preach this at work. Every abstraction you add to a codebase is a debt your future self or your teammate has to pay for. Turns out, the same rule applies to your front door and your laundry room.
+If you've read my post on [simplicity in agency development](/blog/simplicity-in-agency-development), you know I already preach this at work. Every abstraction you add to a codebase is a debt your future self or your teammate has to pay for. Turns out, the same rule applies to your front door and your laundry room.
 
 The marketing world (again, my fault, sorry) will keep telling you that smarter is better, and that every dumb object in your life is a problem waiting to be solved. But these objects were never problems. My deadbolt wasn't a problem. My grocery list wasn't a problem. The "solutions" I adopted ended up becoming bigger problems than they ever were.
 

@@ -15,7 +15,7 @@ const { title, description, tags, schema } = Astro.props
 
 const tagLinks = tags?.map(tag => ({
   label: `#${slugifyTag(tag)}`,
-  href: `/blog/tags/${slugifyTag(tag)}/#posts`,
+  href: `/blog/tags/${slugifyTag(tag)}#posts`,
 }))
 ---
 

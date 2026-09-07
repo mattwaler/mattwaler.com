@@ -22,7 +22,7 @@ const schema = {
   description: post.data.description,
   datePublished: post.data.date.toISOString(),
   dateModified: post.data.date.toISOString(),
-  url: `https://mattwaler.com/blog/${slug}/`,
+  url: `https://mattwaler.com/blog/${slug}`,
   keywords: post.data.tags?.join(', '),
   author: {
     '@type': 'Person',

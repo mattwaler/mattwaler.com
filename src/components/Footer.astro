@@ -9,9 +9,11 @@ const socials = [
   { name: 'LinkedIn', url: 'https://linkedin.com/in/mattwaler', Icon: LinkedIn },
 ]
 
-const pathname = Astro.url.pathname
+// With `build.format: 'file'`, Astro.url.pathname is `/contact.html` at build time
+// but `/contact` in the browser — normalize so both match.
+const pathname = Astro.url.pathname.replace(/\.html$/, '').replace(/(.)\/$/, '$1')
 const noCtaLinks = [
-  '/contact/', '/dad/', '/klaus/'
+  '/contact', '/dad', '/klaus'
 ]
 ---
 
@@ -23,7 +25,7 @@ const noCtaLinks = [
         Have a project in mind, or just want to say hello? I'd love to hear from you.
       </p>
       <div class="mt-9">
-        <a href="/contact/" class="button">Get in Touch</a>
+        <a href="/contact" class="button">Get in Touch</a>
       </div>
     </div>
   </section>

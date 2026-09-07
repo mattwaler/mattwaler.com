@@ -3,19 +3,24 @@ import tailwindcss from '@tailwindcss/vite'
 import sitemap from '@astrojs/sitemap'
 
 const excludedPages = [
-  'https://mattwaler.com/dad/',
-  'https://mattwaler.com/klaus/',
+  'https://mattwaler.com/dad',
+  'https://mattwaler.com/klaus',
 ];
+
+const normalize = (url) => url.replace(/\/$/, '');
 
 export default defineConfig({
   site: 'https://mattwaler.com',
-  trailingSlash: 'always',
+  trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
   vite: {
     plugins: [tailwindcss()],
   },
   integrations: [
     sitemap({
-      filter: (page) => !excludedPages.includes(page),
+      filter: (page) => !excludedPages.includes(normalize(page)),
     }),
   ],
 })
