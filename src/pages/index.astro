@@ -113,6 +113,7 @@ const recentProjects = projects.slice(0, 3)
             x-intersect:enter.threshold.75="show = true"
             x-bind:class="show ? 'opacity-100' : 'opacity-0'"
             class="rounded-xl transition-opacity duration-500 pointer-events-none"
+            loading="lazy"
             autoplay muted playsinline loop src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/masonry/${asset}`}
           ></video>
         ) : (
