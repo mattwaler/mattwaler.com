@@ -1,5 +1,5 @@
 ---
-import Layout from './Layout.astro'
+import Layout, { type PageSchema } from './Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import { slugifyTag } from '../data/tags'
@@ -8,7 +8,7 @@ interface Props {
   title: string
   description?: string
   tags?: string[]
-  schema?: Record<string, unknown>
+  schema?: PageSchema
 }
 
 const { title, description, tags, schema } = Astro.props
@@ -19,8 +19,7 @@ const tagLinks = tags?.map(tag => ({
 }))
 ---
 
-<Layout title={title} description={description}>
-  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+<Layout title={title} description={description} schema={schema}>
   <Hero title={title} description={description} tags={tagLinks} />
   <Waves foreground='#f3f4f6' />
   <section class="bg-gray-100 bg-linear-to-b from-gray-100 via-50% via-white to-gray-100 to-90%">

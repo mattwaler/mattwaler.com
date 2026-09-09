@@ -5,6 +5,8 @@ import Hero from './Hero.astro'
 import Waves from './Waves.astro'
 import BlogCard from './BlogCard.astro'
 import { getAllTags, slugifyTag } from '../data/tags'
+import type { PageSchema } from '../layouts/Layout.astro'
+import { SITE, blog, blogCrumb, blogRef, itemList, postSummary } from '../data/schema'
 
 interface Props {
   activeSlug?: string
@@ -43,24 +45,30 @@ const heroDescription = activeName
   ? `I'm always sure to have a strong opinion, especially on ${activeName}.`
   : "Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'Blog',
-  name: title,
-  description,
-  url: activeSlug ? `https://mattwaler.com/blog/tags/${activeSlug}` : 'https://mattwaler.com/blog',
-  blogPost: posts.map(post => ({
-    '@type': 'BlogPosting',
-    headline: post.data.title,
-    description: post.data.description,
-    datePublished: post.data.date.toISOString(),
-    url: `https://mattwaler.com/blog/${post.id.replace(/\.md$/, '')}`,
-  })),
-}
+const url = activeSlug ? `${SITE}/blog/tags/${activeSlug}` : `${SITE}/blog`
+const postSummaries = posts.map(postSummary)
+
+// `/blog` is the Blog itself; a tag page is a filtered collection that belongs to it.
+const schema: PageSchema = activeName
+  ? {
+      type: 'CollectionPage',
+      breadcrumbs: [blogCrumb, { name: activeName, url }],
+      page: {
+        about: { '@type': 'DefinedTerm', name: activeName, termCode: activeSlug },
+        keywords: [activeName],
+        mainEntity: itemList(postSummaries),
+      },
+      nodes: [blog],
+    }
+  : {
+      type: 'CollectionPage',
+      breadcrumbs: [blogCrumb],
+      page: { mainEntity: blogRef },
+      nodes: [{ ...blog, blogPost: postSummaries }],
+    }
 ---
 
-<Layout title={title} description={description}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<Layout title={title} description={description} schema={schema}>
   <Hero
     title={heroTitle}
     description={heroDescription}

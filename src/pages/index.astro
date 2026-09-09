@@ -15,6 +15,8 @@ import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.astro'
 import BlogCard from '../components/BlogCard.astro'
 import type { CollectionEntry } from 'astro:content';
+import type { PageSchema } from '../layouts/Layout.astro'
+import { personRef } from '../data/schema'
 
 const masonry = [
   'masonry-8.webp',
@@ -47,11 +49,18 @@ const recentPosts = allPosts
   .slice(0, 3)
 
 const recentProjects = projects.slice(0, 3)
+
+// The home page is Matt's profile, so the Person is its main entity.
+const schema: PageSchema = {
+  type: 'ProfilePage',
+  page: { about: personRef, mainEntity: personRef },
+}
 ---
 
 <Layout
   title="Matt Waler builds websites, iOS apps, and plays a ton of tennis."
   description="Matt Waler is a web and iOS developer based in Ohio."
+  schema={schema}
 >
   <!-- Hero -->
   <Hero

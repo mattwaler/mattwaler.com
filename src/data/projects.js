@@ -1,3 +1,7 @@
+/** CDN screenshot for a project, shared by the card UI and structured data. */
+export const projectImageUrl = (project) =>
+  `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}.webp`
+
 export default [
   {
     title: "TrendyMinds",
@@ -13,6 +17,7 @@ export default [
       "Repeaters is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.",
     link: "https://repeaters.mattwaler.com",
     tools: ["Swift"],
+    category: "ProductivityApplication",
   },
   {
     title: "Kings Court Landscaping",
@@ -50,6 +55,7 @@ export default [
       "A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.",
     link: "https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone",
     tools: ["Swift"],
+    category: "HealthApplication",
   },
 
   {

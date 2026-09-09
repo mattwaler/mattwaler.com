@@ -2,21 +2,20 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import type { PageSchema } from '../layouts/Layout.astro'
+import { SITE, personRef } from '../data/schema'
 
 const title = 'Contact Matt Waler about your next website or application.'
 const description = 'Get in touch with Matt Waler to start your next web or mobile application.'
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'ContactPage',
-  name: title,
-  description,
-  url: 'https://mattwaler.com/contact',
+const schema: PageSchema = {
+  type: 'ContactPage',
+  breadcrumbs: [{ name: 'Contact', url: `${SITE}/contact` }],
+  page: { about: personRef, mainEntity: personRef },
 }
 ---
 
-<Layout title={title} description={description}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<Layout title={title} description={description} schema={schema}>
   <Hero
     title="Let's get in touch."
     description="Thank you for taking the time to view my website. If you are interested in connecting, fill out the contact form below. I will get back to you as soon as possible."

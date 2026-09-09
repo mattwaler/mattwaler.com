@@ -5,14 +5,35 @@ import Footer from '../components/Footer.astro'
 import Debug from '../components/Debug.astro'
 import ArrowUp from '../icons/ArrowUp.svg'
 import '../styles/app.css'
+import {
+  SITE,
+  person,
+  website,
+  websiteRef,
+  breadcrumbList,
+  type SchemaNode,
+  type Breadcrumb,
+} from '../data/schema'
+
+export interface PageSchema {
+  /** Schema.org type(s) for this page's WebPage node. Defaults to `WebPage`. */
+  type?: string | string[]
+  /** Extra properties merged into the WebPage node (e.g. `mainEntity`, `about`, `datePublished`). */
+  page?: SchemaNode
+  /** Trail ending at the current page; `Home` is prepended automatically. */
+  breadcrumbs?: Breadcrumb[]
+  /** Additional nodes to include in the page's graph. Reference the page via `{ '@id': canonical }`. */
+  nodes?: SchemaNode[]
+}
 
 interface Props {
   title: string
   description?: string
   ogImage?: string
+  schema?: PageSchema
 }
 
-const { title, description = '', ogImage } = Astro.props
+const { title, description = '', ogImage, schema = {} } = Astro.props
 
 // With `build.format: 'file'`, Astro.url.pathname is `/contact.html` at build time
 // but `/contact` in the browser — normalize to the URL the site actually serves.
@@ -21,30 +42,46 @@ const canonical = new URL(
   Astro.site
 ).href.replace(/(.)\/$/, '$1')
 
-const personSchema = {
+const ogImageUrl = new URL(ogImage ?? '/og-image.png', Astro.site).href
+
+const breadcrumbs = schema.breadcrumbs?.length
+  ? [{ name: 'Home', url: SITE }, ...schema.breadcrumbs]
+  : undefined
+
+const breadcrumbId = `${canonical}#breadcrumb`
+
+const webPage: SchemaNode = {
+  '@type': schema.type ?? 'WebPage',
+  '@id': canonical,
+  url: canonical,
+  name: title,
+  description,
+  inLanguage: 'en-US',
+  isPartOf: websiteRef,
+  primaryImageOfPage: { '@type': 'ImageObject', url: ogImageUrl, width: 1800, height: 1200 },
+  ...(breadcrumbs && { breadcrumb: { '@id': breadcrumbId } }),
+  ...schema.page,
+}
+
+const graph = {
   '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Matt Waler',
-  url: 'https://mattwaler.com',
-  jobTitle: 'Web & iOS Developer',
-  address: {
-    '@type': 'PostalAddress',
-    addressRegion: 'OH',
-    addressCountry: 'US',
-  },
-  sameAs: [
-    'https://github.com/mattwaler',
-    'https://instagram.com/mattwaler',
-    'https://linkedin.com/in/mattwaler',
+  '@graph': [
+    person,
+    website,
+    webPage,
+    ...(breadcrumbs ? [{ '@id': breadcrumbId, ...breadcrumbList(breadcrumbs) }] : []),
+    ...(schema.nodes ?? []),
   ],
 }
 
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'mattwaler.com',
-  url: 'https://mattwaler.com',
-}
+// Article pages advertise themselves to Open Graph consumers as articles.
+const article = schema.page?.datePublished
+  ? {
+      published: String(schema.page.datePublished),
+      modified: String(schema.page.dateModified ?? schema.page.datePublished),
+      tags: (schema.page.keywords as string[] | undefined) ?? [],
+    }
+  : undefined
 ---
 
 <!DOCTYPE html>
@@ -70,8 +107,16 @@ const websiteSchema = {
     <meta property="og:title" content={title}>
     <meta property="og:description" content={description}>
     <meta property="og:url" content={canonical}>
-    <meta property="og:type" content="website">
-    <meta property="og:image" content={new URL(ogImage ?? '/og-image.png', Astro.site).href}>
+    <meta property="og:type" content={article ? 'article' : 'website'}>
+    {article && (
+      <>
+        <meta property="article:published_time" content={article.published}>
+        <meta property="article:modified_time" content={article.modified}>
+        <meta property="article:author" content={SITE}>
+        {article.tags.map(tag => <meta property="article:tag" content={tag}>)}
+      </>
+    )}
+    <meta property="og:image" content={ogImageUrl}>
     <meta property="og:image:width" content="1800">
     <meta property="og:image:height" content="1200">
     <meta property="og:locale" content="en_US">
@@ -84,8 +129,7 @@ const websiteSchema = {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://mattwaler.nyc3.cdn.digitaloceanspaces.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..900&display=swap" rel="stylesheet">
-    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
   </head>
   <body>
     <a

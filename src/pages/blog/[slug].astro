@@ -1,12 +1,14 @@
 ---
 import { getCollection, render } from "astro:content";
 import Markdown from "../../layouts/Markdown.astro";
+import type { PageSchema } from "../../layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
+import { blog, blogCrumb, blogRef, personRef, postId, postUrl } from "../../data/schema";
 
 export async function getStaticPaths() {
   const posts: CollectionEntry<'blog'>[] = await getCollection("blog") ;
   return posts.map((post) => ({
-    params: { slug: post.id.replace(/\.md$/, "") },
+    params: { slug: post.id },
     props: { post },
   }));
 }
@@ -14,21 +16,41 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await render(post);
 
-const slug = post.id.replace(/\.md$/, '')
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: post.data.title,
-  description: post.data.description,
-  datePublished: post.data.date.toISOString(),
-  dateModified: post.data.date.toISOString(),
-  url: `https://mattwaler.com/blog/${slug}`,
-  keywords: post.data.tags?.join(', '),
-  author: {
-    '@type': 'Person',
-    name: 'Matt Waler',
-    url: 'https://mattwaler.com',
+const url = postUrl(post)
+const published = post.data.date.toISOString()
+const modified = (post.data.updated ?? post.data.date).toISOString()
+const wordCount = post.body?.split(/\s+/).filter(Boolean).length
+
+const schema: PageSchema = {
+  type: 'WebPage',
+  breadcrumbs: [blogCrumb, { name: post.data.title, url }],
+  page: {
+    datePublished: published,
+    dateModified: modified,
+    keywords: post.data.tags,
+    mainEntity: { '@id': postId(post) },
   },
+  nodes: [
+    blog,
+    {
+      '@type': 'BlogPosting',
+      '@id': postId(post),
+      headline: post.data.title,
+      description: post.data.description,
+      url,
+      mainEntityOfPage: { '@id': url },
+      isPartOf: blogRef,
+      inLanguage: 'en-US',
+      datePublished: published,
+      dateModified: modified,
+      author: personRef,
+      publisher: personRef,
+      image: new URL('/og-image.png', Astro.site).href,
+      keywords: post.data.tags,
+      articleSection: post.data.tags?.[0],
+      wordCount,
+    },
+  ],
 }
 ---
 

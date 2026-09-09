@@ -5,6 +5,8 @@ import Waves from './Waves.astro'
 import ProjectCard from './ProjectCard.astro'
 import allProjects from '../data/projects.js'
 import { getAllTools, slugifyTool } from '../data/tools'
+import type { PageSchema } from '../layouts/Layout.astro'
+import { SITE, itemList, projectItem, projectsCrumb } from '../data/schema'
 
 interface Props {
   activeSlug?: string
@@ -41,27 +43,22 @@ const heroDescription = activeName
   ? `Every project below was built with love, care, and ${activeName}.`
   : 'I have built a lot of websites and mobile applications since I started back in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed.'
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'CollectionPage',
-  name: title,
-  description,
-  url: activeSlug ? `https://mattwaler.com/projects/tools/${activeSlug}` : 'https://mattwaler.com/projects',
-  mainEntity: {
-    '@type': 'ItemList',
-    itemListElement: projects.map((project, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: project.title,
-      description: project.description,
-      url: project.link,
-    })),
+const url = activeSlug ? `${SITE}/projects/tools/${activeSlug}` : `${SITE}/projects`
+
+const schema: PageSchema = {
+  type: 'CollectionPage',
+  breadcrumbs: activeName ? [projectsCrumb, { name: activeName, url }] : [projectsCrumb],
+  page: {
+    ...(activeName && {
+      about: { '@type': 'DefinedTerm', name: activeName, termCode: activeSlug },
+      keywords: [activeName],
+    }),
+    mainEntity: itemList(projects.map(projectItem)),
   },
 }
 ---
 
-<Layout title={title} description={description}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<Layout title={title} description={description} schema={schema}>
   <Hero
     title={heroTitle}
     description={heroDescription}

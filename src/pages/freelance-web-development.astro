@@ -9,6 +9,8 @@ import AstroIcon from '../icons/AstroIcon.svg'
 import Nextjs from '../icons/Nextjs.svg'
 import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.astro'
+import type { PageSchema } from '../layouts/Layout.astro'
+import { SITE, personRef } from '../data/schema'
 
 const tools = [
   { name: 'Laravel', Icon: Laravel },
@@ -40,34 +42,45 @@ const recentProjects = projects
 const title = 'Ohio-based Freelance Web Development by Matt Waler'
 const description = 'Fixed-price freelance web development based in Ohio. Specializing in CMS-based systems like Laravel, Statamic, and Craft CMS, or fully static sites built with Astro and Next.js.'
 
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Matt Waler Web Development',
-  description,
-  url: 'https://mattwaler.com/freelance-web-development',
-  areaServed: 'United States',
-  address: {
-    '@type': 'PostalAddress',
-    addressRegion: 'OH',
-    addressCountry: 'US',
+const url = `${SITE}/freelance-web-development`
+const serviceId = `${url}#service`
+
+// The page describes one Service offered by Matt, plus the pricing FAQ.
+const schema: PageSchema = {
+  type: ['WebPage', 'FAQPage'],
+  breadcrumbs: [{ name: 'Freelance Web Development', url }],
+  page: {
+    about: { '@id': serviceId },
+    mainEntity: pricingFaqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
   },
-  founder: {
-    '@type': 'Person',
-    name: 'Matt Waler',
-  },
-  priceRange: 'Fixed-price quotes',
-  knowsAbout: ['Laravel', 'Statamic', 'Craft CMS', 'Astro', 'Next.js'],
-  makesOffer: pricingFaqs.map(faq => ({
-    '@type': 'Offer',
-    name: faq.question,
-    description: faq.answer,
-  })),
+  nodes: [
+    {
+      '@type': 'Service',
+      '@id': serviceId,
+      name: 'Freelance Web Development',
+      serviceType: 'Web Development',
+      description,
+      url,
+      provider: personRef,
+      areaServed: { '@type': 'Country', name: 'United States' },
+      availableChannel: { '@type': 'ServiceChannel', serviceUrl: `${url}#contact` },
+      keywords: ['Laravel', 'Statamic', 'Craft CMS', 'Astro', 'Next.js'],
+      offers: {
+        '@type': 'Offer',
+        name: 'Fixed-price quote',
+        description: 'Every project is quoted at a fixed price based on its goals and scope before any work begins.',
+        priceCurrency: 'USD',
+      },
+    },
+  ],
 }
 ---
 
-<Layout title={title} description={description}>
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<Layout title={title} description={description} schema={schema}>
 
   <!-- Hero -->
   <Hero
