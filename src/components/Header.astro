@@ -2,7 +2,7 @@
 import Logo from '../icons/Logo.svg'
 import Menu from '../icons/Menu.svg'
 import Close from '../icons/Close.svg'
-import navigation from '../data/navigation.js'
+import { nav1, nav2 } from '../data/navigation.js'
 ---
 
 <header
@@ -24,7 +24,11 @@ import navigation from '../data/navigation.js'
       </div>
       <!-- Desktop Links -->
       <div class="justify-center items-center gap-8 hidden lg:flex">
-        {navigation.map(item => (
+        {nav1.map(item => (
+          <a class="font-medium opacity-90 whitespace-nowrap" href={item.route}>{item.name}</a>
+        ))}
+        <div role="presentation" class="w-8"></div>
+        {nav2.map(item => (
           <a class="font-medium opacity-90 whitespace-nowrap" href={item.route}>{item.name}</a>
         ))}
       </div>
@@ -48,14 +52,14 @@ import navigation from '../data/navigation.js'
     </div>
     <!-- Mobile Links -->
     <div
-      class="bg-white shadow-xl border-gray-100 overflow-clip w-56 flex flex-col divide-y divide-gray-100 rounded-2xl text-gray-900 lg:hidden"
+      class="bg-white border border-gray-100 shadow-lg w-56 overflow-clip flex flex-col divide-y divide-gray-100 rounded-2xl text-gray-900 lg:hidden"
       x-anchor.bottom-end.offset.16="$refs.menuButton"
       x-cloak
       x-transition.duration.300ms
       x-show="showMobile"
     >
-      {navigation.map(item => (
-        <a x-on:click="showMobile = false" class="font-medium px-4 py-3 hover:bg-gray-100 transition-colors" href={item.route}>{item.name}</a>
+      {[...nav1, ...nav2].map(item => (
+        <a x-on:click="showMobile = false" class="font-medium px-5 py-3.5 hover:bg-gray-100 transition-colors" href={item.route}>{item.name}</a>
       ))}
     </div>
   </div>
