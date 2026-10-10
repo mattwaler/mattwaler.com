@@ -7,7 +7,7 @@ tags:
   - Life
 ---
 
-I was running around eight background apps just to make macOS feel the way I wanted. Each one did its job well, but they also gave me eight things to update and eight things to reinstall on the next clean install or new device purchase.
+I was running tons of background apps just to make macOS feel the way I wanted. Each one did its job well, but they also gave me many things to keep up-to-date and lots to reinstall on the next machine wipe or new device purchase.
 
 ## The old setup
 
@@ -19,7 +19,7 @@ I was running around eight background apps just to make macOS feel the way I wan
 * [LinearMouse](https://linearmouse.app) to tune mouse and trackpad behavior like acceleration and scroll direction
 * [OnyX](https://www.titanium-software.fr/en/onyx.html) to clear caches and run maintenance tasks
 
-Seven apps, and I'm sure I'm forgetting some strays hiding in my Login Items.
+Seven apps I can think of, and I'm sure I'm forgetting some strays hiding in my Login Items.
 
 ## Enter Vorssaint
 
@@ -27,7 +27,7 @@ Then I found [Vorssaint](https://github.com/vorssaint/vorssaint-utils), a free, 
 
 Pairing Vorsstaint with Spotlight, I shrank my entire background app library down to one third-party installation and a built-in one. I get fewer permission prompts, fewer update popups, and a lot fewer icons in my menu bar!
 
-If you read my post on [why dumb doesn't break](/blog/dumb-doesnt-break), you can guess why this appeals to me. Every app I run is another thing that can crash, update at a bad time, or get abandoned by its developer. Eight of them multiplies the odds.
+If you read my post on [why dumb doesn't break](/blog/dumb-doesnt-break), you can guess why this appeals to me. Every app I run is another thing that can crash, update at a bad time, or get abandoned by its developer.
 
 ## Where Spotlight falls short
 
@@ -38,6 +38,6 @@ Spotlight has improved a lot, but it has a long way to go before it replaces Ray
 
 ## Will I switch back to Raycast?
 
-I might. Those two commands are about the only things I miss, and I'm close to reinstalling Raycast for them alone. That would bring my stack to three apps, which sure as hell still beats eight.
+I might. Those two commands are about the only things I miss, and I'm close to reinstalling Raycast for them alone. That would bring my stack to three apps, which sure as hell still beats seven.
 
 If you made it this far, thanks. And, as always, stay minimal.
