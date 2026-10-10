@@ -9,7 +9,7 @@ tags:
 Today I will showcase how you can create a lazy blur up image effect on your images in Astro!
 
 I am using this component in one of my most recent projects:
-<a target="_blank" href="https://kingscourtlandscaping.com/">Kings Court Landscaping</a>
+[Kings Court Landscaping](https://kingscourtlandscaping.com/)
 
 I will be using Tailwind CSS and Alpine.js for styling and scripting, but this can easily be recreated in vanilla JS/CSS if that's your preference!
 

@@ -8,6 +8,8 @@ tags:
 
 In every web project I've ever done, I always end up creating a set of utility classes for each heading type. Things like `h1`, `h2`, and so on.
 
+## The Setup
+
 For example, here's an excerpt of my old typography styles on this site, written in Tailwind of course:
 
 ```css
@@ -26,26 +28,23 @@ For example, here's an excerpt of my old typography styles on this site, written
 /* and so on... */
 ```
 
+## The Problem
+
 While this works great for maintaining consistency and adherence to a typography scale, there's one crucial area where this approach breaks down: the dreaded 2-column. You know the one, where you have an image on one side, and your content on the other:
 
-<img
-  src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-1.webp"
-  loading="lazy"
-/>
+![Two-column layout where the heading in the second section is annotated "Too big" next to a "Just right" heading above it](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-1.webp)
+
+## The Tempting Fix
 
 In a UI like this, you may be tempted to use your `h2` style, but I can guarantee it will look way large in that context! Now, you may be tempted to utilize the next step down in your type scale, like so:
 
-<img
-  src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-2.webp"
-  loading="lazy"
-/>
+![The same two-column layout with the top heading labeled H2 and the second section heading labeled H3](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-2.webp)
 
 Unfortunately, that introduces another problem. Now, when you inevitably stack on tablet resolutions, your font is too small, and inconsistent with the above block:
 
-<img
-  src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-3.webp"
-  loading="lazy"
-/>
+![The layout stacked into one column, annotated: the lower heading feels too small and inconsistent with the H2 above it](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-3.webp)
+
+## The Solution
 
 With the advent and adoption of container queries and the `:has` selector, this phenomenon can finally be solved! Instead of utilizing breakpoint-based typography scales, the solution is to use container-based scales! Peep the code:
 
@@ -78,18 +77,14 @@ With the advent and adoption of container queries and the `:has` selector, this 
 
 Now, your typography styles will respond not to the entire viewport, but their parent container size! So when using the dreaded 2-column UI element, your typography will like you would expect!
 
+## The Result
+
 Here's how your exact same `h2` class would behave on desktop:
 
-<img
-  src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-4.webp"
-  loading="lazy"
-/>
+![The two-column layout with both headings using H2, annotated: sizing is determined by the container](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-4.webp)
 
 And here's how it would behave on tablet down to mobile:
 
-<img
-  src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-5.webp"
-  loading="lazy"
-/>
+![The stacked tablet and mobile layout, annotated: the two headings remain consistent when stacked](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-5.webp)
 
 Give it a whirl in your next project and let me know how it works out for you!
