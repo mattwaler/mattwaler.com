@@ -41,3 +41,5 @@ Spotlight has improved a lot, but it has a long way to go before it replaces Ray
 I might. Those two commands are about the only things I miss, and I'm close to reinstalling Raycast for them alone. That would bring my stack to three apps, which sure as hell still beats seven.
 
 If you made it this far, thanks. And, as always, stay minimal.
+
+**EDIT/UPDATE:** I reinstalled Raycast as my main launcher. Sue me.
