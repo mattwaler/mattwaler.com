@@ -15,7 +15,7 @@ export default [
     title: "Repeaters",
     description:
       "Repeaters is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.",
-    link: "https://repeaters.mattwaler.com",
+    link: "/repeaters",
     tools: ["Swift"],
     category: "ProductivityApplication",
   },

@@ -1,0 +1,154 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Waves from '../components/Waves.astro'
+import Privacy from '../icons/Privacy.svg'
+import type { PageSchema } from '../layouts/Layout.astro'
+import { SITE, personRef } from '../data/schema'
+
+const cdn = (file: string) => `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/repeaters/${file}`
+
+const download = 'https://apps.apple.com/us/app/agone-recurring-tasks-tracker/id6478084115?platform=iphone'
+
+const features = [
+  {
+    heading: 'Create items with custom intervals.',
+    subheading: "Add an item, set the interval for completion, and you'll get a notification when it's time to do it.",
+    image: cdn('item.webp'),
+  },
+  {
+    heading: 'Create groups to keep items organized.',
+    subheading: 'Break up your tasks into groups to keep things clean. Choose a custom color and icon and make it your own.',
+    image: cdn('groups.webp'),
+  },
+  {
+    heading: 'Perform quick actions with a single tap.',
+    subheading: 'Quickly postpone your items or mark a missed completion without leaving the list view.',
+    image: cdn('quick.webp'),
+  },
+  {
+    heading: 'View your entire completion history.',
+    subheading: 'Whether you want to see the history of a single item, or all items chronologically, Repeaters has you covered.',
+    image: cdn('history.webp'),
+  },
+  {
+    heading: 'Stay synced across all your devices.',
+    subheading: 'Repeaters utilizes your own iCloud storage so that items, groups, and completions stay perfectly in sync.',
+    image: cdn('sync.webp'),
+  },
+  {
+    heading: 'Stunning across device appearance settings.',
+    subheading: 'Repeaters looks incredible regardless of your theme preferences.',
+    image: cdn('dark.webp'),
+  },
+]
+
+const title = 'Repeaters is a dedicated app for repeating tasks.'
+const description = 'Repeaters is the iOS app that keeps track for you. Set it once, and get reminded exactly when you need to do it next.'
+
+const url = `${SITE}/repeaters`
+const appId = `${url}#app`
+
+// The page describes the Repeaters iOS app.
+const schema: PageSchema = {
+  breadcrumbs: [{ name: 'Repeaters', url }],
+  page: { about: { '@id': appId }, mainEntity: { '@id': appId } },
+  nodes: [
+    {
+      '@type': 'MobileApplication',
+      '@id': appId,
+      name: 'Repeaters',
+      description,
+      url,
+      downloadUrl: download,
+      operatingSystem: 'iOS',
+      applicationCategory: 'ProductivityApplication',
+      author: personRef,
+    },
+  ],
+}
+---
+
+<Layout title={title} description={description} schema={schema}>
+
+  <!-- Hero -->
+  <Hero
+    title="A dedicated home for life's repeating tasks."
+    description="Move your endlessly repeating tasks into an application built from the ground up to handle them."
+    cta={{ label: 'Download on the App Store', href: download }}
+    image={{ src: cdn('dark.webp'), alt: 'Repeaters app in light and dark mode', width: 700, height: 900 }}
+  />
+
+  <!-- Intro -->
+  <Waves />
+  <section class="relative z-2 section bg-linear-to-b from-blue-950 to-blue-600">
+    <div class="container md:text-center text-balance">
+      <h2 class="h2 text-white">Stay on top of what never stops.</h2>
+      <h3 class="h5 text-blue-200 mt-3">No more mental checklists, no more forgotten tasks.</h3>
+    </div>
+    <div class="container mt-12 space-y-6 text-lg text-blue-200 text-balance md:text-center md:max-w-3xl mx-auto">
+      <p>Life is full of repeating chores, things like changing the furnace filter, giving the dog a bath, or watering the plants. These things don't happen every day, never end, and need to get done.</p>
+      <p>Repeaters is the iOS app that keeps track for you. Set it once, and get reminded exactly when you need to do it next.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <Waves rotate foreground="#155dfc" />
+  <section class="bg-white section">
+    <div class="container md:text-center text-balance">
+      <h2 class="h2">Built for tasks that repeat.</h2>
+      <h3 class="h5 mt-3 text-gray-600">
+        Everything you need, and nothing you don't.
+      </h3>
+    </div>
+    <div class="container mt-12 md:mt-24 space-y-16 md:space-y-24 max-w-5xl">
+      {features.map((feature, index) => (
+        <div class:list={[
+          'flex flex-col-reverse items-center gap-8 md:gap-16',
+          index % 2 ? 'md:flex-row-reverse' : 'md:flex-row',
+        ]}>
+          <div class="w-full md:w-1/2 space-y-3 text-balance">
+            <h4 class="h3">{feature.heading}</h4>
+            <p class="text-lg text-gray-600">{feature.subheading}</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img
+              src={feature.image}
+              alt=""
+              width="700"
+              height="900"
+              loading="lazy"
+              class="w-2/3 md:w-full h-auto mx-auto"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <Waves foreground="#f3f4f6" />
+  <section class="section bg-linear-to-b from-gray-100 to-white">
+    <div class="container md:text-center text-balance md:max-w-3xl">
+      <Privacy class="size-20 md:mx-auto text-blue-600" />
+      <h2 class="h2 mt-6">Privacy-focused by nature.</h2>
+      <p class="h6 mt-6 text-gray-600">
+        Since Repeaters stores data in your own iCloud storage, you own your data, not me. I do not collect, nor do I even have the ability to access, your personal data.
+      </p>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <Waves foreground="#162456" background="white" />
+  <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
+    <div class="container md:text-center text-balance text-white md:max-w-3xl">
+      <h2 class="h2">Take control of your recurring tasks.</h2>
+      <h3 class="h5 mt-3 opacity-80">
+        Download Repeaters now and start taking control of the repeating tasks you have in life.
+      </h3>
+      <a href={download} class="button inline-block mt-12">Download on the App Store</a>
+    </div>
+  </section>
+  <Waves rotate foreground="#155dfc" />
+
+</Layout>

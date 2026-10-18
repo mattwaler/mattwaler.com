@@ -33,7 +33,7 @@ If you read my post on [why dumb doesn't break](/blog/dumb-doesnt-break), you ca
 
 Spotlight has improved a lot, but it has a long way to go before it replaces Raycast. I think it's absolutely asinine that had to create my own shortcuts just to put my Mac to sleep or shut it down. In Raycast, I typed a few letters and hit enter. In Spotlight, I have to build the commands myself before I could use them:
 
-![The macOS Shortcuts app showing custom Shut Down and Sleep shortcuts](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/shortcuts.png)
+![The macOS Shortcuts app showing custom Shut Down and Sleep shortcuts](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/shortcuts.webp)
 
 
 ## Will I switch back to Raycast?

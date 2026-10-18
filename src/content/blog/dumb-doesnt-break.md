@@ -29,7 +29,7 @@ Did I want to love my smart home gadgets? Absolutely. I'm a developer for Christ
 
 ## The $5 board that beat every app
 
-For years, my instinct for every new problem in life was to find the perfect app for it. Todo lists, grocery lists, habits, budgeting. Hell, I even [made my own app](https://repeaters.mattwaler.com) (which I still love, by the way).
+For years, my instinct for every new problem in life was to find the perfect app for it. Todo lists, grocery lists, habits, budgeting. Hell, I even [made my own app](/repeaters) (which I still love, by the way).
 
 I bounced between these apps, each one promising to be the last one I'd ever need. Each one had its own account credentials, its own pricing model, etc. I wasn't aware at the time, but I was spending more time organizing my tasks than actually freaking doing them.
 

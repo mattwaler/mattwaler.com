@@ -56,7 +56,7 @@ Every todo app I tried treated these the same as one-off tasks that just so happ
 
 That sorta works okay, until you miss one. Then, the whole schedule gets misaligned, overdue badges start to pile up, and you feeling overwhelmend by the entire app and the system breaks down completely.
 
-I built [Repeaters](https://repeaters.mattwaler.com) to handle this exact problem. It seperates out these endless tasks into their own app so that your true checklists can actually be completed instead of being endlessly refreshed. All this app does is track how long it's been since I last did something, sends a push notification after a set interval when it is time to complete it again.
+I built [Repeaters](/repeaters) to handle this exact problem. It seperates out these endless tasks into their own app so that your true checklists can actually be completed instead of being endlessly refreshed. All this app does is track how long it's been since I last did something, sends a push notification after a set interval when it is time to complete it again.
 
 ![Screenshots of my Repeaters app setup](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/repeaters-mock.webp)
 

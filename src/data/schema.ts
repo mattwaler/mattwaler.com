@@ -122,7 +122,7 @@ export const projectItem = (project: Project): SchemaNode => {
     '@type': isApp ? 'MobileApplication' : 'WebSite',
     name: project.title,
     description: project.description,
-    url: project.link,
+    url: new URL(project.link, SITE).href,
     image: projectImageUrl(project),
     keywords: project.tools,
     ...(isApp && { operatingSystem: 'iOS' }),

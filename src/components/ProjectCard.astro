@@ -12,12 +12,13 @@ interface Props {
 }
 
 const { project } = Astro.props
+const external = !project.link.startsWith('/')
 ---
 
 <a
   href={project.link}
-  target="_blank"
-  rel="noopener noreferrer"
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
   class="bg-white hover:rotate-4 transition-transform rounded-xl shadow-xl overflow-clip w-full md:flex md:items-center xl:block group"
 >
   <img
