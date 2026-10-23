@@ -14,7 +14,7 @@ export default [
   {
     title: "Repeaters",
     description:
-      "Repeaters is a recurring task tracker. You can create repeating items, custom groups, and get completion history and push notifications when things are due.",
+      "Repeaters is a recurring task tracker. You can create repeating items, custom groups, and unscheduled items, get completion history and push notifications when things are due, and back everything up to CSV.",
     link: "/repeaters",
     tools: ["Swift"],
     category: "ProductivityApplication",
@@ -53,7 +53,7 @@ export default [
     title: "Intervals",
     description:
       "A no-fuss fitness timer that allows a user to customize timer duration, repeats, and rest time.",
-    link: "https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone",
+    link: "/intervals",
     tools: ["Swift"],
     category: "HealthApplication",
   },

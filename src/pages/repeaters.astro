@@ -18,14 +18,21 @@ const features = [
     alt: 'Repeaters item detail screen with a custom repeat interval',
   },
   {
+    heading: 'Track the things you do whenever.',
+    subheading: "Turn off notifications for tasks without a schedule, like washing the car. They get their own list and show how long it's been since you last did them.",
+    image: cdn('unscheduled.webp'),
+    alt: 'Repeaters unscheduled items list showing time since last completion',
+    isNew: true,
+  },
+  {
     heading: 'Create groups to keep items organized.',
-    subheading: 'Break up your tasks into groups to keep things clean. Choose a custom color and icon and make it your own.',
+    subheading: 'Break up your tasks into groups to keep things clean. Choose from dozens of bright colors and icons to make each one your own.',
     image: cdn('groups.webp'),
     alt: 'Repeaters groups list with custom colors and icons',
   },
   {
     heading: 'Perform quick actions with a single tap.',
-    subheading: 'Quickly postpone your items or mark a missed completion without leaving the list view.',
+    subheading: 'Postpone an item or log a missed completion right from the list, or from the item itself.',
     image: cdn('quick.webp'),
     alt: 'Quick actions to postpone or mark a missed completion in Repeaters',
   },
@@ -34,6 +41,13 @@ const features = [
     subheading: 'Whether you want to see the history of a single item, or all items chronologically, Repeaters has you covered.',
     image: cdn('history.webp'),
     alt: 'Repeaters completion history timeline',
+  },
+  {
+    heading: 'Back up your data any time.',
+    subheading: 'Export every group, item, and completion to a CSV file from Settings, and import it again whenever you need to.',
+    image: cdn('backup.webp'),
+    alt: 'Repeaters settings with CSV export and import options',
+    isNew: true,
   },
   {
     heading: 'Stay synced across all your devices.',
@@ -50,7 +64,7 @@ const features = [
 ]
 
 const title = 'Repeaters is a free iPhone app for tracking recurring tasks.'
-const description = "Repeaters is a free iOS app for recurring tasks and chores. Set an interval once, get reminded when it's due, and see your full completion history."
+const description = "Repeaters is a free iOS app for recurring tasks and chores. Set an interval once, get reminded when it's due, track the things you do whenever, and see your full completion history."
 
 const url = `${SITE}/repeaters`
 const appId = `${url}#app`
@@ -126,6 +140,9 @@ const schema: PageSchema = {
           index % 2 ? 'md:flex-row-reverse' : 'md:flex-row',
         ]}>
           <div class="w-full md:w-1/2 space-y-3 text-balance">
+            {feature.isNew && (
+              <span class="inline-block rounded-full bg-blue-100 px-3 py-1 text-sm font-semibold text-blue-700">New</span>
+            )}
             <h4 class="h3">{feature.heading}</h4>
             <p class="text-lg text-gray-600">{feature.subheading}</p>
           </div>

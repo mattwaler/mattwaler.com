@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Waves from '../components/Waves.astro'
+import Privacy from '../icons/Privacy.svg'
+import type { PageSchema } from '../layouts/Layout.astro'
+import { SITE, personRef } from '../data/schema'
+
+const cdn = (file: string) => `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/intervals/${file}`
+
+const download = 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone'
+
+const features = [
+  {
+    heading: 'Set your work time in seconds.',
+    subheading: 'Slide or step your countdown anywhere from 5 seconds to 5 minutes. No menus, no presets to dig through.',
+    image: cdn('countdown.webp'),
+    alt: 'Intervals settings screen with the countdown slider',
+  },
+  {
+    heading: 'Build in the rest you need.',
+    subheading: 'Choose a rest period between every round, and Intervals switches over for you the moment work time ends.',
+    image: cdn('rest.webp'),
+    alt: 'Intervals timer during a rest period',
+  },
+  {
+    heading: 'Repeat as many times as you like.',
+    subheading: 'Pick up to 10 rounds, or have the timer repeat indefinitely until you decide you are done.',
+    image: cdn('repeats.webp'),
+    alt: 'Intervals repeat settings with the repeat indefinitely toggle',
+  },
+  {
+    heading: 'See and hear every round.',
+    subheading: 'A wave fills the timer as each round counts down, with a sound at the start and end so you never need to look at your phone.',
+    image: cdn('timer.webp'),
+    alt: 'Intervals countdown timer filling with a wave animation',
+  },
+  {
+    heading: 'Picks up right where you left off.',
+    subheading: 'Your countdown, rest, and repeat settings are remembered, so your next workout is a single tap away.',
+    image: cdn('settings.webp'),
+    alt: 'Intervals settings for countdown, rest, and repeats',
+  },
+  {
+    heading: 'At home on any screen.',
+    subheading: 'Intervals works in portrait or landscape on both iPhone and iPad, so prop it up wherever you train.',
+    image: cdn('landscape.webp'),
+    alt: 'Intervals timer in landscape on iPhone and iPad',
+  },
+]
+
+const title = 'Intervals is a free, no-fuss fitness timer for iPhone.'
+const description = 'Intervals is a free iOS interval timer. Set your work time, rest time, and number of rounds once, then hit start and train.'
+
+const url = `${SITE}/intervals`
+const appId = `${url}#app`
+
+// The page describes the Intervals iOS app.
+const schema: PageSchema = {
+  breadcrumbs: [{ name: 'Intervals', url }],
+  page: { about: { '@id': appId }, mainEntity: { '@id': appId } },
+  nodes: [
+    {
+      '@type': 'MobileApplication',
+      '@id': appId,
+      name: 'Intervals',
+      alternateName: 'Intervals: Fitness Timer App',
+      description,
+      url,
+      downloadUrl: download,
+      installUrl: download,
+      sameAs: [download],
+      image: cdn('hero.webp'),
+      screenshot: features.map(feature => feature.image),
+      operatingSystem: 'iOS',
+      applicationCategory: 'HealthApplication',
+      author: personRef,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    },
+  ],
+}
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogImage="/og-intervals.png"
+  ogImageAlt="The Intervals logo below a band of waves on a blue gradient background."
+  schema={schema}
+>
+
+  <!-- Hero -->
+  <Hero
+    title="A workout timer that stays out of your way."
+    description="Set your work, rest, and rounds once. Hit start, put your phone down, and let Intervals keep time."
+    cta={{ label: 'Download on the App Store', href: download }}
+    image={{ src: cdn('hero.webp'), alt: 'Intervals timer app on iPhone', width: 700, height: 900 }}
+  />
+
+  <!-- Intro -->
+  <Waves />
+  <section class="relative z-2 section bg-linear-to-b from-blue-950 to-blue-600">
+    <div class="container md:text-center text-balance">
+      <h2 class="h2 text-white">Less tapping, more training.</h2>
+      <h3 class="h5 text-blue-200 mt-3">No accounts, no subscriptions, no clutter.</h3>
+    </div>
+    <div class="container mt-12 space-y-6 text-lg text-blue-200 text-balance md:text-center md:max-w-3xl mx-auto">
+      <p>Most fitness timers bury the one thing you need under workout plans, logins, and upsells. When you are mid-set, you just want to know how long until the next break.</p>
+      <p>Intervals does exactly that. Three settings, one start button, and a clear signal when it's time to work and time to rest.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <Waves rotate foreground="#155dfc" />
+  <section class="bg-white section">
+    <div class="container md:text-center text-balance">
+      <h2 class="h2">Built for work and rest.</h2>
+      <h3 class="h5 mt-3 text-gray-600">
+        Everything you need, and nothing you don't.
+      </h3>
+    </div>
+    <div class="container mt-12 md:mt-24 space-y-16 md:space-y-24 max-w-5xl">
+      {features.map((feature, index) => (
+        <div class:list={[
+          'flex flex-col-reverse items-center gap-8 md:gap-16',
+          index % 2 ? 'md:flex-row-reverse' : 'md:flex-row',
+        ]}>
+          <div class="w-full md:w-1/2 space-y-3 text-balance">
+            <h4 class="h3">{feature.heading}</h4>
+            <p class="text-lg text-gray-600">{feature.subheading}</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img
+              src={feature.image}
+              alt={feature.alt}
+              width="700"
+              height="900"
+              loading="lazy"
+              class="w-2/3 md:w-full h-auto mx-auto"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <Waves foreground="#f3f4f6" />
+  <section class="section bg-linear-to-b from-gray-100 to-white">
+    <div class="container md:text-center text-balance md:max-w-3xl">
+      <Privacy class="size-20 md:mx-auto text-blue-600" />
+      <h2 class="h2 mt-6">Privacy-focused by nature.</h2>
+      <p class="h6 mt-6 text-gray-600">
+        Intervals keeps your settings on your device and nowhere else. There are no accounts and no tracking, and I do not collect, nor do I even have the ability to access, any of your data.
+      </p>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <Waves foreground="#162456" background="white" />
+  <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
+    <div class="container md:text-center text-balance text-white md:max-w-3xl">
+      <h2 class="h2">Your next workout starts with one tap.</h2>
+      <h3 class="h5 mt-3 opacity-80">
+        Download Intervals for free and spend less time setting up and more time training.
+      </h3>
+      <a href={download} class="button inline-block mt-12">Download on the App Store</a>
+    </div>
+  </section>
+  <Waves rotate foreground="#155dfc" />
+
+</Layout>
