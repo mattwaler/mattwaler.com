@@ -27,8 +27,3 @@
 @utility overlap {
   @apply grid grid-cols-1 *:col-start-1 *:row-start-1;
 }
-
-@utility scrollbar-none {
-  scrollbar-width: none;
-  &::-webkit-scrollbar { display: none; }
-}

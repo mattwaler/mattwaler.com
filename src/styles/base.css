@@ -14,8 +14,4 @@
   body {
     @apply overflow-x-clip;
   }
-
-  [x-cloak] {
-    display: none !important;
-  }
 }

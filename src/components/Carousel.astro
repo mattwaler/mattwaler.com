@@ -15,71 +15,99 @@ const trackId = `carousel-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
   aria-roledescription="carousel"
   aria-label={label}
   x-data="{
-    atStart: true,
-    atEnd: false,
-    update() {
-      const track = $refs.track
-      this.atStart = track.scrollLeft <= 1
-      this.atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1
-      // Keep keyboard focus when the focused arrow is disabled at either end
-      if (this.atStart && document.activeElement === $refs.prev && !this.atEnd) $refs.next.focus()
-      if (this.atEnd && document.activeElement === $refs.next && !this.atStart) $refs.prev.focus()
-    },
-    go(direction) {
-      const track = $refs.track
-      const step = track.firstElementChild.offsetWidth + parseFloat(getComputedStyle(track).columnGap)
-      const smooth = !matchMedia('(prefers-reduced-motion: reduce)').matches
-      track.scrollBy({ left: direction * step, behavior: smooth ? 'smooth' : 'auto' })
+    canPrev: false,
+    canNext: false,
+    snaps: 0,
+    selected: 0,
+    init() {
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches
+      // Kept out of Alpine's reactive data so Embla's internals aren't proxied
+      const embla = EmblaCarousel($refs.viewport, {
+        // Snap cards to the edge of the shadow padding, not the viewport edge
+        align: () => parseFloat(getComputedStyle($refs.track).paddingLeft),
+      })
+      const sync = () => {
+        this.canPrev = embla.canScrollPrev()
+        this.canNext = embla.canScrollNext()
+        this.snaps = embla.scrollSnapList().length
+        this.selected = embla.selectedScrollSnap()
+        // Keep keyboard focus when the focused arrow is disabled at either end
+        if (!this.canPrev && document.activeElement === $refs.prev && this.canNext) $refs.next.focus()
+        if (!this.canNext && document.activeElement === $refs.next && this.canPrev) $refs.prev.focus()
+      }
+      embla.on('select', sync).on('reInit', sync)
+      sync()
+      this.go = direction => direction < 0 ? embla.scrollPrev(reduceMotion) : embla.scrollNext(reduceMotion)
+      this.goTo = index => embla.scrollTo(index, reduceMotion)
+      this.destroy = () => embla.destroy()
     },
   }"
-  x-init="update()"
-  x-on:resize.window.debounce.100ms="update()"
 >
-  <!-- Inset by the arrow (32px, 44px from md) plus an 8px gap so the arrows never overlap the cards -->
-  <div class="relative px-10 md:px-13">
-    <!-- Arrows sit beside the cards, halfway up, and come first in tab order -->
-    {[
-      { direction: -1, ref: 'prev', label: 'Previous', disabled: 'atStart', side: 'left-0', rotate: '-rotate-90' },
-      { direction: 1, ref: 'next', label: 'Next', disabled: 'atEnd', side: 'right-0', rotate: 'rotate-90' },
-    ].map(button => (
-      <button
-        type="button"
-        x-ref={button.ref}
-        aria-label={button.label}
-        aria-controls={trackId}
-        x-on:click={`go(${button.direction})`}
-        x-bind:disabled={button.disabled}
-        x-show="!(atStart && atEnd)"
-        x-cloak
-        class:list={[
-          // Matches the back to top button
-          'absolute top-1/2 -translate-y-1/2 z-10 p-2 md:p-3 rounded-full bg-black text-white shadow-lg',
-          'transition-[background-color,opacity] cursor-pointer enabled:hover:bg-gray-800',
-          'disabled:opacity-50 disabled:cursor-not-allowed',
-          'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
-          button.side,
-        ]}
-      >
-        <ArrowUp class:list={['size-4 md:size-5', button.rotate]} aria-hidden="true" />
-      </button>
-    ))}
-    <!-- Padding gives card shadows and hover tilt room inside the scroll area -->
+  <!-- Embla viewport; it bleeds into the padding so card shadows and edges fade instead of clipping -->
+  <div
+    x-ref="viewport"
+    class="-mx-8 -my-10 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_2rem,black_calc(100%-2rem),transparent)]"
+  >
     <div
       id={trackId}
       x-ref="track"
-      x-on:scroll.debounce.50ms="update()"
       class:list={[
-        'flex gap-12 overflow-x-auto snap-x snap-mandatory scrollbar-none fade-x fade-size-x-[2rem]',
-        '-mx-8 px-8 scroll-px-8 -my-10 py-10',
-        // Cards fill the view exactly, so every snap point shows whole cards and the
-        // fade only touches the edge padding as cards slide past
-        '*:shrink-0 *:snap-start *:w-full md:*:w-[calc((100%-3rem)/2)]',
-        // Cards tilt on hover elsewhere, but not while they sit in a scrolling row
-        '*:rotate-none!',
+        'flex gap-12 px-8 py-10 touch-pan-y touch-pinch-zoom',
+        // Embla reads the end gap from the last slide's margin, not the container padding
+        '*:last:mr-8',
+        // Cards fill the view exactly, so every snap shows whole cards
+        '*:shrink-0 *:w-full md:*:w-[calc((100%-3rem)/2)]',
         cols === 3 && 'xl:*:w-[calc((100%-6rem)/3)]',
+        // Cards tilt on hover elsewhere, but not while they sit in a carousel
+        '*:rotate-none!',
       ]}
     >
       <slot />
+    </div>
+  </div>
+
+  <!-- Controls: arrows on the left, dots on the right; hidden when every card fits -->
+  <div class="flex items-center justify-between gap-6 mt-8" x-show="snaps > 1" x-cloak>
+    <div class="flex gap-3 shrink-0">
+      {[
+        { direction: -1, ref: 'prev', label: 'Previous', disabled: '!canPrev', rotate: '-rotate-90' },
+        { direction: 1, ref: 'next', label: 'Next', disabled: '!canNext', rotate: 'rotate-90' },
+      ].map(button => (
+        <button
+          type="button"
+          x-ref={button.ref}
+          aria-label={button.label}
+          aria-controls={trackId}
+          x-on:click={`go(${button.direction})`}
+          x-bind:disabled={button.disabled}
+          class:list={[
+            // Matches the back to top button
+            'p-3 rounded-full bg-black text-white shadow-lg',
+            'transition-[background-color,opacity] cursor-pointer enabled:hover:bg-gray-800',
+            'disabled:opacity-50 disabled:cursor-not-allowed',
+            'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
+          ]}
+        >
+          <ArrowUp class:list={['size-5', button.rotate]} aria-hidden="true" />
+        </button>
+      ))}
+    </div>
+    <div class="flex flex-wrap items-center justify-end">
+      <template x-for="index in snaps" x-bind:key="index">
+        <button
+          type="button"
+          class="p-1.5 rounded-full cursor-pointer group/dot focus-visible:outline-3 focus-visible:outline-blue-500"
+          aria-controls={trackId}
+          x-bind:aria-label="`Go to slide ${index}`"
+          x-bind:aria-current="index - 1 === selected ? 'true' : null"
+          x-on:click="goTo(index - 1)"
+        >
+          <span
+            class="block h-2.5 rounded-full bg-black transition-all duration-300"
+            x-bind:class="index - 1 === selected ? 'w-6' : 'w-2.5 opacity-25 group-hover/dot:opacity-50'"
+          ></span>
+        </button>
+      </template>
     </div>
   </div>
 </div>
