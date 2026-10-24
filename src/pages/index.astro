@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import SectionHeading from '../components/SectionHeading.astro'
 import Tailwind from '../icons/Tailwind.svg'
 import Alpine from '../icons/Alpine.svg'
 import AstroIcon from '../icons/AstroIcon.svg'
@@ -14,6 +15,7 @@ import Laravel from '../icons/Laravel.svg'
 import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.astro'
 import BlogCard from '../components/BlogCard.astro'
+import Carousel from '../components/Carousel.astro'
 import type { CollectionEntry } from 'astro:content';
 import type { PageSchema } from '../layouts/Layout.astro'
 import { personRef } from '../data/schema'
@@ -46,9 +48,9 @@ const tools = [
 const allPosts: CollectionEntry<'blog'>[] = await getCollection('blog')
 const recentPosts = allPosts
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3)
+  .slice(0, 6)
 
-const recentProjects = projects.slice(0, 3)
+const recentProjects = projects.slice(0, 6)
 
 // The home page is Matt's profile, so the Person is its main entity.
 const schema: PageSchema = {
@@ -78,10 +80,7 @@ const schema: PageSchema = {
   <Waves />
   <section class="relative z-2 bg-white section bg-linear-to-b from-blue-950 to-blue-600">
     <div>
-      <div class="container md:text-center text-balance">
-        <h2 class="h2 text-white">What does Matt Waler do?</h2>
-        <h3 class="h5 text-blue-200 mt-3">Oh, you want to talk shop? Let's get right to it.</h3>
-      </div>
+      <SectionHeading title="What does Matt Waler do?" subtitle="Oh, you want to talk shop? Let's get right to it." tone="dark" class="container" />
       <div class="container text-base mt-12 text-balance md:text-center md:max-w-3xl mx-auto">
         <p class="text-lg text-blue-200">Whether it's a static website or a full-blown iOS application, I'm all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.</p>
       </div>
@@ -105,12 +104,7 @@ const schema: PageSchema = {
   <!-- Masonry -->
   <Waves rotate foreground="#155dfc" />
   <section class="bg-white section space-y-12 md:space-y-24">
-    <div class="container text-balance md:text-center">
-      <h2 class="h2">Who is Matt Waler?</h2>
-      <h3 class="h5 mt-3 text-gray-600">
-        They always say to show, not tell.
-      </h3>
-    </div>
+    <SectionHeading title="Who is Matt Waler?" subtitle="They always say to show, not tell." class="container" />
     <div
       class="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] container max-w-none gap-3 md:gap-5 grid-rows-[masonry]"
       x-init="new window.Masonry($el)"
@@ -144,16 +138,13 @@ const schema: PageSchema = {
   <Waves foreground="#f3f4f6" />
   <section class="section bg-linear-to-b from-gray-100 to-white">
     <div class="container">
-      <div class="md:text-center text-balance">
-        <h2 class="h2">What is Matt Waler building?</h2>
-        <h3 class="h5 mt-3 text-gray-600">
-          Take a gander at my most recent projects.
-        </h3>
-      </div>
-      <div class="grid grid-cols-1 xl:grid-cols-3 gap-12 mt-12">
-        {recentProjects.map(project => (
-          <ProjectCard project={project} />
-        ))}
+      <SectionHeading title="What is Matt Waler building?" subtitle="Take a gander at my most recent projects." />
+      <div class="mt-12">
+        <Carousel label="Recent projects">
+          {recentProjects.map(project => (
+            <ProjectCard project={project} />
+          ))}
+        </Carousel>
       </div>
       <div class="mt-12 md:text-center">
         <a href="/projects" class="button">View All Projects</a>
@@ -165,16 +156,13 @@ const schema: PageSchema = {
   <Waves foreground="#162456" background="white" />
   <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
     <div class="container">
-      <div class="md:text-center text-balance text-white">
-        <h2 class="h2">What is Matt Waler thinking?</h2>
-        <h3 class="h5 mt-3 opacity-80">
-          Thoughts, tutorials, and the occasional rant.
-        </h3>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
-        {recentPosts.map(post => (
-          <BlogCard post={post} />
-        ))}
+      <SectionHeading title="What is Matt Waler thinking?" subtitle="Thoughts, tutorials, and the occasional rant." tone="cta" />
+      <div class="mt-12">
+        <Carousel label="Recent blog posts">
+          {recentPosts.map(post => (
+            <BlogCard post={post} />
+          ))}
+        </Carousel>
       </div>
       <div class="mt-12 md:text-center">
         <a href="/blog" class="button">View All Posts</a>

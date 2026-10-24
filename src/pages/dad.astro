@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import Carousel from '../components/Carousel.astro'
 
 const title = 'Dad'
 const description = 'An endlessly growing list of things my dad taught me.'
@@ -79,15 +80,15 @@ const lessons = [
 
   <div class="bg-linear-to-b from-gray-100 to-white to-90%">
     <section class="container section rich-text">
-      <div class="horizontal flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-4">
+      <Carousel label="Photos with Dad">
         {Array.from({ length: images + 1 }, (_, i) => (
           <img
-            class="my-0! max-h-64 w-auto max-w-[80%] shrink-0 snap-center rounded-lg object-cover lg:max-h-96"
+            class="my-0! h-64 lg:h-96 rounded-lg object-cover"
             src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/dad/dad-${i}.webp`}
             alt=""
           />
         ))}
-      </div>
+      </Carousel>
       <p>
         I figured I would take a page out of your book and <strong>make</strong> something
         for you, something that I plan on updating every year.

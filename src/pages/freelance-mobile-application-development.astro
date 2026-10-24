@@ -2,10 +2,12 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import SectionHeading from '../components/SectionHeading.astro'
 import Swift from '../icons/Swift.svg'
 import React from '../icons/React.svg'
 import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.astro'
+import Carousel from '../components/Carousel.astro'
 import type { PageSchema } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
@@ -87,10 +89,7 @@ const schema: PageSchema = {
   <Waves />
   <section class="relative z-2 bg-white section bg-linear-to-b from-blue-950 to-blue-600">
     <div>
-      <div class="container md:text-center text-balance">
-        <h2 class="h2 text-white">Native iOS apps or cross-platform mobile apps.</h2>
-        <h3 class="h5 text-blue-200 mt-3">Built with Swift when it needs to feel native. React Native when it needs to run everywhere.</h3>
-      </div>
+      <SectionHeading title="Native iOS apps or cross-platform mobile apps." subtitle="Built with Swift when it needs to feel native. React Native when it needs to run everywhere." tone="dark" class="container" />
       <div class="container text-base mt-12 text-balance md:text-center md:max-w-3xl mx-auto">
         <p class="text-lg text-blue-200">Some apps need to feel completely at home on iOS, with deep system integration, smooth animations, and App Store-grade performance. Others need to reach iOS and Android from a single codebase without doubling the budget. I specialize in both: Swift and SwiftUI for native iOS apps, and React Native for cross-platform apps that need to ship everywhere at once.</p>
       </div>
@@ -110,12 +109,7 @@ const schema: PageSchema = {
   <!-- Pricing -->
   <Waves rotate foreground="#155dfc" />
   <section class="bg-white section space-y-12">
-    <div class="container text-balance md:text-center">
-      <h2 class="h2">Pragmatic, fixed-price quotes.</h2>
-      <h3 class="h5 mt-3 text-gray-600">
-        Straightforward pricing built around your goals, not the clock.
-      </h3>
-    </div>
+    <SectionHeading title="Pragmatic, fixed-price quotes." subtitle="Straightforward pricing built around your goals, not the clock." class="container" />
     <div class="container grid grid-cols-1 md:grid-cols-3 gap-8">
       {pricingFaqs.map(faq => (
         <div class="bg-gray-100 rounded-xl p-8 space-y-2">
@@ -130,16 +124,13 @@ const schema: PageSchema = {
   <Waves foreground="#f3f4f6" />
   <section class="section bg-linear-to-b from-gray-100 to-white">
     <div class="container">
-      <div class="md:text-center text-balance">
-        <h2 class="h2">Recent work</h2>
-        <h3 class="h5 mt-3 text-gray-600">
-          A few examples of mobile apps I've built recently.
-        </h3>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-12 mt-12">
-        {recentProjects.map(project => (
-          <ProjectCard project={project} />
-        ))}
+      <SectionHeading title="Recent work" subtitle="A few examples of mobile apps I've built recently." />
+      <div class="max-w-4xl mx-auto mt-12">
+        <Carousel label="Recent mobile apps" cols={2}>
+          {recentProjects.map(project => (
+            <ProjectCard project={project} />
+          ))}
+        </Carousel>
       </div>
       <div class="mt-12 md:text-center">
         <a href="/projects" class="button">View All Projects</a>
@@ -151,12 +142,7 @@ const schema: PageSchema = {
   <Waves foreground="#162456" background="white" />
   <section id="contact" class="text-white bg-linear-to-t from-blue-600 to-blue-950 to-90%">
     <div class="container section max-w-3xl" x-data>
-      <div class="md:text-center text-balance">
-        <h2 class="h2">Let's talk about your app.</h2>
-        <h3 class="h5 mt-3 opacity-80">
-          Tell me a bit about what you need, and I'll get back to you with next steps.
-        </h3>
-      </div>
+      <SectionHeading title="Let's talk about your app." subtitle="Tell me a bit about what you need, and I'll get back to you with next steps." tone="cta" />
       <div x-cloak x-show="window.location.search.includes('contact=true')">
         <p class="h4 pt-16">Message sent! Thanks for reaching out!</p>
       </div>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import SectionHeading from '../components/SectionHeading.astro'
 import Privacy from '../icons/Privacy.svg'
 import type { PageSchema } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
@@ -100,10 +101,7 @@ const schema: PageSchema = {
   <!-- Intro -->
   <Waves />
   <section class="relative z-2 section bg-linear-to-b from-blue-950 to-blue-600">
-    <div class="container md:text-center text-balance">
-      <h2 class="h2 text-white">Less tapping, more training.</h2>
-      <h3 class="h5 text-blue-200 mt-3">No accounts, no subscriptions, no clutter.</h3>
-    </div>
+    <SectionHeading title="Less tapping, more training." subtitle="No accounts, no subscriptions, no clutter." tone="dark" class="container" />
     <div class="container mt-12 space-y-6 text-lg text-blue-200 text-balance md:text-center md:max-w-3xl mx-auto">
       <p>Most fitness timers bury the one thing you need under workout plans, logins, and upsells. When you are mid-set, you just want to know how long until the next break.</p>
       <p>Intervals does exactly that. Three settings, one start button, and a clear signal when it's time to work and time to rest.</p>
@@ -113,12 +111,7 @@ const schema: PageSchema = {
   <!-- Features -->
   <Waves rotate foreground="#155dfc" />
   <section class="bg-white section">
-    <div class="container md:text-center text-balance">
-      <h2 class="h2">Built for work and rest.</h2>
-      <h3 class="h5 mt-3 text-gray-600">
-        Everything you need, and nothing you don't.
-      </h3>
-    </div>
+    <SectionHeading title="Built for work and rest." subtitle="Everything you need, and nothing you don't." class="container" />
     <div class="container mt-12 md:mt-24 space-y-16 md:space-y-24 max-w-5xl">
       {features.map((feature, index) => (
         <div class:list={[
@@ -159,13 +152,9 @@ const schema: PageSchema = {
   <!-- Download -->
   <Waves foreground="#162456" background="white" />
   <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
-    <div class="container md:text-center text-balance text-white md:max-w-3xl">
-      <h2 class="h2">Your next workout starts with one tap.</h2>
-      <h3 class="h5 mt-3 opacity-80">
-        Download Intervals for free and spend less time setting up and more time training.
-      </h3>
+    <SectionHeading title="Your next workout starts with one tap." subtitle="Download Intervals for free and spend less time setting up and more time training." tone="cta" class="container md:max-w-3xl">
       <a href={download} class="button inline-block mt-12">Download on the App Store</a>
-    </div>
+    </SectionHeading>
   </section>
   <Waves rotate foreground="#155dfc" />
 

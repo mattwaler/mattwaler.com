@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string
+  subtitle?: string
+  /** dark: on blue sections, light: on white or gray sections, cta: on closing gradient sections */
+  tone?: 'light' | 'dark' | 'cta'
+  class?: string
+}
+
+const { title, subtitle, tone = 'light', class: className } = Astro.props
+
+const titleTone = { light: '', dark: 'text-white', cta: 'text-white' }[tone]
+const subtitleTone = { light: 'text-gray-600', dark: 'text-blue-200', cta: 'text-white opacity-80' }[tone]
+---
+
+<div class:list={[className, 'md:text-center text-balance']}>
+  <h2 class:list={['h2', titleTone]}>{title}</h2>
+  {subtitle && <p class:list={['h5 mt-2', subtitleTone]}>{subtitle}</p>}
+  <slot />
+</div>

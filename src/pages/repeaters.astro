@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import SectionHeading from '../components/SectionHeading.astro'
 import Privacy from '../icons/Privacy.svg'
 import type { PageSchema } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
@@ -114,10 +115,7 @@ const schema: PageSchema = {
   <!-- Intro -->
   <Waves />
   <section class="relative z-2 section bg-linear-to-b from-blue-950 to-blue-600">
-    <div class="container md:text-center text-balance">
-      <h2 class="h2 text-white">Stay on top of what never stops.</h2>
-      <h3 class="h5 text-blue-200 mt-3">No more mental checklists, no more forgotten tasks.</h3>
-    </div>
+    <SectionHeading title="Stay on top of what never stops." subtitle="No more mental checklists, no more forgotten tasks." tone="dark" class="container" />
     <div class="container mt-12 space-y-6 text-lg text-blue-200 text-balance md:text-center md:max-w-3xl mx-auto">
       <p>Life is full of repeating chores, things like changing the furnace filter, giving the dog a bath, or watering the plants. These things don't happen every day, never end, and need to get done.</p>
       <p>Repeaters is the iOS app that keeps track for you. Set it once, and get reminded exactly when you need to do it next.</p>
@@ -127,12 +125,7 @@ const schema: PageSchema = {
   <!-- Features -->
   <Waves rotate foreground="#155dfc" />
   <section class="bg-white section">
-    <div class="container md:text-center text-balance">
-      <h2 class="h2">Built for tasks that repeat.</h2>
-      <h3 class="h5 mt-3 text-gray-600">
-        Everything you need, and nothing you don't.
-      </h3>
-    </div>
+    <SectionHeading title="Built for tasks that repeat." subtitle="Everything you need, and nothing you don't." class="container" />
     <div class="container mt-12 md:mt-24 space-y-16 md:space-y-24 max-w-5xl">
       {features.map((feature, index) => (
         <div class:list={[
@@ -176,13 +169,9 @@ const schema: PageSchema = {
   <!-- Download -->
   <Waves foreground="#162456" background="white" />
   <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
-    <div class="container md:text-center text-balance text-white md:max-w-3xl">
-      <h2 class="h2">Take control of your recurring tasks.</h2>
-      <h3 class="h5 mt-3 opacity-80">
-        Download Repeaters now and start taking control of the repeating tasks you have in life.
-      </h3>
+    <SectionHeading title="Take control of your recurring tasks." subtitle="Download Repeaters now and start taking control of the repeating tasks you have in life." tone="cta" class="container md:max-w-3xl">
       <a href={download} class="button inline-block mt-12">Download on the App Store</a>
-    </div>
+    </SectionHeading>
   </section>
   <Waves rotate foreground="#155dfc" />
 

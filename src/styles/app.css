@@ -1,6 +1,6 @@
 @import 'tailwindcss' source('..');
+@import 'tw-fade';
 @import './base.css';
-@import './components.css';
 @import './utilities.css';
 @import './typography.css';
 
