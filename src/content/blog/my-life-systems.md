@@ -64,7 +64,7 @@ As you can see, I'm a bit behind on moisturizing and stretching, but I don't fre
 
 Is it insane to build an app simply to categorize todos into two different buckets? Maybe. But nothing else worked for me, and now it's something I use every single day.
 
-## The fridge board: things we do together
+## The dry-erase board on the fridge for things we do together
 
 Last but not least, the [$5 dry erase board](https://www.amazon.com/Magnetic-Whiteboard-Fridge-Erase-Board/dp/B0C6LZ3HV7/ref=sr_1_25) on the kitchen fridge.
 
