@@ -68,7 +68,7 @@ const schema: PageSchema = activeName
     }
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} noindex={!!activeSlug}>
   <Hero
     title={heroTitle}
     description={heroDescription}

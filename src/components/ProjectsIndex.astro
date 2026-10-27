@@ -58,7 +58,7 @@ const schema: PageSchema = {
 }
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout title={title} description={description} schema={schema} noindex={!!activeSlug}>
   <Hero
     title={heroTitle}
     description={heroDescription}
