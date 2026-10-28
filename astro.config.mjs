@@ -11,12 +11,6 @@ const excludedPages = [
   'https://mattwaler.com/klaus',
 ];
 
-// Filtered views of /projects and /blog are noindexed, so keep them out of the sitemap too.
-const excludedPrefixes = [
-  'https://mattwaler.com/projects/tools/',
-  'https://mattwaler.com/blog/tags/',
-];
-
 const normalize = (url) => url.replace(/\/$/, '');
 
 export default defineConfig({
@@ -33,9 +27,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) =>
-        !excludedPages.includes(normalize(page)) &&
-        !excludedPrefixes.some((prefix) => page.startsWith(prefix)),
+      filter: (page) => !excludedPages.includes(normalize(page)),
     }),
   ],
 })

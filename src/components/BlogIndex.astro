@@ -6,98 +6,57 @@ import Waves from './Waves.astro'
 import BlogCard from './BlogCard.astro'
 import { getAllTags, slugifyTag } from '../data/tags'
 import type { PageSchema } from '../layouts/Layout.astro'
-import { SITE, blog, blogCrumb, blogRef, itemList, postSummary } from '../data/schema'
+import { blog, blogCrumb, blogRef, postSummary } from '../data/schema'
 
-interface Props {
-  activeSlug?: string
-}
-
-const { activeSlug } = Astro.props
-
-const allPosts = await getCollection('blog')
-const posts = allPosts
-  .filter(post => !activeSlug || (post.data.tags ?? []).some(tag => slugifyTag(tag) === activeSlug))
+const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
 
-const tags = getAllTags(allPosts)
 const pills = [
-  {
-    slug: 'all',
-    name: 'All Posts',
-    active: !activeSlug,
-    href: '/blog#posts',
-  },
-  ...tags.map(tag => ({
-    ...tag,
-    active: tag.slug === activeSlug,
-    href: tag.slug === activeSlug ? '/blog#posts' : `/blog/tags/${tag.slug}#posts`,
-  })),
+  { slug: 'all', name: 'All Posts', href: '/blog#posts' },
+  ...getAllTags(posts).map(tag => ({ ...tag, href: `/blog?tag=${tag.slug}#posts` })),
 ]
 
-const activeName = tags.find(tag => tag.slug === activeSlug)?.name
-const title = activeName
-  ? `Read Matt Waler's blog posts about ${activeName}.`
-  : "Read Matt Waler's thoughts and ramblings on web development, app development, and life."
+const title = "Read Matt Waler's thoughts and ramblings on web development, app development, and life."
 const description = 'Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!'
 
-const heroTitle = activeName ? `Read my thoughts about ${activeName}.` : 'Sneak a peek inside my head.'
-const heroDescription = activeName
-  ? `I'm always sure to have a strong opinion, especially on ${activeName}.`
-  : "Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
-
-const url = activeSlug ? `${SITE}/blog/tags/${activeSlug}` : `${SITE}/blog`
 const postSummaries = posts.map(postSummary)
 
-// `/blog` is the Blog itself; a tag page is a filtered collection that belongs to it.
-const schema: PageSchema = activeName
-  ? {
-      type: 'CollectionPage',
-      breadcrumbs: [blogCrumb, { name: activeName, url }],
-      page: {
-        about: { '@type': 'DefinedTerm', name: activeName, termCode: activeSlug },
-        keywords: [activeName],
-        mainEntity: itemList(postSummaries),
-      },
-      nodes: [blog],
-    }
-  : {
-      type: 'CollectionPage',
-      breadcrumbs: [blogCrumb],
-      page: { mainEntity: blogRef },
-      nodes: [{ ...blog, blogPost: postSummaries }],
-    }
+const schema: PageSchema = {
+  type: 'CollectionPage',
+  breadcrumbs: [blogCrumb],
+  page: { mainEntity: blogRef },
+  nodes: [{ ...blog, blogPost: postSummaries }],
+}
 ---
 
-<Layout title={title} description={description} schema={schema} noindex={!!activeSlug}>
+<Layout title={title} description={description} schema={schema}>
   <Hero
-    title={heroTitle}
-    description={heroDescription}
+    title="Sneak a peek inside my head."
+    description="Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
     cta={{ label: "Subscribe via RSS", href: "/rss.xml" }}
   />
 
   <Waves />
 
   <section id="posts" class="section scroll-mt-24 bg-linear-to-t from-blue-600 to-blue-950 to-90%">
-    <div class="container space-y-12">
+    <div class="container space-y-12" x-data="filter('tag')">
       <nav aria-label="Filter posts by category" class="flex flex-wrap justify-start gap-x-5 gap-y-3">
         {pills.map(pill => (
           <a
             href={pill.href}
-            aria-current={pill.active ? 'true' : undefined}
-            class:list={[
-              'text-base font-medium transition-colors',
-              pill.active
-                ? 'text-white underline underline-offset-4'
-                : 'text-white/60 hover:text-white',
-            ]}
+            aria-current={pill.slug === 'all' ? 'true' : undefined}
+            x-bind:aria-current={`active === '${pill.slug}' ? 'true' : null`}
+            x-on:click={`select($event, '${pill.slug}')`}
+            class="text-base font-medium transition-colors text-white/60 hover:text-white aria-[current=true]:text-white aria-[current=true]:underline underline-offset-4"
           >
             {pill.name}
           </a>
         ))}
       </nav>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <p class="sr-only" aria-live="polite" x-text="`Showing ${count} ${count === 1 ? 'post' : 'posts'}`"></p>
+      <div x-ref="grid" class="relative grid content-start grid-cols-1 lg:grid-cols-2 gap-12">
         {posts.map(post => (
-          <BlogCard post={post} />
+          <BlogCard post={post} data-filters={(post.data.tags ?? []).map(slugifyTag).join(' ')} />
         ))}
       </div>
     </div>

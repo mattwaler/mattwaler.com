@@ -9,13 +9,16 @@ interface Props {
     tools: string[]
     trendy?: boolean
   }
+  /** Space-separated tool slugs the projects filter matches against. */
+  'data-filters'?: string
 }
 
-const { project } = Astro.props
+const { project, ...attrs } = Astro.props
 const external = !project.link.startsWith('/')
 ---
 
 <a
+  {...attrs}
   href={project.link}
   target={external ? '_blank' : undefined}
   rel={external ? 'noopener noreferrer' : undefined}

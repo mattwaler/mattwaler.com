@@ -3,90 +3,55 @@ import Layout from '../layouts/Layout.astro'
 import Hero from './Hero.astro'
 import Waves from './Waves.astro'
 import ProjectCard from './ProjectCard.astro'
-import allProjects from '../data/projects.js'
+import projects from '../data/projects.js'
 import { getAllTools, slugifyTool } from '../data/tools'
 import type { PageSchema } from '../layouts/Layout.astro'
-import { SITE, itemList, projectItem, projectsCrumb } from '../data/schema'
+import { itemList, projectItem, projectsCrumb } from '../data/schema'
 
-interface Props {
-  activeSlug?: string
-}
-
-const { activeSlug } = Astro.props
-
-const projects = allProjects
-  .filter(project => !activeSlug || project.tools.some(tool => slugifyTool(tool) === activeSlug))
-
-const tools = getAllTools(allProjects)
 const pills = [
-  {
-    slug: 'all',
-    name: 'All Projects',
-    active: !activeSlug,
-    href: '/projects#projects',
-  },
-  ...tools.map(tool => ({
-    ...tool,
-    active: tool.slug === activeSlug,
-    href: tool.slug === activeSlug ? '/projects#projects' : `/projects/tools/${tool.slug}#projects`,
-  })),
+  { slug: 'all', name: 'All Projects', href: '/projects#projects' },
+  ...getAllTools(projects).map(tool => ({ ...tool, href: `/projects?tool=${tool.slug}#projects` })),
 ]
 
-const activeName = tools.find(tool => tool.slug === activeSlug)?.name
-const title = activeName
-  ? `Projects Matt Waler has built with ${activeName}.`
-  : 'Projects Matt Waler has built since 2016.'
+const title = 'Projects Matt Waler has built since 2016.'
 const description = 'A non-exhaustive list of websites and iOS apps I built since I started my career in 2016.'
-
-const heroTitle = activeName ? `See what I've built with ${activeName}.` : "See what I've built."
-const heroDescription = activeName
-  ? `Every project below was built with love, care, and ${activeName}.`
-  : 'I have built a lot of websites and mobile applications since I started back in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed.'
-
-const url = activeSlug ? `${SITE}/projects/tools/${activeSlug}` : `${SITE}/projects`
 
 const schema: PageSchema = {
   type: 'CollectionPage',
-  breadcrumbs: activeName ? [projectsCrumb, { name: activeName, url }] : [projectsCrumb],
+  breadcrumbs: [projectsCrumb],
   page: {
-    ...(activeName && {
-      about: { '@type': 'DefinedTerm', name: activeName, termCode: activeSlug },
-      keywords: [activeName],
-    }),
     mainEntity: itemList(projects.map(projectItem)),
   },
 }
 ---
 
-<Layout title={title} description={description} schema={schema} noindex={!!activeSlug}>
+<Layout title={title} description={description} schema={schema}>
   <Hero
-    title={heroTitle}
-    description={heroDescription}
+    title="See what I've built."
+    description="I have built a lot of websites and mobile applications since I started back in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed."
   />
 
   <Waves rotate foreground="white" background="#f3f4f6" />
 
   <section id="projects" class="section scroll-mt-24 bg-gray-100">
-    <div class="container space-y-12">
+    <div class="container space-y-12" x-data="filter('tool')">
       <nav aria-label="Filter projects by technology" class="flex flex-wrap justify-start gap-x-5 gap-y-3">
         {pills.map(pill => (
           <a
             href={pill.href}
-            aria-current={pill.active ? 'true' : undefined}
-            class:list={[
-              'text-base font-medium transition-colors',
-              pill.active
-                ? 'text-gray-900 underline underline-offset-4'
-                : 'text-gray-500 hover:text-gray-900',
-            ]}
+            aria-current={pill.slug === 'all' ? 'true' : undefined}
+            x-bind:aria-current={`active === '${pill.slug}' ? 'true' : null`}
+            x-on:click={`select($event, '${pill.slug}')`}
+            class="text-base font-medium transition-colors text-gray-500 hover:text-gray-900 aria-[current=true]:text-gray-900 aria-[current=true]:underline underline-offset-4"
           >
             {pill.name}
           </a>
         ))}
       </nav>
-      <div class="grid items-start grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
+      <p class="sr-only" aria-live="polite" x-text="`Showing ${count} ${count === 1 ? 'project' : 'projects'}`"></p>
+      <div x-ref="grid" class="relative grid content-start items-start grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
         {projects.map(project => (
-          <ProjectCard project={project} />
+          <ProjectCard project={project} data-filters={project.tools.map(slugifyTool).join(' ')} />
         ))}
       </div>
     </div>

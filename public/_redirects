@@ -5,3 +5,5 @@
 /websites                     /projects
 /apps                         /projects
 /apps/agone                   /repeaters
+/blog/tags/:tag               /blog?tag=:tag
+/projects/tools/:tool         /projects?tool=:tool
