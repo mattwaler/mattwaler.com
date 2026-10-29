@@ -134,7 +134,13 @@ const article = schema.page?.datePublished
         if (!dispatchEvent(new Event('filter:popstate', { cancelable: true }))) event.stopImmediatePropagation()
       })
     </script>
-    <ClientRouter />
+    <!-- Must also run before ClientRouter checks whether view transitions are supported -->
+    <script is:inline>
+      // Safari repaints the white html background under its toolbars while a view transition
+      // runs, so it navigates with the router's plain DOM swap instead
+      if (navigator.vendor === 'Apple Computer, Inc.') document.startViewTransition = undefined
+    </script>
+    <ClientRouter fallback="swap" />
     <title>{title}</title>
     <meta name="description" content={description}>
     <meta name="abstract" content={description}>
