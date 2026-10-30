@@ -1,6 +1,8 @@
+import { cdn } from './images.js'
+
 /** CDN screenshot for a project, shared by the card UI and structured data. */
 export const projectImageUrl = (project) =>
-  `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}.webp`
+  cdn(`projects/${project.title.toLowerCase().replace(/\s+/g, '-')}.webp`)
 
 export default [
   {

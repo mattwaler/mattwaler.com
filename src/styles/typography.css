@@ -66,7 +66,7 @@
 		li p { @apply my-4; }
 
 		/* Assets */
-		img { @apply max-w-full mx-auto; }
+		img { @apply max-w-full h-auto mx-auto; }
 		video, iframe.video { @apply max-w-full mx-auto aspect-video; }
 		figcaption { @apply my-4 text-[smaller]; }
 

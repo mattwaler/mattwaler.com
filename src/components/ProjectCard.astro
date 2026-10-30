@@ -11,10 +11,13 @@ interface Props {
   }
   /** Space-separated tool slugs the projects filter matches against. */
   'data-filters'?: string
+  /** Load the screenshot right away, for a card that is the page's largest element. */
+  priority?: boolean
 }
 
-const { project, ...attrs } = Astro.props
+const { project, priority = false, ...attrs } = Astro.props
 const external = !project.link.startsWith('/')
+const src = projectImageUrl(project)
 ---
 
 <a
@@ -27,9 +30,10 @@ const external = !project.link.startsWith('/')
   <img
     width="1200"
     height="975"
-    loading="lazy"
+    loading={priority ? 'eager' : 'lazy'}
+    fetchpriority={priority ? 'high' : undefined}
     class="aspect-1200/975 object-cover object-top w-full h-auto bg-gray-200"
-    src={projectImageUrl(project)}
+    src={src}
     alt=""
   />
   <div class="p-8 space-y-2 border-t-2">

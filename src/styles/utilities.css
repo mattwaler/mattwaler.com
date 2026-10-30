@@ -27,3 +27,6 @@
 @utility overlap {
   @apply grid grid-cols-1 *:col-start-1 *:row-start-1;
 }
+
+/* Typed.js adds its cursor after load; taking it out of the inline flow keeps the headline from shifting */
+.typed-cursor { position: absolute; }

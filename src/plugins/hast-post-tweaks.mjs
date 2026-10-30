@@ -1,9 +1,18 @@
 import { defineHastPlugin } from 'satteri'
+import probe from 'probe-image-size'
 
 // Markdown content tweaks:
 // - external links open in a new tab
 // - images lazy load and decode off the main thread
+// - remote images get their intrinsic size, so text doesn't shift as they load
 // Values already set in the markdown are left alone.
+
+// Each image is measured once per build, however many times it is rendered
+const sizes = new Map()
+const measure = (src) => {
+  if (!sizes.has(src)) sizes.set(src, probe(src).catch(() => null))
+  return sizes.get(src)
+}
 
 function isExternal(href, siteHost) {
   if (typeof href !== 'string' || !/^(https?:)?\/\//i.test(href)) return false
@@ -23,7 +32,7 @@ export default function postTweaks({ site }) {
     name: 'post-tweaks',
     element: {
       filter: ['a', 'img'],
-      visit(node, ctx) {
+      async visit(node, ctx) {
         const props = node.properties ?? {}
 
         if (node.tagName === 'a') {
@@ -38,6 +47,14 @@ export default function postTweaks({ site }) {
 
         if (!props.loading) ctx.setProperty(node, 'loading', 'lazy')
         if (!props.decoding) ctx.setProperty(node, 'decoding', 'async')
+
+        if (typeof props.src !== 'string' || !/^https?:\/\//.test(props.src)) return
+        const size = await measure(props.src)
+        if (!size) return
+        if (!props.width && !props.height) {
+          ctx.setProperty(node, 'width', size.width)
+          ctx.setProperty(node, 'height', size.height)
+        }
       },
     },
   })

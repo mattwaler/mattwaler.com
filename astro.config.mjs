@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import sitemap from '@astrojs/sitemap'
 import { satteri } from '@astrojs/markdown-satteri'
@@ -22,6 +22,15 @@ export default defineConfig({
   build: {
     format: 'file',
   },
+  // Self-hosted with a metric-matched fallback, so text never waits on Google Fonts
+  fonts: [{
+    provider: fontProviders.fontsource(),
+    name: 'Outfit',
+    cssVariable: '--font-outfit',
+    weights: ['400 900'],
+    subsets: ['latin'],
+    fallbacks: ['sans-serif'],
+  }],
   vite: {
     plugins: [tailwindcss()],
   },

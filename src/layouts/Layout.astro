@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { Font } from 'astro:assets'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Debug from '../components/Debug.astro'
@@ -144,10 +145,8 @@ const article = schema.page?.datePublished
     <title>{title}</title>
     <meta name="description" content={description}>
     <meta name="abstract" content={description}>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://mattwaler.nyc3.cdn.digitaloceanspaces.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..900&display=swap" rel="stylesheet">
+    <Font cssVariable="--font-outfit" preload />
     <script type="application/ld+json" set:html={JSON.stringify(graph)} />
   </head>
   <body>

@@ -7,5 +7,5 @@
 
 @theme {
   --breakpoint-2xl: initial;
-  --font-sans: "Outfit", sans-serif;
+  --font-sans: var(--font-outfit);
 }

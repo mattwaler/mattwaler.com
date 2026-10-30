@@ -19,20 +19,22 @@ import Carousel from '../components/Carousel.astro'
 import type { CollectionEntry } from 'astro:content';
 import type { PageSchema } from '../layouts/Layout.astro'
 import { personRef } from '../data/schema'
+import { cdn } from '../data/images.js'
 
+// Dimensions let the grid reserve space before each image arrives
 const masonry = [
-  'masonry-8.webp',
-  'forehand.mp4',
-  'masonry-10.webp',
-  'masonry-4.webp',
-  'masonry-2.webp',
-  'masonry-1.webp',
-  'bench.mp4',
-  'masonry-3.webp',
-  'serve.mp4',
-  'masonry-9.webp',
-  'masonry-5.webp',
-]
+  { file: 'masonry-8.webp', width: 579, height: 772 },
+  { file: 'forehand-1080.mp4', width: 1080, height: 1080 },
+  { file: 'masonry-10.webp', width: 1071, height: 1428 },
+  { file: 'masonry-4.webp', width: 576, height: 384 },
+  { file: 'masonry-2.webp', width: 1235, height: 1852 },
+  { file: 'masonry-1.webp', width: 1071, height: 1428 },
+  { file: 'bench-1080.mp4', width: 1080, height: 1080 },
+  { file: 'masonry-3.webp', width: 576, height: 384 },
+  { file: 'serve-1080.mp4', width: 1080, height: 1080 },
+  { file: 'masonry-9.webp', width: 579, height: 772 },
+  { file: 'masonry-5.webp', width: 576, height: 384 },
+].map(asset => ({ ...asset, src: cdn(`masonry/${asset.file}`) }))
 
 const tools = [
   { name: 'Tailwind', Icon: Tailwind },
@@ -110,22 +112,31 @@ const schema: PageSchema = {
       x-init="new window.Masonry($el)"
     >
       {masonry.map(asset => (
-        asset.endsWith('.mp4') ? (
+        asset.file.endsWith('.mp4') ? (
           <video
             x-data="{ show: false }"
             x-intersect:enter.threshold.75="show = true"
+            x-intersect:enter.margin.400px.once="if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { $el.src = $el.dataset.src; $el.play().catch(() => {}) }"
             x-bind:class="show ? 'opacity-100' : 'opacity-0'"
-            class="rounded-xl transition-opacity duration-500 pointer-events-none"
-            autoplay muted playsinline loop src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/masonry/${asset}`}
+            class="rounded-xl transition-opacity duration-500 pointer-events-none w-full h-auto"
+            width={asset.width}
+            height={asset.height}
+            poster={asset.src.replace('.mp4', '-poster.webp')}
+            data-src={asset.src}
+            preload="none"
+            muted playsinline loop
           ></video>
         ) : (
           <img
             x-data="{ show: false }"
             x-intersect:enter.threshold.75="show = true"
             x-bind:class="show ? 'opacity-100' : 'opacity-0'"
-            src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/masonry/${asset}`}
+            src={asset.src}
+            width={asset.width}
+            height={asset.height}
             loading="lazy"
-            class="rounded-xl transition-opacity duration-500"
+            decoding="async"
+            class="rounded-xl transition-opacity duration-500 w-full h-auto"
             alt=""
           />
         )

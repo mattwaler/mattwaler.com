@@ -50,8 +50,8 @@ const schema: PageSchema = {
       </nav>
       <p class="sr-only" aria-live="polite" x-text="`Showing ${count} ${count === 1 ? 'project' : 'projects'}`"></p>
       <div x-ref="grid" class="relative grid content-start items-start grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
-        {projects.map(project => (
-          <ProjectCard project={project} data-filters={project.tools.map(slugifyTool).join(' ')} />
+        {projects.map((project, index) => (
+          <ProjectCard project={project} priority={index === 0} data-filters={project.tools.map(slugifyTool).join(' ')} />
         ))}
       </div>
     </div>

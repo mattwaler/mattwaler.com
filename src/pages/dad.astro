@@ -3,10 +3,20 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import Carousel from '../components/Carousel.astro'
+import { cdn } from '../data/images.js'
 
 const title = 'Dad'
 const description = 'An endlessly growing list of things my dad taught me.'
-const images = 5
+
+// Dimensions let the carousel reserve space before each photo arrives
+const photos = [
+  { file: 'dad-0.webp', width: 1080, height: 720 },
+  { file: 'dad-1.webp', width: 1080, height: 1440 },
+  { file: 'dad-2.webp', width: 1080, height: 1440 },
+  { file: 'dad-3.webp', width: 1080, height: 810 },
+  { file: 'dad-4.webp', width: 1080, height: 1440 },
+  { file: 'dad-5.webp', width: 1080, height: 810 },
+].map(photo => ({ ...photo, src: cdn(`dad/${photo.file}`) }))
 
 const lessons = [
   '3D printing is fucking awesome and I should have said yes to yours when you upgraded...',
@@ -81,10 +91,14 @@ const lessons = [
   <div class="bg-linear-to-b from-gray-100 to-white to-90%">
     <section class="container section rich-text">
       <Carousel label="Photos with Dad">
-        {Array.from({ length: images + 1 }, (_, i) => (
+        {photos.map((photo, i) => (
           <img
             class="my-0! h-64 lg:h-96 rounded-lg object-cover"
-            src={`https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/dad/dad-${i}.webp`}
+            src={photo.src}
+            width={photo.width}
+            height={photo.height}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
             alt=""
           />
         ))}
