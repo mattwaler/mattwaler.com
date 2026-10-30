@@ -1,19 +1,35 @@
 ---
 import { getCollection, render } from "astro:content";
 import Markdown from "../../layouts/Markdown.astro";
-import type { PageSchema } from "../../layouts/Layout.astro";
+import type { PageMeta } from "../../layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { blog, blogCrumb, blogRef, personRef, postId, postUrl } from "../../data/schema";
+import SectionHeading from "../../components/SectionHeading.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import Carousel from "../../components/Carousel.astro";
 
 export async function getStaticPaths() {
   const posts: CollectionEntry<'blog'>[] = await getCollection("blog") ;
+
+  // Up to five other posts, ranked by how many tags they share, then newest first
+  const relatedPosts = (post: CollectionEntry<'blog'>) => {
+    const tags = new Set(post.data.tags ?? [])
+    return posts
+      .filter((other) => other.id !== post.id)
+      .map((other) => ({ other, shared: (other.data.tags ?? []).filter((tag) => tags.has(tag)).length }))
+      .filter(({ shared }) => shared > 0)
+      .sort((a, b) => b.shared - a.shared || b.other.data.date.valueOf() - a.other.data.date.valueOf())
+      .slice(0, 5)
+      .map(({ other }) => other)
+  }
+
   return posts.map((post) => ({
     params: { slug: post.id },
-    props: { post },
+    props: { post, related: relatedPosts(post) },
   }));
 }
 
-const { post } = Astro.props;
+const { post, related } = Astro.props;
 const { Content } = await render(post);
 
 const url = postUrl(post)
@@ -21,42 +37,61 @@ const published = post.data.date.toISOString()
 const modified = (post.data.updated ?? post.data.date).toISOString()
 const wordCount = post.body?.split(/\s+/).filter(Boolean).length
 
-const schema: PageSchema = {
-  type: 'WebPage',
-  breadcrumbs: [blogCrumb, { name: post.data.title, url }],
-  page: {
-    datePublished: published,
-    dateModified: modified,
-    keywords: post.data.tags,
-    mainEntity: { '@id': postId(post) },
-  },
-  nodes: [
-    blog,
-    {
-      '@type': 'BlogPosting',
-      '@id': postId(post),
-      headline: post.data.title,
-      description: post.data.description,
-      url,
-      mainEntityOfPage: { '@id': url },
-      isPartOf: blogRef,
-      inLanguage: 'en-US',
+const meta: PageMeta = {
+  title: post.data.title,
+  description: post.data.description,
+  schema: {
+    type: 'WebPage',
+    breadcrumbs: [blogCrumb, { name: post.data.title, url }],
+    page: {
       datePublished: published,
       dateModified: modified,
-      author: personRef,
-      publisher: personRef,
-      image: new URL('/og-image.png', Astro.site).href,
       keywords: post.data.tags,
-      articleSection: post.data.tags?.[0],
-      wordCount,
+      mainEntity: { '@id': postId(post) },
     },
-  ],
+    nodes: [
+      blog,
+      {
+        '@type': 'BlogPosting',
+        '@id': postId(post),
+        headline: post.data.title,
+        description: post.data.description,
+        url,
+        mainEntityOfPage: { '@id': url },
+        isPartOf: blogRef,
+        inLanguage: 'en-US',
+        datePublished: published,
+        dateModified: modified,
+        author: personRef,
+        publisher: personRef,
+        image: new URL('/og-image.png', Astro.site).href,
+        keywords: post.data.tags,
+        articleSection: post.data.tags?.[0],
+        wordCount,
+      },
+    ],
+  },
 }
 ---
 
-<Markdown title={post.data.title} description={post.data.description} tags={post.data.tags} schema={schema}>
+<Markdown meta={meta} tags={post.data.tags}>
   <Content />
   <div class="mt-12 rich-text">
     <p>Did you enjoy this post? Consider <a href="/rss.xml">subscribing to the RSS feed</a>!</p>
   </div>
+  {/* A lone related post doesn't earn its own section */}
+  {related.length >= 2 && (
+    <Fragment slot="after">
+      <SectionHeading title="What else is Matt Waler thinking?" subtitle="Made it this far? These might be up your alley too." tone="cta" />
+      <div class="mt-12">
+        <Carousel
+          label="Related posts"
+          cols={related.length === 2 ? 2 : 3}
+          cta={{ label: 'View All Posts', href: '/blog' }}
+        >
+          {related.map((post) => <BlogCard post={post} />)}
+        </Carousel>
+      </div>
+    </Fragment>
+  )}
 </Markdown>

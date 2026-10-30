@@ -2,7 +2,7 @@
 date: 2025-07-23
 title: Simplicity in Agency Development
 description:
-  By keeping things simple, isolated to single files, and scoped, pieces from projects can be easily shared across clients and speed up development time significantly.
+  Keeping code simple, scoped, and isolated to single files makes it easy to share pieces across client projects and speeds up development significantly.
 tags:
   - Agency
   - Development

@@ -5,7 +5,7 @@ import Waves from './Waves.astro'
 import ProjectCard from './ProjectCard.astro'
 import projects from '../data/projects.js'
 import { getAllTools, slugifyTool } from '../data/tools'
-import type { PageSchema } from '../layouts/Layout.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
 import { itemList, projectItem, projectsCrumb } from '../data/schema'
 
 const pills = [
@@ -13,19 +13,20 @@ const pills = [
   ...getAllTools(projects).map(tool => ({ ...tool, href: `/projects?tool=${tool.slug}#projects` })),
 ]
 
-const title = 'Projects Matt Waler has built since 2016.'
-const description = 'A non-exhaustive list of websites and iOS apps I built since I started my career in 2016.'
-
-const schema: PageSchema = {
-  type: 'CollectionPage',
-  breadcrumbs: [projectsCrumb],
-  page: {
-    mainEntity: itemList(projects.map(projectItem)),
+const meta: PageMeta = {
+  title: 'Projects Matt Waler has built since 2016.',
+  description: 'A non-exhaustive list of websites and iOS apps I built since I started my career in 2016.',
+  schema: {
+    type: 'CollectionPage',
+    breadcrumbs: [projectsCrumb],
+    page: {
+      mainEntity: itemList(projects.map(projectItem)),
+    },
   },
 }
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout meta={meta}>
   <Hero
     title="See what I've built."
     description="I have built a lot of websites and mobile applications since I started back in 2016. Listed below is a non-exhaustive representation of what I have developed and deployed."

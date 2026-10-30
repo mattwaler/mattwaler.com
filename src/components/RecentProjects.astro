@@ -1,0 +1,21 @@
+---
+import SectionHeading from './SectionHeading.astro'
+import Carousel from './Carousel.astro'
+import ProjectCard from './ProjectCard.astro'
+import projects from '../data/projects.js'
+
+const recentProjects = projects.slice(0, 6)
+---
+
+<section class="section bg-linear-to-b from-gray-100 to-white">
+  <div class="container">
+    <SectionHeading title="What is Matt Waler building?" subtitle="Take a gander at my most recent projects." />
+    <div class="mt-12">
+      <Carousel label="Recent projects" cta={{ label: 'View All Projects', href: '/projects' }}>
+        {recentProjects.map(project => (
+          <ProjectCard project={project} />
+        ))}
+      </Carousel>
+    </div>
+  </div>
+</section>

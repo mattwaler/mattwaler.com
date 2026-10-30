@@ -9,7 +9,7 @@ tags:
 Today I will showcase how you can create a lazy blur up image effect on your images in Astro!
 
 I am using this component in one of my most recent projects:
-[Kings Court Landscaping](https://kingscourtlandscaping.com/)
+[Kings Court Landscaping](https://kingscourtlandscaping.com/). You can find it alongside my other [Astro projects](/projects?tool=astro#projects).
 
 I will be using Tailwind CSS and Alpine.js for styling and scripting, but this can easily be recreated in vanilla JS/CSS if that's your preference!
 

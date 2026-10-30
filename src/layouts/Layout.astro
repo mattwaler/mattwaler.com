@@ -27,16 +27,22 @@ export interface PageSchema {
   nodes?: SchemaNode[]
 }
 
-interface Props {
+export interface PageMeta {
   title: string
   description?: string
   /** 2400x1260 image path; defaults to `/og-image.png`. */
   ogImage?: string
   ogImageAlt?: string
   schema?: PageSchema
+  /** Keep the page out of search results while still letting crawlers follow its links. */
+  noindex?: boolean
 }
 
-const { title, description = '', ogImage, ogImageAlt, schema = {} } = Astro.props
+interface Props {
+  meta: PageMeta
+}
+
+const { title, description = '', ogImage, ogImageAlt, schema = {}, noindex = false } = Astro.props.meta
 
 // With `build.format: 'file'`, Astro.url.pathname is `/contact.html` at build time
 // but `/contact` in the browser — normalize to the URL the site actually serves.
@@ -96,7 +102,9 @@ const article = schema.page?.datePublished
     <style is:global>
       [x-cloak] { display: none!important; }
     </style>
-    <meta name="robots" content="index, follow, noodp, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    {noindex
+      ? <meta name="robots" content="noindex, follow">
+      : <meta name="robots" content="index, follow, noodp, max-image-preview:large, max-snippet:-1, max-video-preview:-1">}
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="Pragma" content="cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

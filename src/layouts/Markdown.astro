@@ -1,17 +1,16 @@
 ---
-import Layout, { type PageSchema } from './Layout.astro'
+import Layout, { type PageMeta } from './Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import { slugifyTag } from '../data/tags'
 
 interface Props {
-  title: string
-  description?: string
+  meta: PageMeta
   tags?: string[]
-  schema?: PageSchema
 }
 
-const { title, description, tags, schema } = Astro.props
+const { meta, tags } = Astro.props
+const { title, description } = meta
 
 const tagLinks = tags?.map(tag => ({
   label: `#${slugifyTag(tag)}`,
@@ -19,7 +18,8 @@ const tagLinks = tags?.map(tag => ({
 }))
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<!-- The hero shows the bare title; the document title names the author for search results -->
+<Layout meta={{ ...meta, title: `${title} | Matt Waler` }}>
   <Hero title={title} description={description} tags={tagLinks} />
   <Waves foreground='#f3f4f6' />
   <section class="bg-gray-100 bg-linear-to-b from-gray-100 via-50% via-white to-gray-100 to-90%">
@@ -27,5 +27,18 @@ const tagLinks = tags?.map(tag => ({
       <slot />
     </div>
   </section>
-  <Waves rotate foreground="#f3f4f6" />
+  <!-- An `after` slot closes the page with a blue section, matching the home page's blog section -->
+  {Astro.slots.has('after') ? (
+    <>
+      <Waves foreground="#162456" background="#f3f4f6" />
+      <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
+        <div class="container">
+          <slot name="after" />
+        </div>
+      </section>
+      <Waves rotate foreground="#155dfc" />
+    </>
+  ) : (
+    <Waves rotate foreground="#f3f4f6" />
+  )}
 </Layout>

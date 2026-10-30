@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import SectionHeading from '../components/SectionHeading.astro'
 import Privacy from '../icons/Privacy.svg'
-import type { PageSchema } from '../layouts/Layout.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
 const cdn = (file: string) => `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/intervals/${file}`
@@ -50,14 +50,18 @@ const features = [
   },
 ]
 
-const title = 'Intervals is a free, no-fuss fitness timer for iPhone.'
-const description = 'Intervals is a free iOS interval timer. Set your work time, rest time, and number of rounds once, then hit start and train.'
+const meta: PageMeta = {
+  title: 'Intervals is a free, no-fuss fitness timer for iPhone.',
+  description: 'Intervals is a free iOS interval timer. Set your work time, rest time, and number of rounds once, then hit start and train.',
+  ogImage: '/og-intervals.png',
+  ogImageAlt: 'The Intervals logo below a band of waves on a blue gradient background.',
+}
 
 const url = `${SITE}/intervals`
 const appId = `${url}#app`
 
 // The page describes the Intervals iOS app.
-const schema: PageSchema = {
+meta.schema = {
   breadcrumbs: [{ name: 'Intervals', url }],
   page: { about: { '@id': appId }, mainEntity: { '@id': appId } },
   nodes: [
@@ -66,7 +70,7 @@ const schema: PageSchema = {
       '@id': appId,
       name: 'Intervals',
       alternateName: 'Intervals: Fitness Timer App',
-      description,
+      description: meta.description,
       url,
       downloadUrl: download,
       installUrl: download,
@@ -82,13 +86,7 @@ const schema: PageSchema = {
 }
 ---
 
-<Layout
-  title={title}
-  description={description}
-  ogImage="/og-intervals.png"
-  ogImageAlt="The Intervals logo below a band of waves on a blue gradient background."
-  schema={schema}
->
+<Layout meta={meta}>
 
   <!-- Hero -->
   <Hero

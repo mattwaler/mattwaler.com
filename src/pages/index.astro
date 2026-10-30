@@ -1,9 +1,10 @@
 ---
-import { getCollection } from 'astro:content'
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import SectionHeading from '../components/SectionHeading.astro'
+import RecentProjects from '../components/RecentProjects.astro'
+import RecentPosts from '../components/RecentPosts.astro'
 import Tailwind from '../icons/Tailwind.svg'
 import Alpine from '../icons/Alpine.svg'
 import AstroIcon from '../icons/AstroIcon.svg'
@@ -12,12 +13,7 @@ import Typescript from '../icons/Typescript.svg'
 import Swift from '../icons/Swift.svg'
 import Statamic from '../icons/Statamic.svg'
 import Laravel from '../icons/Laravel.svg'
-import projects from '../data/projects.js'
-import ProjectCard from '../components/ProjectCard.astro'
-import BlogCard from '../components/BlogCard.astro'
-import Carousel from '../components/Carousel.astro'
-import type { CollectionEntry } from 'astro:content';
-import type { PageSchema } from '../layouts/Layout.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
 import { personRef } from '../data/schema'
 import { cdn } from '../data/images.js'
 
@@ -47,25 +43,18 @@ const tools = [
   { name: 'Laravel', Icon: Laravel },
 ]
 
-const allPosts: CollectionEntry<'blog'>[] = await getCollection('blog')
-const recentPosts = allPosts
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 6)
-
-const recentProjects = projects.slice(0, 6)
-
-// The home page is Matt's profile, so the Person is its main entity.
-const schema: PageSchema = {
-  type: 'ProfilePage',
-  page: { about: personRef, mainEntity: personRef },
+const meta: PageMeta = {
+  title: 'Matt Waler builds websites, iOS apps, and plays a ton of tennis.',
+  description: 'Matt Waler is an Ohio-based web and iOS developer who builds websites with Laravel, Statamic, Craft CMS, and Astro, plus native iPhone apps in Swift.',
+  // The home page is Matt's profile, so the Person is its main entity.
+  schema: {
+    type: 'ProfilePage',
+    page: { about: personRef, mainEntity: personRef },
+  },
 }
 ---
 
-<Layout
-  title="Matt Waler builds websites, iOS apps, and plays a ton of tennis."
-  description="Matt Waler is a web and iOS developer based in Ohio."
-  schema={schema}
->
+<Layout meta={meta}>
   <!-- Hero -->
   <Hero
     title="I develop websites, iOS applications, and"
@@ -144,42 +133,13 @@ const schema: PageSchema = {
     </div>
   </section>
 
-
   <!-- Projects -->
   <Waves foreground="#f3f4f6" />
-  <section class="section bg-linear-to-b from-gray-100 to-white">
-    <div class="container">
-      <SectionHeading title="What is Matt Waler building?" subtitle="Take a gander at my most recent projects." />
-      <div class="mt-12">
-        <Carousel label="Recent projects">
-          {recentProjects.map(project => (
-            <ProjectCard project={project} />
-          ))}
-        </Carousel>
-      </div>
-      <div class="mt-12 md:text-center">
-        <a href="/projects" class="button">View All Projects</a>
-      </div>
-    </div>
-  </section>
+  <RecentProjects />
 
   <!-- Blog -->
   <Waves foreground="#162456" background="white" />
-  <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
-    <div class="container">
-      <SectionHeading title="What is Matt Waler thinking?" subtitle="Thoughts, tutorials, and the occasional rant." tone="cta" />
-      <div class="mt-12">
-        <Carousel label="Recent blog posts">
-          {recentPosts.map(post => (
-            <BlogCard post={post} />
-          ))}
-        </Carousel>
-      </div>
-      <div class="mt-12 md:text-center">
-        <a href="/blog" class="button">View All Posts</a>
-      </div>
-    </div>
-  </section>
+  <RecentPosts />
   <Waves rotate foreground="#155dfc" />
 
 </Layout>

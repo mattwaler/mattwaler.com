@@ -1,7 +1,7 @@
 ---
 date: 2026-10-02
 title: Using Lit to create cross-language components
-description: On larger projects that utilize multiple templating languages to accomplish server-side and client-side rendering, using lit to create custom html elements can solve your problems.
+description: On projects that mix server-side and client-side templating languages, Lit custom elements give you one component that works in every one of them.
 tags:
   - Development
 ---
@@ -124,6 +124,8 @@ export class ProviderCard extends LitElement {
 // Define it so you can use it everywhere!
 customElements.define('provider-card', ProviderCard)
 ```
+
+That `createRenderRoot` override is what lets Tailwind classes reach the markup. I go into why in [Using Tailwind CSS with Lit and HTML Custom Elements](/blog/using-tailwind-with-lit-html-custom-elements).
 
 With the element defined once, both sides just use it, and each one only has to pass a single `provider` object. In Twig, you pass the raw entry and merge in the fields that need something special, like the avatar, then encode it as JSON:
 

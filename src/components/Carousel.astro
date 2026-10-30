@@ -4,9 +4,11 @@ import ArrowUp from '../icons/ArrowUp.svg'
 interface Props {
   label: string
   cols?: 2 | 3
+  /** Link to the full listing, shown at the right of the controls. */
+  cta?: { label: string; href: string }
 }
 
-const { label, cols = 3 } = Astro.props
+const { label, cols = 3, cta } = Astro.props
 const trackId = `carousel-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
 ---
 
@@ -58,56 +60,67 @@ const trackId = `carousel-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
         // Cards fill the view exactly, so every snap shows whole cards
         '*:shrink-0 *:w-full md:*:w-[calc((100%-3rem)/2)]',
         cols === 3 && 'xl:*:w-[calc((100%-6rem)/3)]',
-        // Cards tilt on hover elsewhere, but not while they sit in a carousel
-        '*:rotate-none!',
       ]}
     >
       <slot />
     </div>
   </div>
 
-  <!-- Controls: arrows on the left, dots on the right; hidden when every card fits -->
-  <div class="flex items-center justify-between gap-6 mt-8" x-show="snaps > 1" x-cloak>
-    <div class="flex gap-3 shrink-0">
-      {[
-        { direction: -1, ref: 'prev', label: 'Previous', disabled: '!canPrev', rotate: '-rotate-90' },
-        { direction: 1, ref: 'next', label: 'Next', disabled: '!canNext', rotate: 'rotate-90' },
-      ].map(button => (
-        <button
-          type="button"
-          x-ref={button.ref}
-          aria-label={button.label}
-          aria-controls={trackId}
-          x-on:click={`go(${button.direction})`}
-          x-bind:disabled={button.disabled}
-          class:list={[
-            // Matches the back to top button
-            'p-3 rounded-full bg-black text-white shadow-lg',
-            'transition-[background-color,opacity] cursor-pointer enabled:hover:bg-gray-800',
-            'disabled:opacity-50 disabled:cursor-not-allowed',
-            'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
-          ]}
-        >
-          <ArrowUp class:list={['size-5', button.rotate]} aria-hidden="true" />
-        </button>
-      ))}
+  <!--
+    Controls below the cards: arrows for mouse and trackpad, dots for touch (which can swipe).
+    Centered on their own, or on the left with the CTA on the right. The arrows always show,
+    disabled when every card fits, so carousels look alike; a lone dot is left out.
+  -->
+  <div class:list={['flex items-center gap-6 mt-8', cta ? 'justify-between' : 'justify-center']}>
+    <div>
+      <div class="flex gap-3 pointer-coarse:hidden">
+        {[
+          { direction: -1, ref: 'prev', label: 'Previous', disabled: '!canPrev', rotate: '-rotate-90' },
+          { direction: 1, ref: 'next', label: 'Next', disabled: '!canNext', rotate: 'rotate-90' },
+        ].map(button => (
+          <button
+            type="button"
+            x-ref={button.ref}
+            aria-label={button.label}
+            aria-controls={trackId}
+            x-on:click={`go(${button.direction})`}
+            x-bind:disabled={button.disabled}
+            disabled
+            class:list={[
+              // Matches the back to top button
+              'p-3 rounded-full bg-black text-white shadow-lg',
+              'transition-[background-color,opacity] cursor-pointer enabled:hover:bg-gray-800',
+              'disabled:opacity-50 disabled:cursor-not-allowed',
+              'focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
+            ]}
+          >
+            <ArrowUp class:list={['size-5', button.rotate]} aria-hidden="true" />
+          </button>
+        ))}
+      </div>
+      <div class="hidden pointer-coarse:flex flex-wrap items-center" x-show="snaps > 1">
+        <template x-for="index in snaps" x-bind:key="index">
+          <button
+            type="button"
+            class="p-1.5 rounded-full cursor-pointer group/dot focus-visible:outline-3 focus-visible:outline-blue-500"
+            aria-controls={trackId}
+            x-bind:aria-label="`Go to slide ${index}`"
+            x-bind:aria-current="index - 1 === selected ? 'true' : null"
+            x-on:click="goTo(index - 1)"
+          >
+            <span
+              class="block h-2.5 rounded-full bg-black transition-all duration-300"
+              x-bind:class="index - 1 === selected ? 'w-6' : 'w-2.5 opacity-25 group-hover/dot:opacity-50'"
+            ></span>
+          </button>
+        </template>
+      </div>
     </div>
-    <div class="flex flex-wrap items-center justify-end">
-      <template x-for="index in snaps" x-bind:key="index">
-        <button
-          type="button"
-          class="p-1.5 rounded-full cursor-pointer group/dot focus-visible:outline-3 focus-visible:outline-blue-500"
-          aria-controls={trackId}
-          x-bind:aria-label="`Go to slide ${index}`"
-          x-bind:aria-current="index - 1 === selected ? 'true' : null"
-          x-on:click="goTo(index - 1)"
-        >
-          <span
-            class="block h-2.5 rounded-full bg-black transition-all duration-300"
-            x-bind:class="index - 1 === selected ? 'w-6' : 'w-2.5 opacity-25 group-hover/dot:opacity-50'"
-          ></span>
-        </button>
-      </template>
-    </div>
+    {cta && (
+      <a href={cta.href} class="button ml-auto shrink-0 inline-flex items-center gap-2 group/cta">
+        {cta.label}
+        <ArrowUp class="size-4 rotate-90 transition-transform group-hover/cta:translate-x-0.5" aria-hidden="true" />
+      </a>
+    )}
   </div>
 </div>

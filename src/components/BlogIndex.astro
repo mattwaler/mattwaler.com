@@ -5,7 +5,7 @@ import Hero from './Hero.astro'
 import Waves from './Waves.astro'
 import BlogCard from './BlogCard.astro'
 import { getAllTags, slugifyTag } from '../data/tags'
-import type { PageSchema } from '../layouts/Layout.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
 import { blog, blogCrumb, blogRef, postSummary } from '../data/schema'
 
 const posts = (await getCollection('blog'))
@@ -16,20 +16,21 @@ const pills = [
   ...getAllTags(posts).map(tag => ({ ...tag, href: `/blog?tag=${tag.slug}#posts` })),
 ]
 
-const title = "Read Matt Waler's thoughts and ramblings on web development, app development, and life."
-const description = 'Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!'
-
 const postSummaries = posts.map(postSummary)
 
-const schema: PageSchema = {
-  type: 'CollectionPage',
-  breadcrumbs: [blogCrumb],
-  page: { mainEntity: blogRef },
-  nodes: [{ ...blog, blogPost: postSummaries }],
+const meta: PageMeta = {
+  title: "Matt Waler's blog on web and iOS development",
+  description: 'Coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. Come for the bugs, stay for the fixes!',
+  schema: {
+    type: 'CollectionPage',
+    breadcrumbs: [blogCrumb],
+    page: { mainEntity: blogRef },
+    nodes: [{ ...blog, blogPost: postSummaries }],
+  },
 }
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout meta={meta}>
   <Hero
     title="Sneak a peek inside my head."
     description="Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"

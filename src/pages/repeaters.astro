@@ -4,7 +4,7 @@ import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import SectionHeading from '../components/SectionHeading.astro'
 import Privacy from '../icons/Privacy.svg'
-import type { PageSchema } from '../layouts/Layout.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
 const cdn = (file: string) => `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/repeaters/${file}`
@@ -64,14 +64,18 @@ const features = [
   },
 ]
 
-const title = 'Repeaters is a free iPhone app for tracking recurring tasks.'
-const description = "Repeaters is a free iOS app for recurring tasks and chores. Set an interval once, get reminded when it's due, track the things you do whenever, and see your full completion history."
+const meta: PageMeta = {
+  title: 'Repeaters is a free iPhone app for tracking recurring tasks.',
+  description: "Repeaters is a free iOS app for recurring tasks and chores. Set an interval once, get reminded when it's due, and see your full completion history.",
+  ogImage: '/og-repeaters.png',
+  ogImageAlt: 'The Repeaters logo below a band of waves on a blue gradient background.',
+}
 
 const url = `${SITE}/repeaters`
 const appId = `${url}#app`
 
 // The page describes the Repeaters iOS app.
-const schema: PageSchema = {
+meta.schema = {
   breadcrumbs: [{ name: 'Repeaters', url }],
   page: { about: { '@id': appId }, mainEntity: { '@id': appId } },
   nodes: [
@@ -80,7 +84,7 @@ const schema: PageSchema = {
       '@id': appId,
       name: 'Repeaters',
       alternateName: 'Repeaters: Track Repeat Todos',
-      description,
+      description: meta.description,
       url,
       downloadUrl: download,
       installUrl: download,
@@ -96,13 +100,7 @@ const schema: PageSchema = {
 }
 ---
 
-<Layout
-  title={title}
-  description={description}
-  ogImage="/og-repeaters.png"
-  ogImageAlt="The Repeaters logo below a band of waves on a blue gradient background."
-  schema={schema}
->
+<Layout meta={meta}>
 
   <!-- Hero -->
   <Hero

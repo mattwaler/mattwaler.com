@@ -1,11 +1,15 @@
 ---
 import Markdown from '../layouts/Markdown.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
+
+const meta: PageMeta = {
+  title: 'Klaus Care Instructions',
+  description: 'A cheat sheet for taking care of Klaus!',
+  noindex: true,
+}
 ---
 
-<Markdown
-  title="Klaus Care Instructions"
-  description="A cheat sheet for taking care of Klaus!"
->
+<Markdown meta={meta}>
   <h2>Food</h2>
   <ul>
     <li>

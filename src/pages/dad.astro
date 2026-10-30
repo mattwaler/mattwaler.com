@@ -3,10 +3,14 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import Carousel from '../components/Carousel.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
 import { cdn } from '../data/images.js'
 
-const title = 'Dad'
-const description = 'An endlessly growing list of things my dad taught me.'
+const meta: PageMeta = {
+  title: 'Dad',
+  description: 'An endlessly growing list of things my dad taught me.',
+  noindex: true,
+}
 
 // Dimensions let the carousel reserve space before each photo arrives
 const photos = [
@@ -83,8 +87,8 @@ const lessons = [
 ]
 ---
 
-<Layout title={title} description={description}>
-  <Hero title={title} description={description} />
+<Layout meta={meta}>
+  <Hero title={meta.title} description={meta.description} />
 
   <Waves foreground="#f3f4f6" />
 

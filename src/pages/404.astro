@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Hero from '../components/Hero.astro'
+import Waves from '../components/Waves.astro'
+import RecentProjects from '../components/RecentProjects.astro'
+import RecentPosts from '../components/RecentPosts.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
+
+// Noindexed, so repeating the home page's closing sections here can't compete with it in search
+const meta: PageMeta = {
+  title: 'Page not found | Matt Waler',
+  description: "This page doesn't exist, or it moved.",
+  noindex: true,
+}
+---
+
+<Layout meta={meta}>
+  <Hero
+    title="Woah there buddy, you look lost."
+    description="This page either does not exist, or it moved somewhere else. Let's get you back on track."
+  />
+
+  <!-- Projects -->
+  <Waves foreground="#f3f4f6" />
+  <RecentProjects />
+
+  <!-- Blog -->
+  <Waves foreground="#162456" background="white" />
+  <RecentPosts />
+  <Waves rotate foreground="#155dfc" />
+</Layout>

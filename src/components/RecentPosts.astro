@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import SectionHeading from './SectionHeading.astro'
+import Carousel from './Carousel.astro'
+import BlogCard from './BlogCard.astro'
+
+const allPosts: CollectionEntry<'blog'>[] = await getCollection('blog')
+const recentPosts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 6)
+---
+
+<section class="bg-linear-to-b from-blue-950 to-blue-600 section">
+  <div class="container">
+    <SectionHeading title="What is Matt Waler thinking?" subtitle="Thoughts, tutorials, and the occasional rant." tone="cta" />
+    <div class="mt-12">
+      <Carousel label="Recent blog posts" cta={{ label: 'View All Posts', href: '/blog' }}>
+        {recentPosts.map(post => (
+          <BlogCard post={post} />
+        ))}
+      </Carousel>
+    </div>
+  </div>
+</section>

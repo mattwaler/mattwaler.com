@@ -8,7 +8,7 @@ import React from '../icons/React.svg'
 import projects from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.astro'
 import Carousel from '../components/Carousel.astro'
-import type { PageSchema } from '../layouts/Layout.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
 const tools = [
@@ -35,14 +35,16 @@ const recentProjects = projects
   .filter(project => project.tools.includes('Swift'))
   .slice(0, 3)
 
-const title = 'Ohio-based Freelance Mobile App Development by Matt Waler'
-const description = 'Fixed-price freelance mobile app development based in Ohio. Specializing in native iOS apps built with Swift and SwiftUI, or cross-platform apps built with React Native.'
+const meta: PageMeta = {
+  title: 'Ohio-based Freelance Mobile App Development by Matt Waler',
+  description: 'Fixed-price freelance mobile app development based in Ohio. Native iOS apps built with Swift and SwiftUI, or cross-platform apps with React Native.',
+}
 
 const url = `${SITE}/freelance-mobile-application-development`
 const serviceId = `${url}#service`
 
 // The page describes one Service offered by Matt, plus the pricing FAQ.
-const schema: PageSchema = {
+meta.schema = {
   type: ['WebPage', 'FAQPage'],
   breadcrumbs: [{ name: 'Freelance Mobile App Development', url }],
   page: {
@@ -59,7 +61,7 @@ const schema: PageSchema = {
       '@id': serviceId,
       name: 'Freelance Mobile App Development',
       serviceType: 'Mobile Application Development',
-      description,
+      description: meta.description,
       url,
       provider: personRef,
       areaServed: { '@type': 'Country', name: 'United States' },
@@ -76,7 +78,7 @@ const schema: PageSchema = {
 }
 ---
 
-<Layout title={title} description={description} schema={schema}>
+<Layout meta={meta}>
 
   <!-- Hero -->
   <Hero
@@ -126,14 +128,11 @@ const schema: PageSchema = {
     <div class="container">
       <SectionHeading title="Recent work" subtitle="A few examples of mobile apps I've built recently." />
       <div class="max-w-4xl mx-auto mt-12">
-        <Carousel label="Recent mobile apps" cols={2}>
+        <Carousel label="Recent mobile apps" cols={2} cta={{ label: 'View All Projects', href: '/projects' }}>
           {recentProjects.map(project => (
             <ProjectCard project={project} />
           ))}
         </Carousel>
-      </div>
-      <div class="mt-12 md:text-center">
-        <a href="/projects" class="button">View All Projects</a>
       </div>
     </div>
   </section>

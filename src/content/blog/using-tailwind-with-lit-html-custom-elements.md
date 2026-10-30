@@ -43,3 +43,5 @@ Now you can use it somewhere else in your project like so:
 ```
 
 [This is available in the documentation here](https://lit.dev/docs/components/shadow-dom/#implementing-createrenderroot). They talk about some of the shortcomings and why this is not recommended, but if you are using Tailwind in your projects, the benefits of having access to Tailwind far outweigh the cost of not being able to scope styling to your elements.
+
+For a real-world example of one of these elements shared between Twig and React, check out [Using Lit to create cross-language components](/blog/using-lit-cross-language-components).
