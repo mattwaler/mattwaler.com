@@ -20,12 +20,14 @@ const tagLinks = tags?.map(tag => ({
 
 <!-- The hero shows the bare title; the document title names the author for search results -->
 <Layout meta={{ ...meta, title: `${title} | Matt Waler` }}>
-  <Hero title={title} description={description} tags={tagLinks} />
+  <Hero title={title} description={description} tags={tagLinks}>
+    <slot name="eyebrow" slot="eyebrow" />
+  </Hero>
   <Waves foreground='#f3f4f6' />
   <section class="bg-gray-100 bg-linear-to-b from-gray-100 via-50% via-white to-gray-100 to-90%">
-    <div class="container section rich-text md:max-w-3xl">
+    <article class="container section rich-text md:max-w-3xl">
       <slot />
-    </div>
+    </article>
   </section>
   <!-- An `after` slot closes the page with a blue section, matching the home page's blog section -->
   {Astro.slots.has('after') ? (

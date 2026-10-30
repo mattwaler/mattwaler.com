@@ -1,5 +1,7 @@
 import type { CollectionEntry } from 'astro:content'
 import { projectImageUrl } from './projects.js'
+import { isoDate } from './dates'
+import { cdn } from './images.js'
 
 export type SchemaNode = Record<string, unknown>
 export type Breadcrumb = { name: string; url: string }
@@ -19,11 +21,18 @@ export const trendyMinds = {
   url: 'https://trendyminds.com',
 }
 
+// Shown on the home page under "Who is Matt Waler?" and used as the Person description
+export const bio = "I'm Matt Waler, a web and iOS developer from Ohio who's been building stuff since 2016. I like simple tools, fast sites, and apps that do one thing well. When I'm not building something, I'm most likely on a tennis court or hanging out with my wife and our french bulldog, Klaus."
+
 export const person: SchemaNode = {
   '@type': 'Person',
   '@id': PERSON_ID,
   name: 'Matt Waler',
+  // The App Store lists Matt's apps under his full name
+  alternateName: 'Matthew Waler',
   url: SITE,
+  image: cdn('masonry/masonry-5.webp'),
+  description: bio,
   jobTitle: 'Web & iOS Developer',
   worksFor: trendyMinds,
   address: {
@@ -50,6 +59,7 @@ export const person: SchemaNode = {
     'https://github.com/mattwaler',
     'https://instagram.com/mattwaler',
     'https://linkedin.com/in/mattwaler',
+    'https://apps.apple.com/us/developer/matthew-waler/id1659047703',
   ],
 }
 
@@ -98,7 +108,7 @@ export const postSummary = (post: CollectionEntry<'blog'>): SchemaNode => ({
   headline: post.data.title,
   description: post.data.description,
   url: postUrl(post),
-  datePublished: post.data.date.toISOString(),
+  datePublished: isoDate(post.data.date),
   author: personRef,
 })
 

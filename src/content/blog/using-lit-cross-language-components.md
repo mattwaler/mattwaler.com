@@ -15,7 +15,7 @@ At my agency, our biggest client's website operates on the following stack:
 - Algolia Instantsearch for search experiences
 - TailwindCSS for styling
 
-## The Problem
+## Why our provider card ended up written twice
 
 A massive challenge we face in this approach is when a component spans across multiple templating languages. For example, we utilize a "Provider Card" that displays a provider's avatar, their phone number, and a button to drive users to that provider's page. This card is utilized in the Algolia experience, but it also needs to be server-rendered other pages that are related to this provider!
 
@@ -73,7 +73,7 @@ Same markup and same classes, written twice. Both cards take a single `provider`
 
 As you can imagine, this grows more and more painful as more logic gets added to the cards, because they now have to be added in both places, and tested with entirely different libraries and methodologies! You also cannot pass data to the cards in a consistent way across platforms!
 
-## The Solution
+## Writing the card once as a Lit custom element
 
 A fantastic solution we found for this problem was utilizing Lit and HTML Custom Elements to solve this problem. This allowed us to define our components in a singular templating language that could then be used by both server and client rendered libraries throughout the site!
 

@@ -10,6 +10,9 @@ interface Props {
 
 const { title, description, titlePhrases, cta, tags, image } = Astro.props
 
+// Rendered up front: a slot forwarded from a layout counts as filled even when it's empty
+const eyebrow = Astro.slots.has('eyebrow') ? (await Astro.slots.render('eyebrow')).trim() : ''
+
 const reserveTitle = titlePhrases?.length
   ? `${title} ${titlePhrases.reduce((a, b) => (a.length > b.length ? a : b))}`
   : undefined
@@ -20,13 +23,15 @@ const reserveTitle = titlePhrases?.length
     <div class:list={['space-y-6 overlap', image && 'md:w-[65%]']}>
       {reserveTitle && (
         <div class:list={['space-y-6 w-full max-w-3xl', !image && 'mx-auto']}>
-          <p role="presentation" aria-hidden="true" class="h1 opacity-0">
-            {reserveTitle}
-          </p>
+          <!-- Drawn from an attribute so text extractors don't read it as the page's first line -->
+          <p aria-hidden="true" class="h1 opacity-0 before:content-[attr(data-text)]" data-text={reserveTitle}></p>
           {description && <p class="h6 opacity-75 text-balance">{description}</p>}
         </div>
       )}
       <div class:list={['space-y-6 w-full max-w-3xl', !image && 'mx-auto']}>
+        {eyebrow && (
+          <p class="!mb-3 text-base text-gray-600" set:html={eyebrow} />
+        )}
         <h1 class:list={["h1", !reserveTitle && (image ? 'text-pretty' : 'text-balance')]}>
           {titlePhrases?.length ? (
             <>

@@ -7,6 +7,8 @@ import { blog, blogCrumb, blogRef, personRef, postId, postUrl } from "../../data
 import SectionHeading from "../../components/SectionHeading.astro";
 import BlogCard from "../../components/BlogCard.astro";
 import Carousel from "../../components/Carousel.astro";
+import { formatDate, isoDate } from "../../data/dates";
+import { cdn } from "../../data/images.js";
 
 export async function getStaticPaths() {
   const posts: CollectionEntry<'blog'>[] = await getCollection("blog") ;
@@ -33,8 +35,8 @@ const { post, related } = Astro.props;
 const { Content } = await render(post);
 
 const url = postUrl(post)
-const published = post.data.date.toISOString()
-const modified = (post.data.updated ?? post.data.date).toISOString()
+const published = isoDate(post.data.date)
+const modified = isoDate(post.data.updated ?? post.data.date)
 const wordCount = post.body?.split(/\s+/).filter(Boolean).length
 
 const meta: PageMeta = {
@@ -75,10 +77,28 @@ const meta: PageMeta = {
 ---
 
 <Markdown meta={meta} tags={post.data.tags}>
+  <time slot="eyebrow" datetime={published}>{formatDate(post.data.date)}</time>
   <Content />
-  <div class="mt-12 rich-text">
-    <p>Did you enjoy this post? Consider <a href="/rss.xml">subscribing to the RSS feed</a>!</p>
-  </div>
+  <aside aria-label="About the author" class="mt-12 pt-8 border-t border-gray-300 flex flex-col sm:flex-row sm:items-center gap-6">
+    <!-- A tall portrait beside the text on wider screens, cropped to the faces on phones -->
+    <div class="relative h-56 sm:h-48 sm:w-28 shrink-0 rounded-xl overflow-clip">
+      <img
+        src={cdn('masonry/masonry-2.webp')}
+        alt="Matt Waler"
+        width="1235"
+        height="1852"
+        loading="lazy"
+        class="absolute inset-0 size-full object-cover object-[50%_30%]"
+      />
+    </div>
+    <div class="flex-1 text-sm/relaxed md:text-base/relaxed">
+      <p class="!m-0 text-sm text-gray-600">Written by</p>
+      <p class="!m-0 text-lg md:text-xl font-bold"><a href="/" rel="author" class="!no-underline hover:!underline">Matt Waler</a></p>
+      <!-- Kept on one line: Astro drops the whitespace at line breaks next to inline tags -->
+      <p class="!mt-3 !mb-0">I'm a web and iOS developer in Ohio, building websites at TrendyMinds by day and iPhone apps like <a href="/repeaters">Repeaters</a> and <a href="/intervals">Intervals</a> by night.</p>
+      <p class="!mt-3 !mb-0">If you liked this post, <a href="/rss.xml">subscribe to  the RSS feed!</a></p>
+    </div>
+  </aside>
   {/* A lone related post doesn't earn its own section */}
   {related.length >= 2 && (
     <Fragment slot="after">

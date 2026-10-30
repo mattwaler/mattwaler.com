@@ -13,11 +13,15 @@ I am using this component in one of my most recent projects:
 
 I will be using Tailwind CSS and Alpine.js for styling and scripting, but this can easily be recreated in vanilla JS/CSS if that's your preference!
 
+## How the blur-up effect works
+
 The concept is really simple:
 
 - Construct a container that is sized to your image dimensions
 - Render a microscopic version of the image with a tiny file size that loads eagerly first and displays while the full resolution image is loading
 - Load the full resolution image lazily, and once completed, hide the tiny image that is displaying in front of it
+
+## The ImageBlur component
 
 Take a look at this Astro component I named `ImageBlur.astro`:
 
@@ -87,6 +91,8 @@ const {
   />
 </div>
 ```
+
+## Using the component
 
 This can now be used in any other Astro files like so:
 

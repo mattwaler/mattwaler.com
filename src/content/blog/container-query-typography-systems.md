@@ -8,7 +8,7 @@ tags:
 
 In every web project I've ever done, I always end up creating a set of utility classes for each heading type. Things like `h1`, `h2`, and so on.
 
-## The Setup
+## Breakpoint-based heading utilities
 
 For example, here's an excerpt of my old typography styles on this site, written in Tailwind of course:
 
@@ -28,13 +28,13 @@ For example, here's an excerpt of my old typography styles on this site, written
 /* and so on... */
 ```
 
-## The Problem
+## Why breakpoint sizes break in two-column layouts
 
 While this works great for maintaining consistency and adherence to a typography scale, there's one crucial area where this approach breaks down: the dreaded 2-column. You know the one, where you have an image on one side, and your content on the other:
 
 ![Two-column layout where the heading in the second section is annotated "Too big" next to a "Just right" heading above it](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-1.webp)
 
-## The Tempting Fix
+## Why dropping a heading level doesn't fix it
 
 In a UI like this, you may be tempted to use your `h2` style, but I can guarantee it will look way large in that context! Now, you may be tempted to utilize the next step down in your type scale, like so:
 
@@ -44,7 +44,7 @@ Unfortunately, that introduces another problem. Now, when you inevitably stack o
 
 ![The layout stacked into one column, annotated: the lower heading feels too small and inconsistent with the H2 above it](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/typography-3.webp)
 
-## The Solution
+## Sizing headings with container queries
 
 With the advent and adoption of container queries and the `:has` selector, this phenomenon can finally be solved! Instead of utilizing breakpoint-based typography scales, the solution is to use container-based scales! Peep the code:
 
@@ -77,7 +77,7 @@ With the advent and adoption of container queries and the `:has` selector, this 
 
 Now, your typography styles will respond not to the entire viewport, but their parent container size! So when using the dreaded 2-column UI element, your typography will like you would expect!
 
-## The Result
+## How container-sized headings look on desktop and mobile
 
 Here's how your exact same `h2` class would behave on desktop:
 

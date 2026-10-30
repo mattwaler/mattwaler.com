@@ -14,7 +14,7 @@ import Swift from '../icons/Swift.svg'
 import Statamic from '../icons/Statamic.svg'
 import Laravel from '../icons/Laravel.svg'
 import type { PageMeta } from '../layouts/Layout.astro'
-import { personRef } from '../data/schema'
+import { bio, personRef } from '../data/schema'
 import { cdn } from '../data/images.js'
 
 // Dimensions let the grid reserve space before each image arrives
@@ -95,7 +95,9 @@ const meta: PageMeta = {
   <!-- Masonry -->
   <Waves rotate foreground="#155dfc" />
   <section class="bg-white section space-y-12 md:space-y-24">
-    <SectionHeading title="Who is Matt Waler?" subtitle="They always say to show, not tell." class="container" />
+    <SectionHeading title="Who is Matt Waler?" subtitle="They always say to show, not tell. I'll do both." class="container">
+      <p class="mt-6 text-lg text-gray-600 md:max-w-3xl md:mx-auto">{bio}</p>
+    </SectionHeading>
     <div
       class="grid grid-cols-[repeat(auto-fill,minmax(120px,1fr))] md:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] container max-w-none gap-3 md:gap-5 grid-rows-[masonry]"
       x-init="new window.Masonry($el)"
