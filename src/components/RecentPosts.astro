@@ -5,18 +5,35 @@ import SectionHeading from './SectionHeading.astro'
 import Carousel from './Carousel.astro'
 import BlogCard from './BlogCard.astro'
 
-const allPosts: CollectionEntry<'blog'>[] = await getCollection('blog')
-const recentPosts = allPosts
+// Defaults to the home page's six newest posts; blog posts pass their related posts and copy
+interface Props {
+  title?: string
+  subtitle?: string
+  /** Accessible name for the carousel. */
+  label?: string
+  posts?: CollectionEntry<'blog'>[]
+}
+
+const {
+  title = 'What is Matt Waler thinking?',
+  subtitle = 'Thoughts, tutorials, and the occasional rant.',
+  label = 'Recent blog posts',
+} = Astro.props
+
+const posts = Astro.props.posts ?? (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 6)
+
+// Two posts split the row in half rather than leaving a gap
+const cols = posts.length === 2 ? 2 : 3
 ---
 
 <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
   <div class="container">
-    <SectionHeading title="What is Matt Waler thinking?" subtitle="Thoughts, tutorials, and the occasional rant." tone="cta" />
+    <SectionHeading title={title} subtitle={subtitle} tone="cta" />
     <div class="mt-12">
-      <Carousel label="Recent blog posts" cta={{ label: 'View All Posts', href: '/blog' }}>
-        {recentPosts.map(post => (
+      <Carousel label={label} cols={cols} cta={{ label: 'All Posts', href: '/blog' }}>
+        {posts.map(post => (
           <BlogCard post={post} />
         ))}
       </Carousel>

@@ -4,9 +4,7 @@ import Markdown from "../../layouts/Markdown.astro";
 import type { PageMeta } from "../../layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
 import { blog, blogCrumb, blogRef, personRef, postId, postUrl } from "../../data/schema";
-import SectionHeading from "../../components/SectionHeading.astro";
-import BlogCard from "../../components/BlogCard.astro";
-import Carousel from "../../components/Carousel.astro";
+import RecentPosts from "../../components/RecentPosts.astro";
 import { formatDate, isoDate } from "../../data/dates";
 import { cdn } from "../../data/images.js";
 
@@ -101,17 +99,12 @@ const meta: PageMeta = {
   </aside>
   {/* A lone related post doesn't earn its own section */}
   {related.length >= 2 && (
-    <Fragment slot="after">
-      <SectionHeading title="What else is Matt Waler thinking?" subtitle="Made it this far? These might be up your alley too." tone="cta" />
-      <div class="mt-12">
-        <Carousel
-          label="Related posts"
-          cols={related.length === 2 ? 2 : 3}
-          cta={{ label: 'View All Posts', href: '/blog' }}
-        >
-          {related.map((post) => <BlogCard post={post} />)}
-        </Carousel>
-      </div>
-    </Fragment>
+    <RecentPosts
+      slot="after"
+      title="What else is Matt Waler thinking?"
+      subtitle="Made it this far? These might be up your alley too."
+      label="Related posts"
+      posts={related}
+    />
   )}
 </Markdown>

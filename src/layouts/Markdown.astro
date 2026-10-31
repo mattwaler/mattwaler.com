@@ -29,15 +29,11 @@ const tagLinks = tags?.map(tag => ({
       <slot />
     </article>
   </section>
-  <!-- An `after` slot closes the page with a blue section, matching the home page's blog section -->
+  <!-- An `after` slot closes the page with a blue section, like RecentPosts on the home page -->
   {Astro.slots.has('after') ? (
     <>
       <Waves foreground="#162456" background="#f3f4f6" />
-      <section class="bg-linear-to-b from-blue-950 to-blue-600 section">
-        <div class="container">
-          <slot name="after" />
-        </div>
-      </section>
+      <slot name="after" />
       <Waves rotate foreground="#155dfc" />
     </>
   ) : (

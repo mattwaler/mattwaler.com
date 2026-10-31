@@ -6,8 +6,7 @@ import SectionHeading from '../components/SectionHeading.astro'
 import Swift from '../icons/Swift.svg'
 import React from '../icons/React.svg'
 import projects from '../data/projects.js'
-import ProjectCard from '../components/ProjectCard.astro'
-import Carousel from '../components/Carousel.astro'
+import RecentProjects from '../components/RecentProjects.astro'
 import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
@@ -124,18 +123,14 @@ meta.schema = {
 
   <!-- Projects -->
   <Waves foreground="#f3f4f6" />
-  <section class="section bg-linear-to-b from-gray-100 to-white">
-    <div class="container">
-      <SectionHeading title="Recent work" subtitle="A few examples of mobile apps I've built recently." />
-      <div class="max-w-4xl mx-auto mt-12">
-        <Carousel label="Recent mobile apps" cols={2} cta={{ label: 'View All Projects', href: '/projects' }}>
-          {recentProjects.map(project => (
-            <ProjectCard project={project} />
-          ))}
-        </Carousel>
-      </div>
-    </div>
-  </section>
+  <RecentProjects
+    title="Recent work"
+    subtitle="A few examples of mobile apps I've built recently."
+    label="Recent mobile apps"
+    projects={recentProjects}
+    cols={2}
+    class="max-w-4xl mx-auto"
+  />
 
   <!-- Contact -->
   <Waves foreground="#162456" background="white" />

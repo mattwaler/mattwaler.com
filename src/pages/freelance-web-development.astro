@@ -9,8 +9,7 @@ import Craft from '../icons/Craft.svg'
 import AstroIcon from '../icons/AstroIcon.svg'
 import Nextjs from '../icons/Nextjs.svg'
 import projects from '../data/projects.js'
-import ProjectCard from '../components/ProjectCard.astro'
-import Carousel from '../components/Carousel.astro'
+import RecentProjects from '../components/RecentProjects.astro'
 import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
@@ -130,18 +129,12 @@ meta.schema = {
 
   <!-- Projects -->
   <Waves foreground="#f3f4f6" />
-  <section class="section bg-linear-to-b from-gray-100 to-white">
-    <div class="container">
-      <SectionHeading title="Recent work" subtitle="A few examples of CMS-based and static sites I've built recently." />
-      <div class="mt-12">
-        <Carousel label="Recent web projects" cta={{ label: 'View All Projects', href: '/projects' }}>
-          {recentProjects.map(project => (
-            <ProjectCard project={project} />
-          ))}
-        </Carousel>
-      </div>
-    </div>
-  </section>
+  <RecentProjects
+    title="Recent work"
+    subtitle="A few examples of CMS-based and static sites I've built recently."
+    label="Recent web projects"
+    projects={recentProjects}
+  />
 
   <!-- Contact -->
   <Waves foreground="#162456" background="white" />

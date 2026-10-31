@@ -2,17 +2,36 @@
 import SectionHeading from './SectionHeading.astro'
 import Carousel from './Carousel.astro'
 import ProjectCard from './ProjectCard.astro'
-import projects from '../data/projects.js'
+import allProjects from '../data/projects.js'
 
-const recentProjects = projects.slice(0, 6)
+// Defaults to the home page's section; other pages pass their own projects and copy
+interface Props {
+  title?: string
+  subtitle?: string
+  /** Accessible name for the carousel. */
+  label?: string
+  projects?: typeof allProjects
+  cols?: 2 | 3
+  /** Extra classes for the carousel's wrapper, e.g. to narrow it. */
+  class?: string
+}
+
+const {
+  title = 'What is Matt Waler building?',
+  subtitle = 'Take a gander at my most recent projects.',
+  label = 'Recent projects',
+  projects = allProjects.slice(0, 6),
+  cols,
+  class: className,
+} = Astro.props
 ---
 
 <section class="section bg-linear-to-b from-gray-100 to-white">
   <div class="container">
-    <SectionHeading title="What is Matt Waler building?" subtitle="Take a gander at my most recent projects." />
-    <div class="mt-12">
-      <Carousel label="Recent projects" cta={{ label: 'View All Projects', href: '/projects' }}>
-        {recentProjects.map(project => (
+    <SectionHeading title={title} subtitle={subtitle} />
+    <div class:list={[className, 'mt-12']}>
+      <Carousel label={label} cols={cols} cta={{ label: 'All Projects', href: '/projects' }}>
+        {projects.map(project => (
           <ProjectCard project={project} />
         ))}
       </Carousel>
