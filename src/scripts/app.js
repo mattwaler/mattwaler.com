@@ -16,3 +16,9 @@ window.EmblaCarousel = EmblaCarousel
 window.Typed = Typed
 
 Alpine.start()
+
+// The router only runs count.js once, so report each client-side navigation ourselves. The
+// referrer is blanked because document.referrer still points at whatever site sent the first visit
+document.addEventListener('astro:after-swap', () => {
+  window.goatcounter?.count?.({ referrer: () => '' })
+})
