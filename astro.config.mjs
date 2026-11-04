@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import sitemap from '@astrojs/sitemap'
 import { satteri } from '@astrojs/markdown-satteri'
 import postTweaks from './src/plugins/hast-post-tweaks.mjs'
+import { easternDate } from './src/data/dates.ts'
 
 const site = 'https://mattwaler.com'
 
@@ -19,8 +20,9 @@ const postsDir = new URL('./src/content/blog/', import.meta.url)
 const postLastmod = new Map(
   readdirSync(postsDir).filter(file => file.endsWith('.md')).map(file => {
     const frontmatter = readFileSync(new URL(file, postsDir), 'utf8').split('---')[1] ?? ''
-    const field = name => frontmatter.match(new RegExp(`^${name}:\\s*(\\S+)`, 'm'))?.[1]
-    return [`${site}/blog/${file.replace(/\.md$/, '')}`, field('updated') ?? field('date')]
+    const field = name => frontmatter.match(new RegExp(`^${name}:\\s*(.+)$`, 'm'))?.[1]
+    const lastmod = field('updated') ?? field('date')
+    return [`${site}/blog/${file.replace(/\.md$/, '')}`, lastmod && new Date(easternDate(lastmod)).toISOString()]
   })
 )
 

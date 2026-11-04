@@ -1,5 +1,5 @@
 ---
-date: 2026-11-04
+date: 2026-11-04 14:15
 title: "Changing my crosshair"
 description: My friends gave me endless grief for constantly tweaking my Counter-Strike crosshair. Turns out that habit was the perfect training for a career in web development.
 tags:
