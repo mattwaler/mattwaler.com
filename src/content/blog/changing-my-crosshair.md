@@ -103,7 +103,7 @@ After years of webpack configs, [Vite](https://vite.dev) was a relief, and I bar
 
 At this point in my career, I moved from frontend to fullstack development, and I was now working with clients who needed edit access to certain areas of their sites. Tailwind, Alpine, and Vite covered how I styled, scripted, and built those sites, but now I needed a CMS too.
 
-[Craft CMS](https://craftcms.com) was my answer. It was the simplest configurable CMS I could find for non-technical people. I could build custom fields for each site and write templates in [Twig](https://twig.symfony.com), so I kept full control over the markup. Clients got an editor they could actually use, and I got a CMS with no opinions about my front end.
+[Craft CMS](https://craftcms.com) was my answer. It was the simplest configurable CMS I could find for non-technical people. I could build custom fields for each site and write templates in [Twig](https://twig.symfony.com), so I kept full control over the markup.
 
 ## Flat-file content with Statamic
 
@@ -130,18 +130,20 @@ blocks:
 ---
 ```
 
-I think that's where client work is heading. In the industries I work in (healthcare, non-profits, and small-to-medium businesses), clients don't want to author content in a CMS anymore. Even with a friendly control panel, they'd rather send a quick email than log in and hunt for the right entry.
+## Where I think the CMS landscape is headed
 
-So they just ask:
+I think my approach above with Astro is where client work is heading. In the industries I work in (healthcare, non-profits, and small-to-medium businesses), clients don't want to author content in a CMS anymore. Even with a friendly control panel, they'd rather send a quick email and "prompt" somebody else than log in and hunt for the right spot in the CMS to update certain things.
+
+I get emails like this daily:
 
 * "Can you add our new team member?"
 * "Can you update our holiday hours?"
 * "Can you swap out the homepage photo?"
 * "Can you post this upcoming event?"
 
-A developer, or an LLM with a developer reviewing its work, edits the Markdown, drops new images into an [S3](https://aws.amazon.com/s3/) bucket, and the site rebuilds. Every change has a commit behind it, and there's no database to back up or patch. If you've read my post on [simplicity in agency development](/blog/simplicity-in-agency-development), you know why that appeals to me.
+With this new approach, A developer can prompt an LLM to edit the Markdown, drop new images into an [S3](https://aws.amazon.com/s3/) bucket, and commit the changes to trigger an automated CI/CD pipeline to deploy the changes. Every change has a commit behind it, and there's no database to back up or patch. If you've read my post on [simplicity in agency development](/blog/simplicity-in-agency-development), you know why that appeals to me.
 
-The traditional CMS isn't going away tomorrow, but it's starting to feel like a crosshair I'm about to change.
+The traditional CMS isn't going away tomorrow, but it's starting to feel like a crosshair that needs some tweaks.
 
 ## Prompt-driven development with Claude and VS Code
 
