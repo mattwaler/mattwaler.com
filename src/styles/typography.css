@@ -66,9 +66,10 @@
 		li p { @apply my-4; }
 
 		/* Assets */
-		img { @apply max-w-full h-auto mx-auto; }
+		img { @apply max-w-full h-auto mx-auto rounded-xl shadow-xl; }
 		video, iframe.video { @apply max-w-full mx-auto aspect-video; }
-		figcaption { @apply my-4 text-[smaller]; }
+		figure, p:has(> img:only-child) { @apply my-[3em]; }
+		figcaption { @apply mt-6 text-[smaller] text-center; }
 
 		/* Tables */
 		table { @apply w-full table-auto text-left; }
