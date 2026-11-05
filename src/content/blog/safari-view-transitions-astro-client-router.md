@@ -17,7 +17,7 @@ Modern Safari tints its toolbars to match whatever content sits underneath them.
 It's a small thing, but once I saw it I couldn't stop seeing it. Here's my homepage in the iOS Simulator, navigating to the contact page. Watch the toolbar at the bottom as the page changes.
 
 <figure>
-  <video class="aspect-auto! w-full max-w-xs rounded-xl shadow-xl" src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/safari-toolbar-before.mp4?v=4" poster="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/safari-toolbar-before-poster.webp?v=3" width="600" height="1304" controls preload="metadata" muted playsinline aria-label="Safari with view transitions on: the page fades through white and the bottom toolbar flashes white"></video>
+  <video class="aspect-auto! w-full max-w-xs rounded-xl shadow-xl" src="https://cdn.mattwaler.com/blog/safari-toolbar-before.mp4?v=4" poster="https://cdn.mattwaler.com/blog/safari-toolbar-before-poster.webp?v=3" width="600" height="1304" controls preload="metadata" muted playsinline aria-label="Safari with view transitions on: the page fades through white and the bottom toolbar flashes white"></video>
   <figcaption>Before the fix, at 1/2 speed.</figcaption>
 </figure>
 
@@ -52,11 +52,11 @@ Here's the same navigation with the fix in place, next to the original for compa
 <figure>
   <div class="grid grid-cols-2 gap-4 md:gap-8 max-w-xl mx-auto">
     <div>
-      <video class="aspect-auto! w-full rounded-xl shadow-xl" src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/safari-toolbar-before.mp4?v=4" poster="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/safari-toolbar-before-poster.webp?v=3" width="600" height="1304" controls preload="metadata" muted playsinline aria-label="Safari with view transitions on: the page fades through white and the bottom toolbar flashes white"></video>
+      <video class="aspect-auto! w-full rounded-xl shadow-xl" src="https://cdn.mattwaler.com/blog/safari-toolbar-before.mp4?v=4" poster="https://cdn.mattwaler.com/blog/safari-toolbar-before-poster.webp?v=3" width="600" height="1304" controls preload="metadata" muted playsinline aria-label="Safari with view transitions on: the page fades through white and the bottom toolbar flashes white"></video>
       <p class="mt-3 text-center font-bold">Before</p>
     </div>
     <div>
-      <video class="aspect-auto! w-full rounded-xl shadow-xl" src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/safari-toolbar-after.mp4?v=4" poster="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/safari-toolbar-after-poster.webp?v=3" width="600" height="1304" controls preload="metadata" muted playsinline aria-label="Safari with view transitions off: the page swaps instantly without a white flash"></video>
+      <video class="aspect-auto! w-full rounded-xl shadow-xl" src="https://cdn.mattwaler.com/blog/safari-toolbar-after.mp4?v=4" poster="https://cdn.mattwaler.com/blog/safari-toolbar-after-poster.webp?v=3" width="600" height="1304" controls preload="metadata" muted playsinline aria-label="Safari with view transitions off: the page swaps instantly without a white flash"></video>
       <p class="mt-3 text-center font-bold">After</p>
     </div>
   </div>

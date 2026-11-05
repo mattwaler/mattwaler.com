@@ -22,7 +22,7 @@ If I have to think about the answer for more than a second, the system probably 
 
 Reminders is my place for anything that gets done once. Things like Amazon returns, picking up sticks in the backyard, and future blog posts I want to write.
 
-![Screenshots of my Reminders app setup](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/reminders-mock.webp)
+![Screenshots of my Reminders app setup](https://cdn.mattwaler.com/blog/reminders-mock.webp)
 
 As you can see, it's also where my media backlog lives. I keep separate lists for movies to watch, games to play, and books I want to load into my Ebook.
 
@@ -34,7 +34,7 @@ If Reminders is for things that end, Notes is for things that stick around.
 
 Recipes live here. So do checklists I reuse, like what to pack for a trip or what to do before we leave the house for a week. Those checklists aren't tasks, they're references. I don't want them disappearing when I check them off.
 
-![Screenshots of my Notes app setup](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/notes-mock.webp)
+![Screenshots of my Notes app setup](https://cdn.mattwaler.com/blog/notes-mock.webp)
 
 Notes is also my brain dump. Any half-baked idea, gift idea for my wife, or random thought I'll forget in ten minutes gets thrown into a note. It doesn't need to be organized any more than a few different folders within the app. It just needs to exist somewhere other than my head.
 
@@ -58,7 +58,7 @@ That sorta works okay, until you miss one. Then, the whole schedule gets misalig
 
 I built [Repeaters](/repeaters) to handle this exact problem. It seperates out these endless tasks into their own app so that your true checklists can actually be completed instead of being endlessly refreshed. All this app does is track how long it's been since I last did something, sends a push notification after a set interval when it is time to complete it again.
 
-![Screenshots of my Repeaters app setup](https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/repeaters-mock.webp)
+![Screenshots of my Repeaters app setup](https://cdn.mattwaler.com/blog/repeaters-mock.webp)
 
 As you can see, I'm a bit behind on moisturizing and stretching, but I don't fret over it, I will get back to them when I can and they are not clogging up my other todo list.
 

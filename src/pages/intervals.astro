@@ -6,8 +6,9 @@ import SectionHeading from '../components/SectionHeading.astro'
 import Privacy from '../icons/Privacy.svg'
 import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
+import { cdn } from '../data/images.js'
 
-const cdn = (file: string) => `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/intervals/${file}`
+const shot = (file: string) => cdn(`intervals/${file}`)
 
 const download = 'https://apps.apple.com/us/app/fitness-timer-simple/id1659047701?platform=iphone'
 
@@ -15,37 +16,37 @@ const features = [
   {
     heading: 'Set your work time in seconds.',
     subheading: 'Slide or step your countdown anywhere from 5 seconds to 5 minutes. No menus, no presets to dig through.',
-    image: cdn('countdown.webp'),
+    image: shot('countdown.webp'),
     alt: 'Intervals settings screen with the countdown slider',
   },
   {
     heading: 'Build in the rest you need.',
     subheading: 'Choose a rest period between every round, and Intervals switches over for you the moment work time ends.',
-    image: cdn('rest.webp'),
+    image: shot('rest.webp'),
     alt: 'Intervals timer during a rest period',
   },
   {
     heading: 'Repeat as many times as you like.',
     subheading: 'Pick up to 10 rounds, or have the timer repeat indefinitely until you decide you are done.',
-    image: cdn('repeats.webp'),
+    image: shot('repeats.webp'),
     alt: 'Intervals repeat settings with the repeat indefinitely toggle',
   },
   {
     heading: 'See and hear every round.',
     subheading: 'A wave fills the timer as each round counts down, with a sound at the start and end so you never need to look at your phone.',
-    image: cdn('timer.webp'),
+    image: shot('timer.webp'),
     alt: 'Intervals countdown timer filling with a wave animation',
   },
   {
     heading: 'Picks up right where you left off.',
     subheading: 'Your countdown, rest, and repeat settings are remembered, so your next workout is a single tap away.',
-    image: cdn('settings.webp'),
+    image: shot('settings.webp'),
     alt: 'Intervals settings for countdown, rest, and repeats',
   },
   {
     heading: 'At home on any screen.',
     subheading: 'Intervals works in portrait or landscape on both iPhone and iPad, so prop it up wherever you train.',
-    image: cdn('landscape.webp'),
+    image: shot('landscape.webp'),
     alt: 'Intervals timer in landscape on iPhone and iPad',
   },
 ]
@@ -75,7 +76,7 @@ meta.schema = {
       downloadUrl: download,
       installUrl: download,
       sameAs: [download],
-      image: cdn('hero.webp'),
+      image: shot('hero.webp'),
       screenshot: features.map(feature => feature.image),
       operatingSystem: 'iOS',
       applicationCategory: 'HealthApplication',
@@ -93,7 +94,7 @@ meta.schema = {
     title="A workout timer that stays out of your way."
     description="Set your work, rest, and rounds once. Hit start, put your phone down, and let Intervals keep time."
     cta={{ label: 'Download on the App Store', href: download }}
-    image={{ src: cdn('hero.webp'), alt: 'Intervals timer app on iPhone', width: 700, height: 900 }}
+    image={{ src: shot('hero.webp'), alt: 'Intervals timer app on iPhone', width: 700, height: 900 }}
   />
 
   <!-- Intro -->

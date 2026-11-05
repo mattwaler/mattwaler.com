@@ -11,12 +11,12 @@ tags:
 Growing up, I played a LOT of CS:GO with my friends, and they gave me endless grief for changing my crosshair every week. Smaller, bigger gap, green, cyan, dot, no dot. Funnily enough, they always seemed to spot the new crosshair after they died and I was still alive and fighting for that round.
 
 <figure>
-  <img src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/cs2-hours.webp?v=4" alt="My Steam library showing 1,948 hours on record in Counter-Strike 2" width="1254" height="171" loading="lazy" decoding="async">
+  <img src="https://cdn.mattwaler.com/blog/cs2-hours.webp?v=4" alt="My Steam library showing 1,948 hours on record in Counter-Strike 2" width="1254" height="171" loading="lazy" decoding="async">
   <figcaption>Please don't judge me.</figcaption>
 </figure>
 
 <figure>
-  <img src="https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/blog/crosshair-settings.webp" alt="A green Counter-Strike crosshair labeled with the console commands for its dot, size, thickness, color, and outline" width="1224" height="720" loading="lazy" decoding="async">
+  <img src="https://cdn.mattwaler.com/blog/crosshair-settings.webp" alt="A green Counter-Strike crosshair labeled with the console commands for its dot, size, thickness, color, and outline" width="1224" height="720" loading="lazy" decoding="async">
   <figcaption>Image via <a href="https://scope.gg" target="_blank" rel="noopener noreferrer">scope.gg</a></figcaption>
 </figure>
 

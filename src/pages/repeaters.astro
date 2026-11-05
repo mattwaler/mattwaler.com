@@ -6,8 +6,9 @@ import SectionHeading from '../components/SectionHeading.astro'
 import Privacy from '../icons/Privacy.svg'
 import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
+import { cdn } from '../data/images.js'
 
-const cdn = (file: string) => `https://mattwaler.nyc3.cdn.digitaloceanspaces.com/MW/repeaters/${file}`
+const shot = (file: string) => cdn(`repeaters/${file}`)
 
 const download = 'https://apps.apple.com/us/app/repeaters-track-repeat-todos/id6478084115'
 
@@ -15,51 +16,51 @@ const features = [
   {
     heading: 'Create items with custom intervals.',
     subheading: "Add an item, set the interval for completion, and you'll get a notification when it's time to do it.",
-    image: cdn('item.webp'),
+    image: shot('item.webp'),
     alt: 'Repeaters item detail screen with a custom repeat interval',
   },
   {
     heading: 'Track the things you do whenever.',
     subheading: "Turn off notifications for tasks without a schedule, like washing the car. They get their own list and show how long it's been since you last did them.",
-    image: cdn('unscheduled.webp'),
+    image: shot('unscheduled.webp'),
     alt: 'Repeaters unscheduled items list showing time since last completion',
     isNew: true,
   },
   {
     heading: 'Create groups to keep items organized.',
     subheading: 'Break up your tasks into groups to keep things clean. Choose from dozens of bright colors and icons to make each one your own.',
-    image: cdn('groups.webp'),
+    image: shot('groups.webp'),
     alt: 'Repeaters groups list with custom colors and icons',
   },
   {
     heading: 'Perform quick actions with a single tap.',
     subheading: 'Postpone an item or log a missed completion right from the list, or from the item itself.',
-    image: cdn('quick.webp'),
+    image: shot('quick.webp'),
     alt: 'Quick actions to postpone or mark a missed completion in Repeaters',
   },
   {
     heading: 'View your entire completion history.',
     subheading: 'Whether you want to see the history of a single item, or all items chronologically, Repeaters has you covered.',
-    image: cdn('history.webp'),
+    image: shot('history.webp'),
     alt: 'Repeaters completion history timeline',
   },
   {
     heading: 'Back up your data any time.',
     subheading: 'Export every group, item, and completion to a CSV file from Settings, and import it again whenever you need to.',
-    image: cdn('backup.webp'),
+    image: shot('backup.webp'),
     alt: 'Repeaters settings with CSV export and import options',
     isNew: true,
   },
   {
     heading: 'Stay synced across all your devices.',
     subheading: 'Repeaters utilizes your own iCloud storage so that items, groups, and completions stay perfectly in sync.',
-    image: cdn('sync.webp'),
+    image: shot('sync.webp'),
     alt: 'Repeaters synced across iPhone and iPad with iCloud',
   },
   {
     heading: 'Stunning across device appearance settings.',
     subheading: 'Repeaters looks incredible regardless of your theme preferences.',
-    image: cdn('dark.webp'),
+    image: shot('dark.webp'),
     alt: 'Repeaters shown in light and dark mode',
   },
 ]
@@ -89,7 +90,7 @@ meta.schema = {
       downloadUrl: download,
       installUrl: download,
       sameAs: [download],
-      image: cdn('dark.webp'),
+      image: shot('dark.webp'),
       screenshot: features.map(feature => feature.image),
       operatingSystem: 'iOS',
       applicationCategory: 'ProductivityApplication',
@@ -107,7 +108,7 @@ meta.schema = {
     title="A dedicated home for life's repeating tasks."
     description="Move your endlessly repeating tasks into an application built from the ground up to handle them."
     cta={{ label: 'Download on the App Store', href: download }}
-    image={{ src: cdn('dark.webp'), alt: 'Repeaters app in light and dark mode', width: 700, height: 900 }}
+    image={{ src: shot('dark.webp'), alt: 'Repeaters app in light and dark mode', width: 700, height: 900 }}
   />
 
   <!-- Intro -->
