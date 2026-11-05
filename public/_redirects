@@ -1,9 +1,10 @@
-/instruction                  /
-/qr/1                         /gotcha.mp3
-/qr/2                         /gotcha.mp3
-/work                         /projects
-/websites                     /projects
-/apps                         /projects
-/apps/agone                   /repeaters
-/blog/tags/:tag               /blog?tag=:tag
-/projects/tools/:tool         /projects?tool=:tool
+# Cloudflare defaults to 302 when no code is given, so each permanent move says 301
+/instruction           /                     301
+/qr/1                  /gotcha.mp3           301
+/qr/2                  /gotcha.mp3           301
+/work                  /projects             301
+/websites              /projects             301
+/apps                  /projects             301
+/apps/agone            /repeaters            301
+/blog/tags/:tag        /blog?tag=:tag        301
+/projects/tools/:tool  /projects?tool=:tool  301

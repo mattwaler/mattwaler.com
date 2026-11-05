@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
+import ContactForm from '../components/ContactForm.astro'
 import SectionHeading from '../components/SectionHeading.astro'
 import Swift from '../icons/Swift.svg'
 import React from '../icons/React.svg'
@@ -135,35 +136,9 @@ meta.schema = {
   <!-- Contact -->
   <Waves foreground="#162456" background="white" />
   <section id="contact" class="text-white bg-linear-to-t from-blue-600 to-blue-950 to-90%">
-    <div class="container section max-w-3xl" x-data>
+    <div class="container section max-w-3xl">
       <SectionHeading title="Let's talk about your app." subtitle="Tell me a bit about what you need, and I'll get back to you with next steps." tone="cta" />
-      <div x-cloak x-show="window.location.search.includes('contact=true')">
-        <p class="h4 pt-16">Message sent! Thanks for reaching out!</p>
-      </div>
-      <form
-        action="/freelance-mobile-application-development/?contact=true"
-        netlify
-        class="mt-8 grid grid-cols-1 gap-8"
-        method="POST"
-        name="Contact Form"
-      >
-        <input type="hidden" name="form-name" value="Contact Form">
-        <label class="grid grid-cols-1">
-          <p>Name</p>
-          <input required name="name" class="input" type="text">
-        </label>
-        <label class="grid grid-cols-1">
-          <p>Email</p>
-          <input required name="email" class="input" type="email">
-        </label>
-        <label class="grid grid-cols-1">
-          <p>Message</p>
-          <textarea required name="message" rows="5" class="input"></textarea>
-        </label>
-        <div>
-          <button class="button rounded" type="submit">Submit</button>
-        </div>
-      </form>
+      <ContactForm />
     </div>
   </section>
   <Waves rotate foreground="#155dfc" />

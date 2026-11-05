@@ -5,10 +5,12 @@ import { anchor } from '@alpinejs/anchor'
 import { Masonry } from 'grid-rows-masonry'
 import EmblaCarousel from 'embla-carousel'
 import filter from './filter.js'
+import contactForm from './contact.js'
 
 Alpine.plugin(anchor)
 Alpine.plugin(intersect)
 Alpine.data('filter', filter)
+Alpine.data('contactForm', contactForm)
 
 window.Alpine = Alpine
 window.Masonry = Masonry

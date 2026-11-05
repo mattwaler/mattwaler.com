@@ -1,0 +1,55 @@
+---
+// Submissions go to Static Forms. The key is public by design, since it ships in the form's HTML.
+const apiKey = 'sf_79c49a26ca3024de0fccb38b'
+
+// Without JavaScript the browser posts straight to Static Forms, which sends the visitor back here
+// build.format 'file' makes the build-time pathname end in .html, which isn't the public URL
+const page = new URL(Astro.url.pathname.replace(/\.html$/, ''), Astro.site)
+const redirectTo = new URL(`?contact=true#contact`, page)
+---
+
+<div x-data="contactForm">
+  <!-- Same title + subtitle pairing as SectionHeading's cta tone, one heading level down -->
+  <div x-cloak x-show="status === 'sent'" role="status" class="mt-8 md:text-center text-balance">
+    <h3 class="h3 text-white">Message received!</h3>
+    <p class="h5 mt-2 text-white opacity-80">Thanks for reaching out! I'll be in touch as soon as I can.</p>
+  </div>
+  <form
+    x-show="status !== 'sent'"
+    x-on:submit.prevent="submit"
+    action="https://api.staticforms.dev/submit"
+    method="POST"
+    class="mt-8 grid grid-cols-1 gap-8"
+    data-astro-reload
+  >
+    <input type="hidden" name="apiKey" value={apiKey}>
+    <input type="hidden" name="redirectTo" value={redirectTo.href}>
+    <input type="hidden" name="page" value={page.href}>
+    <!-- Bots fill every field; Static Forms drops any submission where this one has a value -->
+    <label class="sr-only" aria-hidden="true">
+      Leave this empty
+      <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
+    </label>
+    <label class="grid grid-cols-1">
+      <p>Name</p>
+      <input required name="name" class="input" type="text" autocomplete="name">
+    </label>
+    <label class="grid grid-cols-1">
+      <p>Email</p>
+      <input required name="email" class="input" type="email" autocomplete="email">
+    </label>
+    <label class="grid grid-cols-1">
+      <p>Message</p>
+      <textarea required name="message" rows="5" class="input"></textarea>
+    </label>
+    <p x-cloak x-show="status === 'error'" x-text="error" role="alert" class="font-medium"></p>
+    <div>
+      <button
+        class="button rounded disabled:opacity-60"
+        type="submit"
+        x-bind:disabled="status === 'sending'"
+        x-text="status === 'sending' ? 'Sending…' : 'Submit'"
+      >Submit</button>
+    </div>
+  </form>
+</div>
