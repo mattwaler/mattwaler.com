@@ -1,0 +1,76 @@
+---
+import Markdown from '../layouts/Markdown.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
+import { SITE, personRef } from '../data/schema'
+import { easternDate, formatDate, isoDate } from '../data/dates'
+
+// Bump this whenever the policy changes
+const updated = easternDate('2026-11-13') as Date
+
+const meta: PageMeta = {
+  title: 'Privacy Policy',
+  description: 'This site sets zero cookies and counts page visits anonymously with GoatCounter. Here is exactly what information is collected and why.',
+  schema: {
+    breadcrumbs: [{ name: 'Privacy Policy', url: `${SITE}/privacy-policy` }],
+    page: {
+      dateModified: isoDate(updated),
+      author: personRef,
+    },
+  },
+}
+---
+
+<Markdown meta={meta}>
+  <span slot="eyebrow">Last updated <time datetime={isoDate(updated)}>{formatDate(updated)}</time></span>
+
+  <p>
+    This privacy policy explains what information is collected when you visit mattwaler.com, which is owned and operated by Waler Media, LLC. I keep this site as private as I can, so this will be a short read.
+  </p>
+
+  <h2>Cookies</h2>
+  <p>
+    This site does not use cookies. Nothing is saved to your browser to identify you or follow you around the web, which is also why you won't see a cookie banner here.
+  </p>
+
+  <h2>Analytics</h2>
+  <p>
+    I use <a href="https://www.goatcounter.com/">GoatCounter</a> to count page visits. It's an open source, privacy-friendly analytics tool that tells me which pages people read and roughly where they came from, without identifying who anyone is.
+  </p>
+  <p>When you load a page, GoatCounter records:</p>
+  <ul>
+    <li>The page you visited and the site that referred you, if any</li>
+    <li>Your browser, operating system, and screen size</li>
+    <li>Your country, which is looked up from your IP address</li>
+  </ul>
+  <p>
+    Your IP address itself is never stored. To avoid counting the same visit twice, GoatCounter briefly keeps a one-way hash of your IP address and browser that can't be reversed, then deletes it after a few hours. You can read more in <a href="https://www.goatcounter.com/help/privacy">GoatCounter's privacy policy</a>.
+  </p>
+  <p>
+    If you block the GoatCounter script with an ad blocker or similar tool, the site works exactly the same.
+  </p>
+
+  <h2>Contact form</h2>
+  <p>
+    If you send me a message through <a href="/contact">my contact form</a>, the name, email address, and message you enter are delivered to me by email through <a href="https://www.staticforms.dev/">Static Forms</a>. I only use that information to reply to you, and I never sell it, share it, or add you to a mailing list.
+  </p>
+
+  <h2>Hosting</h2>
+  <p>
+    This site and its images are served by Cloudflare. Like any web host, Cloudflare processes basic technical information, such as your IP address, in order to deliver pages to your browser and protect the site from abuse. I don't use that information to identify or track visitors.
+  </p>
+
+  <h2>My iPhone apps</h2>
+  <p>
+    <a href="/repeaters">Repeaters</a> and <a href="/intervals">Intervals</a> keep your data on your device. They don't require an account, and I have no ability to access anything you store in them.
+  </p>
+
+  <h2>Links to other sites</h2>
+  <p>
+    This site links to other websites, like my social profiles and the App Store. Once you leave mattwaler.com, those sites' own privacy policies apply.
+  </p>
+
+  <h2>Changes and questions</h2>
+  <p>
+    If anything about how this site handles information changes, I'll update this page and the date at the top. If you have questions about your privacy, <a href="/contact">reach out</a> and I'll be happy to help.
+  </p>
+</Markdown>

@@ -1,0 +1,90 @@
+---
+import Markdown from '../layouts/Markdown.astro'
+import type { PageMeta } from '../layouts/Layout.astro'
+import { SITE, personRef } from '../data/schema'
+import { easternDate, formatDate, isoDate } from '../data/dates'
+
+// Bump this whenever the way AI is used on the site changes
+const updated = easternDate('2026-11-13') as Date
+
+const meta: PageMeta = {
+  title: 'AI Disclosure',
+  description: 'How I use AI on this site, from grabbing app screenshots to drafting blog posts and writing structured data, and what always stays in my hands.',
+  schema: {
+    breadcrumbs: [{ name: 'AI Disclosure', url: `${SITE}/ai-disclosure` }],
+    page: {
+      dateModified: isoDate(updated),
+      author: personRef,
+    },
+  },
+}
+---
+
+<Markdown meta={meta}>
+  <span slot="eyebrow">Last updated <time datetime={isoDate(updated)}>{formatDate(updated)}</time></span>
+
+  <p>
+    I use AI to help run this site. I think you deserve to know where it shows up, so this page lays out
+    exactly what it does, what it doesn't, and how I keep an eye on it.
+  </p>
+  <p>
+    The short version: AI handles the tedious work so I can spend my time on the parts that matter. Every
+    opinion, recommendation, and project on this site is mine, and I review everything AI produces before it
+    goes live.
+  </p>
+
+  <h2>Screenshots and assets</h2>
+  <p>
+    The screenshots of my iPhone apps, like the ones on the <a href="/repeaters">Repeaters</a> and <a href="/intervals">Intervals</a> pages, are captured by AI. It boots up the iOS Simulator, taps through
+    each screen, and grabs the shots I ask for.
+  </p>
+  <p>
+    These are real screenshots of the real apps. AI is doing the clicking, not the drawing, so what you see is
+    what you get when you download them.
+  </p>
+
+  <h2>Blog posts</h2>
+  <p>
+    Every post on <a href="/blog">my blog</a> starts as an outline I write myself: the topic, the points I want
+    to make, and the opinions I want to share. AI turns that outline into a rough first draft so I'm not
+    staring at a blank page.
+  </p>
+  <p>
+    From there, I rewrite the draft by hand. I change the wording to sound like me, cut what doesn't belong, and
+    add the stories and details only I would know. By the time a post is published, it has been hand-authored
+    over from top to bottom, and the ideas in it were always mine to begin with.
+  </p>
+
+  <h2>SEO and AEO</h2>
+  <p>
+    AI helps with the behind-the-scenes information that search engines and AI assistants read to understand
+    this site. That includes:
+  </p>
+  <ul>
+    <li>Page titles and the short descriptions you see in search results</li>
+    <li>JSON-LD structured data that describes my pages, posts, apps, and projects</li>
+    <li>Alt text for images and social sharing cards</li>
+    <li>The <a href="/llms.txt">llms.txt</a> file that gives language models a plain-text map of the site</li>
+  </ul>
+  <p>
+    I review all of it before it ships to make sure it accurately describes the page it belongs to.
+  </p>
+
+  <h2>Code</h2>
+  <p>
+    I also use AI as a coding assistant while building and maintaining this site. I treat it the way I describe in <a href="/blog/ai-in-development-worst-mentor-best-mentee">AI in Development: the Worst Mentor, the Best Mentee</a>:
+    I make the decisions and give it specific instructions, then I read and understand every change before it
+    gets merged.
+  </p>
+
+  <h2>What stays human</h2>
+  <p>
+    Some things I will always do myself. My opinions and recommendations come from my own experience. The
+    projects in <a href="/projects">my portfolio</a> are work I actually did. When you reach out through <a href="/contact">my contact form</a>, the reply comes from me.
+  </p>
+
+  <h2>Questions?</h2>
+  <p>
+    If you have questions about how I use AI, or you think something on the site isn't living up to this page, <a href="/contact">let me know</a>. I'll update this page whenever the way I use AI changes.
+  </p>
+</Markdown>

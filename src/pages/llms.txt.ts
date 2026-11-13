@@ -30,6 +30,11 @@ export const GET: APIRoute = async () => {
     link('Freelance mobile app development', '/freelance-mobile-application-development', 'Fixed-price native iOS and cross-platform apps.'),
     link('Contact', '/contact', 'Get in touch about a project.'),
     '',
+    '## About this site',
+    '',
+    link('AI disclosure', '/ai-disclosure', 'How AI is used on this site, from app screenshots and blog drafts to structured data.'),
+    link('Privacy policy', '/privacy-policy', 'No cookies, anonymous page counts with GoatCounter, and how contact form messages are handled.'),
+    '',
   ].join('\n')
 
   return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })

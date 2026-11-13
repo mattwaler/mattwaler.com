@@ -12,6 +12,11 @@ const socials = [
 // With `build.format: 'file'`, Astro.url.pathname is `/contact.html` at build time
 // but `/contact` in the browser — normalize so both match.
 const pathname = Astro.url.pathname.replace(/\.html$/, '').replace(/(.)\/$/, '$1')
+const pageLinks = [
+  { name: 'Privacy Policy', url: '/privacy-policy' },
+  { name: 'AI Disclosure', url: '/ai-disclosure' },
+]
+
 const noCtaLinks = [
   '/contact', '/dad', '/klaus'
 ]
@@ -32,21 +37,26 @@ const noCtaLinks = [
 )}
 
 <footer>
-  <div class="mx-auto container py-6 md:flex md:items-center md:justify-between">
-    <div class="flex justify-start gap-x-6 md:order-2">
+  <div class="mx-auto container py-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+    <div class="flex justify-start items-center gap-x-5 md:order-3">
       {socials.map(({ name, url, Icon }) => (
         <a
-          class="text-gray-900 hover:text-gray-700 transition-colors"
+          class="text-gray-400 hover:text-gray-700 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
           href={url}
         >
           <span class="sr-only">{name}</span>
-          <Icon class="size-6" />
+          <Icon class="size-5.5" />
         </a>
       ))}
     </div>
-    <p class="mt-4 font-medium text-sm/6 md:order-1 md:mt-0">
+    <nav aria-label="Site policies" class="flex flex-wrap gap-x-5 gap-y-1 text-sm/6 font-medium md:order-2">
+      {pageLinks.map(({ name, url }) => (
+        <a href={url} class="text-gray-500 hover:text-gray-900 transition-colors">{name}</a>
+      ))}
+    </nav>
+    <p class="font-medium text-sm/6 md:order-1">
       &copy; {new Date().getFullYear()} Waler Media, LLC. All rights reserved.
     </p>
   </div>
