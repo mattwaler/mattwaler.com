@@ -24,15 +24,15 @@
     "typed.js": "^3.0.0"
   },
   "devDependencies": {
-    "@astrojs/markdown-satteri": "^0.4.7",
+    "@astrojs/markdown-satteri": "^0.4.9",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/forms": "^0.5.11",
-    "@tailwindcss/vite": "^4.3.4",
-    "astro": "^7.4.7",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.11",
     "probe-image-size": "^7.5.0",
-    "satteri": "^0.11.6",
+    "satteri": "^0.11.7",
     "tailwindcss": "4.3",
-    "vite": "^8.3.6"
+    "vite": "^8.3.8"
   }
 }
