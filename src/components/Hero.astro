@@ -3,12 +3,13 @@ interface Props {
   title: string
   description?: string
   titlePhrases?: string[]
-  cta?: { label: string; href: string }
+  /** Buttons under the description, in order. `outline` draws a secondary, outlined button. */
+  ctas?: { label: string; href: string; outline?: boolean }[]
   tags?: { label: string; href: string }[]
   image?: { src: string; alt?: string; width: number; height: number }
 }
 
-const { title, description, titlePhrases, cta, tags, image } = Astro.props
+const { title, description, titlePhrases, ctas, tags, image } = Astro.props
 
 // Rendered up front: a slot forwarded from a layout counts as filled even when it's empty
 const eyebrow = Astro.slots.has('eyebrow') ? (await Astro.slots.render('eyebrow')).trim() : ''
@@ -63,10 +64,13 @@ const reserveTitle = titlePhrases?.length
             ))}
           </ul>
         )}
-        {cta && (
-          <a href={cta.href} class="mt-3 button inline-block">
-            {cta.label}
-          </a>
+        {/* Padding, not margin: a margin would collapse into the description's spacing */}
+        {ctas && ctas.length > 0 && (
+          <div class:list={['pt-3 flex flex-wrap gap-3', !image && 'md:justify-center']}>
+            {ctas.map(cta => (
+              <a href={cta.href} class={cta.outline ? 'button-outline' : 'button'}>{cta.label}</a>
+            ))}
+          </div>
         )}
       </div>
     </div>

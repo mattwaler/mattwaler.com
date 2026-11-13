@@ -3,16 +3,9 @@ import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import SectionHeading from '../components/SectionHeading.astro'
+import ToolList from '../components/ToolList.astro'
 import RecentProjects from '../components/RecentProjects.astro'
 import RecentPosts from '../components/RecentPosts.astro'
-import Tailwind from '../icons/Tailwind.svg'
-import Alpine from '../icons/Alpine.svg'
-import AstroIcon from '../icons/AstroIcon.svg'
-import Nextjs from '../icons/Nextjs.svg'
-import Typescript from '../icons/Typescript.svg'
-import Swift from '../icons/Swift.svg'
-import Statamic from '../icons/Statamic.svg'
-import Laravel from '../icons/Laravel.svg'
 import type { PageMeta } from '../layouts/Layout.astro'
 import { bio, personRef } from '../data/schema'
 import { cdn } from '../data/images.js'
@@ -32,16 +25,6 @@ const masonry = [
   { file: 'masonry-5.webp', width: 576, height: 384 },
 ].map(asset => ({ ...asset, src: cdn(`masonry/${asset.file}`) }))
 
-const tools = [
-  { name: 'Tailwind', Icon: Tailwind },
-  { name: 'Alpine', Icon: Alpine },
-  { name: 'Astro', Icon: AstroIcon },
-  { name: 'Next.js', Icon: Nextjs },
-  { name: 'TypeScript', Icon: Typescript },
-  { name: 'Swift', Icon: Swift },
-  { name: 'Statamic', Icon: Statamic },
-  { name: 'Laravel', Icon: Laravel },
-]
 
 const meta: PageMeta = {
   title: 'Matt Waler builds websites, iOS apps, and plays a ton of tennis.',
@@ -75,19 +58,10 @@ const meta: PageMeta = {
       <div class="container text-base mt-12 text-balance md:text-center md:max-w-3xl mx-auto">
         <p class="text-lg text-blue-200">Whether it's a static website or a full-blown iOS application, I'm all about taking ideas and turning them into something tangible. I pride myself on keeping my code simple, practical, and easy to maintain, resorting to complexity only when absolutely necessary.</p>
       </div>
-      <div class="overflow-hidden w-full mt-16">
-        <div class="flex w-max animate-marquee">
-          {[...tools, ...tools, ...tools, ...tools].map(({ name, Icon }) => (
-            <div class="flex flex-col items-center gap-2.5 w-20 mr-16">
-              <Icon class="size-12 text-white" />
-              <p class="text-xs text-blue-100 font-mono text-center">{name}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ToolList class="mt-16" tools={['Alpine', 'Astro', 'Claude', 'Git', 'Laravel', 'Next.js', 'Node', 'Statamic', 'Swift', 'Tailwind', 'TypeScript', 'VS Code', 'Xcode']} />
       <div class="container mt-12 flex flex-wrap gap-3 md:justify-center">
-        <a href="/freelance-web-development" class="button">Web Development</a>
         <a href="/freelance-mobile-application-development" class="button">App Development</a>
+        <a href="/freelance-web-development" class="button">Web Development</a>
       </div>
     </div>
   </section>

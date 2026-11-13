@@ -1,0 +1,82 @@
+---
+import Alpine from '../icons/Alpine.svg'
+import AstroIcon from '../icons/AstroIcon.svg'
+import Claude from '../icons/Claude.svg'
+import Craft from '../icons/Craft.svg'
+import Git from '../icons/Git.svg'
+import Laravel from '../icons/Laravel.svg'
+import Nextjs from '../icons/Nextjs.svg'
+import Node from '../icons/Node.svg'
+import React from '../icons/React.svg'
+import Statamic from '../icons/Statamic.svg'
+import Swift from '../icons/Swift.svg'
+import Tailwind from '../icons/Tailwind.svg'
+import Typescript from '../icons/Typescript.svg'
+import VSCode from '../icons/VSCode.svg'
+import Xcode from '../icons/Xcode.svg'
+
+// Every tool a page can show, keyed by the label printed under its icon
+const icons = {
+  'Alpine': Alpine,
+  'Astro': AstroIcon,
+  'Claude': Claude,
+  'Craft CMS': Craft,
+  'Git': Git,
+  'Laravel': Laravel,
+  'Next.js': Nextjs,
+  'Node': Node,
+  'React Native': React,
+  'Statamic': Statamic,
+  'Swift': Swift,
+  'Tailwind': Tailwind,
+  'TypeScript': Typescript,
+  'VS Code': VSCode,
+  'Xcode': Xcode,
+}
+
+export type Tool = keyof typeof icons
+
+interface Props {
+  tools: Tool[]
+  /** Scroll the tools in an endless marquee. Off, they sit in a centered row, for short lists. */
+  marquee?: boolean
+  class?: string
+}
+
+const { tools, marquee = true, class: className } = Astro.props
+
+const sorted = [...tools]
+  .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
+  .map(name => ({ name, Icon: icons[name] }))
+
+// Each tile is w-24 plus mr-16, 160px. Repeat the list until one copy can slide off a 4K-wide
+// screen with no gap behind it; the marquee moves exactly one copy per loop.
+const tileWidth = 160
+const copies = Math.max(2, Math.ceil(3840 / (sorted.length * tileWidth)) + 1)
+const repeated = Array.from({ length: copies }, () => sorted).flat()
+---
+
+{marquee ? (
+  <div class:list={['overflow-hidden w-full', className]}>
+    <div
+      class="flex w-max animate-marquee"
+      style={`--marquee-copies: ${copies}; --marquee-items: ${sorted.length}`}
+    >
+      {repeated.map(({ name, Icon }, index) => (
+        <div class="flex flex-col items-center gap-2.5 w-24 mr-16" aria-hidden={index >= sorted.length ? 'true' : undefined}>
+          <Icon class="size-12 text-white" />
+          <p class="text-xs text-blue-100 font-mono text-center">{name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+) : (
+  <div class:list={['flex flex-wrap justify-center gap-8 md:gap-16', className]}>
+    {sorted.map(({ name, Icon }) => (
+      <div class="flex flex-col items-center gap-2.5 w-24">
+        <Icon class="size-12 text-white" />
+        <p class="text-xs text-blue-100 font-mono text-center">{name}</p>
+      </div>
+    ))}
+  </div>
+)}

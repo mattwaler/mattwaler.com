@@ -4,17 +4,12 @@ import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import ContactForm from '../components/ContactForm.astro'
 import SectionHeading from '../components/SectionHeading.astro'
-import Swift from '../icons/Swift.svg'
-import React from '../icons/React.svg'
+import ToolList from '../components/ToolList.astro'
 import projects from '../data/projects.js'
 import RecentProjects from '../components/RecentProjects.astro'
 import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
-const tools = [
-  { name: 'Swift', Icon: Swift },
-  { name: 'React Native', Icon: React },
-]
 
 const pricingFaqs = [
   {
@@ -84,7 +79,7 @@ meta.schema = {
   <Hero
     title="Ohio-based freelance mobile app development."
     description="I build native iOS apps and cross-platform mobile apps for businesses that want a pragmatic partner, clear communication, and a fixed price before work starts."
-    cta={{ label: 'Get a Fixed-Price Quote', href: '#contact' }}
+    ctas={[{ label: 'Get a Fixed-Price Quote', href: '#contact' }]}
   />
 
   <!-- Specialization -->
@@ -95,16 +90,7 @@ meta.schema = {
       <div class="container text-base mt-12 text-balance md:text-center md:max-w-3xl mx-auto">
         <p class="text-lg text-blue-200">Some apps need to feel completely at home on iOS, with deep system integration, smooth animations, and App Store-grade performance. Others need to reach iOS and Android from a single codebase without doubling the budget. I specialize in both: Swift and SwiftUI for native iOS apps, and React Native for cross-platform apps that need to ship everywhere at once.</p>
       </div>
-      <div class="w-full mt-16">
-        <div class="flex justify-center gap-16">
-          {tools.map(({ name, Icon }) => (
-            <div class="flex flex-col items-center gap-2.5 w-24">
-              <Icon class="size-12 text-white" />
-              <p class="text-xs text-blue-100 font-mono text-center">{name}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ToolList class="mt-16" tools={['React Native', 'Swift', 'Xcode']} marquee={false} />
     </div>
   </section>
 

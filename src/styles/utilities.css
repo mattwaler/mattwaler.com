@@ -1,10 +1,12 @@
+/* Marquees render their list --marquee-copies times and slide exactly one copy per loop, so the
+   reset is seamless. Duration scales with --marquee-items to keep every marquee at the same speed. */
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-25%); }
+  to   { transform: translateX(calc(-100% / var(--marquee-copies, 4))); }
 }
 
 @utility animate-marquee {
-  animation: marquee 18s linear infinite;
+  animation: marquee calc(var(--marquee-items, 8) * 2.25s) linear infinite;
 }
 
 @utility container {
@@ -22,6 +24,11 @@
 
 @utility button {
   @apply bg-black px-4 py-2 rounded-full font-medium text-white hover:bg-gray-800 transition-colors;
+}
+
+/* Same footprint as .button; the ring is inset so the two line up side by side */
+@utility button-outline {
+  @apply px-4 py-2 rounded-full font-medium text-gray-900 ring-2 ring-inset ring-black hover:bg-black hover:text-white transition-colors;
 }
 
 @utility overlap {

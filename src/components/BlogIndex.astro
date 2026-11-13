@@ -34,7 +34,10 @@ const meta: PageMeta = {
   <Hero
     title="Sneak a peek inside my head."
     description="Sorry, you're probably going to regret doing that. Here on my blog you will find coding tips, tech rants, coffee-fueled tutorials, and the occasional meme. We don't have a ton here just yet, but don't worry, more is on the way!"
-    cta={{ label: "Subscribe via RSS", href: "/rss.xml" }}
+    ctas={[
+      { label: "Subscribe via RSS", href: "/rss.xml" },
+      { label: "AI Disclosure", href: "/ai-disclosure", outline: true },
+    ]}
   />
 
   <Waves />

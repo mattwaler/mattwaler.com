@@ -4,23 +4,12 @@ import Hero from '../components/Hero.astro'
 import Waves from '../components/Waves.astro'
 import ContactForm from '../components/ContactForm.astro'
 import SectionHeading from '../components/SectionHeading.astro'
-import Statamic from '../icons/Statamic.svg'
-import Laravel from '../icons/Laravel.svg'
-import Craft from '../icons/Craft.svg'
-import AstroIcon from '../icons/AstroIcon.svg'
-import Nextjs from '../icons/Nextjs.svg'
+import ToolList from '../components/ToolList.astro'
 import projects from '../data/projects.js'
 import RecentProjects from '../components/RecentProjects.astro'
 import type { PageMeta } from '../layouts/Layout.astro'
 import { SITE, personRef } from '../data/schema'
 
-const tools = [
-  { name: 'Laravel', Icon: Laravel },
-  { name: 'Statamic', Icon: Statamic },
-  { name: 'Craft CMS', Icon: Craft },
-  { name: 'Astro', Icon: AstroIcon },
-  { name: 'Next.js', Icon: Nextjs },
-]
 
 const pricingFaqs = [
   {
@@ -90,7 +79,7 @@ meta.schema = {
   <Hero
     title="Ohio-based freelance web development."
     description="I build CMS-based systems and fully static sites for businesses that want a pragmatic partner, clear communication, and a fixed price before work starts."
-    cta={{ label: 'Get a Fixed-Price Quote', href: '#contact' }}
+    ctas={[{ label: 'Get a Fixed-Price Quote', href: '#contact' }]}
   />
 
   <!-- Specialization -->
@@ -101,16 +90,7 @@ meta.schema = {
       <div class="container text-base mt-12 text-balance md:text-center md:max-w-3xl mx-auto">
         <p class="text-lg text-blue-200">Some projects need a content management system your team can update every day. Others just need to be fast, simple, and hands-off. I specialize in both: Laravel, Statamic, and Craft CMS for teams that need to manage their own content, and Astro or Next.js for fully static sites that don't need a backend at all.</p>
       </div>
-      <div class="overflow-hidden w-full mt-16">
-        <div class="flex w-max animate-marquee">
-          {[...tools, ...tools, ...tools, ...tools, ...tools, ...tools].map(({ name, Icon }) => (
-            <div class="flex flex-col items-center gap-2.5 w-24 mr-16">
-              <Icon class="size-12 text-white" />
-              <p class="text-xs text-blue-100 font-mono text-center">{name}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <ToolList class="mt-16" tools={['Alpine', 'Astro', 'Craft CMS', 'Laravel', 'Next.js', 'Node', 'Statamic', 'Tailwind', 'TypeScript']} />
     </div>
   </section>
 
