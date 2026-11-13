@@ -36,12 +36,12 @@ const noCtaLinks = [
   </section>
 )}
 
-<footer>
+<footer class="text-gray-600">
   <div class="mx-auto container py-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
     <div class="flex justify-start items-center gap-x-5 md:order-3">
       {socials.map(({ name, url, Icon }) => (
         <a
-          class="text-gray-400 hover:text-gray-700 transition-colors"
+          class="hover:text-gray-900 transition-colors"
           target="_blank"
           rel="noopener noreferrer"
           href={url}
@@ -53,7 +53,7 @@ const noCtaLinks = [
     </div>
     <nav aria-label="Site policies" class="flex flex-wrap gap-x-5 gap-y-1 text-sm/6 font-medium md:order-2">
       {pageLinks.map(({ name, url }) => (
-        <a href={url} class="text-gray-500 hover:text-gray-900 transition-colors">{name}</a>
+        <a href={url} class="hover:text-gray-900 transition-colors">{name}</a>
       ))}
     </nav>
     <p class="font-medium text-sm/6 md:order-1">
